@@ -8,7 +8,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+<!--和基本框架很快就回家  -->
     <artifactId>eureka7001</artifactId>
     <packaging>war</packaging>
 
