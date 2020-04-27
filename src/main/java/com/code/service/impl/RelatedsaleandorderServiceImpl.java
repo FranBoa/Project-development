@@ -2,7 +2,10 @@ package com.code.service.impl;
 
 import com.code.entity.Relatedsaleandorder;
 import com.code.dao.RelatedsaleandorderDao;
+import com.code.entity.Saleandorder;
 import com.code.service.RelatedsaleandorderService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -33,8 +36,8 @@ public class RelatedsaleandorderServiceImpl implements RelatedsaleandorderServic
     /**
      * 查询多条数据
      *
-     * @param 
-     * @param 
+     * @param
+     * @param
      * @return 对象列表
      */
     @Override
@@ -51,6 +54,14 @@ public class RelatedsaleandorderServiceImpl implements RelatedsaleandorderServic
     @Override
    public List<Relatedsaleandorder> queryAll(Relatedsaleandorder relatedsaleandorder){
           return  this.relatedsaleandorderDao.queryAll(relatedsaleandorder);
+    }
+
+    @Override
+    public PageInfo<Relatedsaleandorder> queryAllforPage(int pageNum, int pageSize, Relatedsaleandorder relatedsaleandorder) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<Relatedsaleandorder> list =this.relatedsaleandorderDao.queryAll(relatedsaleandorder);
+        PageInfo<Relatedsaleandorder> pageinfo=new PageInfo<>(list);
+        return pageinfo;
     }
 
     /**
