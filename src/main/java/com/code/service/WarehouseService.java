@@ -34,7 +34,7 @@ public interface WarehouseService {
      * @param warehouse 实例对象
      * @return 实例对象
      */
-    Warehouse insert(Warehouse warehouse);
+    int insert(Warehouse warehouse);
 
     /**
      * 通过实体作为筛选条件查询
@@ -59,5 +59,7 @@ public interface WarehouseService {
      * @return 是否成功
      */
     boolean deleteById(Integer wid);
+
+
 
 }

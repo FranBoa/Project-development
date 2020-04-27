@@ -13,18 +13,18 @@ public class Category implements Serializable {
     /**
     * 类别编号
     */
-    private String cid;
+    private int cid;
     /**
     * 类别名称
     */
     private String name;
 
 
-    public String getCid() {
+    public int getCid() {
         return cid;
     }
 
-    public void setCid(String cid) {
+    public void setCid(int cid) {
         this.cid = cid;
     }
 

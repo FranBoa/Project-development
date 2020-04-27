@@ -50,7 +50,7 @@ public interface PurchaseService {
      * @param purchase 实例对象
      * @return 实例对象
      */
-    Purchase update(Purchase purchase);
+    int update(Purchase purchase);
 
     /**
      * 通过主键删除数据

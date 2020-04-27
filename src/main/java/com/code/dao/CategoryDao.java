@@ -60,6 +60,6 @@ public interface CategoryDao {
      * @param cid 主键
      * @return 影响行数
      */
-    int deleteById(String cid);
+    int deleteById(int cid);
 
 }

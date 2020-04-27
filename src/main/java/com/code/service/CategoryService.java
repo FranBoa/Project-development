@@ -34,7 +34,7 @@ public interface CategoryService {
      * @param category 实例对象
      * @return 实例对象
      */
-    Category insert(Category category);
+    int insert(Category category);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,7 +50,7 @@ public interface CategoryService {
      * @param category 实例对象
      * @return 实例对象
      */
-    Category update(Category category);
+    int update(Category category);
 
     /**
      * 通过主键删除数据
@@ -58,6 +58,6 @@ public interface CategoryService {
      * @param cid 主键
      * @return 是否成功
      */
-    boolean deleteById(String cid);
+    int deleteById(int cid);
 
 }

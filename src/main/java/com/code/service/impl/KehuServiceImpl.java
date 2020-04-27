@@ -26,7 +26,7 @@ public class KehuServiceImpl implements KehuService {
      * @return 实例对象
      */
     @Override
-    public Kehu queryById(String id) {
+    public Kehu queryById(int id) {
         return this.kehuDao.queryById(id);
     }
 
@@ -60,9 +60,8 @@ public class KehuServiceImpl implements KehuService {
      * @return 实例对象
      */
     @Override
-    public Kehu insert(Kehu kehu) {
-        this.kehuDao.insert(kehu);
-        return kehu;
+    public int insert(Kehu kehu) {
+        return this.kehuDao.insert(kehu);
     }
 
     /**
@@ -72,9 +71,8 @@ public class KehuServiceImpl implements KehuService {
      * @return 实例对象
      */
     @Override
-    public Kehu update(Kehu kehu) {
-        this.kehuDao.update(kehu);
-        return this.queryById(kehu.getId());
+    public int update(Kehu kehu) {
+        return this.kehuDao.update(kehu);
     }
 
     /**
@@ -84,7 +82,7 @@ public class KehuServiceImpl implements KehuService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String id) {
-        return this.kehuDao.deleteById(id) > 0;
+    public int deleteById(int id) {
+		return this.kehuDao.deleteById(id);
     }
 }

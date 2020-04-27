@@ -9,79 +9,79 @@ import java.io.Serializable;
  * @since 2020-04-19 02:16:40
  */
 public class Warehouse implements Serializable {
-    private static final long serialVersionUID = -83904690039903439L;
-    /**
-    * 仓库id
-    */
-    private Integer wid;
-    /**
-    * 仓库名称
-    */
-    private String wname;
-    /**
-    * 仓库地址
-    */
-    private String address;
-    /**
-    * 负责人
-    */
-    private String personnelname;
-    /**
-    * 负责人联系电话
-    */
-    private String personnelphone;
-    /**
-    * 仓库电话
-    */
-    private String wphone;
+	private static final long serialVersionUID = -83904690039903439L;
+	/**
+	 * 仓库id
+	 */
+	private int wid;
+	/**
+	 * 仓库名称
+	 */
+	private String wname;
+	/**
+	 * 仓库地址
+	 */
+	private String address;
+	/**
+	 * 负责人
+	 */
+	private String personnelname;
+	/**
+	 * 负责人联系电话
+	 */
+	private String personnelphone;
+	/**
+	 * 仓库电话
+	 */
 
+	private int wstatus;
 
-    public Integer getWid() {
-        return wid;
-    }
+	public int getWid() {
+		return wid;
+	}
 
-    public void setWid(Integer wid) {
-        this.wid = wid;
-    }
+	public void setWid(int wid) {
+		this.wid = wid;
+	}
 
-    public String getWname() {
-        return wname;
-    }
+	public int getWstatus() {
+		return wstatus;
+	}
 
-    public void setWname(String wname) {
-        this.wname = wname;
-    }
+	public void setWstatus(int wstatus) {
+		this.wstatus = wstatus;
+	}
 
-    public String getAddress() {
-        return address;
-    }
+	public String getWname() {
+		return wname;
+	}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+	public void setWname(String wname) {
+		this.wname = wname;
+	}
 
-    public String getPersonnelname() {
-        return personnelname;
-    }
+	public String getAddress() {
+		return address;
+	}
 
-    public void setPersonnelname(String personnelname) {
-        this.personnelname = personnelname;
-    }
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    public String getPersonnelphone() {
-        return personnelphone;
-    }
+	public String getPersonnelname() {
+		return personnelname;
+	}
 
-    public void setPersonnelphone(String personnelphone) {
-        this.personnelphone = personnelphone;
-    }
+	public void setPersonnelname(String personnelname) {
+		this.personnelname = personnelname;
+	}
 
-    public String getWphone() {
-        return wphone;
-    }
+	public String getPersonnelphone() {
+		return personnelphone;
+	}
 
-    public void setWphone(String wphone) {
-        this.wphone = wphone;
-    }
+	public void setPersonnelphone(String personnelphone) {
+		this.personnelphone = personnelphone;
+	}
 
 }

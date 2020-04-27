@@ -2,6 +2,8 @@ package com.code.entity;
 
 import java.io.Serializable;
 
+import lombok.ToString;
+
 /**
  * (Kehu)实体类
  *
@@ -13,7 +15,7 @@ public class Kehu implements Serializable {
     /**
     * 客户编号
     */
-    private String id;
+    private int id;
     /**
     * 客户等级
     */
@@ -44,11 +46,11 @@ public class Kehu implements Serializable {
     private String address;
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -108,4 +110,14 @@ public class Kehu implements Serializable {
         this.address = address;
     }
 
+	@Override
+	public String toString() {
+		return "Kehu [id=" + id + ", grade=" + grade + ", name=" + name + ", cid=" + cid + ", sell=" + sell
+				+ ", contact=" + contact + ", mobilePhone=" + mobilePhone + ", address=" + address + "]";
+	}
+
+	
+
+    
+    
 }

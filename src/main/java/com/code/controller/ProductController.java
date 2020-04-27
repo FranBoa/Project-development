@@ -5,6 +5,8 @@ import com.code.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * (Product)表控制层
@@ -54,6 +56,16 @@ public class ProductController {
     @RequestMapping("queryAll")
     public List<Product>  queryAll(Product product){
            return this.productService.queryAll(product);
+    }
+    @RequestMapping("add")
+    public String add(@RequestBody Product product) {
+    	System.out.println(1234);
+    	int result=this.productService.insert(product);
+    	if (result>0) {
+			return "<script> alert('添加成功') </script>";
+		} else {
+			return "<script> alert('添加失败') </script>";
+		}
     }
 
 }

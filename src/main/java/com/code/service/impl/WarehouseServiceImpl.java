@@ -60,9 +60,9 @@ public class WarehouseServiceImpl implements WarehouseService {
      * @return 实例对象
      */
     @Override
-    public Warehouse insert(Warehouse warehouse) {
-        this.warehouseDao.insert(warehouse);
-        return warehouse;
+    public int insert(Warehouse warehouse) {
+       
+        return  this.warehouseDao.insert(warehouse);
     }
 
     /**
@@ -87,4 +87,6 @@ public class WarehouseServiceImpl implements WarehouseService {
     public boolean deleteById(Integer wid) {
         return this.warehouseDao.deleteById(wid) > 0;
     }
+
+	
 }

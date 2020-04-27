@@ -5,6 +5,8 @@ import com.code.service.WarehouseService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * (Warehouse)表控制层
@@ -54,6 +56,26 @@ public class WarehouseController {
     @RequestMapping("queryAll")
     public List<Warehouse>  queryAll(Warehouse warehouse){
            return this.warehouseService.queryAll(warehouse);
+    }
+    
+    @RequestMapping("add")
+    public String  add(HttpServletResponse response, HttpServletRequest request,Warehouse warehouse){
+    	String wName = request.getParameter("wName");
+    	String address=request.getParameter("address");
+    	String personnelName=request.getParameter("personnelName");
+    	String personnelPhone=request.getParameter("personnelPhone");
+    		int wStatus=1;
+    		warehouse.setWname(wName);
+    		warehouse.setAddress(address);
+    		warehouse.setPersonnelname(personnelName);
+    		warehouse.setPersonnelphone(personnelPhone);
+    		warehouse.setWstatus(wStatus);
+    		int result=this.warehouseService.insert(warehouse);
+    		if (result>0) {
+				return "<script> alert('添加成功') </script>";
+			} else {
+				return "<script> alert('添加失败') </script>";
+			}
     }
 
 }

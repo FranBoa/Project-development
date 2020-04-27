@@ -60,9 +60,8 @@ public class ProductServiceImpl implements ProductService {
      * @return 实例对象
      */
     @Override
-    public Product insert(Product product) {
-        this.productDao.insert(product);
-        return product;
+    public int insert(Product product) {
+        return   this.productDao.insert(product);
     }
 
     /**

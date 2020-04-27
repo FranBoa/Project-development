@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.dao.Finance_CashStatement">
+    <select id="getCash_Statement" resultType="CashStatement">
+        select * from cash_statement where `date` between #{date1} and #{date2} and dealings=#{dealings}
+    </select>
+</mapper>

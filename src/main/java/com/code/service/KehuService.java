@@ -17,7 +17,7 @@ public interface KehuService {
      * @param id 主键
      * @return 实例对象
      */
-    Kehu queryById(String id);
+    Kehu queryById(int id);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface KehuService {
      * @param kehu 实例对象
      * @return 实例对象
      */
-    Kehu insert(Kehu kehu);
+    int insert(Kehu kehu);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,7 +50,7 @@ public interface KehuService {
      * @param kehu 实例对象
      * @return 实例对象
      */
-    Kehu update(Kehu kehu);
+    int update(Kehu kehu);
 
     /**
      * 通过主键删除数据
@@ -58,6 +58,6 @@ public interface KehuService {
      * @param id 主键
      * @return 是否成功
      */
-    boolean deleteById(String id);
+    int deleteById(int id);
 
 }

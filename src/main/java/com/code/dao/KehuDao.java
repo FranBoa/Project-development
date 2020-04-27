@@ -18,7 +18,7 @@ public interface KehuDao {
      * @param id 主键
      * @return 实例对象
      */
-    Kehu queryById(String id);
+    Kehu queryById(int id);
 
     /**
      * 查询指定行数据
@@ -60,6 +60,6 @@ public interface KehuDao {
      * @param id 主键
      * @return 影响行数
      */
-    int deleteById(String id);
+    int deleteById(int id);
 
 }

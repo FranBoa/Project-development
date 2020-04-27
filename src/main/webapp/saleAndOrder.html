@@ -45,7 +45,7 @@
                             </form>
                         </div>
                         <div class="layui-card-body ">
-                            <table class="layui-table" lay-data="{url:'saleandorder/selectAll',page:true,toolbar: '#toolbarDemo',id:'test'}" lay-filter="test">
+                            <table class="layui-table" lay-data="{url:'saleandorder/selectAll',page:true,toolbar: '#toolbarDemo',id:'test',height: 415 }" lay-filter="test">
                                 <thead>
                                 <tr>
                                     <th lay-data="{type:'checkbox'}">ID</th>
@@ -74,16 +74,15 @@
 
                         </div>
                         <div class="layui-card-header">
-                            <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                            <button class="layui-btn layui-btn-danger" lay-submit  lay-filter="del">
                                 <i class="layui-icon"></i>批量删除</button>
                             <button class="layui-btn" onclick="openAdd()">
-                                <i class="layui-icon"></i>添加</button></div>
+                                <i class="layui-icon"></i>添加计划商品</button></div>
                         <div class="layui-card-body ">
-                            <table class="layui-table layui-form " id="xtable"  >
+                            <table class="layui-table layui-form " id="xtable">
                                 <thead>
                                 <tr>
                                     <th  rowspan="3">  <input type="checkbox" name=""  lay-filter="checkall" lay-skin="primary"></th>
-                                    <th  rowspan="3">订单编号</th>
                                     <th  rowspan="3">商品名</th>
                                     <th  colspan="7"  style="text-align: center">商品信息</th>
                                     <th colspan="2"  style="text-align: center">其他</th>
@@ -94,7 +93,7 @@
                                     <th  rowspan="2">单位</th>
                                     <th  colspan="5"  style="text-align: center">详细</th>
                                     <th  rowspan="2">支付方式</th>
-                                    <th  rowspan="2">发货方式</th>
+                                    <th  rowspan="2">发货地址</th>
                                 </tr>
                                 <tr>
                                     <th  rowspan="2">商品价格</th>
@@ -106,8 +105,7 @@
                                 </thead>
                                 <tbody id="tbody">
                                     <tr v-for="item in list">
-                                        <td><input type="checkbox" name="" lay-skin="primary">
-                                        <td>{{item.ordernumber}}</td>
+                                        <td><input type="checkbox" name="" lay-skin="primary" :value="item.sid">
                                         <td>{{item.rname}}</td>
                                         <td>{{item.scount}}</td>
                                         <td>{{item.sunit}}</td>
@@ -120,26 +118,20 @@
                                         <td>{{item.address}}</td>
 
                                         <td class="td-manage">
-                                            <a title="查看" onclick="xadmin.open('编辑','order-view.html')"  @click="sendMessage(item.ordernumber)" href="javascript:;">
+                                            <a title="修改" onclick="xadmin.open('编辑','order-view.html')"  @click="sendMessage(item.ordernumber)" href="javascript:;">
                                                 <i class="layui-icon">&#xe63c;</i></a>
                                             <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
                                                 <i class="layui-icon">&#xe640;</i></a>
                                         </td>
                                     </tr>
-
                                 </tbody>
                             </table>
+
                         </div>
                         <div class="layui-card-body ">
-                            <div class="page">
-                                <div>
-                                    <a class="prev" href="">&lt;&lt;</a>
-                                    <a class="num" href="">1</a>
-                                    <span class="current">2</span>
-                                    <a class="num" href="">3</a>
-                                    <a class="num" href="">489</a>
-                                    <a class="next" href="">&gt;&gt;</a></div>
-                            </div>
+                            <fieldset id="page1" class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                                <legend>选择一条数据...</legend>
+                            </fieldset>
                         </div>
                     </div>
                 </div>
@@ -150,22 +142,58 @@
     <script src="/js/vue-2.4.0.js"></script>
     <script src="/js/axios.min.js"></script>
     <script src="/js/qs.min.js"></script>
-
-    <script>
+    <script></script>
+    <script  name="VUE">
         var vm=new Vue({
             el:"#xx",
-            data:{
-               list:[],
-                list2:[],
-                 orderId:null
-            },
+            data:{list:[], list2:[], orderId:null, pageNum:1, pageSize:5, count:null},
             methods:{
                 sendMessage(){
-                    var data=  Qs.stringify({"ordernumber":this.orderId});
+                    var data=  Qs.stringify({"ordernumber":this.orderId,"pageNum":this.pageNum,"pageSize":this.pageSize});
                     axios.post('relatedsaleandorder/queryAll',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
-                        console.log(res.data.data);
                         this.list=res.data.data;
+                        this.count=res.data.count;
+                        var count=this.count;
+                        layui.use('laypage', function(){
+                            var laypage = layui.laypage;
+                            //执行一个laypage实例
+                            laypage.render({
+                                elem: 'page1' //注意，这里的 test1 是 ID，不用加 # 号
+                                ,count: vm.$data.count//数据总数，从服务端得到
+                                ,limit:vm.$data.pageSize
+                                ,limits:[5,10,20,40]
+                                ,theme: '#1E9FFF'
+                                ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+                                ,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                                ,hash: 'fenye' //自定义hash值
+                                ,jump: function(obj, first){
+                                    //obj包含了当前分页的所有参数，比如
+                                    //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                    //得到每页显示的条数
+                                    //首次不执行
+                                    if(!first){
 
+                                        console.log(obj.limit);
+                                        $.ajax({
+                                            url:"relatedsaleandorder/queryAll",
+                                            data:{"ordernumber":vm.$data.orderId,"pageNum":obj.curr,"pageSize":obj.limit},
+                                            type:"post",
+                                            async: false,
+                                            traditional:true,
+                                            success:function(data){
+                                                //layer.msg(data);
+                                                vm.$data.list=data.data;
+                                                vm.$data.count=data.count;
+                                                //location.reload(); //删除成功后再刷新
+                                            },
+                                            error:function(data){
+
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+                        });
                     }).catch(err=>{
                         alert('请求失败')
                     })
@@ -174,13 +202,24 @@
             mounted(){
 
              },
-            updated:function(){
-                layui.use('form',function(){
-                    var form=layui.form;
+            created(){
+
+            },
+            beforeUpdate:function(){
+
+            },
+            updated:function() {
+
+                layui.use('laypage', function(){
+                    var laypage = layui.laypage;
+                    laypage.render();
+                });
+                layui.use('form', function () {
+                    var form = layui.form;
                     form.render();
                 });
-                layui.use('table',function(){
-                    var table=layui.table;
+                layui.use('table', function () {
+                    var table = layui.table;
                     table.render();
                 });
             },
@@ -190,6 +229,10 @@
                 }
             }
         });
+
+
+
+
     </script>
     <script>
         var v1=new Vue({
@@ -202,15 +245,7 @@
         });
     </script>
     <script>
-        layui.use('laypage', function(){
-            var laypage = layui.laypage;
 
-            //执行一个laypage实例
-            laypage.render({
-                elem: 'test' //注意，这里的 test1 是 ID，不用加 # 号
-                ,count: 50 //数据总数，从服务端得到
-            });
-        });
     </script>
     <script type="text/html" id="orderTemp">
         {{#  if(d.status === '未出库'){ }}
@@ -298,42 +333,86 @@
                             layer.msg(checkStatus.isAll ? '全选': '未全选');
                             break;
                         case 'delAny':
+                            //var data=checkStatus.data[1].sid;
+                            var sid=new Array();
+                            if (checkStatus.data.length==0)return false;
+                            for (var i=0;i<checkStatus.data.length;i++){
+                                var data=checkStatus.data[i].sid;
+                                sid.push(data);
+                            }
+                            //var sid=JSON.stringify(sid);
                             $.ajax({
-                                url:"传",
-                                data:{'id':id},
-                                type:"Post",
-                                dataType:"json",
+                                url:"saleandorder/del",
+                                data:{sid:sid},
+                                type:"post",
+                                traditional:true,
                                 success:function(data){
-                                    console.log(data);
-                                    layer.msg(data.msg);
-                                    location.reload(); //删除成功后再刷新
+                                    if (data.code==0){
+                                        layer.msg(data.result, {time: 5000, icon:6});
+                                    }else{
+                                        layer.msg(data.result, {time: 5000, icon:5});
+                                    }
+
+                                    //location.reload(); //删除成功后再刷新
                                 },
                                 error:function(data){
-                                    $.messager.alert('错误',data.msg);
+                                    layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
                                 }
                             });
-                            var data=checkStatus.data;
-                            layer.msg(JSON.stringify(data[0].ordernumber)+"删除成功！");
                             break;
                     };
                 });
+        });
 
-        });</script>
 
 
+
+    </script>
     <script>layui.use(['laydate', 'form'],
         function() {
             var laydate = layui.laydate;
             var  form = layui.form;
+            $ = layui.$;
+
             // 监听全选
             form.on('checkbox(checkall)', function(data){
-
                 if(data.elem.checked){
                     $('#tbody input').prop('checked',true);
                 }else{
                     $('#tbody input').prop('checked',false);
                 }
                 form.render('checkbox');
+
+            });
+
+
+           form.on('submit(del)',function(data){
+               //将页面全部复选框选中的值拼接到一个数组中
+               var box = [];
+               $('#tbody input[type=checkbox]:checked').each(function() {
+                   box.push($(this).val());
+               });
+               if (box.length==0)return false;
+               //数组
+               console.log(box);
+               $.ajax({
+                   url:"relatedsaleandorder/del",
+                   data:{"sid":box},
+                   type:"post",
+                   traditional:true,
+                   success:function(data){
+                       if (data.code==0){
+                           layer.msg(data.result, {time: 5000, icon:6});
+                       }else{
+                           layer.msg(data.result, {time: 5000, icon:5});
+                       }
+                       //location.reload(); //删除成功后再刷新
+                   },
+                   error:function(data){
+
+                   }
+               });
+               return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
             });
 
             //执行一个laydate实例
@@ -353,24 +432,18 @@
         function member_stop(obj, id) {
             layer.confirm('确认要停用吗？',
             function(index) {
-
                 if ($(obj).attr('title') == '启用') {
-
                     //发异步把用户状态进行更改
                     $(obj).attr('title', '停用');
                     $(obj).find('i').html('&#xe62f;');
-
                     $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
                     layer.msg('已停用!', {
                         icon: 5,
                         time: 1000
                     });
-
                 } else {
-
                     $(obj).attr('title', '启用');
                     $(obj).find('i').html('&#xe601;');
-
                     $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
                     layer.msg('已启用!', {
                         icon: 5,
@@ -394,27 +467,16 @@
             });
         }
 
-        function delAll(argument) {
-
-            var data = tableCheck.getData();
-
-            layer.confirm('确认要删除吗？' + data,
-            function(index) {
-                //捉到所有被选中的，发异步进行删除
-                layer.msg('删除成功', {
-                    icon: 1
-                });
-                $(".layui-form-checked").not('.header').parents('tr').remove();
-            });
-        }</script>
 
 
+      </script>
     <script type="text/html" id="toolbarDemo">
         <div class = "layui-btn-container" >
             <button class="layui-btn-danger layui-btn layui-btn-sm" lay-event="delAny"> <i class="layui-icon"></i>批量删除</button></button>
-            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>
-            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >
-            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>
+            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" >添加计划订单</button>
+<!--            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>-->
+<!--            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >-->
+<!--            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>-->
         </div >
     </script>
     <script type="text/html" id="switchTpl">

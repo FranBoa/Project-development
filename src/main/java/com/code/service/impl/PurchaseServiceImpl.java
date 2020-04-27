@@ -72,9 +72,8 @@ public class PurchaseServiceImpl implements PurchaseService {
      * @return 实例对象
      */
     @Override
-    public Purchase update(Purchase purchase) {
-        this.purchaseDao.update(purchase);
-        return this.queryById(purchase.getPurchaseId());
+    public int update(Purchase purchase) {
+        return this.purchaseDao.update(purchase);
     }
 
     /**

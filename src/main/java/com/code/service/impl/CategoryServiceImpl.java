@@ -60,9 +60,8 @@ public class CategoryServiceImpl implements CategoryService {
      * @return 实例对象
      */
     @Override
-    public Category insert(Category category) {
-        this.categoryDao.insert(category);
-        return category;
+    public int insert(Category category) {
+        return this.categoryDao.insert(category);
     }
 
     /**
@@ -72,9 +71,8 @@ public class CategoryServiceImpl implements CategoryService {
      * @return 实例对象
      */
     @Override
-    public Category update(Category category) {
-        this.categoryDao.update(category);
-        return this.queryById(category.getCid());
+    public int update(Category category) {
+        return this.categoryDao.update(category);
     }
 
     /**
@@ -84,7 +82,7 @@ public class CategoryServiceImpl implements CategoryService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String cid) {
-        return this.categoryDao.deleteById(cid) > 0;
+    public int deleteById(int cid) {
+        return this.categoryDao.deleteById(cid);
     }
 }

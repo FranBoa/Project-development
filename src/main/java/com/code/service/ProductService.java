@@ -34,7 +34,7 @@ public interface ProductService {
      * @param product 实例对象
      * @return 实例对象
      */
-    Product insert(Product product);
+    int insert(Product product);
 
     /**
      * 通过实体作为筛选条件查询

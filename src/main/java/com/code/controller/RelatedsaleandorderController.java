@@ -2,6 +2,7 @@ package com.code.controller;
 
 import com.code.entity.Relatedsaleandorder;
 import com.code.service.RelatedsaleandorderService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -55,13 +56,29 @@ public class RelatedsaleandorderController {
      * @return 对象列表
      */
         @RequestMapping("queryAll")
-        public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder){
-            System.out.println(relatedsaleandorder);
+        public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder,int pageNum, int pageSize){
             Map<String,Object> map = new HashMap<>();
-            List<Relatedsaleandorder> list = this.relatedsaleandorderService.queryAll(relatedsaleandorder);
-            map.put("data",list);
+            PageInfo<Relatedsaleandorder> pageInfo = this.relatedsaleandorderService.queryAllforPage(pageNum,pageSize,relatedsaleandorder);
+            map.put("data",pageInfo.getList());
             map.put("code",0);
-            map.put("total",list.size());
+            map.put("count",pageInfo.getTotal());
+            return map;
+        }
+
+
+        @RequestMapping("del")
+        public Map<String,Object> delAll(int [] sid){
+            int x=sid.length;
+            int b=sid.length;
+            for (int i=0;i<sid.length;i++){
+                boolean flag=true;
+                if(flag!=true){
+                    b=b-1;
+                }
+            }
+            Map<String,Object> map=new HashMap<>();
+            map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条!" );
+            map.put("code",x-b>0?1:0);
             return map;
         }
 }

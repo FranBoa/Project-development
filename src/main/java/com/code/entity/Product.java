@@ -29,7 +29,7 @@ public class Product implements Serializable {
     /**
     * 商品售价
     */
-    private Double psprice;
+	private Double psprice;
     /**
     * 商品存储仓库
     */

@@ -46,7 +46,6 @@ public class SaleandorderController {
         @RequestMapping("selectAll")
         public Map<String,Object> selectAll(@RequestParam("page") int pageNum, @RequestParam("limit") int pageSize){
             PageInfo<Saleandorder> pageInfo = this.saleandorderService.selectAllForPage(pageNum,pageSize);
-            System.out.println(pageInfo);
             Map<String,Object> map = new HashMap<>();
             map.put("data",pageInfo.getList());
             map.put("code",0);
@@ -64,6 +63,23 @@ public class SaleandorderController {
     @RequestMapping("queryAll")
     public List<Saleandorder>  queryAll(Saleandorder saleandorder){
            return this.saleandorderService.queryAll(saleandorder);
+    }
+
+    @ResponseBody
+    @RequestMapping("del")
+    public  Map<String,Object> del( int [] sid){
+        int x=sid.length;
+        int b=sid.length;
+        for (int i=0;i<sid.length;i++){
+            boolean flag=true;
+            if(flag!=true){
+                b=b-1;
+            }
+        }
+        Map<String,Object> map=new HashMap<>();
+        map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条!" );
+        map.put("code",x-b>0?1:0);
+        return map;
     }
 
 }

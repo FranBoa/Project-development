@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>购货订单</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- 
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+         --><link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script src="./lib/layui/layui.all.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<script src="js/vue.js"></script>
+		<script src="js/axios.min.js"></script>
+		<script src="js/qs.min.js"></script>
+		<!-- <style>
+			.box {
+			    width: 100%;
+			    /* 因为 content 会另起一行，影响样式的话，height 设置为具体的值可以避免高度变高的情况 */
+			    height: 100%;
+			    /* 设置元素两端对齐 */
+			    text-align: justify;
+			}
+			 
+			/* 这里的伪元素一定要加上，不然span元素不能两端对齐 */			
+			.box:after {
+			    content: "";
+			    display: inline-block;
+			    overflow: hidden;
+			    width: 100%;
+			}
+						
+			.box span {
+			    width: 500px;
+			    height: 10px;
+			    /* 设置盒子为行内块 */
+			    display: inline-block;
+			    /* 设置盒子内元素水平居中 */
+			    text-align: center;
+			    }
+		</style> -->
+    </head>
+    
+    <body>
+        <div class="x-nav">
+            <span class="layui-breadcrumb">
+                <a href="">首页</a>
+                <a href="">演示</a>
+                <a>
+                    <cite>导航元素</cite></a>
+            </span>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+                <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+            </a>
+        </div>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                                <div class="layui-input-inline layui-show-xs-block">
+                                	<div class="box">
+										<span>日期：<span id="day"></span></span>
+										<span>单据编号：<span id="ghid"></span></span>
+									</div>
+									<script>
+								        var date = new Date()<!--获得日期数据-->
+								        var y = date.getFullYear();<!--年-->
+								        var m = date.getMonth()+1;<!--月，这里的月份必须要+1才是当前月份-->
+								        var d = date.getDate(); <!--日，getDay是获得当前星期几（0-6），getDate是获得当前日期-->
+								        var h = date.getHours();
+
+								        document.getElementById("ghid").innerHTML = "gh"+y+m+d+h;
+								        document.getElementById("day").innerHTML = y+"年"+m+"月"+d+"日";
+								    </script>
+								</div>
+						</div>
+                        <!-- <div class="layui-card-header">
+                            <button class="layui-btn" onclick="xadmin.open('购货','./w-purchase-add.html',800,600)">
+                                <i class="layui-icon"></i>购货</button></div> -->
+                        <div class="layui-card-body">
+                        <table id="tableList" class="layui-table" >
+	        					<tr>
+    									<!-- <th>供货商</th> -->
+    									<th></th>
+    									<th>商品名称</th>
+    									<th>价格</th>
+    									<th>数量</th>
+    									<th>仓库</th>
+    									<th>备注</th>
+    									<th>关联销货订单</th>
+    									<th>操作</th>
+	        		
+	        					</tr>
+	        					<tr v-for="sp in list">
+						        		<td><input type="checkbox"/></td>
+							        		<td>{{sp.spname}}</td>
+							        		<td>{{sp.spdanjia}}</td>
+						        		<td><input type="text" name="num"/></td>
+						        		<td>
+											<select>
+												<option></option>
+											</select></td>
+						        		<td><textarea name="beizhu"></textarea></td>
+						        		<td><input type="text" name="xiaodan"/></td>
+						        		<td class='td-manage'><a title="删除" onclick="member_del(this,'{{sp.spid}}')" href="javascript:;"><i class="layui-icon">&#xe640;</i></a></td>
+	        						</tr>
+    						</table>
+    						
+                        </div>
+						
+                        <!-- <div class="layui-card-body ">
+                            <div class="page">
+                                <div>
+                                    <a class="prev" href="">&lt;&lt;</a>
+                                    <a class="num" href="">1</a>
+                                    <span class="current">2</span>
+                                    <a class="num" href="">3</a>
+                                    <a class="num" href="">489</a>
+                                    <a class="next" href="">&gt;&gt;</a>
+                                </div>
+                            </div>
+                        </div> -->
+						<div>
+							优惠率：<input type="text" id="youhuilv" />
+							付款优惠：<input type="text" readonly="readonly" id="youhuijiage" />
+							<!-- 优惠后金额：<input type="text" name="youhuihoujine"  /> -->
+							本次付款：<input type="text" readonly="readonly" id="fukuan"  />
+							<!-- <script type="text/javascript">
+							var youhuilv = document.getElementById("#youhuilv").value;
+							var youhuijiage = youhuilv*18;
+							var fukuan = 18-youhuijiage;
+							</script> -->
+							<!-- 结算账户：<select>
+								<option>现金</option>
+								<option>银行存款</option>
+								<option>多账户</option></select> -->
+							<!-- 本次欠款：<input type="text" name="" /> -->
+                            <!-- 		<button class="layui-btn" style="display:block;margin:0 auto" onclick="xadmin.add_tab('在tab打开刷新','/w-Purchase-summary.html',true)">历史单据</button> -->
+							<!-- <input id="btnInsert" οnclick="addorder" type="button" value="生成订单"> -->
+							<div class="layui-card-header">
+                            		<button class="layui-btn" style="display:block;margin:0 auto" id="btnInsert" onclick="addorder">生成订单</button>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+    var vm=new Vue({
+		el:'#tableList',
+		data:{
+			keywords:'',
+			list:[],
+			gm:[],
+			items:[],
+			splist:[]
+		},
+		mounted(){//初始化显示后调用
+			this.getAllBrand()
+		},
+		methods:{
+			getAllBrand(){
+				//发送一个异步请求，请求控制器获取返回所有的品牌
+				axios.get('shangping/selectAll').then(res=>{
+					this.list=res.data.data;
+				}).catch(err=>{
+					alert('操作失败')
+				})
+			}
+		}
+    })
+    
+    
+    layui.use(['laydate', 'form'],
+        function() {
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+        });
+		
+    	/* 多条数据 */
+    	var allobject=[ ];
+		$('#tableList').each(function(){
+		                //获取对象所需要的值
+		                var courseId = $(this).data('id');
+		                var buyNum = $(this).data('quantity');
+		                var buyPrice = $('.P_su').text();
+		
+		               //将获取好的值保存到对象中
+		                var object = {
+		                    "courseId":courseId,
+		                    "buyNum":buyNum,
+		                    "buyPrice":buyPrice
+		                }
+		               //将对象保存到数组中
+		                
+		                allobject.push(object );
+		            });
+		           //将数组转换为json类型的字符串
+		           var allobjectJSON = JSON.stringify(allobject);
+    	
+    	/* 添加订单信息 */
+    	function addorder(){
+    		var txtName= $("#XX").val(); 
+            $.ajax({
+                type: "post",
+                url: "purchase/add", //Home控制器下的Edit方法是不是这样写？
+                data: "{id:'" + txtID + "'}", //传id，因为0001，加‘’转成字符传，不然就把0自动消了
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                             if (data != '') {
+                                }//删掉提示
+            	}
+            })
+    	}
+    
+    
+    
+        /*用户-删除*/
+        function member_del(obj, id) {
+            layer.confirm('确认要删除吗？',
+            function(index) {
+                //发异步删除数据
+                $(obj).parents("tr").remove();
+                layer.msg('已删除!', {
+                    icon: 1,
+                    time: 1000
+                });
+            });
+        }
+
+        function delAll(argument) {
+
+            var data = tableCheck.getData();
+
+            layer.confirm('确认要删除吗？' + data,
+            function(index) {
+                //捉到所有被选中的，发异步进行删除
+                layer.msg('删除成功', {
+                    icon: 1
+                });
+                $(".layui-form-checked").not('.header').parents('tr').remove();
+            });
+        }
+        </script>
+</html>

@@ -3,8 +3,13 @@ package com.code.controller;
 import com.code.entity.Category;
 import com.code.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 客户类别(Category)表控制层
@@ -29,8 +34,16 @@ public class CategoryController {
      */
     @GetMapping("selectOne")
     public Category selectOne(String id) {
-        return this.categoryService.queryById(id);
+    	Category category = this.categoryService.queryById(id);
+        return category;
     }
+    
+    //修改客户
+    @RequestMapping("/updateKehuSort")
+	public @ResponseBody String updateKehuSort(HttpServletRequest request, Category category){
+		int row = this.categoryService.update(category);
+		return row>0?"修改成功":"修改失败";
+	}
     
     
         /**
@@ -52,8 +65,28 @@ public class CategoryController {
      * @return 对象列表
      */
     @RequestMapping("queryAll")
-    public List<Category>  queryAll(Category category){
-           return this.categoryService.queryAll(category);
+    public Map<String, Object> queryAll(Category category){
+    	List<Category> list=this.categoryService.queryAll(category);
+    	Map<String, Object> map=new HashMap<>();
+    	map.put("data", list);
+    	map.put("code", 0);
+    	map.put("total", list.size());
+        return map;
     }
+    
+    //添加客户
+    @RequestMapping(value="/insertKehu",produces ="html/text;charset=UTF-8")
+	public @ResponseBody  String insertBrand(HttpServletRequest request, Category category) {
+    	//System.out.println(request.getParameter("grade"));
+		int row=this.categoryService.insert(category);
+		return row>0?"添加成功":"添加失败";
+	}
+    
+    //删除客户
+  	@RequestMapping("/deleteById")
+  	public @ResponseBody String deleteById(int cid) {
+  		int row=this.categoryService.deleteById(cid);
+  		return row>0?"删除成功":"删除失败";
+  	}
 
 }

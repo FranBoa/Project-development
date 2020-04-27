@@ -1,8 +1,11 @@
 package com.code.controller;
 
+import com.code.entity.Purchase;
 import com.code.entity.Shangping;
 import com.code.service.ShangpingService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Resource;
 
@@ -40,8 +43,13 @@ public class ShangpingController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
-    public List<Shangping> selectAll(){
-           return this.shangpingService.selectAll();
+    public HashMap<String, Object> selectAll(){
+    	HashMap<String, Object> map = new HashMap<>();
+    	List<Shangping> list = this.shangpingService.selectAll();
+    	map.put("data", list);
+    	map.put("code", 0);
+    	/*map.put("count", pageInfo.getTotal());*/
+        return map;
     }
     
     
@@ -52,8 +60,13 @@ public class ShangpingController {
      * @return 对象列表
      */
     @RequestMapping("queryAll")
-    public List<Shangping>  queryAll(Shangping shangping){
-           return this.shangpingService.queryAll(shangping);
+    public HashMap<String, Object>  queryAll(Shangping shangping){
+    	HashMap<String, Object> map = new HashMap<>();
+    	List<Shangping> list = this.shangpingService.queryAll(shangping);
+    	map.put("data", list);
+    	map.put("code", 0);
+    	/*map.put("count", pageInfo.getTotal());*/
+        return map;
     }
 
 }
