@@ -80,14 +80,13 @@ public class KehuController {
     //添加客户
     @RequestMapping(value="/insertKehu",produces ="html/text;charset=UTF-8")
 	public @ResponseBody  String insertKehu(HttpServletRequest request, Kehu kehu) {
-    	System.out.println(kehu);
 //    	System.out.println(request.getParameter("grade"));
 //    	System.out.println(request.getParameter("name"));
 //    	System.out.println(request.getParameter("cid"));
 //    	System.out.println(request.getParameter("sell"));
 //    	System.out.println(request.getParameter("contact"));
 //    	System.out.println(request.getParameter("mobilePhone"));
-//    	System.out.println(request.getParameter("address"));
+//    	System.out.println(request.getParameter("address"));;
 		int row=this.kehuService.insert(kehu);
 		return row>0?"添加成功":"添加失败";
 	}
