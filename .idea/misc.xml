@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+<<<<<<< HEAD
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="JavaScriptSettings">
@@ -12,6 +13,21 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+=======
+    <file type="web" url="file://$PROJECT_DIR$/eureka7001" />
+    <file type="web" url="file://$PROJECT_DIR$/eureka7002" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/secondTest/pom.xml" />
+      </set>
+>>>>>>> branch 'master' of https://github.com/13548551932/Project-development
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
