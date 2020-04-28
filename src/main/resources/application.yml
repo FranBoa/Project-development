@@ -2,8 +2,8 @@ server:
   port: 8080
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/clothesppsdb?useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://cdb-p1xvx2q4.cd.tencentcdb.com:10080/clothesppsdb?useSSL=false&useUnicode=true&amp;characterEncoding=utf-8
     username: root
     password: 123456
 

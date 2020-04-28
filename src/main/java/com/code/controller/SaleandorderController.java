@@ -1,6 +1,7 @@
 package com.code.controller;
 
 import com.code.entity.Saleandorder;
+import com.code.service.RelatedsaleandorderService;
 import com.code.service.SaleandorderService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,8 @@ public class SaleandorderController {
     @Resource
     private SaleandorderService saleandorderService;
 
+    @Resource
+    private RelatedsaleandorderService relatedsaleandorderService;
     /**
      * 通过主键查询单条数据
      *
@@ -67,7 +70,7 @@ public class SaleandorderController {
 
     @ResponseBody
     @RequestMapping("del")
-    public  Map<String,Object> del( int [] sid){
+    public  Map<String,Object> del( int [] sid,String [] ordernumber){
         int x=sid.length;
         int b=sid.length;
         for (int i=0;i<sid.length;i++){

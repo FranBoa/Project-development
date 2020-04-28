@@ -249,9 +249,9 @@
     </script>
     <script type="text/html" id="orderTemp">
         {{#  if(d.status === '未出库'){ }}
-        <span style="color: #F581B1;">{{ d.status }}</span>
+        <span style="color: #eb7cab;">{{ d.status }}</span>
         {{#  } else if(d.status === '已出库'){ }}
-        <span style="color: #98F898;">{{ d.status }}</span>
+        <span style="color: #77bf77;">{{ d.status }}</span>
         {{#  } else { }}
         {{ d.status }}
         {{#  } }}
@@ -335,15 +335,18 @@
                         case 'delAny':
                             //var data=checkStatus.data[1].sid;
                             var sid=new Array();
+                            var ordernumber=new Array();
                             if (checkStatus.data.length==0)return false;
                             for (var i=0;i<checkStatus.data.length;i++){
                                 var data=checkStatus.data[i].sid;
+                                var data2=checkStatus.data[i].ordernumber;
                                 sid.push(data);
+                                ordernumber.push(data2);
                             }
                             //var sid=JSON.stringify(sid);
                             $.ajax({
                                 url:"saleandorder/del",
-                                data:{sid:sid},
+                                data:{sid:sid,ordernumber:ordernumber},
                                 type:"post",
                                 traditional:true,
                                 success:function(data){
