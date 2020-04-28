@@ -81,6 +81,9 @@ public class KehuController {
     @RequestMapping(value="/insertKehu",produces ="html/text;charset=UTF-8")
 	public @ResponseBody  String insertKehu(HttpServletRequest request, Kehu kehu) {
 //    	System.out.println(request.getParameter("grade"));
+//    	System.out.println(request.getParameter("grade"));
+//    	System.out.println(request.getParameter("grade"));
+//    	System.out.println(request.getParameter("grade"));
 //    	System.out.println(request.getParameter("name"));
 //    	System.out.println(request.getParameter("cid"));
 //    	System.out.println(request.getParameter("sell"));
