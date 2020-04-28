@@ -42,6 +42,7 @@ public class WarehouseController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
+    @ResponseBody
     public List<Warehouse> selectAll(){
            return this.warehouseService.selectAll();
     }
@@ -54,10 +55,17 @@ public class WarehouseController {
      * @return 对象列表
      */
     @RequestMapping("queryAll")
+    @ResponseBody
     public List<Warehouse>  queryAll(Warehouse warehouse){
            return this.warehouseService.queryAll(warehouse);
     }
-    
+    /**
+     * 添加
+     * @param response
+     * @param request
+     * @param warehouse
+     * @return
+     */
     @RequestMapping("add")
     public String  add(HttpServletResponse response, HttpServletRequest request,Warehouse warehouse){
     	String wName = request.getParameter("wName");
@@ -76,6 +84,21 @@ public class WarehouseController {
 			} else {
 				return "<script> alert('添加失败') </script>";
 			}
+    }
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    @RequestMapping("del")
+    public String del(String wid) {
+    	System.out.println(wid);
+    	boolean result = this.warehouseService.deleteById(Integer.parseInt(wid));
+    	if (result) {
+    		return "删除成功";
+		} else {
+			return "删除失败";
+		}
     }
 
 }

@@ -40,6 +40,7 @@ public class ProducttypeController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
+    @ResponseBody
     public List<Producttype> selectAll(){
            return this.producttypeService.selectAll();
     }

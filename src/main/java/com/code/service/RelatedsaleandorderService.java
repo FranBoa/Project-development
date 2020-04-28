@@ -1,6 +1,9 @@
 package com.code.service;
 
 import com.code.entity.Relatedsaleandorder;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
+
 import java.util.List;
 
 /**
@@ -22,7 +25,7 @@ public interface RelatedsaleandorderService {
     /**
      * 查询多条数据
      *
-     * @param 
+     * @param
      * @param
      * @return 对象列表
      */
@@ -43,6 +46,8 @@ public interface RelatedsaleandorderService {
      * @return 对象列表
      */
     List<Relatedsaleandorder> queryAll(Relatedsaleandorder relatedsaleandorder);
+
+    PageInfo<Relatedsaleandorder> queryAllforPage(int pageNum, int pageSize, Relatedsaleandorder relatedsaleandorder);
 
     /**
      * 修改数据

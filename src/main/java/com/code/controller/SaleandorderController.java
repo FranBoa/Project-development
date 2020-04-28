@@ -67,7 +67,7 @@ public class SaleandorderController {
 
     @ResponseBody
     @RequestMapping("del")
-    public String del( int [] sid){
+    public  Map<String,Object> del( int [] sid){
         int x=sid.length;
         int b=sid.length;
         for (int i=0;i<sid.length;i++){
@@ -76,8 +76,10 @@ public class SaleandorderController {
                 b=b-1;
             }
         }
-
-        return "执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条!" ;
+        Map<String,Object> map=new HashMap<>();
+        map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条!" );
+        map.put("code",x-b>0?1:0);
+        return map;
     }
 
 }

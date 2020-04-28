@@ -42,6 +42,7 @@ public class ProductController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
+    @ResponseBody
     public List<Product> selectAll(){
            return this.productService.selectAll();
     }
@@ -57,14 +58,36 @@ public class ProductController {
     public List<Product>  queryAll(Product product){
            return this.productService.queryAll(product);
     }
+    
     @RequestMapping("add")
-    public String add(@RequestBody Product product) {
-    	System.out.println(1234);
+    public String add(HttpServletResponse response, HttpServletRequest request, Product product) {
+    	String pName=request.getParameter("pName");
+    	int productType=Integer.parseInt(request.getParameter("productType")) ;
+    	double pbprice=Double.parseDouble(request.getParameter("pbprice")) ;
+    	double psprice=Double.parseDouble(request.getParameter("psprice"));
+    	int wareHouse=Integer.parseInt(request.getParameter("WareHouse"));
+    	String details=request.getParameter("details");
+    	product.setPname(pName);
+    	product.setPtype(productType+1);
+    	product.setPbprice(pbprice);
+    	product.setPsprice(psprice);
+    	product.setWarehouse(wareHouse+1);
+    	product.setDetails(details);
     	int result=this.productService.insert(product);
     	if (result>0) {
 			return "<script> alert('添加成功') </script>";
 		} else {
 			return "<script> alert('添加失败') </script>";
+		}
+    }
+    
+    
+    @RequestMapping("del")
+    public String del(Integer pid) {
+    	if (this.productService.deleteById(pid)) {
+			return "删除成功！";
+		}else {
+			return "删除失败!";
 		}
     }
 

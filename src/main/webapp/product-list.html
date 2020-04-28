@@ -11,8 +11,9 @@
 <link rel="stylesheet" href="css/xadmin.css">
 <script src="lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/xadmin.js"></script>
-<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/vue-2.4.0.js"></script>
 <script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/qs.min.js"></script>
 <!--[if lt IE 9]>
           <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
           <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -73,17 +74,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-for="product in list">
-									<td><input type="checkbox" name="id" value="1"
+								<tr v-for="(goods,index) in list">
+									<td><input type="checkbox" name="id" value=""
 										lay-skin="primary"></td>
-									<td>{{product.pid}}</td>
-									<td>{{product.pname}}</td>
-									<td>{{product.ptype}}</td>
-									<td>{{product.pbprice}}</td>
-									<td>{{prodcut.psprice}}</td>
-									<td>{{prduct.warehouse}}</td>
-									<td>{{product.warenum}}</td>
-									<td>{{product.details}}</td>
+									<td>{{goods.pid}}</td>
+									<td>{{goods.pname}}</td>
+									<td>{{goods.ptype}}</td>
+									<td>{{goods.pbprice}}</td>
+									<td>{{goods.psprice}}</td>
+									<td>{{goods.warehouse}}</td>
+									<td>{{goods.warenum}}</td>
+									<td>{{goods.details}}</td>
 									<td class="td-status"><span
 										class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
 									<td class="td-manage"><a
@@ -92,7 +93,7 @@
 									</a> <a title="编辑"
 										onclick="xadmin.open('编辑','product-edit.html',600,400)"
 										href="javascript:;"> <i class="layui-icon">&#xe642;</i>
-									</a> <a title="删除" onclick="member_del(this,'要删除的id')"
+									</a> <a title="删除" @click="del(goods.pid,index)"
 										href="javascript:;"> <i class="layui-icon">&#xe640;</i>
 									</a></td>
 								</tr>
@@ -114,12 +115,25 @@
 				list: []
 			},
 			mounted() {
-				axios.get('product/selectAll').then(res=>{
-					console.log(res)
-					this.list=res.data
-				}).catch(err=>{
-					alert("请求失败")	
-				})
+				this.selectAll()
+			},
+			methods:{
+				selectAll(){
+					axios.get('/product/selectAll').then(res=>{
+						this.list=res.data
+					}).catch(err=>{
+						alert("请求失败")	
+					})
+				},
+				del(key,index){
+					var pid=Qs.stringify({'pid':key})
+					axios.post('product/del',pid).then(res=>{
+						alert(res.data)
+						this.list.splice(index);
+					}).catch(err=>{
+						alert('操作失败')
+					})
+				}
 			}
 		});
 
