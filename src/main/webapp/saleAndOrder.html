@@ -28,6 +28,104 @@
         </div>
         <div class="layui-fluid" id="v1">
             <div class="layui-row layui-col-space15">
+
+                <div class="layui-col-md12">
+
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <div class="layui-collapse" lay-filter="test">
+                                <div class="layui-colla-item">
+                                    <h2 class="layui-colla-title">计划订单添加<i class="layui-icon layui-colla-icon"></i></h2>
+                                    <div class="layui-colla-content">
+
+                                        <form class="layui-form" >
+
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">单行输入框</label>
+                                                <div class="layui-input-block">
+                                                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="layui-form-item" id="area-picker">
+                                                <label class="layui-form-label">送货地点</label>
+                                                <div class="layui-input-inline" >
+                                                    <select name="province" class="province-selector" data-value="" lay-filter="province-1">
+                                                        <option value="">请选择省</option>
+                                                    </select>
+                                                </div>
+                                                <div class="layui-input-inline">
+                                                    <select name="city" class="city-selector" data-value="" lay-filter="city-1">
+                                                        <option value="">请选择市</option>
+                                                    </select>
+                                                </div>
+                                                <div class="layui-input-inline" >
+                                                    <select name="county" class="county-selector" data-value="" lay-filter="county-1">
+                                                        <option value="">请选择区</option>
+                                                    </select>
+                                                </div>
+                                                <div class="layui-input-inline" >
+                                                    <input type="text" class="layui-input" name="detailedAddress" id="detailedAddress" placeholder="请输入详细地址" autocomplete="off">
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">复选框</label>
+                                                <div class="layui-input-block">
+                                                    <input type="checkbox" name="like[write]" title="写作" checked="">
+                                                    <input type="checkbox" name="like[read]" title="阅读" >
+                                                    <input type="checkbox" name="like[game]" title="游戏">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">开关-默认关</label>
+                                                <div class="layui-input-block">
+                                                    <input type="checkbox" name="close" lay-skin="switch" lay-text="ON|OFF">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">开关-默认开</label>
+                                                <div class="layui-input-block">
+                                                    <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <div class="layui-input-block">
+                                                    <button type="button" class="layui-btn layui-btn-normal" onclick="openAdd2()">
+                                                        <i class="layui-icon"></i>添加计划订单商品</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">单选框</label>
+                                                <div class="layui-input-block">
+                                                    <input type="radio" name="sex" value="男" title="男" checked="">
+                                                    <input type="radio" name="sex" value="女" title="女">
+                                                    <input type="radio" name="sex" value="禁" title="禁用" disabled="">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <div class="layui-input-block">
+                                                    <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
                     <div class="layui-card">
                         <div class="layui-card-body ">
@@ -143,7 +241,7 @@
     <script src="/js/axios.min.js"></script>
     <script src="/js/qs.min.js"></script>
     <script></script>
-    <script  name="VUE">
+    <script  name="VUE-VM">
         var vm=new Vue({
             el:"#xx",
             data:{list:[], list2:[], orderId:null, pageNum:1, pageSize:5, count:null},
@@ -234,7 +332,7 @@
 
 
     </script>
-    <script>
+    <script name="VUE-V1">
         var v1=new Vue({
             el:"#v1",
             data:{
@@ -285,6 +383,23 @@
         }else {
             layer.msg("请选择一个计划订单！");
         }
+    }
+
+    function openAdd2() {
+        layer.open({
+            type: 2,
+            closeBtn:2,
+            title: "计划订单添加",
+            shade: 0.4,
+            area: ['900px', '800px'],
+            anim: 2,
+            content: ['/SaleAndOrder-add2.html'],
+            success: function (layero, index) {
+                var iframe = window['layui-layer-iframe' + index];//拿到iframe元素
+                iframe.child(vm.$data.orderId);
+                //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
+            }
+        });
 
     }
     </script>
@@ -428,6 +543,8 @@
                 elem: '#end' //指定元素
             });
 
+
+
         });
 
 
@@ -473,6 +590,25 @@
 
 
       </script>
+    <script>
+        layui.use(['layer', 'layarea'], function() {
+            var layer = layui.layer,
+                layarea = layui.layarea;
+
+            layarea.render({
+                elem: '#area-picker',
+                data: {
+                    province: '湖南省',
+                    city: '长沙市',
+                    county: '岳麓区',
+                },
+                change: function (res) {
+                    //选择结果
+                    console.log(res);
+                }
+            });
+        })
+    </script>
     <script type="text/html" id="toolbarDemo">
         <div class = "layui-btn-container" >
             <button class="layui-btn-danger layui-btn layui-btn-sm" lay-event="delAny"> <i class="layui-icon"></i>批量删除</button></button>
@@ -481,10 +617,6 @@
 <!--            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >-->
 <!--            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>-->
         </div >
-    </script>
-    <script type="text/html" id="switchTpl">
-        <!-- 这里的checked的状态只是演示 -->
-        <input type = "checkbox" name = "sex" value = "{{d.id}}" lay-skin = "switch"lay-text = "女|男" lay-filter = "sexDemo" {{ d.id == 10003 ? 'checked': ''}} >
     </script>
     <script>layui.use('laydate',
         function() {
