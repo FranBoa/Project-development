@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
         <link rel="stylesheet" href="/css/font.css">
         <link rel="stylesheet" href="/css/xadmin.css">
+        <link rel="stylesheet" href="/css/demo.css">
         <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/js/xadmin.js"></script>
         <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -16,7 +17,39 @@
             <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
             <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
         <![endif]--></head>
+    <style type="text/css">
+        .layui-table-cell .layui-form-checkbox[lay-skin="primary"]{
+            top: 2%;
+            transform: translateY(-50%);
+        }
 
+    </style>
+<!--    <style>-->
+<!--        /** 箭头未展开 */-->
+<!--        #auth-table + .treeTable .treeTable-icon .layui-icon-triangle-d:before {-->
+<!--            content: "\e602";-->
+<!--        }-->
+
+<!--        /** 箭头展开 */-->
+<!--        #auth-table + .treeTable .treeTable-icon.open .layui-icon-triangle-d:before {-->
+<!--            content: "\e61a";-->
+<!--        }-->
+
+<!--        /** 文件图标 */-->
+<!--        #auth-table + .treeTable .treeTable-icon .layui-icon-file:before {-->
+<!--            content: "\e60d";-->
+<!--        }-->
+
+<!--        /** 文件夹未展开 */-->
+<!--        #auth-table + .treeTable .treeTable-icon .layui-icon-layer:before {-->
+<!--            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE6UlEQVR4Xu2ZPYhcVRiGny9hC0FsTEBCGkFTWIQE/IlpgmKpWAiLyR0XLbYTxEKxkCAEhRCxEOwsjJnJioKIYClWKgqiskIIaCoLYyASVJT87JGspN37LrOXvec777Tzzrnvz7Nn2dnAr6YbiKbTOzwGoHEIDIABaLyBxuP7BjAAjTfQeHzfAAag8QYaj+8bwAA03kDj8X0DGIDGG2g8/lw3QFlhD9fZN7oOF7gYT3NudL5GaGjTAJQP2c1VXgIOExyGkf4/oXCe4I3oeH+EvY/G0qYAKFOWCV4Hdo8mQb+RL7jBE7HE3/3S9hQyAGXGCeDVSiv6lqscief4t1L/g9mWAChTHiD4ZrTXvVbPu9GxrEnbUWkAzPgeOJCglsXo+ChBji2L0AtAmfEgrP/0Z3hdZoF7Y5HLGcJsRQYFgLeAF7fiYSM540x0LI3Ey7bb6AdgytcEh7bd6VYa2MGhOJrmVpurmX4AZlwCds31lPF9+AI32O8/DYUvccqUKwR3jG/DuR29Gd36F1pNv/pvgKwAFK5RuC+e4eeWCWgXgJurFz6LCY8bgA0aSPwr4P/UhVNc43ir3xK2fQPcAr/wO/AewU/Ar6xRqroVdvAnC6zGIlc369sAbLax8er/ofAJOzkVR9e/uZVeBkCqqTrRyeh4RXFtAJSWatQUno0Jp/usG4C+hup9/yJ72BuPcH2jCAag3oEV50vRccYAKFXl1LwdHS8YgJzj9qcqfBoTnjQA/VVlVXwXHfcbgKzz9uf6IToOGoD+orIqDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzLUFAMy4BOwSH2jZmBoorMaE/RtZij6/ZcoFgrv7dH5/lA38Eh33zAfAjM+BR0cZz6Y2bqDwY0w4MB8AU04SvOyuq2zg4+h4aj4AzvIwha+qjN+66cLzMeGduQC4+eEy4zywr/U+K8t/hQX2xiJ/zQ/ACgdZ40vgtspKaNducCyOsdJXQO9fAbcOKGc5whofENzVd6jf3/YGTkTHccWFDMD6r4LT3MlOloHHCB4CblceYs3gDfxB4TeCcxReiwmr6hM3BYB6qHX1NGAA6tlqEKcGYJBa6znUANSz1SBODcAgtdZzqAGoZ6tBnBqAQWqt51ADUM9Wgzg1AIPUWs+hBqCerQZxagAGqbWeQw1APVsN4tQADFJrPYcagHq2GsTpf+KxwJB5Cd5mAAAAAElFTkSuQmCC");-->
+<!--        }-->
+
+<!--        /** 文件夹展开 */-->
+<!--        #auth-table + .treeTable .treeTable-icon.open .layui-icon-layer:before {-->
+<!--            content: "\e634";-->
+<!--        }-->
+<!--    </style>-->
     <body>
     <div id="viframe1">
         <div class="layui-fluid">
@@ -50,6 +83,7 @@
                             <input type="text" class="layui-input" name="detailedAddress" id="detailedAddress" placeholder="请输入详细地址" autocomplete="off">
                         </div>
                     </div>
+
                     <div class="layui-form-item">
                         <label  class="layui-form-label">
                             <span class="x-red">*</span>配送物流</label>
@@ -71,22 +105,29 @@
                         </div>
                     </div>
 
+                    <div class="layui-form-item" >
+                        <label  class="layui-form-label">
+                            <span class="x-red">*</span>类型操作</label>
+                        <div class="layui-container">
+                            <input class="layui-input-inline"  id="edt-search" type="text" placeholder="输入关键字" style="width: 120px;height: 25px"/>
+                            <button class="layui-btn" type="button" id="btn-search">&nbsp;&nbsp;搜索&nbsp;&nbsp;</button>
+                            <button class="layui-btn" type="button"  id="btn-expand">全部展开</button>
+                            <button class="layui-btn"type="button"  id="btn-fold">全部折叠</button></div>
+                    </div>
+
+                    <div class="layui-form-item" style="width: 1200px;">
+                       <div class="layui-col-xs3 layui-col-sm3">
+                           <table id="auth-table" class="layui-table" lay-filter="auth-table"></table>
+                     </div>
+                      <div class="layui-col-xs7 layui-col-sm7">
+                            <table class="layui-table" id="test" lay-filter="test"></table>
+                      </div>
+                    </div>
+
+
                     <div class="layui-form-item layui-form-text">
                         <label for="desc" class="layui-form-label">商品增加</label>
-                        <div class="layui-container">
-                            <br><br>
-                            <a class="layui-btn layui-btn-normal" href="index.html">&lt;&lt;返回</a>
-                            &nbsp;&nbsp;
-                            <div class="layui-btn-group">
-                                <button class="layui-btn" id="btn-expand">全部展开</button>
-                                <button class="layui-btn" id="btn-fold">全部折叠</button>
-                            </div>
-                            &nbsp;&nbsp;
-                            <input id="edt-search" type="text" placeholder="输入关键字" style="width: 120px;"/>&nbsp;&nbsp;
-                            <button class="layui-btn" id="btn-search">&nbsp;&nbsp;搜索&nbsp;&nbsp;</button>
 
-                            <table id="auth-table" class="layui-table" lay-filter="auth-table"></table>
-                        </div>
                    <div class="layui-form-item layui-form-text">
                    <label for="desc" class="layui-form-label">描述</label>
             <div class="layui-input-block">
@@ -178,48 +219,42 @@
             })
         </script>
 
-    <script>
+    <script name="Tree">
         layui.config({
             base: 'module/'
         }).extend({
-            treetable: 'treetable-lay/treetable'
-        }).use(['table', 'treetable'], function () {
+            treeTable: 'treetable-lay/treetable'
+        }).use(['table', 'treeTable'], function () {
             var $ = layui.jquery;
             var table = layui.table;
-            var treetable = layui.treetable;
+            var treetable = layui.treeTable;
 
             // 渲染表格
-            layer.load(2);
+            layer.load(3);
             treetable.render({
-                treeColIndex: 1,
-                treeSpid: -1,
-                treeIdName: 'authorityId',
-                treePidName: 'parentId',
-                elem: '#auth-table',
-                url: 'json/menus.json',
+                tree: {
+                    iconIndex: 1,
+                    isPidData: true,
+                    idName: 'producttypeid',
+                    pidName: 'parentid',
+                    arrowType: 'arrow2',
+                    getIcon: 'ew-tree-icon-style2'
+                },
                 page: false,
+                elem: '#auth-table',
+                url: 'producttype/selectAll',
                 cols: [[
                     {type: 'numbers'},
-                    {field: 'authorityName', minWidth: 200, title: '权限名称'},
-                    {field: 'authority', title: '权限标识'},
-                    {field: 'menuUrl', title: '菜单url'},
-                    {
-                        field: 'isMenu', width: 80, align: 'center', templet: function (d) {
-                            if (d.isMenu == 1) {
-                                return '<span class="layui-badge layui-bg-gray">按钮</span>';
-                            }
-                            if (d.parentId == -1) {
-                                return '<span class="layui-badge layui-bg-blue">目录</span>';
-                            } else {
-                                return '<span class="layui-badge-rim">菜单</span>';
-                            }
-                        }, title: '类型'
-                    }
+                    {field: 'producttypename', title: '商品类型'},
+
+
                 ]],
                 done: function () {
                     layer.closeAll('loading');
                 }
             });
+
+
 
             $('#btn-expand').click(function () {
                 treetable.expandAll('#auth-table');
@@ -253,6 +288,53 @@
             });
         });
     </script>
+
+    <script name="Table">
+        layui.use('table', function(){
+            var table = layui.table;
+
+            table.render({
+                elem: '#test'
+                ,url:'product/selectAll'
+                ,width:'1000px'
+                ,size:'sm'
+                ,cols: [[
+                    {type:'checkbox',field:'pid',fixed: 'left'}
+                    ,{field:'pid', width:90, title: 'ID', sort: true}
+                    ,{field:'pname', width:120, title: '商品名', edit: 'text'}
+                    ,{field:'pbprice', width:90, title: '商品进价'}
+                    ,{field:'psprice', width:90,title: '商品售价'}
+                    ,{field:'warehouse', width:120, title: '所在仓库', sort: true}
+                    ,{field:'warenum', width:90, title: '库存数量', sort: true}
+                    ,{field:'details', width:100, title: '说明'}
+                ]]
+                ,page: true
+            });
+
+
+
+        //监听单元格编辑
+        table.on('edit(test3)', function(obj){
+            var value = obj.value //得到修改后的值
+                ,data = obj.data //得到所在行所有键值
+                ,field = obj.field; //得到字段
+            layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+        });
+
+            //头工具栏事件
+            table.on('toolbar(test)', function(obj) {
+                var checkStatus = table.checkStatus(obj.config.id); //获取选中行状态
+                switch (obj.event) {
+                    case 'getCheckData':
+                        var data = checkStatus.data;  //获取选中行数据
+                        layer.alert(JSON.stringify(data));
+                        break;
+                };
+            });
+
+        });
+    </script>
+
 
         <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");

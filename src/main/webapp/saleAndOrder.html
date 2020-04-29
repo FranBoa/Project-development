@@ -388,10 +388,10 @@
     function openAdd2() {
         layer.open({
             type: 2,
-            closeBtn:2,
             title: "计划订单添加",
             shade: 0.4,
-            area: ['900px', '800px'],
+            maxmin: true,
+            area: ['1050px', '800px'],
             anim: 2,
             content: ['/SaleAndOrder-add2.html'],
             success: function (layero, index) {
@@ -407,6 +407,8 @@
         function() {
             var table = layui.table;
             //监听单元格编辑
+
+
             table.on('edit(test)',
                 function(obj) {
                     var value = obj.value //得到修改后的值
@@ -474,7 +476,7 @@
                                     //location.reload(); //删除成功后再刷新
                                 },
                                 error:function(data){
-                                    layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
+                                    layer.msg('錯誤！', {time: 5000, icon:6});
                                 }
                             });
                             break;

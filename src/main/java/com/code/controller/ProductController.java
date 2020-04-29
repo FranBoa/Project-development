@@ -3,8 +3,12 @@ package com.code.controller;
 import com.code.entity.Product;
 import com.code.service.ProductService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Resource;
+import javax.lang.model.element.NestingKind;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -33,8 +37,8 @@ public class ProductController {
     public Product selectOne(Integer id) {
         return this.productService.queryById(id);
     }
-    
-    
+
+
         /**
      * 查询某张表所有数据，搭配PageHelper使用更佳！
      *
@@ -42,11 +46,14 @@ public class ProductController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
-    public List<Product> selectAll(){
-           return this.productService.selectAll();
+    public Map<String,Object> selectAll(){
+           Map<String,Object> map=new HashMap<>();
+           map.put("code",0);
+           map.put("data",this.productService.selectAll());
+        return map;
     }
-    
-    
+
+
         /**
      * 通过实体作为筛选条件查询
      *

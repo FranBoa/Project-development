@@ -3,14 +3,17 @@ package com.code.controller;
 import com.code.entity.Producttype;
 import com.code.service.ProducttypeService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Resource;
 
 /**
  * (Producttype)表控制层
  *
  * @author yap
- * @since 2020-04-19 02:16:39
+ * @since 2020-04-29 16:11:31
  */
 @RestController
 @RequestMapping("producttype")
@@ -31,8 +34,8 @@ public class ProducttypeController {
     public Producttype selectOne(Integer id) {
         return this.producttypeService.queryById(id);
     }
-    
-    
+
+
         /**
      * 查询某张表所有数据，搭配PageHelper使用更佳！
      *
@@ -40,11 +43,14 @@ public class ProducttypeController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
-    public List<Producttype> selectAll(){
-           return this.producttypeService.selectAll();
+    public Map<String,Object> selectAll(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("code",0);
+        map.put("data",this.producttypeService.selectAll());
+        return map;
     }
-    
-    
+
+
         /**
      * 通过实体作为筛选条件查询
      *

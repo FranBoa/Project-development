@@ -8,7 +8,7 @@ import java.util.List;
  * (Producttype)表数据库访问层
  *
  * @author yap
- * @since 2020-04-19 02:16:39
+ * @since 2020-04-29 16:11:31
  */
 public interface ProducttypeDao {
 

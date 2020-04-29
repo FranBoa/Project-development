@@ -5,7 +5,7 @@
   "data": [
     {
       "authorityId": 1,
-      "authorityName": "系统管理",
+      "authorityName": "衣服",
       "orderNumber": 1,
       "menuUrl": null,
       "menuIcon": "layui-icon-set",
@@ -18,7 +18,7 @@
     },
     {
       "authorityId": 2,
-      "authorityName": "用户管理",
+      "authorityName": "裙子",
       "orderNumber": 2,
       "menuUrl": "system/user",
       "menuIcon": null,
@@ -31,7 +31,7 @@
     },
     {
       "authorityId": 3,
-      "authorityName": "查询用户",
+      "authorityName": "裤子",
       "orderNumber": 3,
       "menuUrl": "",
       "menuIcon": "",

@@ -12,7 +12,7 @@ import java.util.List;
  * (Producttype)表服务实现类
  *
  * @author yap
- * @since 2020-04-19 02:16:39
+ * @since 2020-04-29 16:11:31
  */
 @Service("producttypeService")
 public class ProducttypeServiceImpl implements ProducttypeService {
