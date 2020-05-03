@@ -100,6 +100,10 @@
                                                     </div>
                                                 </div>
 
+                                                <div class="layui-form-item">
+                                                    <table id="addgoods" class="layui-table" lay-filter="addgoods"></table>
+                                                </div>
+
                                             </div>
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label">单选框</label>
@@ -240,7 +244,6 @@
     <script src="/js/vue-2.4.0.js"></script>
     <script src="/js/axios.min.js"></script>
     <script src="/js/qs.min.js"></script>
-    <script></script>
     <script  name="VUE-VM">
         var vm=new Vue({
             el:"#xx",
@@ -364,13 +367,66 @@
         {{d.stotal+'￥'}}
     </script>
     <script>
+        function GetValue(obj) {
+            let new_data = $.extend(true, [], obj);
+            var xx=new Array();
+            for (var i=0;i<obj.length;i++){
+                xx.push(obj[i]);
+            }
+            console.log(xx);
+
+
+
+
+            layui.use('table', function(){
+                var table = layui.table;
+
+                //第一个实例
+                table.render({
+                    elem: '#addgoods'
+                    ,data: xx
+
+                    ,height:'600px'
+                    ,page: true //开启分页
+                    ,cols: [[
+                        {type:'checkbox',field:'pid',fixed: 'left'}
+                        ,{field:'pid', width:90, title: 'ID', sort: true}
+                        ,{field:'ptype',width:120,title:'商品类型', sort: true}
+                        ,{field:'pname', width:120, title: '商品名'}
+                        ,{field:'pbprice', width:90, title: '商品进价'}
+                        ,{field:'psprice', width:90,title: '商品售价'}
+                        ,{field:'warehouse', width:120, title: '所在仓库', sort: true}
+                        ,{field:'warenum', width:90, title: '库存数量', sort: true}
+                        ,{field:'details', title: '说明'}
+                    ]]
+                    ,parseData: function(res){ //res 即为原始返回的数据
+                        return {
+                            "code": res.code, //解析接口状态
+                            "msg": res.msg, //解析提示文本
+                            "count": res.count, //解析数据长度
+                            "data": res.data[0] //解析数据列表
+                        };
+                    }
+                    ,done:function (res) {
+                        console.log(res);
+                        console.log(res.data);
+                    }
+                });
+
+
+            });
+
+        }
+    </script>
+    <script>
     function openAdd() {
         if (vm.$data.orderId!=null){
             layer.open({
                 type: 2,
                 closeBtn:2,
+                shadeClose:true,
                 title: "计划商品添加",
-                shade: 0.4,
+
                 area: ['900px', '800px'],
                 anim: 2,
                 content: ['/SaleAndOrder-add.html'],
@@ -391,7 +447,7 @@
             title: "计划订单添加",
             shade: 0.4,
             maxmin: true,
-            area: ['1050px', '800px'],
+            area: ['1300px', '820px'],
             anim: 2,
             content: ['/SaleAndOrder-add2.html'],
             success: function (layero, index) {
@@ -400,7 +456,6 @@
                 //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
             }
         });
-
     }
     </script>
     <script>layui.use('table',

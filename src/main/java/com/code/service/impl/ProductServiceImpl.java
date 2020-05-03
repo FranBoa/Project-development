@@ -3,6 +3,8 @@ package com.code.service.impl;
 import com.code.entity.Product;
 import com.code.dao.ProductDao;
 import com.code.service.ProductService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -33,14 +35,23 @@ public class ProductServiceImpl implements ProductService {
     /**
      * 查询多条数据
      *
-     * @param 
-     * @param 
+     * @param
+     * @param
      * @return 对象列表
      */
     @Override
     public List<Product> selectAll(){
         return this.productDao.selectAll();
     }
+
+    @Override
+    public PageInfo<Product> selectAllforPage(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<Product> list=this.productDao.selectAll();
+        PageInfo<Product> pageInfo=new PageInfo<>(list);
+        return pageInfo;
+    }
+
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,7 +61,15 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
    public List<Product> queryAll(Product product){
-          return  this.productDao.queryAll(product);
+        return  this.productDao.queryAll(product);
+    }
+
+    @Override
+    public PageInfo<Product> queryAllforPage(Integer pageNum, Integer pageSize, Product product) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<Product> list=this.productDao.queryAll(product);
+        PageInfo<Product> pageInfo=new PageInfo<>(list);
+        return pageInfo;
     }
 
     /**

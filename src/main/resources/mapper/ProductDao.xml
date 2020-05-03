@@ -3,7 +3,7 @@
 <mapper namespace="com.code.dao.ProductDao">
 
     <resultMap type="com.code.entity.Product" id="ProductMap">
-        <result property="pid" column="pId" jdbcType="INTEGER"/>
+        <result  property="pid" column="pId" jdbcType="INTEGER"/>
         <result property="pname" column="pName" jdbcType="VARCHAR"/>
         <result property="ptype" column="pType" jdbcType="INTEGER"/>
         <result property="pbprice" column="pBprice" jdbcType="NUMERIC"/>
@@ -11,6 +11,8 @@
         <result property="warehouse" column="Warehouse" jdbcType="INTEGER"/>
         <result property="warenum" column="WareNum" jdbcType="INTEGER"/>
         <result property="details" column="details" jdbcType="VARCHAR"/>
+        <collection property="warehouses" select="com.code.dao.WarehouseDao.queryById" column="warehouse"></collection>
+        <collection property="producttypes" select="com.code.dao.ProducttypeDao.queryById" column="ptype"></collection>
     </resultMap>
 
     <!--查询单个-->
@@ -38,10 +40,16 @@
                 and pId = #{pid}
             </if>
             <if test="pname != null and pname != ''">
-                and pName = #{pname}
+                and pName like  CONCAT('%',#{pname},'%')
             </if>
             <if test="ptype != null">
                 and pType = #{ptype}
+            </if>
+            <if test="ptypes != null and ptypes.length>0">
+                and pType in
+                <foreach collection="ptypes" item="item" index="index" open="("  separator="," close=")">
+                    #{item}
+                </foreach>
             </if>
             <if test="pbprice != null">
                 and pBprice = #{pbprice}

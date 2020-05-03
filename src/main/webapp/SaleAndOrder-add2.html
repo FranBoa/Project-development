@@ -24,43 +24,12 @@
         }
 
     </style>
-<!--    <style>-->
-<!--        /** 箭头未展开 */-->
-<!--        #auth-table + .treeTable .treeTable-icon .layui-icon-triangle-d:before {-->
-<!--            content: "\e602";-->
-<!--        }-->
 
-<!--        /** 箭头展开 */-->
-<!--        #auth-table + .treeTable .treeTable-icon.open .layui-icon-triangle-d:before {-->
-<!--            content: "\e61a";-->
-<!--        }-->
-
-<!--        /** 文件图标 */-->
-<!--        #auth-table + .treeTable .treeTable-icon .layui-icon-file:before {-->
-<!--            content: "\e60d";-->
-<!--        }-->
-
-<!--        /** 文件夹未展开 */-->
-<!--        #auth-table + .treeTable .treeTable-icon .layui-icon-layer:before {-->
-<!--            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAE6UlEQVR4Xu2ZPYhcVRiGny9hC0FsTEBCGkFTWIQE/IlpgmKpWAiLyR0XLbYTxEKxkCAEhRCxEOwsjJnJioKIYClWKgqiskIIaCoLYyASVJT87JGspN37LrOXvec777Tzzrnvz7Nn2dnAr6YbiKbTOzwGoHEIDIABaLyBxuP7BjAAjTfQeHzfAAag8QYaj+8bwAA03kDj8X0DGIDGG2g8/lw3QFlhD9fZN7oOF7gYT3NudL5GaGjTAJQP2c1VXgIOExyGkf4/oXCe4I3oeH+EvY/G0qYAKFOWCV4Hdo8mQb+RL7jBE7HE3/3S9hQyAGXGCeDVSiv6lqscief4t1L/g9mWAChTHiD4ZrTXvVbPu9GxrEnbUWkAzPgeOJCglsXo+ChBji2L0AtAmfEgrP/0Z3hdZoF7Y5HLGcJsRQYFgLeAF7fiYSM540x0LI3Ey7bb6AdgytcEh7bd6VYa2MGhOJrmVpurmX4AZlwCds31lPF9+AI32O8/DYUvccqUKwR3jG/DuR29Gd36F1pNv/pvgKwAFK5RuC+e4eeWCWgXgJurFz6LCY8bgA0aSPwr4P/UhVNc43ir3xK2fQPcAr/wO/AewU/Ar6xRqroVdvAnC6zGIlc369sAbLax8er/ofAJOzkVR9e/uZVeBkCqqTrRyeh4RXFtAJSWatQUno0Jp/usG4C+hup9/yJ72BuPcH2jCAag3oEV50vRccYAKFXl1LwdHS8YgJzj9qcqfBoTnjQA/VVlVXwXHfcbgKzz9uf6IToOGoD+orIqDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzGUAxKKyygxA1mXFXAZALCqrzABkXVbMZQDEorLKDEDWZcVcBkAsKqvMAGRdVsxlAMSissoMQNZlxVwGQCwqq8wAZF1WzLUFAMy4BOwSH2jZmBoorMaE/RtZij6/ZcoFgrv7dH5/lA38Eh33zAfAjM+BR0cZz6Y2bqDwY0w4MB8AU04SvOyuq2zg4+h4aj4AzvIwha+qjN+66cLzMeGduQC4+eEy4zywr/U+K8t/hQX2xiJ/zQ/ACgdZ40vgtspKaNducCyOsdJXQO9fAbcOKGc5whofENzVd6jf3/YGTkTHccWFDMD6r4LT3MlOloHHCB4CblceYs3gDfxB4TeCcxReiwmr6hM3BYB6qHX1NGAA6tlqEKcGYJBa6znUANSz1SBODcAgtdZzqAGoZ6tBnBqAQWqt51ADUM9Wgzg1AIPUWs+hBqCerQZxagAGqbWeQw1APVsN4tQADFJrPYcagHq2GsTpf+KxwJB5Cd5mAAAAAElFTkSuQmCC");-->
-<!--        }-->
-
-<!--        /** 文件夹展开 */-->
-<!--        #auth-table + .treeTable .treeTable-icon.open .layui-icon-layer:before {-->
-<!--            content: "\e634";-->
-<!--        }-->
-<!--    </style>-->
     <body>
     <div id="viframe1">
         <div class="layui-fluid">
             <div class="layui-row">
                 <form class="layui-form">
-                    <div class="layui-form-item">
-                        <label  class="layui-form-label">
-                            <span class="x-red"></span>计划订单编号</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="ordernumber" name="ordernumber" required="" :value="ordernumber" lay-verify="required" disabled="disabled"  autocomplete="off" class="layui-input"></div>
-                    </div>
 
                     <div class="layui-form-item" id="area-picker">
                         <label class="layui-form-label">送货地点</label>
@@ -79,69 +48,95 @@
                                 <option value="">请选择区</option>
                             </select>
                         </div>
-                        <div class="layui-input-inline" >
-                            <input type="text" class="layui-input" name="detailedAddress" id="detailedAddress" placeholder="请输入详细地址" autocomplete="off">
+
+                    </div>
+
+                    <div>
+                        <label  class="layui-form-label">
+                            详细地址
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" lay-verify="title" autocomplete="off" id="detailedAddress" placeholder="请输入详细地址" class="layui-input">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <label  class="layui-form-label">
-                            <span class="x-red">*</span>配送物流</label>
+                            <span class="x-red">*</span>配送物流
+                        </label>
                         <div class="layui-input-inline">
                             <select id="shipping" name="shipping" class="valid">
-                                <option value="shentong">申通物流</option>
-                                <option value="shunfeng">顺丰物流</option></select>
+                                <option value="顺丰物流">顺丰物流</option>
+                                <option value="申通物流">申通物流</option>
+                                <option value="邮政物流">邮政物流</option>
+                                <option value="圆通物流">圆通物流</option>
+                                <option value="货车专送">货车专送</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label  class="layui-form-label">
-                            <span class="x-red">*</span>支付方式</label>
-                        <div class="layui-input-inline">
-                            <select name="contrller">
-                                <option>支付方式</option>
-                                <option>支付宝</option>
-                                <option>微信</option>
-                                <option>货到付款</option></select>
-                        </div>
+<!--                        <label  class="layui-form-label">-->
+<!--                            <span class="x-red">*</span>联系-->
+<!--                        </label>-->
+<!--                        <div class="layui-input-inline">-->
+<!--                            <input type="text" id="" class="layui-input" />-->
+<!--                        </div>-->
                     </div>
 
                     <div class="layui-form-item" >
+
                         <label  class="layui-form-label">
-                            <span class="x-red">*</span>类型操作</label>
-                        <div class="layui-container">
-                            <input class="layui-input-inline"  id="edt-search" type="text" placeholder="输入关键字" style="width: 120px;height: 25px"/>
-                            <button class="layui-btn" type="button" id="btn-search">&nbsp;&nbsp;搜索&nbsp;&nbsp;</button>
-                            <button class="layui-btn" type="button"  id="btn-expand">全部展开</button>
-                            <button class="layui-btn"type="button"  id="btn-fold">全部折叠</button></div>
+                            <span class="x-red">*</span>类型操作
+                        </label>
+                        <div class="layui-col-xs6 layui-col-sm6">
+                                <input class="layui-input-inline"  id="edt-search" type="text" placeholder="输入关键字" style="width: 120px;height: 25px"/>
+                            <div class="layui-btn-container">
+                                <button class="layui-btn layui-btn-radius layui-btn-normal"  type="button" id="btn-search">&nbsp;&nbsp;搜索&nbsp;&nbsp;</button>
+                                <button class="layui-btn layui-btn-radius layui-btn-normal" type="button" id="btn-clear">&nbsp;&nbsp;清除搜索&nbsp;&nbsp;</button>
+                                <button class="layui-btn layui-btn-radius layui-btn-warm" type="button"  id="btn-expand">全部展开</button>
+                                <button class="layui-btn layui-btn-radius layui-btn-warm" type="button"  id="btn-fold">全部折叠</button>
+                            </div>
+
+                        </div>
+                        <div class="layui-col-xs4 layui-col-sm4">
+                                <div class=" layui-input-inline">
+                                    <input type="tel" name="searContent" autocomplete="off"
+                                           placeholder="请输入商品名" class="layui-input">
+                                </div>
+                            <div class="layui-input-inline " style="width: 90px">
+                                <button class="layui-btn layui-btn-radius layui-btn-normal" type="button" id="searchEmailCompany" data-type="reload">
+                                    <i class="layui-icon" style="font-size: 20px; "></i> 搜索
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="layui-form-item" style="width: 1200px;">
-                       <div class="layui-col-xs3 layui-col-sm3">
+                    <div class="layui-form-item"  style="width: 1250px;">
+                       <div class="layui-col-xs4 layui-col-sm3" style="padding-top: 10px">
                            <table id="auth-table" class="layui-table" lay-filter="auth-table"></table>
                      </div>
-                      <div class="layui-col-xs7 layui-col-sm7">
+                      <div class="layui-col-xs8 layui-col-sm9">
                             <table class="layui-table" id="test" lay-filter="test"></table>
                       </div>
                     </div>
 
+        <div class="layui-form-item">
+            <div class="layui-container">
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
+                    <div style="float: right">
+                        <label class="layui-form-label"></label>
+                        <button class="layui-btn  layui-btn-lg layui-btn-radius" lay-filter="add" lay-submit="">点击增加</button>
+                        <button class="layui-btn layui-btn-primary layui-btn-lg layui-btn-radius" lay-filter="close" lay-submit="">关闭页面</button>
+                    </div>
 
-                    <div class="layui-form-item layui-form-text">
-                        <label for="desc" class="layui-form-label">商品增加</label>
-
-                   <div class="layui-form-item layui-form-text">
-                   <label for="desc" class="layui-form-label">描述</label>
-            <div class="layui-input-block">
-                <textarea placeholder="请输入内容" id="desc" name="desc" class="layui-textarea"></textarea>
+            </div>
+                <div class="layui-col-md6 layui-col-sm6 layui-col-xs6"></div>
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label"></label>
-            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
-    </div>
+
         </form>
         </div>
         </div>
     </div>
+    </body>
         <script src="/js/vue-2.4.0.js"></script>
         <script src="/js/axios.min.js"></script>
         <script src="/js/qs.min.js"></script>
@@ -160,45 +155,7 @@
                 viframe1.$data.ordernumber=obj;
             }
         </script>
-        <script>layui.use(['form', 'layer'],
-            function() {
-                $ = layui.jquery;
-                var form = layui.form,
-                layer = layui.layer;
-
-                //自定义验证规则
-                form.verify({
-                    nikename: function(value) {
-                        if (value.length < 5) {
-                            return '昵称至少得5个字符啊';
-                        }
-                    },
-                    pass: [/(.+){6,12}$/, '密码必须6到12位'],
-                    repass: function(value) {
-                        if ($('#L_pass').val() != $('#L_repass').val()) {
-                            return '两次密码不一致';
-                        }
-                    }
-                });
-
-                //监听提交
-                form.on('submit(add)',
-                function(data) {
-                    console.log(data);
-                    //发异步，把数据提交给php
-                    layer.alert("增加成功", {
-                        icon: 6
-                    },
-                    function() {
-                        // 获得frame索引
-                        var index = parent.layer.getFrameIndex(window.name);
-                        //关闭当前frame
-                        parent.layer.close(index);
-                    });
-                    return false;
-                });
-
-            });</script>
+        <script></script>
         <script>
             layui.use(['layer', 'layarea'], function() {
                 var layer = layui.layer,
@@ -218,8 +175,34 @@
                 });
             })
         </script>
+    <script type="text/html" id="warehouse">
+        {{d.warehouses[0].wname}}
+    </script>
+    <script type="text/html" id="producttype">
+        {{d.producttypes[0].producttypename}}
+</script>
+    <script type="text/html" id="RMB">
+        {{d.pbprice+'￥'}}
+    </script>
+    <script type="text/html" id="RMB2">
+        {{d.psprice+'￥'}}
+    </script>
+    <script type="text/html" id="danger">
+    {{#  if(d.warenum <= 50 ){ }}
+    <span style="color: #eb3b5f;">{{ d.warenum }}</span>
+    {{#  } else { }}
+    {{ d.warenum }}
+    {{#  } }}
+</script>
 
-    <script name="Tree">
+    <script name="Tree-Table-Form">
+        var proid="";
+        //记录选中的数据:做缓存使用,作为参数传递给后台,然后生成pdf ,压缩
+        var ids =new Array()
+        var parent_data=[];
+        //当前表格中的全部数据:在表格的checkbox全选的时候没有得到数据, 因此用全局存放变量
+        var table_data=new Array();
+        var treetable_data=new Array();
         layui.config({
             base: 'module/'
         }).extend({
@@ -228,17 +211,17 @@
             var $ = layui.jquery;
             var table = layui.table;
             var treetable = layui.treeTable;
-
             // 渲染表格
             layer.load(3);
-            treetable.render({
+            var tree=treetable.render({
                 tree: {
                     iconIndex: 1,
                     isPidData: true,
                     idName: 'producttypeid',
                     pidName: 'parentid',
                     arrowType: 'arrow2',
-                    getIcon: 'ew-tree-icon-style2'
+                    getIcon: 'ew-tree-icon-style2',
+                    openName: 'producttypename'
                 },
                 page: false,
                 elem: '#auth-table',
@@ -249,76 +232,218 @@
 
 
                 ]],
-                done: function () {
+                done: function(res, curr, count){
+                    treetable_data=res;
                     layer.closeAll('loading');
                 }
             });
 
 
 
+            // 监听行单击事件
+              treetable.on('cell(auth-table)', function(obj){
+                 // console.log(obj.field); //当前单元格的字段名
+                if (obj.data.ismenu==0){
+                    console.log(obj.data) // 得到当前行数据
+                    var producttypeid=obj.data.producttypeid;
+                    var producttypeids=null;
+                    reloadtable(producttypeid,producttypeids);
+                }else if (obj.data.ismenu==1&&obj.data.parentid!=-1){
+                    console.log(obj.data) // 得到当前行数据
+                    var producttypeid=null;
+                    var producttypeids=new Array();
+                    for (var i=0;i<obj.data.children.length;i++){
+                        producttypeids.push(obj.data.children[i].producttypeid);
+                    }
+                    console.log(producttypeids);
+                    reloadtable(producttypeid,producttypeids);
+                }else{
+                    var producttypeid=null;var producttypeids=null;
+                    reloadtable(producttypeid,producttypeids);
+                }
+            });
+
+
+            // 发送type查询
+            function reloadtable(producttypeid,producttypeids){
+                var ptype=null;
+                var ptypes=null;
+                if (producttypeid != null) { ptype=producttypeid;}
+                if (producttypeids != null) { ptypes=Qs.parse(producttypeids);}
+                table.reload('test', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    ,url:'product/queryAll'
+                    , where: {
+                        pname:$("input[name=searContent]").val()
+                        ,ptypes:ptypes
+                        ,ptype:ptype
+                    }
+                });
+
+            }
+
             $('#btn-expand').click(function () {
-                treetable.expandAll('#auth-table');
+                tree.expandAll();
+                $("#btn-expand").addClass("layui-btn-disabled");
+                $("#btn-fold").removeClass("layui-btn-disabled");
             });
 
             $('#btn-fold').click(function () {
-                treetable.foldAll('#auth-table');
+                tree.foldAll();
+                $("#btn-expand").removeClass("layui-btn-disabled");
+                $("#btn-fold").addClass("layui-btn-disabled");
             });
 
             $('#btn-search').click(function () {
                 var keyword = $('#edt-search').val();
-                var searchCount = 0;
-                $('#auth-table').next('.treeTable').find('.layui-table-body tbody tr td').each(function () {
-                    $(this).css('background-color', 'transparent');
-                    var text = $(this).text();
-                    if (keyword != '' && text.indexOf(keyword) >= 0) {
-                        $(this).css('background-color', 'rgba(250,230,160,0.5)');
-                        if (searchCount == 0) {
-                            treetable.expandAll('#auth-table');
-                            $('html,body').stop(true);
-                            $('html,body').animate({scrollTop: $(this).offset().top - 150}, 500);
-                        }
-                        searchCount++;
-                    }
-                });
-                if (keyword == '') {
-                    layer.msg("请输入搜索内容", {icon: 5});
-                } else if (searchCount == 0) {
-                    layer.msg("没有匹配结果", {icon: 5});
-                }
+                tree.filterData(keyword);
+            });
+
+            $('#btn-clear').click(function () {
+                tree.clearFilter();
+                $('#edt-search').val('');
             });
         });
-    </script>
 
-    <script name="Table">
+
         layui.use('table', function(){
             var table = layui.table;
 
             table.render({
                 elem: '#test'
                 ,url:'product/selectAll'
-                ,width:'1000px'
                 ,size:'sm'
                 ,cols: [[
                     {type:'checkbox',field:'pid',fixed: 'left'}
                     ,{field:'pid', width:90, title: 'ID', sort: true}
-                    ,{field:'pname', width:120, title: '商品名', edit: 'text'}
-                    ,{field:'pbprice', width:90, title: '商品进价'}
-                    ,{field:'psprice', width:90,title: '商品售价'}
-                    ,{field:'warehouse', width:120, title: '所在仓库', sort: true}
-                    ,{field:'warenum', width:90, title: '库存数量', sort: true}
-                    ,{field:'details', width:100, title: '说明'}
+                    ,{field:'ptype',width:120,title:'商品类型', sort: true,templet:'#producttype'}
+                    ,{field:'pname', width:120, title: '商品名'}
+                    ,{field:'pbprice', width:90, title: '商品进价',templet:'#RMB'}
+                    ,{field:'psprice', width:90,title: '商品售价',templet:'#RMB2'}
+                    ,{field:'warehouse', width:120, title: '所在仓库', sort: true,templet:'#warehouse'}
+                    ,{field:'warenum', width:90, title: '库存数量', sort: true,templet:'#danger'}
+                    ,{field:'details', title: '说明'}
                 ]]
-                ,page: true
+                ,page:{theme: '#16ccc1'}
+                ,done: function(res, curr, count){
+                    //数据表格加载完成时调用此函数
+                    //如果是异步请求数据方式，res即为你接口返回的信息。
+                    //如果是直接赋值的方式，res即为：{data: [], count: 99} data为当前页数据、count为数据总长度
+
+                    //设置全部数据到全局变量
+                    table_data=res.data;
+
+                    //在缓存中找到id ,然后设置data表格中的选中状态
+                    //循环所有数据，找出对应关系，设置checkbox选中状态
+                    for(var i=0;i< res.data.length;i++){
+                        for (var j = 0; j < ids.length; j++) {
+                            //数据id和要勾选的id相同时checkbox选中
+                            if(res.data[i].pid == ids[j])
+                            {
+                                //这里才是真正的有效勾选
+                                res.data[i]["LAY_CHECKED"]='true';
+                                //找到对应数据改变勾选样式，呈现出选中效果
+                                var index= res.data[i]['LAY_TABLE_INDEX'];
+                                $('.layui-table-fixed-l tr[data-index=' + index + '] input[type="checkbox"]').prop('checked', true);
+                                $('.layui-table-fixed-l tr[data-index=' + index + '] input[type="checkbox"]').next().addClass('layui-form-checked');
+                            }
+                        }
+                    }
+                    //设置全选checkbox的选中状态，只有改变LAY_CHECKED的值， table.checkStatus才能抓取到选中的状态
+                    var checkStatus = table.checkStatus('my-table');
+                    if(checkStatus.isAll){
+                        $(' .layui-table-header th[data-field="0"] input[type="checkbox"]').prop('checked', true);
+                        $('.layui-table-header th[data-field="0"] input[type="checkbox"]').next().addClass('layui-form-checked');
+                    }
+                    //得到所有数据
+                    //console.log(res);
+                    //得到当前页码
+                   // console.log(curr);
+                    //得到数据总量
+                    //console.log(ids);
+                }
             });
 
 
+            //复选框选中监听,将选中的id 设置到缓存数组,或者删除缓存数组
+            table.on('checkbox(test)', function (obj) {
+                if(obj.checked==true){
+                    if(obj.type=='one'){
+                        ids.push(obj.data.pid);
+                        parent_data.push(obj.data);
+                    }else{
+                        for(var i=0;i<table_data.length;i++){
+                            ids.push(table_data[i].pid);
+                            parent_data.push(obj.data[i]);
+                        }
+                    }
+                }else{
+                    if(obj.type=='one'){
+                        for(var i=0;i<ids.length;i++){
+                            if(ids[i]==obj.data.pid){
+                                ids.remove(i);
+                                parent_data.remove(i)
+                            }
+                        }
+                    }else{
+                        for(var i=0;i<ids.length;i++){
+                            for(var j=0;j<table_data.length;j++){
+                                if(ids[i]==table_data[j].pid){
+                                    ids.remove(i);
+                                    parent_data.remove(i);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
 
-        //监听单元格编辑
-        table.on('edit(test3)', function(obj){
+            //搜索加载--数据表格重载
+            var $ = layui.$, active = {
+                reload: function () {
+                    //执行重载
+                    table.reload('test', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        ,url:'product/queryAll'
+                        , where: {
+                                pname:$("input[name=searContent]").val()
+                        //        ,pid:$("input[name=searContent]").val()
+                        }
+
+                    });
+                }
+            };
+
+            $('#searchEmailCompany').on('click', function () {
+                ids=new Array();
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+            element.init();
+
+            Array.prototype.remove=function(dx) {
+                if(isNaN(dx)||dx>this.length){return false;}
+                for(var i=0,n=0;i<this.length;i++)
+                {
+                    if(this[i]!=this[dx])
+                    {
+                        this[n++]=this[i]
+                    }
+                }
+                this.length-=1
+            }
+
+            //监听单元格编辑
+           table.on('edit(test)', function(obj){
             var value = obj.value //得到修改后的值
                 ,data = obj.data //得到所在行所有键值
                 ,field = obj.field; //得到字段
-            layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+            //$('div[lay-id="test"] table tr[data-index='+id+'] div div').removeClass("layui-form-checked");
+         //   table.render('checkbox');
         });
 
             //头工具栏事件
@@ -333,8 +458,99 @@
             });
 
         });
+
+        layui.use(['form', 'layer'],
+            function() {
+                $ = layui.jquery;
+                var form = layui.form,
+                    layer = layui.layer;
+
+                //自定义验证规则
+                form.verify({
+                    nikename: function(value) {
+                        if (value.length < 5) {
+                            return '昵称至少得5个字符啊';
+                        }
+                    },
+                    pass: [/(.+){6,12}$/, '密码必须6到12位'],
+                    repass: function(value) {
+                        if ($('#L_pass').val() != $('#L_repass').val()) {
+                            return '两次密码不一致';
+                        }
+                    }
+                });
+
+                form.on('submit(close)',function () {
+                    var index = parent.layer.getFrameIndex(window.name);
+                    //关闭当前frame
+                    parent.layer.close(index);
+                })
+
+
+
+
+
+                //监听提交
+                form.on('submit(add)', function(data) {
+                       // if (data.field.title==null||data.field.title==''){
+                       //     layer.alert("地址不能为空！",{icon: 5});
+                       //     return  false;
+                       // }
+
+                        layer.alert("增加成功", {
+                                icon: 6
+                            },
+                            function() {
+                                parent.GetValue(parent_data); //GetValue是父界面的Js 方法
+                                var index = parent.layer.getFrameIndex(window.name);
+                                //关闭当前frame
+                                parent.layer.close(index);
+                            });
+                        return false;
+                    });
+
+            });
     </script>
 
+    <script name="Text-tool">
+        layui.config({ base: 'module/' }).extend({
+            textool: 'textool/textool.min'
+        }).use(['form', 'textool'], function() {
+            var $ = layui.$, form = layui.form, textool = layui.textool;
+            textool.init({
+                // 根据元素 id 值单独渲染，为空默认根据 class='layext-text-tool' 批量渲染
+                eleId: 'detailedAddress',
+                // 批量设置输入框最大长度，可结合 eleId 单独设置最大长度
+                maxlength: 200,
+                // 初始化回调，无参
+                initEnd: $.noop,
+                // 显示回调，参数为当前输入框和工具条面板的 jQuery 对象
+                showEnd: $.noop,
+                // 隐藏回调，参数为当前输入框和工具条面板的 jQuery 对象
+                hideEnd: $.noop,
+                // 初始化展开，默认展开，否则收起
+                initShow: false,
+                // 启用指定工具模块，默认依次为字数统计、复制内容、重置内容、清空内容，按数组顺序显示
+                tools: ['count', 'copy', 'reset', 'clear'],
+                // 工具按钮提示类型，默认为 'title' 属性，可选 'laytips'，使用 layer 组件的吸附提示， 其他值不显示提示
+                tipType: 'title',
+                // 吸附提示背景颜色
+                tipColor: '#01AAED',
+                // 对齐方向，默认右对齐，可选左对齐 'left'
+                align: 'left',
+                // 工具条字体颜色
+                color: '#666666',
+                // 工具条背景颜色
+                bgColor: '#FFFFFF',
+                // 工具条边框颜色
+                borderColor: '#E6E6E6',
+                // 工具条附加样式类名
+                className: '',
+                // z-index
+                zIndex: 1
+            });
+        });
+    </script>
 
         <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
@@ -342,6 +558,6 @@
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             })();</script>
-    </body>
+
 
 </html>

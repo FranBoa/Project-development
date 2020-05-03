@@ -1,6 +1,8 @@
 package com.code.service;
 
 import com.code.entity.Product;
+import com.github.pagehelper.PageInfo;
+
 import java.util.List;
 
 /**
@@ -22,11 +24,13 @@ public interface ProductService {
     /**
      * 查询多条数据
      *
-     * @param 
+     * @param
      * @param
      * @return 对象列表
      */
     List<Product>selectAll();
+
+    PageInfo<Product> selectAllforPage(Integer pageNum,Integer pageSize);
 
     /**
      * 新增数据
@@ -44,6 +48,7 @@ public interface ProductService {
      */
     List<Product> queryAll(Product product);
 
+    PageInfo<Product> queryAllforPage(Integer pageNum,Integer pageSize,Product product);
     /**
      * 修改数据
      *

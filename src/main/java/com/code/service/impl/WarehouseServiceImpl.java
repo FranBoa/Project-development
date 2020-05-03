@@ -12,7 +12,7 @@ import java.util.List;
  * (Warehouse)表服务实现类
  *
  * @author yap
- * @since 2020-04-19 02:16:40
+ * @since 2020-05-01 20:50:03
  */
 @Service("warehouseService")
 public class WarehouseServiceImpl implements WarehouseService {
@@ -60,9 +60,9 @@ public class WarehouseServiceImpl implements WarehouseService {
      * @return 实例对象
      */
     @Override
-    public int insert(Warehouse warehouse) {
-       
-        return  this.warehouseDao.insert(warehouse);
+    public Warehouse insert(Warehouse warehouse) {
+        this.warehouseDao.insert(warehouse);
+        return warehouse;
     }
 
     /**
@@ -87,6 +87,4 @@ public class WarehouseServiceImpl implements WarehouseService {
     public boolean deleteById(Integer wid) {
         return this.warehouseDao.deleteById(wid) > 0;
     }
-
-	
 }
