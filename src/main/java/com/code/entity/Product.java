@@ -1,6 +1,8 @@
 package com.code.entity;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * (Product)实体类
@@ -22,6 +24,12 @@ public class Product implements Serializable {
     * 商品类别
     */
     private Integer ptype;
+
+    private List<Warehouse> warehouses;
+
+    private  List<Producttype> producttypes;
+
+    private Integer[]  ptypes;
     /**
     * 商品进价
     */
@@ -68,6 +76,14 @@ public class Product implements Serializable {
         this.ptype = ptype;
     }
 
+    public Integer[] getPtypes() {
+        return ptypes;
+    }
+
+    public void setPtypes(Integer[] ptypes) {
+        this.ptypes = ptypes;
+    }
+
     public Double getPbprice() {
         return pbprice;
     }
@@ -82,6 +98,13 @@ public class Product implements Serializable {
 
     public void setPsprice(Double psprice) {
         this.psprice = psprice;
+    }
+    public List<Warehouse> getWarehouses() {
+        return warehouses;
+    }
+
+    public void setWarehouses(List<Warehouse> warehouses) {
+        this.warehouses = warehouses;
     }
 
     public Integer getWarehouse() {
@@ -108,4 +131,28 @@ public class Product implements Serializable {
         this.details = details;
     }
 
+    public List<Producttype> getProducttypes() {
+        return producttypes;
+    }
+
+    public void setProducttypes(List<Producttype> producttypes) {
+        this.producttypes = producttypes;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "pid=" + pid +
+                ", pname='" + pname + '\'' +
+                ", ptype=" + ptype +
+                ", warehouses=" + warehouses +
+                ", producttypes=" + producttypes +
+                ", ptypes=" + Arrays.toString(ptypes) +
+                ", pbprice=" + pbprice +
+                ", psprice=" + psprice +
+                ", warehouse=" + warehouse +
+                ", warenum=" + warenum +
+                ", details='" + details + '\'' +
+                '}';
+    }
 }

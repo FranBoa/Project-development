@@ -7,7 +7,7 @@ import java.util.List;
  * (Warehouse)表服务接口
  *
  * @author yap
- * @since 2020-04-19 02:16:40
+ * @since 2020-05-01 20:50:03
  */
 public interface WarehouseService {
 
@@ -34,7 +34,7 @@ public interface WarehouseService {
      * @param warehouse 实例对象
      * @return 实例对象
      */
-    int insert(Warehouse warehouse);
+    Warehouse insert(Warehouse warehouse);
 
     /**
      * 通过实体作为筛选条件查询
@@ -59,7 +59,5 @@ public interface WarehouseService {
      * @return 是否成功
      */
     boolean deleteById(Integer wid);
-
-
 
 }

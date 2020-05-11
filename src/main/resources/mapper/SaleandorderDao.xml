@@ -26,6 +26,10 @@
         where sid = #{sid}
     </select>
 
+    <select id="queryLastOne" resultMap="SaleandorderMap">
+        select * from clothesppsdb.saleandorder order by sid DESC limit 1
+    </select>
+
     <!--查询所有的数据-->
     <select id="selectAll" resultMap="SaleandorderMap">
         select

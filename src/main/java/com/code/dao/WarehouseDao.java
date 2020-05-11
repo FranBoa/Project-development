@@ -8,7 +8,7 @@ import java.util.List;
  * (Warehouse)表数据库访问层
  *
  * @author yap
- * @since 2020-04-19 02:16:40
+ * @since 2020-05-01 20:50:03
  */
 public interface WarehouseDao {
 

@@ -21,6 +21,13 @@ public interface SaleandorderDao {
     Saleandorder queryById(Integer sid);
 
     /**
+     * 通过ID查询最后一条数据
+     *
+     * @param sid 主键
+     * @return 实例对象
+     */
+    Saleandorder queryLastOne();
+    /**
      * 查询指定行数据
      *
      * @param offset 查询起始位置

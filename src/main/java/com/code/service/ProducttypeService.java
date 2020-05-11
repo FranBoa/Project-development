@@ -7,7 +7,7 @@ import java.util.List;
  * (Producttype)表服务接口
  *
  * @author yap
- * @since 2020-04-19 02:16:39
+ * @since 2020-04-29 16:11:31
  */
 public interface ProducttypeService {
 
