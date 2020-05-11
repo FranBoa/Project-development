@@ -1,482 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="DistributionSystem:war" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2cb36a92-77c6-4e3a-a114-21510b614716" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/SaleAndOrder-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/SaleAndOrder-add2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/admin-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/admin-cate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/admin-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/admin-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/admin-role.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/admin-rule.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/cate.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/city.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-del.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-dynamic-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-sort-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-sort-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/clientele-sort-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/icon_date.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/theme1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/theme2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/theme3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/theme3360.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/theme4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/theme5.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/treeTable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/css/xadmin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/echarts8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/finance_receipt.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/fonts/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/fonts/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/fonts/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/fonts/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/images/aiwrap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/images/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/axios.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/qs.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/vue-2.4.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/vue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/xadmin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/js/xcity.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/json/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/json/data1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/json/data2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/json/data3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/json/menus.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/layui.mobile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/code.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/font/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/font/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/font/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/font/iconfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/17.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/18.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/19.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/20.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/21.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/22.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/23.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/24.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/25.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/26.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/27.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/28.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/29.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/30.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/31.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/32.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/33.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/34.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/35.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/36.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/37.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/38.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/39.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/40.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/41.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/42.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/43.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/44.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/45.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/46.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/47.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/48.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/49.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/50.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/51.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/52.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/53.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/54.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/55.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/56.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/57.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/58.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/59.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/60.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/61.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/62.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/64.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/65.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/66.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/67.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/68.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/69.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/70.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/71.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/images/face/9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/colorpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/element.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/layarea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/layedit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/laypage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/laytpl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/rate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/transfer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/tree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/lay/modules/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/layui.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/lib/layui/layui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/log.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-DengJi-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-DengJi-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-DengJi-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-Xiaofei-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-Xiaofei-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-Xiaofei-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-Zhuxiao-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-Zhuxiao-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-Zhuxiao-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-card-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-card-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-card-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-del.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-dynamic-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-list1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/member-password.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/module/textool/textool.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/module/textool/textool.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/module/treetable-lay/treetable.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/module/treetable-lay/treetable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/order-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/order-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/order-list1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/order-view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/product-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/product-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/product-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/productType-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/productType-edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/productType-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/role-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/saleAndOrder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/supplier-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/supplier-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-test2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-test3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-test4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/tree-test5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/unicode.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/user.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-Purchase-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-Smart-replenishment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-approval-selectById.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-order-list-approval.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-order-list-return.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-order-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-order-list2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/w-purchase-add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/welcome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/welcome1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/WEB-INF/resources/yhindex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/AccountController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/ActionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/AddressController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/BotpetinventoryController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/CategoryController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/DengjiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/Finance_CashStatementController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/HuiyuanController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/HuiyuankaiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/InventoryController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/InvoiceController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/KehuController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/OtherinwareController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/OtheroutwareController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/ProductController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/ProducttypeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/PurchaseController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/PurchaseDetailController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/PurchaseDetailReturnController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/PurchaseReturnController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/Relatedsaleandorder2Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/RelatedsaleandorderController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/RoleActionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/RoleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/Saleandorder2Controller.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/SaleandorderController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/ShangpingController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/SupplierController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/SuppliertypeController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/TransfersorderController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/UserRoleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/WarehouseController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/XiaofeiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/controller/ZhuxiaoController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/AccountDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/ActionDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/AddressDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/BotpetinventoryDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/CategoryDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/DengjiDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/Finance_CashStatement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/Finance_Receipt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/HuiyuanDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/HuiyuankaiDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/InventoryDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/InvoiceDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/KehuDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/OtherinwareDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/OtheroutwareDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/ProductDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/ProducttypeDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/PurchaseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/PurchaseDetailDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/PurchaseDetailReturnDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/PurchaseReturnDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/Relatedsaleandorder2Dao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/RelatedsaleandorderDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/RoleActionDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/RoleDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/Saleandorder2Dao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/SaleandorderDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/ShangpingDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/SupplierDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/SuppliertypeDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/TransfersorderDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/UserRoleDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/WarehouseDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/XiaofeiDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/dao/ZhuxiaoDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Account.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/AccountReceivableDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/AccountsPayableDetails.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Action.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Address.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Botpetinventory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/CancelAfterVerification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/CashStatement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Category.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/CustomerStatement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Dengji.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Huiyuan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Huiyuankai.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Inventory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Invoice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Kehu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/MoneyTransfer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/OtherExpenses.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/OtherIncomeAndExpenditureDetails.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/OtherRevenue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Otherinware.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Otheroutware.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/PayAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Payment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/PaymentMethod.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/ProcurementSellExpenses.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Producttype.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Profit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Purchase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/PurchaseDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/PurchaseDetailReturn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/PurchaseReturn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Receipt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Relatedsaleandorder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Relatedsaleandorder2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/RoleAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Saleandorder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Saleandorder2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Shangping.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/SpendingCategory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Supplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/SupplierStatement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Suppliertype.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Transfersorder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/UserRole.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Warehouse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Xiaofei.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/entity/Zhuxiao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/AccountService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/ActionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/AddressService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/BotpetinventoryService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/CategoryService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/DengjiService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/HuiyuanService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/HuiyuankaiService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/InventoryService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/InvoiceService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/KehuService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/OtherinwareService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/OtheroutwareService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/ProductService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/ProducttypeService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/PurchaseDetailReturnService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/PurchaseDetailService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/PurchaseReturnService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/PurchaseService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/Relatedsaleandorder2Service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/RelatedsaleandorderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/RoleActionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/RoleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/Saleandorder2Service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/SaleandorderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/ShangpingService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/SupplierService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/SuppliertypeService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/TransfersorderService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/UserRoleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/WarehouseService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/XiaofeiService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/ZhuxiaoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/AccountServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/ActionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/AddressServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/BotpetinventoryServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/CategoryServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/DengjiServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/HuiyuanServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/HuiyuankaiServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/InventoryServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/InvoiceServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/KehuServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/OtherinwareServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/OtheroutwareServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/ProductServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/ProducttypeServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/PurchaseDetailReturnServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/PurchaseDetailServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/PurchaseReturnServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/PurchaseServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/Relatedsaleandorder2ServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/RelatedsaleandorderServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/RoleActionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/RoleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/Saleandorder2ServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/SaleandorderServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/ShangpingServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/SupplierServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/SuppliertypeServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/TransfersorderServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/UserRoleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/WarehouseServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/XiaofeiServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/code/service/impl/ZhuxiaoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AccountDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ActionDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AddressDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BotpetinventoryDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CategoryDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/DengjiDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Finance_CashStatement.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Finance_receipt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/HuiyuanDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/HuiyuankaiDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/InventoryDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/InvoiceDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/KehuDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/OtherinwareDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/OtheroutwareDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ProductDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ProducttypeDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PurchaseDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PurchaseDetailDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PurchaseDetailReturnDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PurchaseReturnDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Relatedsaleandorder2Dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RelatedsaleandorderDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RoleActionDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RoleDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Saleandorder2Dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/SaleandorderDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ShangpingDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/SupplierDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/SuppliertypeDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/TransfersorderDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserRoleDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/WarehouseDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/XiaofeiDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ZhuxiaoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/module/textool/textool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/module/textool/textool.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/33d7c769-e24b-4b08-9395-7f9bd532b916.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/WarehouseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/WarehouseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/WarehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/WarehouseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/WarehouseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/WarehouseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProducttypeDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProducttypeDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WarehouseDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/WarehouseDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" afterDir="false" />
     </list>
@@ -526,22 +71,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/ProductServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="483" lean-forward="true" selection-start-line="483" selection-end-line="483" />
+            <state relative-caret-position="1092">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
               <folding>
-                <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#script#6;n#html#0;n#!!top" />
-                <element signature="n#script#7;n#html#0;n#!!top" />
-                <element signature="n#script#8;n#html#0;n#!!top" />
-                <element signature="n#script#9;n#html#0;n#!!top" />
-                <element signature="n#script#11;n#html#0;n#!!top" />
+                <element signature="e#1360#1361#0" expanded="true" />
+                <element signature="e#1417#1418#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -550,106 +86,115 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="786" column="27" lean-forward="true" selection-start-line="786" selection-start-column="27" selection-end-line="786" selection-end-column="27" />
+            <state relative-caret-position="42">
+              <caret line="350" column="38" lean-forward="true" selection-start-line="350" selection-start-column="38" selection-end-line="350" selection-end-column="38" />
               <folding>
+                <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#fieldset#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#script#4;n#html#0;n#!!top" />
                 <element signature="n#script#5;n#html#0;n#!!top" />
                 <element signature="n#script#6;n#html#0;n#!!top" />
                 <element signature="n#script#7;n#html#0;n#!!top" />
                 <element signature="n#script#8;n#html#0;n#!!top" />
                 <element signature="n#script#9;n#html#0;n#!!top" />
+                <element signature="n#script#11;n#html#0;n#!!top" />
                 <element signature="n#script#12;n#html#0;n#!!top" />
                 <element signature="n#script#13;n#html#0;n#!!top" />
                 <element signature="n#script#14;n#html#0;n#!!top" />
                 <element signature="n#script#15;n#html#0;n#!!top" />
                 <element signature="n#script#16;n#html#0;n#!!top" />
-                <element signature="n#script#17;n#html#0;n#!!top" />
-                <element signature="n#script#18;n#html#0;n#!!top" />
-                <element signature="n#script#19;n#html#0;n#!!top" />
-                <element signature="n#script#22;n#html#0;n#!!top" />
-                <element signature="n#script#24;n#html#0;n#!!top" />
-                <element signature="n#script#25;n#html#0;n#!!top" />
-                <element signature="n#script#26;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://805b6120-cf06-4f54-bb80-8c6b8996d0a7/schema/clothesppsdb/table/saleandorder">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1218">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-412">
-              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state relative-caret-position="12896">
+              <caret line="503" column="56" selection-start-line="503" selection-start-column="56" selection-end-line="503" selection-end-column="56" />
               <folding>
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#879#880#0" expanded="true" />
+                <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProducttypeDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="46" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/WarehouseDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="676">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+              <folding>
+                <element signature="e#612#613#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#843#844#0" expanded="true" />
+                <element signature="e#877#878#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#953#954#0" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="e#1253#1254#0" expanded="true" />
+                <element signature="e#1313#1314#0" expanded="true" />
+                <element signature="e#1365#1366#0" expanded="true" />
+                <element signature="e#1398#1399#0" expanded="true" />
+                <element signature="e#1427#1428#0" expanded="true" />
+                <element signature="e#1471#1472#0" expanded="true" />
+                <element signature="e#1507#1508#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/ProductService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="676">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -665,6 +210,20 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>json</find>
+      <find>demoTreeTb</find>
+      <find>menu</find>
+      <find>css</find>
+      <find>assets</find>
+      <find>搜索</find>
+      <find>权限</find>
+      <find>toolbarDemo</find>
+      <find>ew-tree-icon-style</find>
+      <find>auth-table</find>
+      <find>#table1</find>
+      <find>icon</find>
+      <find>getCheckData</find>
+      <find>searchEmailCompany</find>
       <find>商品增加</find>
       <find>curr</find>
       <find>ptype</find>
@@ -675,26 +234,12 @@
       <find>btn-search</find>
       <find>add</find>
       <find>详细地址</find>
+      <find>detailedAddress</find>
       <find>输入关键字</find>
       <find>searContent</find>
       <find>table</find>
-      <find>test</find>
-      <find>ids</find>
-      <find>detailedAddress</find>
       <find>addgoods</find>
-      <find>open</find>
-      <find>child</find>
-      <find>count</find>
-      <find>vue</find>
-      <find>dev</find>
-      <find>删除</find>
-      <find>demo1</find>
-      <find>数据</find>
-      <find>del</find>
-      <find>复选框</find>
-      <find>checkbox-pay</find>
-      <find>parent_data</find>
-      <find>demo</find>
+      <find>test</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -721,6 +266,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/AccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/AccountDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/InvoiceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/InvoiceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/AccountController.java" />
@@ -734,11 +282,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/order-list.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/PurchaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/service/RelatedsaleandorderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/RelatedsaleandorderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/Finance_CashStatement.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/Finance_receipt.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
@@ -764,12 +315,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" />
       </list>
@@ -780,13 +325,6 @@
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -842,7 +380,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -881,52 +418,7 @@
               <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -935,10 +427,28 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+              <item name="textool" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -955,7 +465,7 @@
     <property name="ToolWindowDebug.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/module/textool" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -969,22 +479,22 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33255813" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.sjhy.plugin.ui.TypeMapperSetting" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\lib\layui" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\module\textool" />
       <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\module" />
       <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\module\treetable-lay" />
       <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\css" />
       <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\lib\layui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1057,22 +567,7 @@
       <workItem from="1588411508957" duration="36956000" />
       <workItem from="1588492032543" duration="605000" />
       <workItem from="1588492698941" duration="394000" />
-      <workItem from="1588493362388" duration="42178000" />
-      <workItem from="1588841232592" duration="402000" />
-      <workItem from="1588854836519" duration="358000" />
-      <workItem from="1588856548894" duration="600000" />
-      <workItem from="1588881423030" duration="9651000" />
-      <workItem from="1588906020644" duration="5044000" />
-      <workItem from="1588941969771" duration="1289000" />
-      <workItem from="1588984580738" duration="265000" />
-      <workItem from="1588985537116" duration="2389000" />
-      <workItem from="1588988136292" duration="5000" />
-      <workItem from="1588988687839" duration="1092000" />
-      <workItem from="1588990100299" duration="4287000" />
-      <workItem from="1589009179931" duration="11000" />
-      <workItem from="1589071065006" duration="3307000" />
-      <workItem from="1589076544398" duration="8619000" />
-      <workItem from="1589088049720" duration="21505000" />
+      <workItem from="1588493362388" duration="749000" />
     </task>
     <task id="LOCAL-00001" summary="部署....">
       <created>1587200949877</created>
@@ -1235,18 +730,11 @@
       <option name="project" value="LOCAL" />
       <updated>1588177598076</updated>
     </task>
-    <task id="LOCAL-00024" summary="提交Tree">
-      <created>1588494184449</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1588494184449</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="420984000" />
+    <option name="totallyTimeSpent" value="320731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1266,11 +754,11 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" weight="0.16471216" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.17110874" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.18496802" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.3283582" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32942432" />
-      <window_info anchor="bottom" x="0" y="31" width="1901" height="948" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" visible="true" weight="0.80383795" />
+      <window_info active="true" anchor="bottom" x="0" y="31" width="1901" height="948" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" visible="true" weight="0.80383795" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32942432" />
@@ -1283,14 +771,13 @@
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" x="28" y="380" width="1876" height="353" id="Run" order="14" sideWeight="0.4989339" side_tool="true" type="SLIDING" weight="0.23773988" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4978678" weight="0.32942432" />
-      <window_info anchor="bottom" id="Application Servers" order="16" weight="0.32942432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49920508" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" sideWeight="0.47547975" weight="0.18763326" />
+      <window_info anchor="right" id="Maven" order="3" sideWeight="0.47547975" visible="true" weight="0.18763326" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" sideWeight="0.35793358" side_tool="true" weight="0.2196162" />
-      <window_info active="true" anchor="right" id="Database" order="6" sideWeight="0.6420664" visible="true" weight="0.2196162" />
+      <window_info anchor="right" id="Database" order="6" sideWeight="0.6420664" weight="0.2196162" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Bean Validation" order="8" sideWeight="0.48154983" weight="0.32995737" />
     </layout>
@@ -1402,7 +889,106 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://805b6120-cf06-4f54-bb80-8c6b8996d0a7/collation/koi8r_bin" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.30/tomcat-embed-core-9.0.30-sources.jar!/org/apache/catalina/core/ApplicationFilterChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="230" column="24" selection-start-line="230" selection-start-column="24" selection-end-line="230" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/member-add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/clientele-add.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/order-add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/order-list1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/layui/layui.all.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/layui/lay/modules/code.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/layui/layui.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/icon.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/editAdv.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/edit.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/json/data.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tree-menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="48" column="34" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tree-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tree-test3.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tree-test4.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/tree-test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/805b6120-cf06-4f54-bb80-8c6b8996d0a7/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://805b6120-cf06-4f54-bb80-8c6b8996d0a7/collation/koi8r_bin">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1479,6 +1065,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/ProducttypeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/module/treetable-lay/treetable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1486,10 +1079,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="66" column="31" lean-forward="true" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/ProcurementSellExpenses.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1534">
+          <caret line="72" column="45" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1522,31 +1143,29 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/net/InetAddress.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="1287" column="5" lean-forward="true" selection-start-line="1287" selection-start-column="5" selection-end-line="1287" selection-end-column="5" />
+        <state relative-caret-position="1092">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1417#1418#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/druid/1.0.9/druid-1.0.9-sources.jar!/com/alibaba/druid/pool/DruidAbstractDataSource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="1374" column="31" selection-start-line="1374" selection-start-column="31" selection-end-line="1374" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47-sources.jar!/com/mysql/jdbc/ConnectionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="2024" column="16" selection-start-line="2024" selection-start-column="16" selection-end-line="2024" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/vue-2.4.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1716" column="27" selection-start-line="1716" selection-start-column="27" selection-end-line="1716" selection-end-column="27" />
+        <state relative-caret-position="12896">
+          <caret line="503" column="56" selection-start-line="503" selection-start-column="56" selection-end-line="503" selection-end-column="56" />
+          <folding>
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1561,27 +1180,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="46" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1417#1418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2262">
-          <caret line="87" column="23" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1625,62 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1118">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/ProducttypeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1040">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Producttype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/XiaofeiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Payment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
@@ -1688,149 +1230,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="338">
-            <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/Saleandorder2Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="46" column="4" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding>
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1218">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="17509" column="12" selection-start-line="17509" selection-start-column="12" selection-end-line="17509" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="483" lean-forward="true" selection-start-line="483" selection-end-line="483" />
-          <folding>
-            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#script#6;n#html#0;n#!!top" />
-            <element signature="n#script#7;n#html#0;n#!!top" />
-            <element signature="n#script#8;n#html#0;n#!!top" />
-            <element signature="n#script#9;n#html#0;n#!!top" />
-            <element signature="n#script#11;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://805b6120-cf06-4f54-bb80-8c6b8996d0a7/schema/clothesppsdb/table/saleandorder">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+        <state relative-caret-position="456">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="786" column="27" lean-forward="true" selection-start-line="786" selection-start-column="27" selection-end-line="786" selection-end-column="27" />
+        <state relative-caret-position="42">
+          <caret line="350" column="38" lean-forward="true" selection-start-line="350" selection-start-column="38" selection-end-line="350" selection-end-column="38" />
           <folding>
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#fieldset#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#4;n#html#0;n#!!top" />
             <element signature="n#script#5;n#html#0;n#!!top" />
             <element signature="n#script#6;n#html#0;n#!!top" />
             <element signature="n#script#7;n#html#0;n#!!top" />
             <element signature="n#script#8;n#html#0;n#!!top" />
             <element signature="n#script#9;n#html#0;n#!!top" />
+            <element signature="n#script#11;n#html#0;n#!!top" />
             <element signature="n#script#12;n#html#0;n#!!top" />
             <element signature="n#script#13;n#html#0;n#!!top" />
             <element signature="n#script#14;n#html#0;n#!!top" />
             <element signature="n#script#15;n#html#0;n#!!top" />
             <element signature="n#script#16;n#html#0;n#!!top" />
-            <element signature="n#script#17;n#html#0;n#!!top" />
-            <element signature="n#script#18;n#html#0;n#!!top" />
-            <element signature="n#script#19;n#html#0;n#!!top" />
-            <element signature="n#script#22;n#html#0;n#!!top" />
-            <element signature="n#script#24;n#html#0;n#!!top" />
-            <element signature="n#script#25;n#html#0;n#!!top" />
-            <element signature="n#script#26;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -1852,7 +1280,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>DistributionSystem:war</last-edited>
+          <last-edited>DistributionSystem:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1930,6 +1358,583 @@
             <option name="proportions">
               <list>
                 <option value="0.33255813" />
+=======
+    <list default="true" id="acbf0de8-47a4-4d04-a8d5-329488cd0a4e" name="Default Changelist" comment="dev修改了pom.xml.....">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/firstTest/target/" />
+    <ignored path="$PROJECT_DIR$/eureka7001/target/" />
+    <ignored path="$PROJECT_DIR$/eureka7002/target/" />
+    <manually-removed-from-ignored>
+      <directory path="$PROJECT_DIR$/secondTest/target/" />
+    </manually-removed-from-ignored>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka7002/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka7002/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eureka7002/src/main/java/com/eureka7002/eureka7002.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka7001/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka7001/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/firstTest/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eureka7001/src/main/java/com/eureka7001/eureka7001.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev3" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="78a51fa3-6922-44a3-a33a-c15f7caa4808" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/secondTest/pom.xml" />
+        <option value="$PROJECT_DIR$/firstTest/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka7002/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka7001/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\m2\repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="BusinessManagement" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="eureka7001" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="eureka7001" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="eureka7002" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="eureka7002" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-5" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7001" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BusinessManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BusinessManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="eureka7002" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEWORK\BusinessManagement" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.eureka7002">
+    <configuration name="eureka7001" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eureka7001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eureka7001.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.eureka7001.eureka7001" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="eureka7002" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eureka7002" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eureka7002.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.eureka7002.eureka7002" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.eureka7002" />
+        <item itemvalue="Spring Boot.eureka7001" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="acbf0de8-47a4-4d04-a8d5-329488cd0a4e" name="Default Changelist" comment="" />
+      <created>1586855804410</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586855804410</updated>
+      <workItem from="1586855808844" duration="954000" />
+      <workItem from="1586856794683" duration="1844000" />
+    </task>
+    <task id="LOCAL-00001" summary="All">
+      <created>1586856913213</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586856913213</updated>
+    </task>
+    <task id="LOCAL-00002" summary="我修改了pom.xml">
+      <created>1586857683929</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586857683929</updated>
+    </task>
+    <task id="LOCAL-00003" summary="我修改了pom.xml.....">
+      <created>1586857902401</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586857902401</updated>
+    </task>
+    <task id="LOCAL-00004" summary="dev1修改了pom.xml.....">
+      <created>1586859402187</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1586859402187</updated>
+    </task>
+    <task id="LOCAL-00005" summary="dev修改了pom.xml.....">
+      <created>1586859544340</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586859544340</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4527000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Web" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25266525" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Java Enterprise" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3283582" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.2185501" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="0" sideWeight="0.31904763" side_tool="true" visible="true" weight="0.31449893" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Maven" order="5" sideWeight="0.68095237" visible="true" weight="0.31449893" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dev1" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="All" />
+    <MESSAGE value="我修改了pom.xml" />
+    <MESSAGE value="我修改了pom.xml....." />
+    <MESSAGE value="dev1修改了pom.xml....." />
+    <MESSAGE value="dev修改了pom.xml....." />
+    <option name="LAST_COMMIT_MESSAGE" value="dev修改了pom.xml....." />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/secondTest/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/firstTest/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka7002/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka7001/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka7002/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka7001/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka7001/src/main/java/com/eureka7001/eureka7001.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eureka7002/src/main/java/com/eureka7002/eureka7002.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+>>>>>>> branch 'master' of https://github.com/13548551932/Project-development
               </list>
             </option>
           </splitter-proportions>

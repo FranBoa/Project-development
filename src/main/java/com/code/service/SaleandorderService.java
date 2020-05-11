@@ -21,9 +21,6 @@ public interface SaleandorderService {
      */
     Saleandorder queryById(Integer sid);
 
-
-    Saleandorder queryLastOne();
-
     /**
      * 查询多条数据
      *

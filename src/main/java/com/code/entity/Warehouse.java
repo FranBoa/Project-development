@@ -84,4 +84,9 @@ public class Warehouse implements Serializable {
         this.wphone = wphone;
     }
 
+	public void setWstatus(int wStatus) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
