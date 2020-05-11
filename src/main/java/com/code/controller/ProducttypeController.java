@@ -1,13 +1,17 @@
 package com.code.controller;
 
-import com.code.entity.Producttype;
-import com.code.service.ProducttypeService;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.code.entity.Producttype;
+import com.code.service.ProducttypeService;
 
 /**
  * (Producttype)表控制层

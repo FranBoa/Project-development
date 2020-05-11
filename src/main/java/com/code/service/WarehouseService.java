@@ -42,7 +42,7 @@ public interface WarehouseService {
      * @param warehouse 实例对象
      * @return 对象列表
      */
-    List<Warehouse> queryAll(Warehouse warehouse);
+    List<Warehouse> queryAll(Warehouse warehose);
 
     /**
      * 修改数据

@@ -1,17 +1,19 @@
 package com.code.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.code.entity.Product;
 import com.code.service.ProductService;
 import com.github.pagehelper.PageInfo;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.annotation.Resource;
-import javax.lang.model.element.NestingKind;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * (Product)表控制层
@@ -85,5 +87,8 @@ public class ProductController {
 			return "<script> alert('添加失败') </script>";
 		}
     }
+    
+    
+    
 
 }

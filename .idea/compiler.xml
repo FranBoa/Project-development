@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="DistributionSystem" />
       </profile>
     </annotationProcessing>
@@ -14,5 +15,12 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="DistributionSystem" options="-parameters" />
     </option>
+=======
+        <module name="eureka7001" />
+        <module name="eureka7002" />
+        <module name="firstTest" />
+      </profile>
+    </annotationProcessing>
+>>>>>>> branch 'master' of https://github.com/13548551932/Project-development
   </component>
 </project>

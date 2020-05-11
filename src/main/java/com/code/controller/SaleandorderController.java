@@ -85,13 +85,4 @@ public class SaleandorderController {
         return map;
     }
 
-    @ResponseBody
-    @RequestMapping("add")
-    public  String add(Saleandorder saleandorder){
-        Saleandorder saleandorder1=this.saleandorderService.queryLastOne();
-        System.out.println(saleandorder1.getSid());
-        System.out.println(saleandorder);
-        return  "";
-    }
-
 }

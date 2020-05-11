@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="css/xadmin.css">
 <script type="text/javascript" src="lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/xadmin.js"></script>
+<script type="text/javascript" src="js/vue-2.4.0.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
 
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
@@ -21,7 +23,7 @@
 </head>
 <body>
 	<div class="layui-fluid">
-		<div class="layui-row">
+		<div class="layui-row" id="app">
 			<form class="layui-form" action="product/add" method="post">
 				<div class="layui-form-item">
 					<label for="L_email" class="layui-form-label"> <span
@@ -37,8 +39,7 @@
 						</label>
 						<div class="layui-input-inline">
 							<select name="productType">
-								<option value="1">短袖</option>
-								<option value="1">长袖</option>
+								<option v-for="(type,index) in typeList" :value="index">{{type.producttypename}}</option>
 							</select>
 						</div>
 					</div>
@@ -67,7 +68,7 @@
 						</label>
 						<div class="layui-input-inline">
 							<select name="WareHouse">
-								<option value="0">默认仓库</option>
+								<option v-for="(ware,index) in wareList" :value='index'>{{ware.wname}}</option>
 							</select>
 						</div>
 					</div>
@@ -92,6 +93,34 @@
 			$ = layui.jquery;
 			var form = layui.form, layer = layui.layer;
 		});
+		var vm = new Vue({
+			el:'#app',
+			data:{
+				typeList:[],
+				wareList:[]
+			},
+			mounted(){
+				this.typeSelectAll()
+				this.wareSelectAll()
+			},
+			methods:{
+				typeSelectAll(){
+					axios.get('producttype/selectAll').then(res=>{
+						this.typeList=res.data
+					}).catch(err=>{
+						alert('操作失败')
+					})
+				},
+				wareSelectAll(){
+					axios.get('warehouse/selectAll').then(res=>{
+						console.log(res)
+						this.wareList=res.data
+					}).catch(err=>{
+						alert('操作失败')
+					})
+				}
+			}
+		})
 	</script>
 	<script>
 		var _hmt = _hmt || [];
