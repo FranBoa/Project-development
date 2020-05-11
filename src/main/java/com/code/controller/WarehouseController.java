@@ -1,10 +1,15 @@
 package com.code.controller;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.code.entity.Warehouse;
 import com.code.service.WarehouseService;
-import org.springframework.web.bind.annotation.*;
-import java.util.List;
-import javax.annotation.Resource;
 
 /**
  * (Warehouse)表控制层
@@ -56,4 +61,4 @@ public class WarehouseController {
            return this.warehouseService.queryAll(warehouse);
     }
 
-}
+}	

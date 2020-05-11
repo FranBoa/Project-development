@@ -41,28 +41,57 @@
                                         <form class="layui-form" >
 
                                             <div class="layui-form-item">
-                                                <label class="layui-form-label">备注</label>
-                                                   <div class="layui-input-block">
+                                                <label class="layui-form-label">单行输入框</label>
+                                                <div class="layui-input-block">
                                                     <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
                                                 </div>
                                             </div>
 
-                                            <div class="layui-form-item">
-                                                <label class="layui-form-label">支付方式</label>
-                                                <div class="layui-input-inline">
-                                                    <select name="pay">
-                                                        <option value="支付宝" selected="">支付宝</option>
-                                                        <option value="微信" >微信</option>
-                                                        <option value="银联">银联</option>
-                                                        <option value="随行付">随行付</option>
-                                                        <option value="银盛支付">银盛支付</option>
+
+
+                                            <div class="layui-form-item" id="area-picker">
+                                                <label class="layui-form-label">送货地点</label>
+                                                <div class="layui-input-inline" >
+                                                    <select name="province" class="province-selector" data-value="" lay-filter="province-1">
+                                                        <option value="">请选择省</option>
                                                     </select>
+                                                </div>
+                                                <div class="layui-input-inline">
+                                                    <select name="city" class="city-selector" data-value="" lay-filter="city-1">
+                                                        <option value="">请选择市</option>
+                                                    </select>
+                                                </div>
+                                                <div class="layui-input-inline" >
+                                                    <select name="county" class="county-selector" data-value="" lay-filter="county-1">
+                                                        <option value="">请选择区</option>
+                                                    </select>
+                                                </div>
+                                                <div class="layui-input-inline" >
+                                                    <input type="text" class="layui-input" name="detailedAddress" id="detailedAddress" placeholder="请输入详细地址" autocomplete="off">
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">复选框</label>
+                                                <div class="layui-input-block">
+                                                    <input type="checkbox" name="like[write]" title="写作" checked="">
+                                                    <input type="checkbox" name="like[read]" title="阅读" >
+                                                    <input type="checkbox" name="like[game]" title="游戏">
                                                 </div>
                                             </div>
 
 
-
                                             <div class="layui-form-item">
+                                                <label class="layui-form-label">开关-默认关</label>
+                                                <div class="layui-input-block">
+                                                    <input type="checkbox" name="close" lay-skin="switch" lay-text="ON|OFF">
+                                                </div>
+                                            </div>
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">开关-默认开</label>
+                                                <div class="layui-input-block">
+                                                    <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="switchTest" lay-text="ON|OFF">
+                                                </div>
 
                                                 <div class="layui-form-item">
                                                     <div class="layui-input-block">
@@ -76,7 +105,14 @@
                                                 </div>
 
                                             </div>
-
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">单选框</label>
+                                                <div class="layui-input-block">
+                                                    <input type="radio" name="sex" value="男" title="男" checked="">
+                                                    <input type="radio" name="sex" value="女" title="女">
+                                                    <input type="radio" name="sex" value="禁" title="禁用" disabled="">
+                                                </div>
+                                            </div>
                                             <div class="layui-form-item">
                                                 <div class="layui-input-block">
                                                     <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
@@ -217,7 +253,6 @@
                     var data=  Qs.stringify({"ordernumber":this.orderId,"pageNum":this.pageNum,"pageSize":this.pageSize});
                     axios.post('relatedsaleandorder/queryAll',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
                         this.list=res.data.data;
-                        console.log(this.list);
                         this.count=res.data.count;
                         var count=this.count;
                         layui.use('laypage', function(){
@@ -253,6 +288,7 @@
                                                 //location.reload(); //删除成功后再刷新
                                             },
                                             error:function(data){
+
                                             }
                                         });
                                     }
@@ -330,323 +366,98 @@
     <script type="text/html" id="RMB">
         {{d.stotal+'￥'}}
     </script>
-    <script type="text/html" id="warehouse">
-        {{d.warehouses[0].wname}}
-    </script>
-    <script type="text/html" id="producttype">
-        {{d.producttypes[0].producttypename}}
-    </script>
-    <script type="text/html" id="RMB1">
-        {{d.pbprice+'￥'}}
-    </script>
-    <script type="text/html" id="RMB2">
-        {{d.psprice+'￥'}}
-    </script>
-    <script type="text/html" id="danger">
-        {{#  if(d.warenum <= 50 ){ }}
-        <span style="color: #eb3b5f;">{{ d.warenum }}</span>
-        {{#  } else { }}
-        {{ d.warenum }}
-        {{#  } }}
-    </script>
-    <script type="text/html" id="addgoodsToolBar">
-        <div class="layui-btn-container">
-            <button class="layui-btn layui-btn-sm" type="button" lay-event="getCheckData">获取选中行数据</button>
-            <button class="layui-btn layui-btn-sm" type="button" lay-event="getCheckLength">获取选中数目</button>
-            <button class="layui-btn layui-btn-sm" type="button" lay-event="isAll">验证是否全选</button>
-        </div>
-    </script>
-    <script type="text/html" id="tax">
-        {{# if(d.tax==null||d.tax=='') { }}
-            {{0+'%'}}
-        {{#  } else { }}
-        {{d.tax+'%'}}
-        {{#  } }}
-</script>
-    <script type="text/html" id="discount">
-        {{# if(d.discount==null||d.discount=='') { }}
-        {{# d.discount=0}}
-        {{d.discount+'%'}}
-        {{#  } else { }}
-        {{d.discount+'%'}}
-        {{#  } }}
-    </script>
-    <script type="text/html" id="count" title="">
-<!--        {{#  layui.each(d.list, function(index, item){ }}-->
-<!--            -->
-<!--        {{#  }); }}-->
-
-        {{# if(d.count==null||d.count=='') { }}
-        {{1}}
-        {{#  } else { }}
-        {{d.count}}
-        {{#  } }}
-    </script>
-    <script  type="text/html" id="total" title="">
-        {{# if(d.count==null&&d.tax==null&&d.discount==null) { }}
-        {{# if(Math.floor((d.psprice*1)*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;">{{Math.floor((d.psprice*1)*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*1)*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else if(d.tax==null&&d.discount==null){ }}
-        {{# if(Math.floor((d.psprice*d.count)*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;">{{Math.floor((d.psprice*d.count)*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count)*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else if(d.count==null&&d.discount==null){ }}
-        {{# if(Math.floor((d.psprice+d.tax/100*(d.psprice))*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice+d.tax/100*(d.psprice))*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice+d.tax/100*(d.psprice))*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else if(d.count==null&&d.tax==null){ }}
-        {{# if(Math.floor((d.psprice-d.discount/100*(d.psprice))*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else if(d.count==null){ }}
-        {{# if(Math.floor((d.psprice+d.tax/100*(d.psprice)-d.discount/100*(d.psprice))*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice+d.tax/100*(d.psprice)-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice+d.tax/100*(d.psprice)-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else if(d.discount==null){ }}
-        {{# if(Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count))*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else if(d.tax==null){ }}
-        {{# if(Math.floor((d.psprice*d.count-d.discount/100*(d.psprice*d.count))*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice*d.count-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } else { }}
-        {{# if(Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count)-d.discount/100*(d.psprice*d.count))*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count)-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
-        {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count)-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
-        {{#  } }}
-        {{#  } }}
-    </script>
-
     <script>
-        var xx=new Array();
-        function GetValue(obj,datafiled,ids) {
-            var datafiled=JSON.stringify(datafiled);
-            var leng=xx.length;
+        function GetValue(obj) {
+            let new_data = $.extend(true, [], obj);
+            var xx=new Array();
             for (var i=0;i<obj.length;i++){
-                    var obj1=JSON.stringify(obj[i]);
-                    var obj2=JSON.parse(obj1.substr(0,obj1.length-1)+",\"address\"" +":"+'['+datafiled+']'+"}");
-                    xx.push(obj2);
+                xx.push(obj[i]);
             }
-           // console.log(xx);
+            console.log(xx);
+
+
+
+
             layui.use('table', function(){
                 var table = layui.table;
 
                 //第一个实例
-                var addgoods=table.render({
+                table.render({
                     elem: '#addgoods'
                     ,data: xx
+
+                    ,height:'600px'
                     ,page: true //开启分页
-                    ,toolbar:'#addgoodsToolBar'
                     ,cols: [[
                         {type:'checkbox',field:'pid',fixed: 'left'}
-                        ,{field:'id',type:'numbers',width:90, title: 'ID', sort: true}
-                        ,{field:'count',type:'normal',title:'数量',edit:true,templet:'#count'}
-                        ,{field:'tax',title:'税率',edit:true,templet:'#tax'}
-                        ,{field:'discount',title:'折扣',edit:true,templet:'#discount'}
-                        ,{field:'total',title:'折税价',templet:'#total'}
+                        ,{field:'pid', width:90, title: 'ID', sort: true}
+                        ,{field:'ptype',width:120,title:'商品类型', sort: true}
                         ,{field:'pname', width:120, title: '商品名'}
-                        ,{field:'ptype',width:120,title:'商品类型', sort: true,templet:'#producttype'}
-                        ,{field:'pbprice', width:90, title: '商品进价',templet:'#RMB1'}
-                        ,{field:'psprice', width:90,title: '商品售价',templet:'#RMB2'}
-                        ,{type:'normal',title:'配送地址',templet:function(d){return d.address[0].province+""+d.address[0].city+""+d.address[0].county+""+d.address[0].title;}}
-                        ,{field:'warehouse', width:120, title: '所在仓库', sort: true,templet:'#warehouse'}
-                        ,{field:'warenum', width:90, title: '库存数量', sort: true,templet:'#danger'}
-                        ,{field:'details', title: '说明',fixed:'right'}
+                        ,{field:'pbprice', width:90, title: '商品进价'}
+                        ,{field:'psprice', width:90,title: '商品售价'}
+                        ,{field:'warehouse', width:120, title: '所在仓库', sort: true}
+                        ,{field:'warenum', width:90, title: '库存数量', sort: true}
+                        ,{field:'details', title: '说明'}
                     ]]
+                    ,parseData: function(res){ //res 即为原始返回的数据
+                        return {
+                            "code": res.code, //解析接口状态
+                            "msg": res.msg, //解析提示文本
+                            "count": res.count, //解析数据长度
+                            "data": res.data[0] //解析数据列表
+                        };
+                    }
                     ,done:function (res) {
-
+                        console.log(res);
+                        console.log(res.data);
                     }
                 });
 
-                Array.prototype.remove=function(dx) {
-                    if(isNaN(dx)||dx>this.length){return false;}
-                    for(var i=0,n=0;i<this.length;i++)
-                    {
-                        if(this[i]!=this[dx])
-                        {
-                            this[n++]=this[i]
-                        }
-                    }
-                    this.length-=1
-                }
-
-                //头工具栏事件
-                table.on('toolbar(addgoods)', function(obj){
-                    var checkStatus = table.checkStatus(obj.config.id);
-                    switch(obj.event){
-                        case 'getCheckData':
-                            var data = checkStatus.data;
-                            layer.alert(JSON.stringify(data));
-                            break;
-                        case 'getCheckLength':
-                            var data = checkStatus.data;
-                            layer.msg('选中了：'+ data.length + ' 个');
-                            break;
-                        case 'isAll':
-                            layer.msg(checkStatus.isAll ? '全选': '未全选');
-                            break;
-
-                        //自定义头工具栏右侧图标 - 提示
-                        case 'LAYTABLE_TIPS':
-                            layer.alert('这是工具栏右侧自定义的一个图标按钮');
-                            break;
-                    };
-                });
-
-                var oldcount=null;
-
-                //监听行工具事件
-                table.on('tool(addgoods)', function(obj){
-                    var data = obj.data;
-                    console.log(data)
-                    oldcount=data.count
-                    if(obj.event === 'del'){
-                        layer.confirm('真的删除行么', function(index){
-                            obj.del();
-                            layer.close(index);
-                        });
-                    } else if(obj.event === 'edit'){
-                        layer.prompt({
-                            formType: 2
-                            ,value: data.email
-                        }, function(value, index){
-                            obj.update({
-                                email: value
-                            });
-                            layer.close(index);
-                        });
-                    }
-                });
-
-                //监听单元格编辑
-                table.on('edit(addgoods)', function(obj){
-                    var value = obj.value //得到修改后的值
-                        ,data = obj.data //得到所在行所有键值
-                        ,field = obj.field; //得到字段
-                    if (!(/(^[1-9]\d*$)/.test(value))) {
-                        if (field == 'count') {
-                                obj.update({
-                                    count: 1
-                                });
-                            addgoods.reload()
-                            return false;
-                        } else {
-                            obj.update({
-                                count: 0
-                            })
-                            addgoods.reload()
-                            return false;
-                        }
-                    }
-                    if (field=="count"){
-                        var count=0;
-                        var total=0;
-                        var Differencevalue=0;
-                        var val=   layui.table.cache["addgoods"];
-                        //console.log(obj);
-                        for (var i=0;i<val.length;i++){
-                            if (val[i].pid==data.pid&&val[i].warehouse==data.warehouse){
-                                count++;
-                            }
-                            if (count>0){
-                                if (val[i].count==null||val[i].count==''){
-                                    total+=1;
-                                }else{
-                                    total+=val[i].count*1;
-                                }
-                            }
-                            //console.log(data.pid);
-                            //console.log(val[i].pid);
-                            if (val[i].count!=value&&val[i].warehouse==data.warehouse){
-                                if (val[i].count==null||val[i].count==''){
-                                    Differencevalue+=1;
-                                }else{
-                                    Differencevalue+=val[i].count*1;
-                                }
-                                }
-
-                        }
-                       // console.log(Differencevalue);
-
-                        if(total>data.warenum){
-                            var count = data.warenum-Differencevalue;
-                            obj.update({
-                                count:count
-                            });
-                        }
-
-                    }
-
-
-                    addgoods.reload()
-                });
 
             });
 
         }
-        function openAdd() {
-            if (vm.$data.orderId!=null){
-                layer.open({
-                    type: 2,
-                    closeBtn:2,
-                    shadeClose:true,
-                    title: "计划商品添加",
-
-                    area: ['900px', '800px'],
-                    anim: 2,
-                    content: ['/SaleAndOrder-add.html'],
-                    success: function (layero, index) {
-                        var iframe = window['layui-layer-iframe' + index];//拿到iframe元素
-                        iframe.child(vm.$data.orderId);
-                        //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
-                    }
-                });
-            }else {
-                layer.msg("请选择一个计划订单！");
-            }
-        }
-
-        function openAdd2() {
+    </script>
+    <script>
+    function openAdd() {
+        if (vm.$data.orderId!=null){
             layer.open({
                 type: 2,
-                title: "计划订单添加",
-                shade: 0.4,
-                maxmin: true,
-                area: ['1300px', '820px'],
+                closeBtn:2,
+                shadeClose:true,
+                title: "计划商品添加",
+
+                area: ['900px', '800px'],
                 anim: 2,
-                content: ['/SaleAndOrder-add2.html'],
+                content: ['/SaleAndOrder-add.html'],
                 success: function (layero, index) {
-                    var   iframe = window['layui-layer-iframe' + index];//拿到iframe元素
-                    var cacheData=xx;
-                    iframe.child(vm.$data.orderId,cacheData);
+                    var iframe = window['layui-layer-iframe' + index];//拿到iframe元素
+                    iframe.child(vm.$data.orderId);
                     //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
                 }
             });
+        }else {
+            layer.msg("请选择一个计划订单！");
         }
+    }
 
-        function sendData() {
-
-            return xx;
-        }
+    function openAdd2() {
+        layer.open({
+            type: 2,
+            title: "计划订单添加",
+            shade: 0.4,
+            maxmin: true,
+            area: ['1300px', '820px'],
+            anim: 2,
+            content: ['/SaleAndOrder-add2.html'],
+            success: function (layero, index) {
+                var iframe = window['layui-layer-iframe' + index];//拿到iframe元素
+                iframe.child(vm.$data.orderId);
+                //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
+            }
+        });
+    }
     </script>
-
     <script>layui.use('table',
         function() {
             var table = layui.table;
@@ -789,16 +600,7 @@
                 elem: '#end' //指定元素
             });
 
-            form.on('submit(demo1)',function (data) {
-                console.log(layui.table.cache["addgoods"]);
-                var arr=layui.table.cache["addgoods"];
-                var val=new Array();
-                var formdata=data.field;
-                for (var i=0;i<arr.length;i++){
-                    val.push({"rname":arr[i].pname,"sprice":arr[i].pbprice,"stotal":arr[i].psprice,"stax":arr[i].tax,"sdiscount":arr[i].discount,"paymethod":formdata.pay,"remarks":formdata.title});
-                }
-                return false;
-            })
+
 
         });
 
