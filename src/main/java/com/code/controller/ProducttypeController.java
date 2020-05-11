@@ -65,5 +65,11 @@ public class ProducttypeController {
     public List<Producttype>  queryAll(Producttype producttype){
            return this.producttypeService.queryAll(producttype);
     }
+    
+    @RequestMapping("getAll")
+    public List<Producttype> getAll(){
+    	List<Producttype> list = this.producttypeService.selectAll();
+    	return list;
+    }
 
 }

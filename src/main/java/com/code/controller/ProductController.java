@@ -1,6 +1,7 @@
 package com.code.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.code.entity.Product;
+import com.code.entity.Producttype;
 import com.code.service.ProductService;
 import com.github.pagehelper.PageInfo;
 
@@ -88,7 +90,7 @@ public class ProductController {
 		}
     }
     
-    
+   
     
 
 }

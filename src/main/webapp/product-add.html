@@ -16,7 +16,9 @@
 <script type="text/javascript" src="js/vue-2.4.0.js">
 							</script>
 <script type="text/javascript" src="js/axios.min.js">
-							</script>
+</script>
+<script type="text/javascript" src="js/qs.min.js">
+</script>
 
 <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 <!--[if lt IE 9]>
@@ -43,8 +45,8 @@
 					</label>
 					<div class="layui-inline">
 						<div class="layui-input-inline">
-							<select name="quiz">
-								<option v-for="type in typeList" :value="type.producttypeid">{{type.producttypename}}</option>
+							<select name="producttype">
+								<option v-for="(type,key) in typeList" :key="key" :value="type.producttypeid">{{type.producttypename}}</option>
 							</select>
 						</div>
 					</div>
@@ -110,10 +112,11 @@
 			},
 			methods:{
 				typeSelectAll(){
-					axios.get('producttype/selectAll').then(res=>{
-						console.log(res.data.data)
-						this.typeList=res.data.data
+					axios.post('producttype/getAll', {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
+						console.log(res.data)
+						this.typeList=res.data		
 					}).catch(err=>{
+						alert(err)
 						alert('操作失败')
 					})
 				},
