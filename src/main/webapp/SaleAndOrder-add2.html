@@ -140,21 +140,6 @@
         <script src="/js/vue-2.4.0.js"></script>
         <script src="/js/axios.min.js"></script>
         <script src="/js/qs.min.js"></script>
-        <script>
-            var viframe1 =new Vue({
-                    el:"#viframe1",
-                    data:{
-                        list:[],
-                        ordernumber:null
-                    },
-                    mounted(){
-
-                    }
-                });
-            function child(obj){
-                viframe1.$data.ordernumber=obj;
-            }
-        </script>
         <script></script>
         <script>
             layui.use(['layer', 'layarea'], function() {
@@ -196,6 +181,23 @@
 </script>
 
     <script name="Tree-Table-Form">
+
+        var viframe1 =new Vue({
+            el:"#viframe1",
+            data:{
+                list:[],
+                ordernumber:null,
+                cacheData:[]
+            },
+            mounted(){
+
+            }
+        });
+        var cacheData=null;
+        function child(obj,obj2){
+            viframe1.$data.ordernumber=obj;
+            cacheData=obj2;
+        }
         var proid="";
         //记录选中的数据:做缓存使用,作为参数传递给后台,然后生成pdf ,压缩
         var ids =new Array()
@@ -376,7 +378,7 @@
                     }else{
                         for(var i=0;i<table_data.length;i++){
                             ids.push(table_data[i].pid);
-                            parent_data.push(obj.data[i]);
+                            parent_data.push(table_data[i]);
                         }
                     }
                 }else{
@@ -384,7 +386,7 @@
                         for(var i=0;i<ids.length;i++){
                             if(ids[i]==obj.data.pid){
                                 ids.remove(i);
-                                parent_data.remove(i)
+                                parent_data.remove(i);
                             }
                         }
                     }else{
@@ -496,16 +498,37 @@
                        //     layer.alert("地址不能为空！",{icon: 5});
                        //     return  false;
                        // }
+                    if (cacheData!=null){
+                        for(var i=0;i<parent_data.length;i++){
+                            var pid=parent_data[i].pid;
+                            var total=0;
+                            for (var j=0;j<cacheData.length;j++){
+                                if (cacheData[j].pid==pid){
+                                    total+=cacheData[j].count==null||cacheData[j].count==''?1:cacheData[j].count*1;
+                                    console.log(cacheData[j].count);
+                                    console.log(total);
+                                    if (j==cacheData.length-1){
+                                        if (total==cacheData[j].warenum){
+                                            parent_data.remove(i);
+                                        }
+                                }else if (cacheData[j].pid==parent_data[i].pid){
+                                        if(cacheData[j].count==cacheData[j].warenum||cacheData[j].warenum<=1){
+                                            parent_data.remove(i);
+                                        }
+                                    }else{
+                                        layer.msg('增加失败!');
+                                    }
+                                }
 
-                        layer.alert("增加成功", {
-                                icon: 6
-                            },
-                            function() {
-                                parent.GetValue(parent_data); //GetValue是父界面的Js 方法
-                                var index = parent.layer.getFrameIndex(window.name);
-                                //关闭当前frame
-                                parent.layer.close(index);
-                            });
+
+
+                            }
+                        }
+                    }
+
+                    layer.msg('增加成功!');
+                    parent.GetValue(parent_data,data.field,ids); //GetValue是父界面的Js 方法
+                    cacheData=parent.sendData();
                         return false;
                     });
 
@@ -529,7 +552,7 @@
                 // 隐藏回调，参数为当前输入框和工具条面板的 jQuery 对象
                 hideEnd: $.noop,
                 // 初始化展开，默认展开，否则收起
-                initShow: false,
+                initShow: true,
                 // 启用指定工具模块，默认依次为字数统计、复制内容、重置内容、清空内容，按数组顺序显示
                 tools: ['count', 'copy', 'reset', 'clear'],
                 // 工具按钮提示类型，默认为 'title' 属性，可选 'laytips'，使用 layer 组件的吸附提示， 其他值不显示提示
@@ -552,7 +575,7 @@
         });
     </script>
 
-        <script>var _hmt = _hmt || []; (function() {
+   <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
                 hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
                 var s = document.getElementsByTagName("script")[0];

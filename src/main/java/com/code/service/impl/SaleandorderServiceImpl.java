@@ -32,6 +32,11 @@ public class SaleandorderServiceImpl implements SaleandorderService {
         return this.saleandorderDao.queryById(sid);
     }
 
+    @Override
+    public Saleandorder queryLastOne() {
+        return this.saleandorderDao.queryLastOne();
+    }
+
     /**
      * 查询多条数据
      *
