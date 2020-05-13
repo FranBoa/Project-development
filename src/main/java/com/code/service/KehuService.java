@@ -19,10 +19,11 @@ public interface KehuService {
      */
     Kehu queryById(int id);
 
+    List<Kehu> queryBycId(Integer cid);
     /**
      * 查询多条数据
      *
-     * @param 
+     * @param
      * @param
      * @return 对象列表
      */

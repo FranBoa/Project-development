@@ -14,10 +14,10 @@ public interface HuiyuankaiService {
     /**
      * 通过ID查询单条数据
      *
-     * @param hykkh 主键
+     * @param hid 主键
      * @return 实例对象
      */
-    Huiyuankai queryById(String hykkh);
+    Huiyuankai queryById(int hid);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface HuiyuankaiService {
      * @param huiyuankai 实例对象
      * @return 实例对象
      */
-    Huiyuankai insert(Huiyuankai huiyuankai);
+    int insert(Huiyuankai huiyuankai);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,14 +50,14 @@ public interface HuiyuankaiService {
      * @param huiyuankai 实例对象
      * @return 实例对象
      */
-    Huiyuankai update(Huiyuankai huiyuankai);
+    int update(Huiyuankai huiyuankai);
 
     /**
      * 通过主键删除数据
      *
-     * @param hykkh 主键
+     * @param hid 主键
      * @return 是否成功
      */
-    boolean deleteById(String hykkh);
+    int deleteById(int hid);
 
 }

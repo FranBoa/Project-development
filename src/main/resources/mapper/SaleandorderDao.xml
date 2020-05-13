@@ -16,31 +16,32 @@
         <result property="stotal" column="stotal" jdbcType="VARCHAR"/>
         <result property="author" column="author" jdbcType="VARCHAR"/>
         <result property="inspect" column="inspect" jdbcType="VARCHAR"/>
+        <result property="wid" column="wid" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="SaleandorderMap">
         select
-          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect
+          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
         where sid = #{sid}
-    </select>
-
-    <select id="queryLastOne" resultMap="SaleandorderMap">
-        select * from clothesppsdb.saleandorder order by sid DESC limit 1
     </select>
 
     <!--查询所有的数据-->
     <select id="selectAll" resultMap="SaleandorderMap">
         select
-          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect
+          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
+    </select>
+
+    <select id="queryLastOne" resultMap="SaleandorderMap">
+        SELECT * FROM clothesppsdb.saleandorder    ORDER BY sid DESC LIMIT 1
     </select>
 
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="SaleandorderMap">
         select
-          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect
+          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
         <where>
             <if test="sid != null">
@@ -82,13 +83,16 @@
             <if test="inspect != null and inspect != ''">
                 and inspect = #{inspect}
             </if>
+            <if test="wid != null and wid != ''">
+                and wid = #{wid}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="sid" useGeneratedKeys="true">
-        insert into clothesppsdb.saleandorder(category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect)
-        values (#{category}, #{salesman}, #{customername}, #{status}, #{sdate}, #{rdate}, #{ordernumber}, #{ordernumber2}, #{remarks}, #{stotal}, #{author}, #{inspect})
+        insert into clothesppsdb.saleandorder(category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid)
+        values (#{category}, #{salesman}, #{customername}, #{status}, #{sdate}, #{rdate}, #{ordernumber}, #{ordernumber2}, #{remarks}, #{stotal}, #{author}, #{inspect}, #{wid})
     </insert>
 
     <!--通过主键修改数据-->
@@ -130,6 +134,9 @@
             </if>
             <if test="inspect != null and inspect != ''">
                 inspect = #{inspect},
+            </if>
+            <if test="wid != null and wid != ''">
+                wid = #{wid},
             </if>
         </set>
         where sid = #{sid}

@@ -48,11 +48,11 @@
 							<i class="layui-icon"></i>批量删除
 						</button>
 						<button class="layui-btn" 
-							onclick="xadmin.open('添加用户','/clientele-add.html',451,560)">
+							onclick="xadmin.open('添加客户','/clientele-add.html',451,520)">
 							<i class="layui-icon" ></i>添加
 						</button>
 						<button class="layui-btn"
-							onclick="xadmin.open('客户类别','/clientele-sort-list.html',900,800)">
+							onclick="xadmin.open('客户类别','/clientele-sort-list.html',900,600)">
 							<i class="layui-icon"></i>客户类别
 						</button>
 					</div>
@@ -75,18 +75,18 @@
 							</thead>
 							<tbody id="tbody">
 								<tr v-for="kh in search()">
-									<td><input type="checkbox" name="id" value="1" lay-skin="primary"></td>
+									<td><input type="checkbox" lay-filter="checkall" name="id" value="1" lay-skin="primary"></td>
 									<td>{{kh.id}}</td>
 									<td>{{kh.grade}}</td>
 									<td>{{kh.name}}</td>
-									<td>{{kh.cid}}</td>
+									<td>{{kh.cType}}</td>
 									<td>{{kh.sell}}</td>
 									<td>{{kh.contact}}</td>
 									<td>{{kh.mobilePhone}}</td>
 									<td>{{kh.address}}</td>
 									<td class="td-manage">
-										<a title="编辑"  onclick="xadmin.open('编辑','clientele-edit.html',451,560)" 
-											@click.prevent="loadKehu(kh.id)" href="javascript:;"> <i class="layui-icon">&#xe642;</i>
+										<a title="编辑"  onclick="xadmin.open('编辑客户','clientele-edit.html',451,520)" 
+											@click.prevent="loadupdate(kh)" href="javascript:;"> <i class="layui-icon">&#xe642;</i>
 										</a> 
 										<a title="删除"  onclick="member_del(this,'要删除的id')"
 											@click.prevent="del(kh.id)" href="javascript:;"> <i class="layui-icon">&#xe640;</i>
@@ -115,10 +115,12 @@
 
 
 </body>
+
 	<script type="text/javascript" src="/js/axios.min.js"></script>
 	<script type="text/javascript" src="/js/vue-2.4.0.js"></script>
 	<script type="text/javascript" src="/js/qs.min.js"></script>
 	<script>
+	var data_kh=null;
 			var vm=new Vue({
 				el:'#app',
 				data:{
@@ -133,7 +135,7 @@
 					getAllKehu(){
 	                	var data=  Qs.stringify({"id":this.id});
 						//发送异步请求，请求后端控制器，获取所有的客户信息
-						axios.get("kehu/queryAll").then(res=>{
+						axios.post("kehu/queryAll").then(res=>{
 							this.list=res.data.data;
 							//alert(res.data.data);
 						}).catch(err=>{
@@ -144,7 +146,7 @@
 					del(id){  
 						//var queren = confirm("确认要删除吗?")
 						//if(queren){
-							axios.get("kehu/deleteById?id="+id).then(res=>{
+							axios.post("kehu/deleteById?id="+id).then(res=>{
 								if(res.data="成功"){
 									//alert("删除成功")
 								}
@@ -163,40 +165,16 @@
 						//alert(newList.length)
 						return newList;
 					},
-					/* //添加
-					query(){
-						var data = {grade:this.grade,name:this.name,cid:this.cid,sell:this.sell,contact:this.contact,mobilePhone:this.mobilePhone,address:this.address}
-						axios.post("kehu/insertKehu",data).then(res=>{
-							this.list=res.data
-						}).catch(err=>{
-							console.log("请求失败")
-						})
-					}, */
-					//修改信息前加载信息
-					loadKehu(id){
-						axios.get("kehu/queryById?id="+id).then(res=>{
-							this.list = res.data
-							console.log(res.data)
-							//alert(id)
-						}).catch(err=>{
-							alert('请求失败')
-						})
-					},
-					/* //修改信息
-					updateKehu(){
-						axios.post("kehu/selectAll",this.member).then(res=>{
-							if(res.data=="成功"){
-								alert('修改成功')
-								this.getAllKehu();
-							}else{
-								alert('出错了,修改失败 ');
-							}
-					}).catch(err=>{
-						alert('请求失败')
-					})
-				   }  */
+					 loadupdate(kh) {
+						data_kh=kh;
+					}
 				}
 			})
+			
+			function loadupdate() {
+				var kh=data_kh;
+			 return kh;
+			}
 		</script>
 
 	<script>
@@ -231,7 +209,7 @@
         });
      </script>
 
-<script>
+    <script>
       layui.use(['laydate','form'], function(){
         var laydate = layui.laydate;
         var  form = layui.form;
@@ -313,4 +291,6 @@
         });
       }
     </script>
+
+
 </html>

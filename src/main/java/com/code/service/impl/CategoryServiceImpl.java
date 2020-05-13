@@ -33,13 +33,18 @@ public class CategoryServiceImpl implements CategoryService {
     /**
      * 查询多条数据
      *
-     * @param 
-     * @param 
+     * @param
+     * @param
      * @return 对象列表
      */
     @Override
     public List<Category> selectAll(){
         return this.categoryDao.selectAll();
+    }
+
+    @Override
+    public List<Category> selectAllWithKehu() {
+        return this.categoryDao.selectAllWithKehu();
     }
 
     /**

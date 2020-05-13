@@ -17,7 +17,7 @@ public interface HuiyuanService {
      * @param hyid 主键
      * @return 实例对象
      */
-    Huiyuan queryById(String hyid);
+    Huiyuan queryById(int hyid);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface HuiyuanService {
      * @param huiyuan 实例对象
      * @return 实例对象
      */
-    Huiyuan insert(Huiyuan huiyuan);
+    int insert(Huiyuan huiyuan);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,7 +50,7 @@ public interface HuiyuanService {
      * @param huiyuan 实例对象
      * @return 实例对象
      */
-    Huiyuan update(Huiyuan huiyuan);
+    int update(Huiyuan huiyuan);
 
     /**
      * 通过主键删除数据
@@ -58,6 +58,6 @@ public interface HuiyuanService {
      * @param hyid 主键
      * @return 是否成功
      */
-    boolean deleteById(String hyid);
+    int deleteById(int hyid);
 
 }

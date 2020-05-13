@@ -22,12 +22,13 @@ public interface CategoryService {
     /**
      * 查询多条数据
      *
-     * @param 
+     * @param
      * @param
      * @return 对象列表
      */
     List<Category>selectAll();
 
+    List<Category> selectAllWithKehu();
     /**
      * 新增数据
      *

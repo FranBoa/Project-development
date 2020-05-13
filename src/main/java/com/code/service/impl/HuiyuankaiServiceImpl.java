@@ -22,12 +22,12 @@ public class HuiyuankaiServiceImpl implements HuiyuankaiService {
     /**
      * 通过ID查询单条数据
      *
-     * @param hykkh 主键
+     * @param hid 主键
      * @return 实例对象
      */
     @Override
-    public Huiyuankai queryById(String hykkh) {
-        return this.huiyuankaiDao.queryById(hykkh);
+    public Huiyuankai queryById(int hid) {
+        return this.huiyuankaiDao.queryById(hid);
     }
 
     /**
@@ -60,9 +60,8 @@ public class HuiyuankaiServiceImpl implements HuiyuankaiService {
      * @return 实例对象
      */
     @Override
-    public Huiyuankai insert(Huiyuankai huiyuankai) {
-        this.huiyuankaiDao.insert(huiyuankai);
-        return huiyuankai;
+    public int insert(Huiyuankai huiyuankai) {
+        return this.huiyuankaiDao.insert(huiyuankai);
     }
 
     /**
@@ -72,19 +71,18 @@ public class HuiyuankaiServiceImpl implements HuiyuankaiService {
      * @return 实例对象
      */
     @Override
-    public Huiyuankai update(Huiyuankai huiyuankai) {
-        this.huiyuankaiDao.update(huiyuankai);
-        return this.queryById(huiyuankai.getHykkh());
+    public int update(Huiyuankai huiyuankai) {
+        return this.huiyuankaiDao.update(huiyuankai);
     }
 
     /**
      * 通过主键删除数据
      *
-     * @param hykkh 主键
+     * @param hid 主键
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String hykkh) {
-        return this.huiyuankaiDao.deleteById(hykkh) > 0;
+    public int deleteById(int hid) {
+        return this.huiyuankaiDao.deleteById(hid);
     }
 }

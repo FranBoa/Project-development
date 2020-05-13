@@ -30,11 +30,16 @@ public class KehuServiceImpl implements KehuService {
         return this.kehuDao.queryById(id);
     }
 
+    @Override
+    public List<Kehu> queryBycId(Integer cid) {
+        return this.kehuDao.queryBycId(cid);
+    }
+
     /**
      * 查询多条数据
      *
-     * @param 
-     * @param 
+     * @param
+     * @param
      * @return 对象列表
      */
     @Override

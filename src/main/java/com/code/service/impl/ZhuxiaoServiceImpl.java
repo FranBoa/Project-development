@@ -22,12 +22,12 @@ public class ZhuxiaoServiceImpl implements ZhuxiaoService {
     /**
      * 通过ID查询单条数据
      *
-     * @param hykkh 主键
+     * @param zid 主键
      * @return 实例对象
      */
     @Override
-    public Zhuxiao queryById(String hykkh) {
-        return this.zhuxiaoDao.queryById(hykkh);
+    public Zhuxiao queryById(int zid) {
+        return this.zhuxiaoDao.queryById(zid);
     }
 
     /**
@@ -60,9 +60,8 @@ public class ZhuxiaoServiceImpl implements ZhuxiaoService {
      * @return 实例对象
      */
     @Override
-    public Zhuxiao insert(Zhuxiao zhuxiao) {
-        this.zhuxiaoDao.insert(zhuxiao);
-        return zhuxiao;
+    public int insert(Zhuxiao zhuxiao) {
+        return this.zhuxiaoDao.insert(zhuxiao);
     }
 
     /**
@@ -72,19 +71,18 @@ public class ZhuxiaoServiceImpl implements ZhuxiaoService {
      * @return 实例对象
      */
     @Override
-    public Zhuxiao update(Zhuxiao zhuxiao) {
-        this.zhuxiaoDao.update(zhuxiao);
-        return this.queryById(zhuxiao.getHykkh());
+    public int update(Zhuxiao zhuxiao) {
+        return this.zhuxiaoDao.update(zhuxiao);
     }
 
     /**
      * 通过主键删除数据
      *
-     * @param hykkh 主键
+     * @param zid 主键
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String hykkh) {
-        return this.zhuxiaoDao.deleteById(hykkh) > 0;
+    public int deleteById(int zid) {
+        return this.zhuxiaoDao.deleteById(zid);
     }
 }

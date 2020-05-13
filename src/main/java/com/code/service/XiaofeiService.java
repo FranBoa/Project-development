@@ -14,10 +14,10 @@ public interface XiaofeiService {
     /**
      * 通过ID查询单条数据
      *
-     * @param hykid 主键
+     * @param xid 主键
      * @return 实例对象
      */
-    Xiaofei queryById(String hykid);
+    Xiaofei queryById(int xid);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface XiaofeiService {
      * @param xiaofei 实例对象
      * @return 实例对象
      */
-    Xiaofei insert(Xiaofei xiaofei);
+    int insert(Xiaofei xiaofei);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,14 +50,14 @@ public interface XiaofeiService {
      * @param xiaofei 实例对象
      * @return 实例对象
      */
-    Xiaofei update(Xiaofei xiaofei);
+    int update(Xiaofei xiaofei);
 
     /**
      * 通过主键删除数据
      *
-     * @param hykid 主键
+     * @param xid 主键
      * @return 是否成功
      */
-    boolean deleteById(String hykid);
+    int deleteById(int xid);
 
 }

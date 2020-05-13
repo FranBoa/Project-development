@@ -59,6 +59,7 @@ public class RelatedsaleandorderController {
         public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder,int pageNum, int pageSize){
             Map<String,Object> map = new HashMap<>();
             PageInfo<Relatedsaleandorder> pageInfo = this.relatedsaleandorderService.queryAllforPage(pageNum,pageSize,relatedsaleandorder);
+            System.out.println(pageInfo);
             map.put("data",pageInfo.getList());
             map.put("code",0);
             map.put("count",pageInfo.getTotal());

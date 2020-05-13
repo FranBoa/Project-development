@@ -161,10 +161,18 @@
             })
         </script>
     <script type="text/html" id="warehouse">
+        {{#  if(d.warehouses==null||d.warehouses.length==0){ }}
+        {{'仓库存不存在'}}
+        {{#  } else { }}
         {{d.warehouses[0].wname}}
+        {{#  } }}
     </script>
     <script type="text/html" id="producttype">
+        {{#  if(d.producttypes==null||d.producttypes.length==0){ }}
+        {{'类型存不存在'}}
+        {{#  } else { }}
         {{d.producttypes[0].producttypename}}
+        {{#  } }}
 </script>
     <script type="text/html" id="RMB">
         {{d.pbprice+'￥'}}
@@ -193,11 +201,7 @@
 
             }
         });
-        var cacheData=null;
-        function child(obj,obj2){
-            viframe1.$data.ordernumber=obj;
-            cacheData=obj2;
-        }
+
         var proid="";
         //记录选中的数据:做缓存使用,作为参数传递给后台,然后生成pdf ,压缩
         var ids =new Array()
@@ -209,7 +213,7 @@
             base: 'module/'
         }).extend({
             treeTable: 'treetable-lay/treetable'
-        }).use(['table', 'treeTable'], function () {
+            }).use(['table', 'treeTable'], function () {
             var $ = layui.jquery;
             var table = layui.table;
             var treetable = layui.treeTable;
@@ -264,7 +268,6 @@
                     reloadtable(producttypeid,producttypeids);
                 }
             });
-
 
             // 发送type查询
             function reloadtable(producttypeid,producttypeids){
@@ -491,44 +494,49 @@
 
 
 
-
+                var cacheData=null;
+                function child(obj,obj2){
+                    viframe1.$data.ordernumber=obj;
+                    cacheData=obj2;
+                }
                 //监听提交
                 form.on('submit(add)', function(data) {
                        // if (data.field.title==null||data.field.title==''){
                        //     layer.alert("地址不能为空！",{icon: 5});
                        //     return  false;
                        // }
+
+                    cacheData=parent.sendData();
                     if (cacheData!=null){
-                        for(var i=0;i<parent_data.length;i++){
-                            var pid=parent_data[i].pid;
-                            var total=0;
-                            for (var j=0;j<cacheData.length;j++){
-                                if (cacheData[j].pid==pid){
-                                    total+=cacheData[j].count==null||cacheData[j].count==''?1:cacheData[j].count*1;
+                        for(var i=0;i<parent_data.length;i++) {
+                            if (parent_data[i].warenum != 0) {
+                            var pid = parent_data[i].pid;
+                            var total = 0;
+                            for (var j = 0; j < cacheData.length; j++) {
+                                if (cacheData[j].pid == pid) {
+                                    total += cacheData[j].count == null || cacheData[j].count == '' ? 1 : cacheData[j].count * 1;
                                     console.log(cacheData[j].count);
                                     console.log(total);
-                                    if (j==cacheData.length-1){
-                                        if (total==cacheData[j].warenum){
+                                    if (j == cacheData.length - 1) {
+                                        if (total == cacheData[j].warenum) {
                                             parent_data.remove(i);
                                         }
-                                }else if (cacheData[j].pid==parent_data[i].pid){
-                                        if(cacheData[j].count==cacheData[j].warenum||cacheData[j].warenum<=1){
+                                    } else if (cacheData[j].pid == parent_data[i].pid) {
+                                        if (cacheData[j].count == cacheData[j].warenum || cacheData[j].warenum <= 1) {
                                             parent_data.remove(i);
                                         }
-                                    }else{
+                                    } else {
                                         layer.msg('增加失败!');
                                     }
                                 }
-
-
-
                             }
+                        }else parent_data.remove(i);
                         }
                     }
-
                     layer.msg('增加成功!');
-                    parent.GetValue(parent_data,data.field,ids); //GetValue是父界面的Js 方法
+
                     cacheData=parent.sendData();
+                    parent.GetValue(parent_data,data.field,ids); //GetValue是父界面的Js 方法
                         return false;
                     });
 

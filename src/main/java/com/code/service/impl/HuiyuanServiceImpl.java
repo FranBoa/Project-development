@@ -26,7 +26,7 @@ public class HuiyuanServiceImpl implements HuiyuanService {
      * @return 实例对象
      */
     @Override
-    public Huiyuan queryById(String hyid) {
+    public Huiyuan queryById(int hyid) {
         return this.huiyuanDao.queryById(hyid);
     }
 
@@ -60,9 +60,8 @@ public class HuiyuanServiceImpl implements HuiyuanService {
      * @return 实例对象
      */
     @Override
-    public Huiyuan insert(Huiyuan huiyuan) {
-        this.huiyuanDao.insert(huiyuan);
-        return huiyuan;
+    public int insert(Huiyuan huiyuan) {
+        return this.huiyuanDao.insert(huiyuan);
     }
 
     /**
@@ -72,9 +71,8 @@ public class HuiyuanServiceImpl implements HuiyuanService {
      * @return 实例对象
      */
     @Override
-    public Huiyuan update(Huiyuan huiyuan) {
-        this.huiyuanDao.update(huiyuan);
-        return this.queryById(huiyuan.getHyid());
+    public int update(Huiyuan huiyuan) {
+        return this.huiyuanDao.update(huiyuan);
     }
 
     /**
@@ -84,7 +82,7 @@ public class HuiyuanServiceImpl implements HuiyuanService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String hyid) {
-        return this.huiyuanDao.deleteById(hyid) > 0;
+    public int deleteById(int hyid) {
+        return this.huiyuanDao.deleteById(hyid);
     }
 }

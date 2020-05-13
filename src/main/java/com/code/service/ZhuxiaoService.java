@@ -14,10 +14,10 @@ public interface ZhuxiaoService {
     /**
      * 通过ID查询单条数据
      *
-     * @param hykkh 主键
+     * @param zid 主键
      * @return 实例对象
      */
-    Zhuxiao queryById(String hykkh);
+    Zhuxiao queryById(int zid);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface ZhuxiaoService {
      * @param zhuxiao 实例对象
      * @return 实例对象
      */
-    Zhuxiao insert(Zhuxiao zhuxiao);
+    int insert(Zhuxiao zhuxiao);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,14 +50,14 @@ public interface ZhuxiaoService {
      * @param zhuxiao 实例对象
      * @return 实例对象
      */
-    Zhuxiao update(Zhuxiao zhuxiao);
+    int update(Zhuxiao zhuxiao);
 
     /**
      * 通过主键删除数据
      *
-     * @param hykkh 主键
+     * @param zid 主键
      * @return 是否成功
      */
-    boolean deleteById(String hykkh);
+    int deleteById(int zid);
 
 }
