@@ -23,15 +23,9 @@
                     
                     <div class="layui-form-item">
                         <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>类别编号</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="cid" required=""  autocomplete="off" class="layui-input"></div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
                             <span class="x-red">*</span>类别名称</label>
                         <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="NAME" required=""  autocomplete="off" class="layui-input"></div>
+                            <input type="text" id="L_username" name="cType" required=""  autocomplete="off" class="layui-input"></div>
                     </div>
                     
                     <div class="layui-form-item">
@@ -61,24 +55,27 @@
                     }
                 });
 
-                //监听提交
-                form.on('submit(add)',
-                function(data) {
-                    console.log(data);
-                    //发异步，把数据提交给php
-                    layer.alert("增加成功", {
-                        icon: 6
-                    },
-                    function() {
-                        // 获得frame索引
-                        var index = parent.layer.getFrameIndex(window.name);
-                        //关闭当前frame
-                        parent.layer.close(index);
-                    });
-                    return false;
-                });
+              //监听提交
+    			form.on("submit(add)", function(data) {
+    				$.post("category/updateKehuSort", data.field, function(data) {
+    					//top.layer.msg("1");
+    					if (data == "1") {
+    						setTimeout(function() {
+    							top.layer.msg("操作成功！");
+    							layer.closeAll("iframe");
+    							//刷新父页面
+    							parent.location.reload();
+    						}, 1000);
+    					} else {
+    						top.layer.msg("操作失败！");
+    					}
+    				});
 
-            });</script>
+    				return false;
+    			})
+
+    		});
+        </script>
         <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
                 hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";

@@ -9,91 +9,114 @@ import java.io.Serializable;
  * @since 2020-04-19 02:16:39
  */
 public class Huiyuan implements Serializable {
-    private static final long serialVersionUID = -49255712788664475L;
-    /**
-    * 会员编号，主键
-    */
-    private String hyid;
-    /**
-    * 会员卡号，外键
-    */
-    private String hykh;
-    /**
-    * 姓名
-    */
-    private String hyname;
-    /**
-    * 性别
-    */
-    private String hysex;
-    /**
-    * 年龄
-    */
-    private Integer hyage;
-    /**
-    * 工作单位
-    */
-    private String hydanwei;
-    /**
-    * 联系方式
-    */
-    private String hylianxi;
+	private static final long serialVersionUID = -49255712788664475L;
+	/**
+	 * 会员编号，主键
+	 */
+	private int hyid;
+	/**
+	 * 会员卡号，外键
+	 */
+	private String hykh;
+	/**
+	 * 密码
+	 */
+	private String pwd;
+	/**
+	 * 确认密码
+	 */
+	private String repass;
+	/**
+	 * 姓名
+	 */
+	private String hyname;
+	/**
+	 * 性别
+	 */
+	private String hysex;
+	/**
+	 * 年龄
+	 */
+	private Integer hyage;
+	/**
+	 * 工作单位
+	 */
+	private String hydanwei;
+	/**
+	 * 联系方式
+	 */
+	private String hylianxi;
 
+	public String getPwd() {
+		return pwd;
+	}
 
-    public String getHyid() {
-        return hyid;
-    }
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
 
-    public void setHyid(String hyid) {
-        this.hyid = hyid;
-    }
+	public String getRepass() {
+		return repass;
+	}
 
-    public String getHykh() {
-        return hykh;
-    }
+	public void setRepass(String repass) {
+		this.repass = repass;
+	}
 
-    public void setHykh(String hykh) {
-        this.hykh = hykh;
-    }
+	public int getHyid() {
+		return hyid;
+	}
 
-    public String getHyname() {
-        return hyname;
-    }
+	public void setHyid(int hyid) {
+		this.hyid = hyid;
+	}
 
-    public void setHyname(String hyname) {
-        this.hyname = hyname;
-    }
+	public String getHykh() {
+		return hykh;
+	}
 
-    public String getHysex() {
-        return hysex;
-    }
+	public void setHykh(String hykh) {
+		this.hykh = hykh;
+	}
 
-    public void setHysex(String hysex) {
-        this.hysex = hysex;
-    }
+	public String getHyname() {
+		return hyname;
+	}
 
-    public Integer getHyage() {
-        return hyage;
-    }
+	public void setHyname(String hyname) {
+		this.hyname = hyname;
+	}
 
-    public void setHyage(Integer hyage) {
-        this.hyage = hyage;
-    }
+	public String getHysex() {
+		return hysex;
+	}
 
-    public String getHydanwei() {
-        return hydanwei;
-    }
+	public void setHysex(String hysex) {
+		this.hysex = hysex;
+	}
 
-    public void setHydanwei(String hydanwei) {
-        this.hydanwei = hydanwei;
-    }
+	public Integer getHyage() {
+		return hyage;
+	}
 
-    public String getHylianxi() {
-        return hylianxi;
-    }
+	public void setHyage(Integer hyage) {
+		this.hyage = hyage;
+	}
 
-    public void setHylianxi(String hylianxi) {
-        this.hylianxi = hylianxi;
-    }
+	public String getHydanwei() {
+		return hydanwei;
+	}
+
+	public void setHydanwei(String hydanwei) {
+		this.hydanwei = hydanwei;
+	}
+
+	public String getHylianxi() {
+		return hylianxi;
+	}
+
+	public void setHylianxi(String hylianxi) {
+		this.hylianxi = hylianxi;
+	}
 
 }

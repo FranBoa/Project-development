@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="x-admin-sm">
-
     <head>
         <meta charset="UTF-8">
         <title>欢迎页面-X-admin2.2</title>
@@ -10,6 +9,7 @@
         <link rel="stylesheet" href="/css/font.css">
         <link rel="stylesheet" href="/css/xadmin.css">
         <script src="/js/jquery.min.js"></script>
+        <script src="/lib/layui/layui.all.js"></script>
         <script src="/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/js/xadmin.js"></script>
     </head>
@@ -61,6 +61,13 @@
                                             </div>
 
 
+                                            <div class="layui-form-item">
+                                                <label class="layui-form-label">收货人</label>
+                                                <div>
+                                                    <div id="kehuid"></div>
+                                                </div>
+                                                </div>
+
 
                                             <div class="layui-form-item">
 
@@ -101,12 +108,12 @@
                                 <div class="layui-inline layui-show-xs-block">
                                     <input class="layui-input" autocomplete="off" placeholder="开始日" name="start" id="start1"></div>
                                 <div class="layui-inline layui-show-xs-block">
-                                    <input class="layui-input" autocomplete="off" placeholder="截止日" name="end" id="end1"></div>
-                                <div class="layui-inline layui-show-xs-block">
+z                                <div class="layui-inline layui-show-xs-block">
                                     <input type="text" name="username" placeholder="请输入用户名"  autocomplete="off" class="layui-input"></div>
                                 <div class="layui-inline layui-show-xs-block">
                                     <button class="layui-btn" lay-submit="" lay-filter="sreach">
                                         <i class="layui-icon">&#xe615;</i></button>
+                                </div>
                                 </div>
                             </form>
                         </div>
@@ -208,110 +215,8 @@
     <script src="/js/vue-2.4.0.js"></script>
     <script src="/js/axios.min.js"></script>
     <script src="/js/qs.min.js"></script>
-    <script  name="VUE-VM">
-        var vm=new Vue({
-            el:"#xx",
-            data:{list:[], list2:[], orderId:null, pageNum:1, pageSize:5, count:null},
-            methods:{
-                sendMessage(){
-                    var data=  Qs.stringify({"ordernumber":this.orderId,"pageNum":this.pageNum,"pageSize":this.pageSize});
-                    axios.post('relatedsaleandorder/queryAll',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
-                        this.list=res.data.data;
-                        console.log(this.list);
-                        this.count=res.data.count;
-                        var count=this.count;
-                        layui.use('laypage', function(){
-                            var laypage = layui.laypage;
-                            //执行一个laypage实例
-                            laypage.render({
-                                elem: 'page1' //注意，这里的 test1 是 ID，不用加 # 号
-                                ,count: vm.$data.count//数据总数，从服务端得到
-                                ,limit:vm.$data.pageSize
-                                ,limits:[5,10,20,40]
-                                ,theme: '#1E9FFF'
-                                ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
-                                ,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
-                                ,hash: 'fenye' //自定义hash值
-                                ,jump: function(obj, first){
-                                    //obj包含了当前分页的所有参数，比如
-                                    //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
-                                    //得到每页显示的条数
-                                    //首次不执行
-                                    if(!first){
-
-                                        console.log(obj.limit);
-                                        $.ajax({
-                                            url:"relatedsaleandorder/queryAll",
-                                            data:{"ordernumber":vm.$data.orderId,"pageNum":obj.curr,"pageSize":obj.limit},
-                                            type:"post",
-                                            async: false,
-                                            traditional:true,
-                                            success:function(data){
-                                                //layer.msg(data);
-                                                vm.$data.list=data.data;
-                                                vm.$data.count=data.count;
-                                                //location.reload(); //删除成功后再刷新
-                                            },
-                                            error:function(data){
-                                            }
-                                        });
-                                    }
-                                }
-                            });
-                        });
-                    }).catch(err=>{
-                        alert('请求失败')
-                    })
-                }
-            },
-            mounted(){
-
-             },
-            created(){
-
-            },
-            beforeUpdate:function(){
-
-            },
-            updated:function() {
-
-                layui.use('laypage', function(){
-                    var laypage = layui.laypage;
-                    laypage.render();
-                });
-                layui.use('form', function () {
-                    var form = layui.form;
-                    form.render();
-                });
-                layui.use('table', function () {
-                    var table = layui.table;
-                    table.render();
-                });
-            },
-            filters: {
-                RMB: function (value) {
-                    return value + '￥';
-                }
-            }
-        });
 
 
-
-
-    </script>
-    <script name="VUE-V1">
-        var v1=new Vue({
-            el:"#v1",
-            data:{
-                list:[],
-            },
-            mounted(){
-            }
-        });
-    </script>
-    <script>
-
-    </script>
     <script type="text/html" id="orderTemp">
         {{#  if(d.status === '未出库'){ }}
         <span style="color: #eb7cab;">{{ d.status }}</span>
@@ -331,9 +236,13 @@
         {{d.stotal+'￥'}}
     </script>
     <script type="text/html" id="warehouse">
+        {{#  if(d.warehouses==null||d.warehouses.length==0){ }}
+        {{'仓库存不存在'}}
+        {{#  } else { }}
         {{d.warehouses[0].wname}}
+        {{#  } }}
     </script>
-    <script type="text/html" id="producttype">
+    <script type="text/html"id="producttype">
         {{d.producttypes[0].producttypename}}
     </script>
     <script type="text/html" id="RMB1">
@@ -433,21 +342,479 @@
         {{#  } }}
         {{#  } }}
     </script>
+    <script name="InfiniteSelect">
+        layui.config({
+            base: 'module/',
+            base2:'/'
+        }).extend({
+            selectN: 'selectNM/selectN',
+            selectM: 'selectNM/selectM',
+        }).use(['jquery','selectN','selectM','form'],function () {
+            $ = layui.jquery;
+            var selectN = layui.selectN
+                ,selectM = layui.selectM;
 
+            var form=layui.form;
+
+            var kehudata=getkehu();
+            //无限级分类-基本配置
+            var catIns1 = selectN({
+                //元素容器【必填】
+                elem: '#kehuid'
+                ,search:true
+                //候选数据【必填】
+                ,data:"category/selectAllWithKehu"
+                ,last:true
+                ,field:{idName:'cid',titleName:'name',childName:'children'}
+            });
+
+            form.on('submit(demo1)',function (data) {
+                var arr=layui.table.cache["addgoods"];
+                //    console.log(arr);
+                var val=new Array();
+                //var selected=catIns1.selected; //lastName lastValue
+                var formdata=data.field;
+
+                console.log(formdata);
+                if (data.field.kehuid==''||data.field.kehuid==null){
+                    layer.msg("请选择客户！！");
+                    return  false;
+                }
+                if (arr==null||arr==''){
+                    layer.msg("请添加商品！");
+                    return  false;
+                }
+                for (var i=0;i<arr.length;i++){
+                    var address=arr[i].address[0].province+''+arr[i].address[0].city+''+arr[i].address[0].county+''+arr[i].address[0].title;
+                    val.push({"rname":arr[i].pname,"sprice":arr[i].psprice,"stotal":arr[i].total,"tax":arr[i].tax,
+                        "sdiscount":arr[i].discount,"paymethod":formdata.pay,"remarks":arr[i].details,"wid":arr[i].warehouse,"address":address,"scount":arr[i].count});
+                }
+                var xx={
+                    "data":val,
+                    "formdata":formdata
+                }
+                console.log(xx);
+
+                return false;
+            });
+
+        });
+
+
+        function getkehu() {
+            var alldata=null;
+            $.ajax({
+                url:"category/selectAllWithKehu",
+                type:'get',
+                success:function(res){
+                    var data = res;
+                    console.log(data);
+                    // for(var i in data){
+                    //     data[i].value = data[i].cid;
+                    //     data[i].label = data[i].cType;
+                    //     delete data[i].cid;
+                    //     delete data[i].cType;
+                    //     data[i].hasChild = true;
+                    // }
+                    alldata=data;
+                }
+
+            });
+            return alldata;
+        }
+
+        function openAdd() {
+            if (vm.$data.orderId!=null){
+                layer.open({
+                    type: 2,
+                    closeBtn:2,
+                    shadeClose:true,
+                    title: "计划商品添加",
+
+                    area: ['900px', '800px'],
+                    anim: 2,
+                    content: ['/SaleAndOrder-add.html'],
+                    success: function (layero, index) {
+                        var iframe = window['layui-layer-iframe' + index];//拿到iframe元素
+                        iframe.child(vm.$data.orderId);
+                        //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
+                    }
+                });
+            }else {
+                layer.msg("请选择一个计划订单！");
+            }
+        }
+        function openAdd2() {
+            layer.open({
+                type: 2,
+                title: "计划订单添加",
+                shade: 0.4,
+                maxmin: true,
+                area: ['1300px', '820px'],
+                anim: 2,
+                content: ['/SaleAndOrder-add2.html'],
+                success: function (layero, index) {
+                    var   iframe = window['layui-layer-iframe' + index];//拿到iframe元素
+                    var cacheData=xx;
+                    iframe.child(vm.$data.orderId,cacheData);
+                    //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
+                }
+            });
+        }
+        function sendData() {
+
+            return xx;
+        }
+    </script>
+    <script>layui.use('table',
+        function() {
+            var table = layui.table;
+            //监听单元格编辑
+
+
+            table.on('edit(test)',
+                function(obj) {
+                    var value = obj.value //得到修改后的值
+                        ,
+                        data = obj.data //得到所在行所有键值
+                        ,
+                        field = obj.field; //得到字段
+                    layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+                });
+
+            //监听行单击事件（双击事件为：rowDouble）
+            table.on('row(test)', function(obj){
+                var data = obj.data.ordernumber;
+                vm.$data.orderId=data;
+                vm.sendMessage();
+
+                // layer.alert(JSON.stringify(data), {
+                //     title: '当前行数据：'
+                // });
+
+                //标注选中样式
+                obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+            });
+
+            //头工具栏事件
+            table.on('toolbar(test)',
+                function(obj) {
+                    var checkStatus = table.checkStatus(obj.config.id);
+                    switch (obj.event) {
+                        case 'getCheckData':
+                            var data = checkStatus.data;
+                            layer.alert(JSON.stringify(data));
+                            break;
+                        case 'getCheckLength':
+                            var data = checkStatus.data;
+                            layer.msg('选中了：' + data.length + ' 个');
+                            break;
+                        case 'isAll':
+                            layer.msg(checkStatus.isAll ? '全选': '未全选');
+                            break;
+                        case 'delAny':
+                            //var data=checkStatus.data[1].sid;
+                            var sid=new Array();
+                            var ordernumber=new Array();
+                            if (checkStatus.data.length==0)return false;
+                            for (var i=0;i<checkStatus.data.length;i++){
+                                var data=checkStatus.data[i].sid;
+                                var data2=checkStatus.data[i].ordernumber;
+                                sid.push(data);
+                                ordernumber.push(data2);
+                            }
+                            //var sid=JSON.stringify(sid);
+                            $.ajax({
+                                url:"saleandorder/del",
+                                data:{sid:sid,ordernumber:ordernumber},
+                                type:"post",
+                                traditional:true,
+                                success:function(data){
+                                    if (data.code==0){
+                                        layer.msg(data.result, {time: 5000, icon:6});
+                                    }else{
+                                        layer.msg(data.result, {time: 5000, icon:5});
+                                    }
+
+                                    //location.reload(); //删除成功后再刷新
+                                },
+                                error:function(data){
+                                    layer.msg('錯誤！', {time: 5000, icon:6});
+                                }
+                            });
+                            break;
+                    };
+                });
+        });
+
+
+
+
+    </script>
+    <script>
+        layui.use(['laydate', 'form'],function() {
+            var laydate = layui.laydate;
+            var  form = layui.form;
+            $ = layui.$;
+
+            // 监听全选
+            form.on('checkbox(checkall)', function(data){
+                if(data.elem.checked){
+                    $('#tbody input').prop('checked',true);
+                }else{
+                    $('#tbody input').prop('checked',false);
+                }
+                form.render('checkbox');
+
+            });
+
+
+           form.on('submit(del)',function(data){
+               //将页面全部复选框选中的值拼接到一个数组中
+               var box = [];
+               $('#tbody input[type=checkbox]:checked').each(function() {
+                   box.push($(this).val());
+               });
+               if (box.length==0)return false;
+               //数组
+               console.log(box);
+               $.ajax({
+                   url:"relatedsaleandorder/del",
+                   data:{"sid":box},
+                   type:"post",
+                   traditional:true,
+                   success:function(data){
+                       if (data.code==0){
+                           layer.msg(data.result, {time: 5000, icon:6});
+                       }else{
+                           layer.msg(data.result, {time: 5000, icon:5});
+                       }
+                       //location.reload(); //删除成功后再刷新
+                   },
+                   error:function(data){
+
+                   }
+               });
+               return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+
+
+
+
+
+
+        /*用户-停用*/
+        function member_stop(obj, id) {
+            layer.confirm('确认要停用吗？',
+            function(index) {
+                if ($(obj).attr('title') == '启用') {
+                    //发异步把用户状态进行更改
+                    $(obj).attr('title', '停用');
+                    $(obj).find('i').html('&#xe62f;');
+                    $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
+                    layer.msg('已停用!', {
+                        icon: 5,
+                        time: 1000
+                    });
+                } else {
+                    $(obj).attr('title', '启用');
+                    $(obj).find('i').html('&#xe601;');
+                    $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
+                    layer.msg('已启用!', {
+                        icon: 5,
+                        time: 1000
+                    });
+                }
+
+            });
+        }
+
+        /*用户-删除*/
+        function member_del(obj, id) {
+            layer.confirm('确认要删除吗？',
+            function(index) {
+                //发异步删除数据
+                $(obj).parents("tr").remove();
+                layer.msg('已删除!', {
+                    icon: 1,
+                    time: 1000
+                });
+            });
+        }
+
+        });
+      </script>
+    <script>
+        layui.use(['layer', 'layarea'], function() {
+            var layer = layui.layer,
+                layarea = layui.layarea;
+
+            layarea.render({
+                elem: '#area-picker',
+                data: {
+                    province: '湖南省',
+                    city: '长沙市',
+                    county: '岳麓区',
+                },
+                change: function (res) {
+                    //选择结果
+                    console.log(res);
+                }
+            });
+        })
+    </script>
+    <script type="text/html" id="toolbarDemo">
+        <div class = "layui-btn-container" >
+            <button class="layui-btn-danger layui-btn layui-btn-sm" lay-event="delAny"> <i class="layui-icon"></i>批量删除</button></button>
+            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" >添加计划订单</button>
+<!--            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>-->
+<!--            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >-->
+<!--            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>-->
+        </div >
+    </script>
+    <script>layui.use('laydate',
+        function() {
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start1' //指定元素
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end1' //指定元素
+            });
+
+        });</script>
+    <script  name="VUE-VM">
+        var vm=new Vue({
+            el:"#xx",
+            data:{list:[], list2:[], orderId:null, pageNum:1, pageSize:5, count:null},
+            methods:{
+                sendMessage(){
+                    var data=  Qs.stringify({"ordernumber":this.orderId,"pageNum":this.pageNum,"pageSize":this.pageSize});
+                    axios.post('relatedsaleandorder/queryAll',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
+                        this.list=res.data.data;
+                        console.log(this.list);
+                        this.count=res.data.count;
+                        var count=this.count;
+                        layui.use('laypage', function(){
+                            var laypage = layui.laypage;
+                            //执行一个laypage实例
+                            laypage.render({
+                                elem: 'page1' //注意，这里的 test1 是 ID，不用加 # 号
+                                ,count: vm.$data.count//数据总数，从服务端得到
+                                ,limit:vm.$data.pageSize
+                                ,limits:[5,10,20,40]
+                                ,theme: '#1E9FFF'
+                                ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+                                ,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                                ,hash: 'fenye' //自定义hash值
+                                ,jump: function(obj, first){
+                                    //obj包含了当前分页的所有参数，比如
+                                    //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                    //得到每页显示的条数
+                                    //首次不执行
+                                    if(!first){
+
+                                        console.log(obj.limit);
+                                        $.ajax({
+                                            url:"relatedsaleandorder/queryAll",
+                                            data:{"ordernumber":vm.$data.orderId,"pageNum":obj.curr,"pageSize":obj.limit},
+                                            type:"post",
+                                            async: false,
+                                            traditional:true,
+                                            success:function(data){
+                                                //layer.msg(data);
+                                                vm.$data.list=data.data;
+                                                vm.$data.count=data.count;
+                                                //location.reload(); //删除成功后再刷新
+                                            },
+                                            error:function(data){
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+                        });
+                    }).catch(err=>{
+                        console.log(err);
+                        alert('请求失败')
+                    })
+                }
+            },
+            mounted(){
+
+            },
+            created(){
+
+            },
+            beforeUpdate:function(){
+
+            },
+            updated:function() {
+
+                layui.use('laypage', function(){
+                    var laypage = layui.laypage;
+                    laypage.render();
+                });
+                layui.use('form', function () {
+                    var form = layui.form;
+                    form.render();
+                });
+                layui.use('table', function () {
+                    var table = layui.table;
+                    table.render();
+                });
+            },
+            filters: {
+                RMB: function (value) {
+                    return value + '￥';
+                }
+            }
+        });
+
+
+
+
+    </script>
+    <script name="VUE-V1">
+        var v1=new Vue({
+            el:"#v1",
+            data:{
+                list:[],
+            },
+            mounted(){
+            },
+            methods:{
+                // axios.post('relatedsaleandorder/queryAll',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
+            }
+        });
+    </script>
     <script>
         var xx=new Array();
         function GetValue(obj,datafiled,ids) {
             var datafiled=JSON.stringify(datafiled);
             var leng=xx.length;
             for (var i=0;i<obj.length;i++){
-                    var obj1=JSON.stringify(obj[i]);
-                    var obj2=JSON.parse(obj1.substr(0,obj1.length-1)+",\"address\"" +":"+'['+datafiled+']'+"}");
-                    xx.push(obj2);
+                var obj1=JSON.stringify(obj[i]);
+                var obj2=JSON.parse(obj1.substr(0,obj1.length-1)+",\"address\"" +":"+'['+datafiled+']'+"}");
+                xx.push(obj2);
             }
-           // console.log(xx);
+            // console.log(xx);
             layui.use('table', function(){
                 var table = layui.table;
-
                 //第一个实例
                 var addgoods=table.render({
                     elem: '#addgoods'
@@ -542,16 +909,16 @@
                         ,field = obj.field; //得到字段
                     if (!(/(^[1-9]\d*$)/.test(value))) {
                         if (field == 'count') {
-                                obj.update({
-                                    count: 1
-                                });
+                            obj.update({
+                                count: 1
+                            });
                             addgoods.reload()
                             return false;
                         } else {
                             obj.update({
                                 count: 0
                             })
-                            addgoods.reload()
+                            addgoods.reload();
                             return false;
                         }
                     }
@@ -580,10 +947,10 @@
                                 }else{
                                     Differencevalue+=val[i].count*1;
                                 }
-                                }
+                            }
 
                         }
-                       // console.log(Differencevalue);
+                        // console.log(Differencevalue);
 
                         if(total>data.warenum){
                             var count = data.warenum-Differencevalue;
@@ -595,301 +962,13 @@
                     }
 
 
-                    addgoods.reload()
+                    addgoods.reload();
                 });
 
             });
 
-        }
-        function openAdd() {
-            if (vm.$data.orderId!=null){
-                layer.open({
-                    type: 2,
-                    closeBtn:2,
-                    shadeClose:true,
-                    title: "计划商品添加",
-
-                    area: ['900px', '800px'],
-                    anim: 2,
-                    content: ['/SaleAndOrder-add.html'],
-                    success: function (layero, index) {
-                        var iframe = window['layui-layer-iframe' + index];//拿到iframe元素
-                        iframe.child(vm.$data.orderId);
-                        //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
-                    }
-                });
-            }else {
-                layer.msg("请选择一个计划订单！");
-            }
-        }
-
-        function openAdd2() {
-            layer.open({
-                type: 2,
-                title: "计划订单添加",
-                shade: 0.4,
-                maxmin: true,
-                area: ['1300px', '820px'],
-                anim: 2,
-                content: ['/SaleAndOrder-add2.html'],
-                success: function (layero, index) {
-                    var   iframe = window['layui-layer-iframe' + index];//拿到iframe元素
-                    var cacheData=xx;
-                    iframe.child(vm.$data.orderId,cacheData);
-                    //iframe.child(JSON.stringify(data))//向此iframe层方法 传递参数
-                }
-            });
-        }
-
-        function sendData() {
-
-            return xx;
         }
     </script>
-
-    <script>layui.use('table',
-        function() {
-            var table = layui.table;
-            //监听单元格编辑
-
-
-            table.on('edit(test)',
-                function(obj) {
-                    var value = obj.value //得到修改后的值
-                        ,
-                        data = obj.data //得到所在行所有键值
-                        ,
-                        field = obj.field; //得到字段
-                    layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
-                });
-
-            //监听行单击事件（双击事件为：rowDouble）
-            table.on('row(test)', function(obj){
-                var data = obj.data.ordernumber;
-                vm.$data.orderId=data;
-                vm.sendMessage();
-
-                // layer.alert(JSON.stringify(data), {
-                //     title: '当前行数据：'
-                // });
-
-                //标注选中样式
-                obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
-            });
-
-            //头工具栏事件
-            table.on('toolbar(test)',
-                function(obj) {
-                    var checkStatus = table.checkStatus(obj.config.id);
-                    switch (obj.event) {
-                        case 'getCheckData':
-                            var data = checkStatus.data;
-                            layer.alert(JSON.stringify(data));
-                            break;
-                        case 'getCheckLength':
-                            var data = checkStatus.data;
-                            layer.msg('选中了：' + data.length + ' 个');
-                            break;
-                        case 'isAll':
-                            layer.msg(checkStatus.isAll ? '全选': '未全选');
-                            break;
-                        case 'delAny':
-                            //var data=checkStatus.data[1].sid;
-                            var sid=new Array();
-                            var ordernumber=new Array();
-                            if (checkStatus.data.length==0)return false;
-                            for (var i=0;i<checkStatus.data.length;i++){
-                                var data=checkStatus.data[i].sid;
-                                var data2=checkStatus.data[i].ordernumber;
-                                sid.push(data);
-                                ordernumber.push(data2);
-                            }
-                            //var sid=JSON.stringify(sid);
-                            $.ajax({
-                                url:"saleandorder/del",
-                                data:{sid:sid,ordernumber:ordernumber},
-                                type:"post",
-                                traditional:true,
-                                success:function(data){
-                                    if (data.code==0){
-                                        layer.msg(data.result, {time: 5000, icon:6});
-                                    }else{
-                                        layer.msg(data.result, {time: 5000, icon:5});
-                                    }
-
-                                    //location.reload(); //删除成功后再刷新
-                                },
-                                error:function(data){
-                                    layer.msg('錯誤！', {time: 5000, icon:6});
-                                }
-                            });
-                            break;
-                    };
-                });
-        });
-
-
-
-
-    </script>
-    <script>layui.use(['laydate', 'form'],
-        function() {
-            var laydate = layui.laydate;
-            var  form = layui.form;
-            $ = layui.$;
-
-            // 监听全选
-            form.on('checkbox(checkall)', function(data){
-                if(data.elem.checked){
-                    $('#tbody input').prop('checked',true);
-                }else{
-                    $('#tbody input').prop('checked',false);
-                }
-                form.render('checkbox');
-
-            });
-
-
-           form.on('submit(del)',function(data){
-               //将页面全部复选框选中的值拼接到一个数组中
-               var box = [];
-               $('#tbody input[type=checkbox]:checked').each(function() {
-                   box.push($(this).val());
-               });
-               if (box.length==0)return false;
-               //数组
-               console.log(box);
-               $.ajax({
-                   url:"relatedsaleandorder/del",
-                   data:{"sid":box},
-                   type:"post",
-                   traditional:true,
-                   success:function(data){
-                       if (data.code==0){
-                           layer.msg(data.result, {time: 5000, icon:6});
-                       }else{
-                           layer.msg(data.result, {time: 5000, icon:5});
-                       }
-                       //location.reload(); //删除成功后再刷新
-                   },
-                   error:function(data){
-
-                   }
-               });
-               return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
-            });
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#start' //指定元素
-            });
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#end' //指定元素
-            });
-
-            form.on('submit(demo1)',function (data) {
-                console.log(layui.table.cache["addgoods"]);
-                var arr=layui.table.cache["addgoods"];
-                var val=new Array();
-                var formdata=data.field;
-                for (var i=0;i<arr.length;i++){
-                    val.push({"rname":arr[i].pname,"sprice":arr[i].pbprice,"stotal":arr[i].psprice,"stax":arr[i].tax,"sdiscount":arr[i].discount,"paymethod":formdata.pay,"remarks":formdata.title});
-                }
-                return false;
-            })
-
-        });
-
-
-        /*用户-停用*/
-        function member_stop(obj, id) {
-            layer.confirm('确认要停用吗？',
-            function(index) {
-                if ($(obj).attr('title') == '启用') {
-                    //发异步把用户状态进行更改
-                    $(obj).attr('title', '停用');
-                    $(obj).find('i').html('&#xe62f;');
-                    $(obj).parents("tr").find(".td-status").find('span').addClass('layui-btn-disabled').html('已停用');
-                    layer.msg('已停用!', {
-                        icon: 5,
-                        time: 1000
-                    });
-                } else {
-                    $(obj).attr('title', '启用');
-                    $(obj).find('i').html('&#xe601;');
-                    $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
-                    layer.msg('已启用!', {
-                        icon: 5,
-                        time: 1000
-                    });
-                }
-
-            });
-        }
-
-        /*用户-删除*/
-        function member_del(obj, id) {
-            layer.confirm('确认要删除吗？',
-            function(index) {
-                //发异步删除数据
-                $(obj).parents("tr").remove();
-                layer.msg('已删除!', {
-                    icon: 1,
-                    time: 1000
-                });
-            });
-        }
-
-
-
-      </script>
-    <script>
-        layui.use(['layer', 'layarea'], function() {
-            var layer = layui.layer,
-                layarea = layui.layarea;
-
-            layarea.render({
-                elem: '#area-picker',
-                data: {
-                    province: '湖南省',
-                    city: '长沙市',
-                    county: '岳麓区',
-                },
-                change: function (res) {
-                    //选择结果
-                    console.log(res);
-                }
-            });
-        })
-    </script>
-    <script type="text/html" id="toolbarDemo">
-        <div class = "layui-btn-container" >
-            <button class="layui-btn-danger layui-btn layui-btn-sm" lay-event="delAny"> <i class="layui-icon"></i>批量删除</button></button>
-            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" >添加计划订单</button>
-<!--            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>-->
-<!--            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >-->
-<!--            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>-->
-        </div >
-    </script>
-    <script>layui.use('laydate',
-        function() {
-            var laydate = layui.laydate;
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#start1' //指定元素
-            });
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#end1' //指定元素
-            });
-
-        });</script>
-
-
 
 
 

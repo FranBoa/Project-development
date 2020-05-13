@@ -22,12 +22,12 @@ public class XiaofeiServiceImpl implements XiaofeiService {
     /**
      * 通过ID查询单条数据
      *
-     * @param hykid 主键
+     * @param xid 主键
      * @return 实例对象
      */
     @Override
-    public Xiaofei queryById(String hykid) {
-        return this.xiaofeiDao.queryById(hykid);
+    public Xiaofei queryById(int xid) {
+        return this.xiaofeiDao.queryById(xid);
     }
 
     /**
@@ -60,9 +60,8 @@ public class XiaofeiServiceImpl implements XiaofeiService {
      * @return 实例对象
      */
     @Override
-    public Xiaofei insert(Xiaofei xiaofei) {
-        this.xiaofeiDao.insert(xiaofei);
-        return xiaofei;
+    public int insert(Xiaofei xiaofei) {
+        return this.xiaofeiDao.insert(xiaofei);
     }
 
     /**
@@ -72,19 +71,18 @@ public class XiaofeiServiceImpl implements XiaofeiService {
      * @return 实例对象
      */
     @Override
-    public Xiaofei update(Xiaofei xiaofei) {
-        this.xiaofeiDao.update(xiaofei);
-        return this.queryById(xiaofei.getHykid());
+    public int update(Xiaofei xiaofei) {
+        return this.xiaofeiDao.update(xiaofei);
     }
 
     /**
      * 通过主键删除数据
      *
-     * @param hykid 主键
+     * @param xid 主键
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String hykid) {
-        return this.xiaofeiDao.deleteById(hykid) > 0;
+    public int deleteById(int xid) {
+        return this.xiaofeiDao.deleteById(xid);
     }
 }

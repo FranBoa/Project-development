@@ -10,31 +10,42 @@ import java.io.Serializable;
  * @since 2020-04-19 02:16:39
  */
 public class Zhuxiao implements Serializable {
-    private static final long serialVersionUID = -42805668269991269L;
-    /**
-    * 会员卡卡号，主键
-    */
-    private String hykkh;
-    /**
-    * 注销时间
-    */
-    private Date zxtime;
+	private static final long serialVersionUID = -42805668269991269L;
+	/**
+	 * 注销编号
+	 */
+	private int zid;
+	/**
+	 * 会员卡卡号
+	 */
+	private String hykkh;
+	/**
+	 * 注销时间
+	 */
+	private Date zxtime;
 
+	public int getZid() {
+		return zid;
+	}
 
-    public String getHykkh() {
-        return hykkh;
-    }
+	public void setZid(int zid) {
+		this.zid = zid;
+	}
 
-    public void setHykkh(String hykkh) {
-        this.hykkh = hykkh;
-    }
+	public String getHykkh() {
+		return hykkh;
+	}
 
-    public Date getZxtime() {
-        return zxtime;
-    }
+	public void setHykkh(String hykkh) {
+		this.hykkh = hykkh;
+	}
 
-    public void setZxtime(Date zxtime) {
-        this.zxtime = zxtime;
-    }
+	public Date getZxtime() {
+		return zxtime;
+	}
+
+	public void setZxtime(Date zxtime) {
+		this.zxtime = zxtime;
+	}
 
 }

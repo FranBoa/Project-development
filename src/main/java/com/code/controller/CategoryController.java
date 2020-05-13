@@ -1,15 +1,19 @@
 package com.code.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.code.entity.Category;
 import com.code.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 客户类别(Category)表控制层
@@ -37,15 +41,23 @@ public class CategoryController {
     	Category category = this.categoryService.queryById(id);
         return category;
     }
-    
-    //修改客户
+
+    //修改客户类别
     @RequestMapping("/updateKehuSort")
-	public @ResponseBody String updateKehuSort(HttpServletRequest request, Category category){
-		int row = this.categoryService.update(category);
-		return row>0?"修改成功":"修改失败";
-	}
-    
-    
+    public void updateKehuSort(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    	System.out.println("进了");
+    	PrintWriter out=response.getWriter();
+    	String cType=request.getParameter("cType");
+    	Category category=new Category();
+    	category.setcType(cType);
+    	//添加操作
+    	categoryService.insert(category);
+    	out.print("1");
+		out.flush();
+		out.close();
+    }
+
+
         /**
      * 查询某张表所有数据，搭配PageHelper使用更佳！
      *
@@ -56,8 +68,11 @@ public class CategoryController {
     public List<Category> selectAll(){
            return this.categoryService.selectAll();
     }
-    
-    
+
+    @RequestMapping("selectAllWithKehu")
+	public List<Category> selectAllWithKehu(){
+    	return  this.categoryService.selectAllWithKehu();
+	}
         /**
      * 通过实体作为筛选条件查询
      *
@@ -73,15 +88,35 @@ public class CategoryController {
     	map.put("total", list.size());
         return map;
     }
-    
-    //添加客户
-    @RequestMapping(value="/insertKehu",produces ="html/text;charset=UTF-8")
-	public @ResponseBody  String insertBrand(HttpServletRequest request, Category category) {
-    	//System.out.println(request.getParameter("grade"));
-		int row=this.categoryService.insert(category);
-		return row>0?"添加成功":"添加失败";
-	}
-    
+
+   //菜单下拉框绑定
+  	@RequestMapping("/Menubangding")
+  	@ResponseBody
+  	public void Menubangding(HttpServletResponse response) throws IOException {
+  		response.setContentType("text/html;charset=utf-8");
+  		List<Category> list = categoryService.selectAll();
+  		String str = JSONArray.toJSONString(list);
+  		PrintWriter out = response.getWriter();
+  		out.print(str);
+  		out.flush();
+  		out.close();
+  	}
+
+    //添加客户类别
+    @RequestMapping("/insertKehuType")
+    public void insertKehuType(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    	System.out.println("进了");
+    	PrintWriter out=response.getWriter();
+    	String cType=request.getParameter("cType");
+    	Category category=new Category();
+    	category.setcType(cType);
+    	//添加操作
+    	categoryService.insert(category);
+    	out.print("1");
+		out.flush();
+		out.close();
+    }
+
     //删除客户
   	@RequestMapping("/deleteById")
   	public @ResponseBody String deleteById(int cid) {

@@ -3,8 +3,13 @@ package com.code.controller;
 import com.code.entity.Zhuxiao;
 import com.code.service.ZhuxiaoService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 会员卡注销表(Zhuxiao)表控制层
@@ -28,9 +33,17 @@ public class ZhuxiaoController {
      * @return 单条数据
      */
     @GetMapping("selectOne")
-    public Zhuxiao selectOne(String id) {
-        return this.zhuxiaoService.queryById(id);
+    public Zhuxiao selectOne(int zid) {
+    	Zhuxiao zhuxiao=this.zhuxiaoService.queryById(zid);
+        return zhuxiao;
     }
+    
+  //修改后
+    @RequestMapping("/updatezx")
+	public @ResponseBody String updatezx(HttpServletRequest request, Zhuxiao zhuxiao){
+		int row = this.zhuxiaoService.update(zhuxiao);
+		return row>0?"修改成功":"修改失败";
+	}
     
     
         /**
@@ -41,19 +54,39 @@ public class ZhuxiaoController {
      */
     @RequestMapping("selectAll")
     public List<Zhuxiao> selectAll(){
+    	
            return this.zhuxiaoService.selectAll();
     }
-    
     
         /**
      * 通过实体作为筛选条件查询
      *
      * @param zhuxiao 实例对象
+         * @return 
      * @return 对象列表
      */
     @RequestMapping("queryAll")
-    public List<Zhuxiao>  queryAll(Zhuxiao zhuxiao){
-           return this.zhuxiaoService.queryAll(zhuxiao);
+    public  Map<String, Object> queryAll(Zhuxiao zhuxiao){
+    	List<Zhuxiao> list=this.zhuxiaoService.queryAll(zhuxiao);
+    	Map<String, Object> map=new HashMap<>();
+    	map.put("data", list);
+    	map.put("code", 0);
+    	map.put("total", list.size());
+        return map;
     }
+    
+  //添加
+    @RequestMapping(value="/insertzx",produces ="html/text;charset=UTF-8")
+	public @ResponseBody  String insertzx(HttpServletRequest request, Zhuxiao zhuxiao) {
+		int row=this.zhuxiaoService.insert(zhuxiao);
+		return row>0?"添加成功":"添加失败";
+	}
+   
+    //删除
+  	@RequestMapping("/deleteById")
+  	public @ResponseBody String deleteById(int zid) {
+  		int row=this.zhuxiaoService.deleteById(zid);
+  		return row>0?"删除成功":"删除失败";
+  	}
 
 }

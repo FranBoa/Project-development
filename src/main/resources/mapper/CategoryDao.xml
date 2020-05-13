@@ -2,61 +2,77 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.code.dao.CategoryDao">
 
-    <resultMap type="com.code.entity.Category" id="CategoryMap">
-        <result property="cid" column="cid" jdbcType="VARCHAR"/>
-        <result property="name" column="NAME" jdbcType="VARCHAR"/>
-    </resultMap>
+	<resultMap type="com.code.entity.Category" id="CategoryMap">
+		<result property="cid" column="cid" jdbcType="VARCHAR" />
+		<result property="cType" column="cType" jdbcType="VARCHAR" />
+	</resultMap>
 
-    <!--查询单个-->
-    <select id="queryById" resultMap="CategoryMap">
-        select
-          cid, NAME
-        from clothesppsdb.category
-        where cid = #{cid}
-    </select>
+	<resultMap type="com.code.entity.Category" id="CategoryMap2">
+		<result property="cid" column="cid" jdbcType="VARCHAR" />
+		<result property="name" column="cType" jdbcType="VARCHAR" />
+		<collection property="children" select="com.code.dao.KehuDao.queryBycId" column="cid"></collection>
+	</resultMap>
+	<!--查询单个 -->
+	<select id="queryById" resultMap="CategoryMap">
+		select
+		cid, cType
+		from
+		clothesppsdb.category
+		where cid = #{cid}
+	</select>
 
-    <!--查询所有的数据-->
-    <select id="selectAll" resultMap="CategoryMap">
-        select
-          cid, NAME
-        from clothesppsdb.category
-    </select>
+	<!--查询所有的数据 -->
+	<select id="selectAll" resultMap="CategoryMap">
+		select
+		cid, cType
+		from
+		clothesppsdb.category
+	</select>
 
-    <!--通过实体作为筛选条件查询-->
-    <select id="queryAll" resultMap="CategoryMap">
-        select
-          cid, NAME
-        from clothesppsdb.category
-        <where>
-            <if test="cid != null and cid != ''">
-                and cid = #{cid}
-            </if>
-            <if test="name != null and name != ''">
-                and NAME = #{name}
-            </if>
-        </where>
-    </select>
+	<!--查询所有的数据 -->
+	<select id="selectAllWithKehu" resultMap="CategoryMap2">
+		select
+		cid, cType
+		from
+		clothesppsdb.category
+	</select>
 
-    <!--新增所有列-->
-    <insert id="insert" keyProperty="cid" useGeneratedKeys="true">
-        insert into clothesppsdb.category(NAME)
-        values (#{name})
-    </insert>
+	<!--通过实体作为筛选条件查询 -->
+	<select id="queryAll" resultMap="CategoryMap">
+		select
+		cid, cType
+		from clothesppsdb.category
+		<where>
+			<if test="cid != null and cid != ''">
+				and cid = #{cid}
+			</if>
+			<if test="cType != null and cType != ''">
+				and cType = #{cType}
+			</if>
+		</where>
+	</select>
 
-    <!--通过主键修改数据-->
-    <update id="update">
-        update clothesppsdb.category
-        <set>
-            <if test="name != null and name != ''">
-                NAME = #{name},
-            </if>
-        </set>
-        where cid = #{cid}
-    </update>
+	<!--新增所有列 -->
+	<insert id="insert" keyProperty="cid" useGeneratedKeys="true">
+		insert
+		into clothesppsdb.category(cType)
+		values (#{cType})
+	</insert>
 
-    <!--通过主键删除-->
-    <delete id="deleteById">
-        delete from clothesppsdb.category where cid = #{cid}
-    </delete>
+	<!--通过主键修改数据 -->
+	<update id="update">
+		update clothesppsdb.category
+		<set>
+			<if test="cType != null and cType != ''">
+				cType = #{cType},
+			</if>
+		</set>
+		where cid = #{cid}
+	</update>
+
+	<!--通过主键删除 -->
+	<delete id="deleteById">
+		delete from clothesppsdb.category where cid = #{cid}
+	</delete>
 
 </mapper>

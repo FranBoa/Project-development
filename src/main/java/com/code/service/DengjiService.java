@@ -17,7 +17,7 @@ public interface DengjiService {
      * @param djid 主键
      * @return 实例对象
      */
-    Dengji queryById(Integer djid);
+    Dengji queryById(int djid);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface DengjiService {
      * @param dengji 实例对象
      * @return 实例对象
      */
-    Dengji insert(Dengji dengji);
+    int insert(Dengji dengji);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,7 +50,7 @@ public interface DengjiService {
      * @param dengji 实例对象
      * @return 实例对象
      */
-    Dengji update(Dengji dengji);
+    int update(Dengji dengji);
 
     /**
      * 通过主键删除数据
@@ -58,6 +58,6 @@ public interface DengjiService {
      * @param djid 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer djid);
+    int deleteById(int djid);
 
 }

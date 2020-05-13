@@ -93,14 +93,7 @@
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "address",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "paymethod",
+    "name" : "wid",
     "comment" : null,
     "type" : null,
     "shortType" : null,

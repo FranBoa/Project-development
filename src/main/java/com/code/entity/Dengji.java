@@ -9,43 +9,42 @@ import java.io.Serializable;
  * @since 2020-04-19 02:16:39
  */
 public class Dengji implements Serializable {
-    private static final long serialVersionUID = 604174576469546525L;
-    /**
-    * 等级编号，主键
-    */
-    private Integer djid;
-    /**
-    * 等级名称
-    */
-    private String djname;
-    /**
-    * 等级优惠
-    */
-    private Object djyouhui;
+	private static final long serialVersionUID = 604174576469546525L;
+	/**
+	 * 等级编号，主键
+	 */
+	private Integer djid;
+	/**
+	 * 等级名称
+	 */
+	private String djname;
+	/**
+	 * 等级优惠
+	 */
+	private Object djyouhui;
 
+	public Integer getDjid() {
+		return djid;
+	}
 
-    public Integer getDjid() {
-        return djid;
-    }
+	public void setDjid(Integer djid) {
+		this.djid = djid;
+	}
 
-    public void setDjid(Integer djid) {
-        this.djid = djid;
-    }
+	public String getDjname() {
+		return djname;
+	}
 
-    public String getDjname() {
-        return djname;
-    }
+	public void setDjname(String djname) {
+		this.djname = djname;
+	}
 
-    public void setDjname(String djname) {
-        this.djname = djname;
-    }
+	public Object getDjyouhui() {
+		return djyouhui;
+	}
 
-    public Object getDjyouhui() {
-        return djyouhui;
-    }
-
-    public void setDjyouhui(Object djyouhui) {
-        this.djyouhui = djyouhui;
-    }
+	public void setDjyouhui(Object djyouhui) {
+		this.djyouhui = djyouhui;
+	}
 
 }

@@ -26,7 +26,7 @@ public class DengjiServiceImpl implements DengjiService {
      * @return 实例对象
      */
     @Override
-    public Dengji queryById(Integer djid) {
+    public Dengji queryById(int djid) {
         return this.dengjiDao.queryById(djid);
     }
 
@@ -60,9 +60,8 @@ public class DengjiServiceImpl implements DengjiService {
      * @return 实例对象
      */
     @Override
-    public Dengji insert(Dengji dengji) {
-        this.dengjiDao.insert(dengji);
-        return dengji;
+    public int insert(Dengji dengji) {
+        return this.dengjiDao.insert(dengji);
     }
 
     /**
@@ -72,9 +71,8 @@ public class DengjiServiceImpl implements DengjiService {
      * @return 实例对象
      */
     @Override
-    public Dengji update(Dengji dengji) {
-        this.dengjiDao.update(dengji);
-        return this.queryById(dengji.getDjid());
+    public int update(Dengji dengji) {
+        return this.dengjiDao.update(dengji);
     }
 
     /**
@@ -84,7 +82,7 @@ public class DengjiServiceImpl implements DengjiService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer djid) {
-        return this.dengjiDao.deleteById(djid) > 0;
+    public int deleteById(int djid) {
+        return this.dengjiDao.deleteById(djid);
     }
 }

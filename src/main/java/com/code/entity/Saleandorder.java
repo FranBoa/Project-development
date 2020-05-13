@@ -7,10 +7,10 @@ import java.io.Serializable;
  * (Saleandorder)实体类
  *
  * @author yap
- * @since 2020-04-26 16:29:19
+ * @since 2020-05-10 22:24:20
  */
 public class Saleandorder implements Serializable {
-    private static final long serialVersionUID = -65685161685766279L;
+    private static final long serialVersionUID = 547541709097255336L;
     
     private Integer sid;
     /**
@@ -59,6 +59,8 @@ public class Saleandorder implements Serializable {
     * 审核人
     */
     private String inspect;
+    
+    private String wid;
 
 
     public Integer getSid() {
@@ -163,6 +165,14 @@ public class Saleandorder implements Serializable {
 
     public void setInspect(String inspect) {
         this.inspect = inspect;
+    }
+
+    public String getWid() {
+        return wid;
+    }
+
+    public void setWid(String wid) {
+        this.wid = wid;
     }
 
 }
