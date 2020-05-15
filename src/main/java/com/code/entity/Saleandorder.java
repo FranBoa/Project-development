@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 public class Saleandorder implements Serializable {
     private static final long serialVersionUID = 547541709097255336L;
-    
+
     private Integer sid;
     /**
     * 类别
@@ -41,7 +41,7 @@ public class Saleandorder implements Serializable {
     * 编号
     */
     private String ordernumber;
-    
+
     private String ordernumber2;
     /**
     * 备注
@@ -59,9 +59,8 @@ public class Saleandorder implements Serializable {
     * 审核人
     */
     private String inspect;
-    
-    private String wid;
 
+    private String wid;
 
     public Integer getSid() {
         return sid;
@@ -135,7 +134,7 @@ public class Saleandorder implements Serializable {
         this.ordernumber2 = ordernumber2;
     }
 
-    public String getRemarks() {
+    public String getRemarks(String title) {
         return remarks;
     }
 
@@ -175,4 +174,23 @@ public class Saleandorder implements Serializable {
         this.wid = wid;
     }
 
+    @Override
+    public String toString() {
+        return "Saleandorder{" +
+                "sid=" + sid +
+                ", category='" + category + '\'' +
+                ", salesman='" + salesman + '\'' +
+                ", customername='" + customername + '\'' +
+                ", status='" + status + '\'' +
+                ", sdate=" + sdate +
+                ", rdate=" + rdate +
+                ", ordernumber='" + ordernumber + '\'' +
+                ", ordernumber2='" + ordernumber2 + '\'' +
+                ", remarks='" + remarks + '\'' +
+                ", stotal='" + stotal + '\'' +
+                ", author='" + author + '\'' +
+                ", inspect='" + inspect + '\'' +
+                ", wid='" + wid + '\'' +
+                '}';
+    }
 }

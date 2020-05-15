@@ -3,11 +3,11 @@
 <mapper namespace="com.code.dao.PurchaseDao">
 
     <resultMap type="com.code.entity.Purchase" id="PurchaseMap">
-        <result property="purchaseId" column="purchase_id" jdbcType="INTEGER"/>
+        <result property="purchaseId" column="purchase_id" jdbcType="VARCHAR"/>
         <result property="usersId" column="users_id" jdbcType="VARCHAR"/>
         <result property="bossUsersId" column="boss_users_id" jdbcType="VARCHAR"/>
         <result property="supplierId" column="supplier_id" jdbcType="VARCHAR"/>
-        <result property="purchaseGoodsId" column="purchase_goods_id" jdbcType="INTEGER"/>
+        <result property="purchaseGoodsId" column="purchase_goods_id" jdbcType="VARCHAR"/>
         <result property="purchaseGoodsName" column="purchase_goods_name" jdbcType="VARCHAR"/>
         <result property="purchaseStatus" column="purchase_status" jdbcType="VARCHAR"/>
         <result property="purchasePrice" column="purchase_price" jdbcType="INTEGER"/>
@@ -15,8 +15,8 @@
         <result property="pruchaseDate" column="pruchase_date" jdbcType="VARCHAR"/>
         <result property="commet" column="commet" jdbcType="VARCHAR"/>
         <result property="warehouse" column="warehouse" jdbcType="VARCHAR"/>
-        <result property="xhOrders" column="xh_orders" jdbcType="VARCHAR"/>
         <result property="discounts" column="discounts" jdbcType="VARCHAR"/>
+        <result property="discountsPrice" column="discounts_sum" jdbcType="INTEGER"/>
         <result property="discountsSum" column="discounts_sum" jdbcType="INTEGER"/>
         <result property="paymentStatus" column="payment_status" jdbcType="VARCHAR"/>
         <result property="purchaseUnit" column="purchase_unit" jdbcType="VARCHAR"/>
@@ -32,67 +32,67 @@
 
     <!--查询所有的数据-->
     <select id="selectAll" resultMap="PurchaseMap">
-        select
-          purchase_id, users_id, boss_users_id, supplier_id, purchase_goods_id, purchase_goods_name, purchase_status, purchase_price, purchase_num, pruchase_date, commet, warehouse, xh_orders, discounts, discounts_sum, payment_status, purchase_unit
-        from clothesppsdb.purchase
+        select p.purchase_id,p.supplier_id,p.users_id,p.boss_users_id,p.warehouse,pd.purchase_goods_id,pd.purchase_goods_name,pd.discounts_price,pd.discounts_sum,pd.discounts,pd.discounts_price,pd.discounts_sum,p.pruchase_date,p.payment_status,p.commet,p.purchase_status
+		from purchase p
+		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
     </select>
 
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="PurchaseMap">
-        select
-          purchase_id, users_id, boss_users_id, supplier_id, purchase_goods_id, purchase_goods_name, purchase_status, purchase_price, purchase_num, pruchase_date, commet, warehouse, xh_orders, discounts, discounts_sum, payment_status, purchase_unit
-        from clothesppsdb.purchase
+        select p.purchase_id,p.supplier_id,p.users_id,p.boss_users_id,p.warehouse,pd.purchase_goods_id,pd.purchase_goods_name,pd.discounts_price,pd.discounts_sum,pd.discounts,pd.discounts_price,pd.discounts_sum,p.pruchase_date,p.payment_status,p.commet,p.purchase_status
+		from purchase p
+		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
         <where>
             <if test="purchaseId != null">
-                and purchase_id = #{purchaseId}
+                and p.purchase_id = #{purchaseId}
             </if>
             <if test="usersId != null and usersId != ''">
-                and users_id = #{usersId}
+                and p.users_id = #{usersId}
             </if>
             <if test="bossUsersId != null and bossUsersId != ''">
-                and boss_users_id = #{bossUsersId}
+                and p.boss_users_id = #{bossUsersId}
             </if>
             <if test="supplierId != null and supplierId != ''">
-                and supplier_id = #{supplierId}
+                and p.supplier_id = #{supplierId}
             </if>
             <if test="purchaseGoodsId != null">
-                and purchase_goods_id = #{purchaseGoodsId}
+                and pd.purchase_goods_id = #{purchaseGoodsId}
             </if>
             <if test="purchaseGoodsName != null and purchaseGoodsName != ''">
-                and purchase_goods_name = #{purchaseGoodsName}
+                and pd.purchase_goods_name = #{purchaseGoodsName}
             </if>
             <if test="purchaseStatus != null and purchaseStatus != ''">
-                and purchase_status = #{purchaseStatus}
+                and p.purchase_status = #{purchaseStatus}
             </if>
             <if test="purchasePrice != null">
-                and purchase_price = #{purchasePrice}
+                and pd.purchase_price = #{purchasePrice}
             </if>
             <if test="purchaseNum != null">
-                and purchase_num = #{purchaseNum}
+                and pd.purchase_num = #{purchaseNum}
             </if>
             <if test="pruchaseDate != null and pruchaseDate != ''">
-                and pruchase_date = #{pruchaseDate}
+                and p.pruchase_date = #{pruchaseDate}
             </if>
             <if test="commet != null and commet != ''">
-                and commet = #{commet}
+                and p.commet = #{commet}
             </if>
             <if test="warehouse != null and warehouse != ''">
-                and warehouse = #{warehouse}
-            </if>
-            <if test="xhOrders != null and xhOrders != ''">
-                and xh_orders = #{xhOrders}
+                and p.dwarehouse = #{warehouse}
             </if>
             <if test="discounts != null and discounts != ''">
-                and discounts = #{discounts}
+                and pd.discounts = #{discounts}
+            </if>
+            <if test="discountsPrice != null">
+                and pd.discounts_price = #{discountsPrice}
             </if>
             <if test="discountsSum != null">
-                and discounts_sum = #{discountsSum}
+                and pd.discounts_sum = #{discountsSum}
             </if>
             <if test="paymentStatus != null and paymentStatus != ''">
-                and payment_status = #{paymentStatus}
+                and p.payment_status = #{paymentStatus}
             </if>
             <if test="purchaseUnit != null and purchaseUnit != ''">
-                and purchase_unit = #{purchaseUnit}
+                and pd.purchase_unit = #{purchaseUnit}
             </if>
         </where>
     </select>
@@ -105,7 +105,7 @@
 
     <!--通过主键修改数据-->
     <update id="update">
-        update clothesppsdb.purchase
+        update purchase
         <set>
             <if test="usersId != null and usersId != ''">
                 users_id = #{usersId},

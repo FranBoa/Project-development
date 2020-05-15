@@ -13,7 +13,6 @@ import javax.annotation.Resource;
  * @author yap
  * @since 2020-04-19 02:16:42
  */
-
 @Controller
 @RequestMapping("user")
 public class UserController {
@@ -30,7 +29,7 @@ public class UserController {
      * @return 单条数据
      */
     @GetMapping("selectOne")
-    public User selectOne(Integer id) {
+    public User selectOne(String id) {
         return this.userService.queryById(id);
     }
 
@@ -58,8 +57,7 @@ public class UserController {
     public String  queryAll(User user){
         System.out.println("************");
         List<User> list =  this.userService.queryAll(user);
-//        return "redirect:/index.html";
-        return "redirect:/yhindex.html";
+        return "index";
     }
 
 }

@@ -1,23 +1,24 @@
 package com.code.service;
 
-import com.code.entity.User;
+import com.code.entity.Wpurchase;
+
 import java.util.List;
 
 /**
- * (User)表服务接口
+ * (Purchase)表服务接口
  *
  * @author yap
  * @since 2020-04-19 02:16:42
  */
-public interface UserService {
+public interface WpurchaseService {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param string 主键
+     * @param purchaseId 主键
      * @return 实例对象
      */
-    User queryById(String string);
+	Wpurchase queryById(Integer WpurchaseId);
 
     /**
      * 查询多条数据
@@ -26,38 +27,42 @@ public interface UserService {
      * @param
      * @return 对象列表
      */
-    List<User>selectAll();
+    List<Wpurchase>selectAll();
 
     /**
      * 新增数据
      *
-     * @param user 实例对象
+     * @param purchase 实例对象
      * @return 实例对象
      */
-    User insert(User user);
+    int insert(Wpurchase Wpurchase);
 
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param user 实例对象
+     * @param purchase 实例对象
      * @return 对象列表
      */
-    List<User> queryAll(User user);
+    List<Wpurchase> queryAll(Wpurchase Wpurchase);
 
     /**
      * 修改数据
      *
-     * @param user 实例对象
+     * @param purchase 实例对象
      * @return 实例对象
      */
-    int update(User user);
+    int update(Wpurchase Wpurchase);
 
     /**
      * 通过主键删除数据
      *
-     * @param id 主键
+     * @param purchaseId 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer id);
+    int deleteById(Integer WpurchaseId);
+
+	int add(Wpurchase wpurchase);
+
+	List<Wpurchase> queryBy(Wpurchase wpurchase);
 
 }

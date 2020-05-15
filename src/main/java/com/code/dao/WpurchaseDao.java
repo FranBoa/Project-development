@@ -1,24 +1,24 @@
 package com.code.dao;
 
-import com.code.entity.User;
-import org.apache.ibatis.annotations.Param;
+import com.code.entity.Wpurchase;
+
 import java.util.List;
 
 /**
- * (User)表数据库访问层
+ * (Purchase)表数据库访问层
  *
  * @author yap
  * @since 2020-04-19 02:16:42
  */
-public interface UserDao {
+public interface WpurchaseDao {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param id 主键
+     * @param purchaseId 主键
      * @return 实例对象
      */
-    User queryById(String id);
+	Wpurchase queryById(Integer WpurchaseId);
 
     /**
      * 查询指定行数据
@@ -27,39 +27,44 @@ public interface UserDao {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<User> selectAll();
+    List<Wpurchase> selectAll();
 
 
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param user 实例对象
+     * @param purchase 实例对象
      * @return 对象列表
      */
-    List<User> queryAll(User user);
+    List<Wpurchase> queryAll(Wpurchase Wpurchase);
+    List<Wpurchase> queryBy(Wpurchase Wpurchase);
 
     /**
      * 新增数据
      *
-     * @param user 实例对象
+     * @param purchase 实例对象
      * @return 影响行数
      */
-    int insert(User user);
+    int insert(Wpurchase Wpurchase);
 
     /**
      * 修改数据
      *
-     * @param user 实例对象
+     * @param purchase 实例对象
      * @return 影响行数
      */
-    int update(User user);
+    int update(Wpurchase Wpurchase);
 
     /**
      * 通过主键删除数据
      *
-     * @param id 主键
+     * @param purchaseId 主键
      * @return 影响行数
      */
-    int deleteById(Integer id);
+    int deleteById(Integer WpurchaseId);
+
+	int addpd(Wpurchase wpurchase);
+
+	int addp(Wpurchase wpurchase);
 
 }

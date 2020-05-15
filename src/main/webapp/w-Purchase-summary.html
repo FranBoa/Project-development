@@ -12,6 +12,10 @@
         <script src="../lib/layui/layui.js" charset="utf-8"></script>
         <script src="../lib/layui/layui.all.js" charset="utf-8"></script>
         <script type="text/javascript" src="../js/xadmin.js"></script>
+		<link href="./css/bootstrap.min.css" rel="stylesheet" />
+		<script src="../js/vue-2.4.0.js"></script>
+		<script src="../js/axios.min.js"></script>
+		<script src="../js/qs.min.js"></script>
     </head>
     
     <body>
@@ -29,30 +33,42 @@
         <div class="layui-fluid">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
-                    <div class="layui-card">
-                        
+                    <div class="layui-card" id="tableList" >
+	                    <div class="panel-body form-inline">
+								<!-- <label>
+									订单编号：
+									<input type="text" v-model="id" class="form-control" />
+								</label> -->
+								<label>
+									商品名称：
+									<input type="text" v-model="name" class="form-control" />
+								</label>
+								<!-- <input type="button" v-on:click="queryAll()" value="搜索" class="layui-btn"/> -->
+						</div>
                         <div class="layui-card-body">
-							<!-- <table class="layui-table" lay-data="{url='purchase/selectAll'}">
-                                <thead>
-									 <tr>
-                                 		<td lay-data="{type='checkbox',field:'purchase_id',width:80, sort: true}"></td>
-									   <td lay-data="{field:'purchase_id', width:80, sort: true}">商品编号</td>
-									   <td lay-data="{field:'users_id', widtd:80}">采购人员</td>
-									   <td lay-data="{field:'boss_users_id', width:80, sort: true}">审批人员</td>
-									   <td lay-data="{field:'supplier_id'}">供货商名称</td>
-									   <td lay-data="{field:'purchase_goods_id'}">商品编号</td>
-									   <td lay-data="{field:'purchase_goods_name', sort: true}">商品名称</td>
-									   <td lay-data="{field:'warehouse', sort: true}">仓库</td>
-									   <td lay-data="{field:'purchase_price'}">购货金额</td>
-									   <td lay-data="{field:'purchase_num', sort: true}">采购费用</td>
-									   <td lay-data="{field:'pruchase_date', sort: true}">备注</td>
-									   <td lay-data="{field:'commet', sort: true}">关联销货订单</td>
-									   <td lay-data="{field:'warehouse', sort: true}">操作</td>
-									   <td class='td-manage'><a title='删除' onclick='member_del(this,'要删除的id')' href='javascript:;'><i class='layui-icon'>&#xe640;</i></a></td>
-									 </tr>
-								<thead>
-                            </table> -->
-                            <table id="tableList">
+    						<table class="layui-table">
+    						<tr>
+    							<td>订单编号</td>
+    							<td>商品名称</td>
+    							<td>价格</td>
+    							<td>数量</td>
+    							<td>购货日期</td>
+    							<td>总金额</td>
+    							<td>仓库</td>
+    							<td>备注</td>
+    							<td>审核状态</td>
+    						</tr>
+    						<tr v-for="c in queryBy()">
+    							<td>{{c.purchaseId}}</td>
+    							<td>{{c.purchaseGoodsName}}</td>
+    							<td>{{c.purchasePrice}}</td>
+    							<td>{{c.purchaseNum}}</td>
+    							<td>{{c.purchaseDate}}</td>
+    							<td>{{c.discountsSum}}</td>
+    							<td>{{c.warehouse}}</td>
+    							<td>{{c.commet}}</td>
+    							<td>{{c.purchaseStatus}}</td>
+    						</tr>
     						</table>
                         </div>
                     </div>
@@ -61,39 +77,56 @@
         </div>
     </body>
     <script>
-    layui.use('table', function () {
-        var table = layui.table;
+    
 
-        //返回的数据必须是code:0
-        var tableIns = table.render({
-            elem: '#tableList'
-          , height: 450
-          , url: '/purchase/selectAll' //数据接口
-          , where: { action: 'getclublistbypage' }
-          , page: true //开启分页
-          , limit: 10
-          , cols: [[ //表头
-            { field: 'purchaseId', title: '订单编号', width: 80, fixed: 'left' }
-            , { field: 'usersId', title: '采购人员', width: 180 }
-            , { field: 'bossUsersId', title: '审批人', width: 180 }
-            , { field: 'supplierId', title: '供货商', width: 180 }
-            , { field: 'purchaseGoodsId', title: '商品id', width: 120 }
-            , { field: 'purchaseGoodsName', title: '商品名称', width: 180 }
-            , { field: 'purchaseStatus', title: '审核状态', width: 180 }
-            , { field: 'purchasePrice', title: '价格', width: 180 }
-            , { field: 'purchaseNum', title: '数量', width: 180 }
-            , { field: 'pruchaseDate', title: '购货日期', width: 180 }
-            , { field: 'commet', title: '备注', width: 180 }
-            , { field: 'warehouse', title: '仓库', width: 180 }
-            , { field: 'xhOrders', title: '关联销货订单', width: 180 }
-            , { field: 'discounts', title: '折扣率', width: 180 }
-            , { field: 'discountsSum', title: '折扣额', width: 180 }
-            , { field: 'paymentStatus', title: '付款方式', width: 180 }
-            , { field: 'purchaseUnit', title: '采购部门', width: 180 }
-          ]]
-        });
+    var vm = new Vue({
+    	el:"#tableList",
+    	data:{
+    		list:[],
+    		id:'',
+    		name:''
+    	},
+		mounted(){//初始化显示后调用
+			this.getAll()
+		},
+    	methods:{
+    		getAll(){
+    			axios.post('/Wpurchase/selectAll').then(res=>{
+    				this.list = res.data.data;
+    			}).catch(err=>{
+    				alert('查询失败')
+    			})
+    		} ,
+			queryBy(){
+    			var newList=[]
+    			this.list.forEach(c=>{
+    				console.log(c);
+					if(c.purchaseGoodsName.includes(this.name)){
+						newList.push(c)
+					}
+				})
+				return newList;
+			}
+    	}
+    })
+    
+    //搜索加载--数据表格重载
+    var $ = layui.$, active = {
+        reload: function () {
+            //执行重载
+            table.reload('test', {
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                ,url:'product/queryAll'
+                , where: {
+                        pname:$("input[name=searContent]").val()
+                //        ,pid:$("input[name=searContent]").val()
+                }
 
-    });
+            });
+        }
+    };
     
     layui.use(['laydate', 'form'],
         function() {

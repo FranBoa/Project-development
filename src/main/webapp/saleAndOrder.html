@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="/css/font.css">
         <link rel="stylesheet" href="/css/xadmin.css">
         <script src="/js/jquery.min.js"></script>
-        <script src="/lib/layui/layui.all.js"></script>
         <script src="/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/js/xadmin.js"></script>
     </head>
@@ -374,26 +373,71 @@ z                                <div class="layui-inline layui-show-xs-block">
                 var val=new Array();
                 //var selected=catIns1.selected; //lastName lastValue
                 var formdata=data.field;
+                var formdatas={
+                    title:formdata.title,
+                    pay:formdata.pay,
+                    kehuid:formdata.kehuid
+                };
+                console.log(formdatas);
+                // formdata2.push({title:formdata.title});
+                // formdata2.push({pay:formdata.pay});
+                // formdata2.push({kehuid:formdata.kehuid});
+                // if (data.field.kehuid==''||data.field.kehuid==null){
+                //     layer.msg("请选择客户！！");
+                //     return  false;
+                // }
+                // if (arr==null||arr==''){
+                //     layer.msg("请添加商品！");
+                //     return  false;
+                // }
 
-                console.log(formdata);
-                if (data.field.kehuid==''||data.field.kehuid==null){
-                    layer.msg("请选择客户！！");
-                    return  false;
-                }
-                if (arr==null||arr==''){
-                    layer.msg("请添加商品！");
-                    return  false;
-                }
-                for (var i=0;i<arr.length;i++){
-                    var address=arr[i].address[0].province+''+arr[i].address[0].city+''+arr[i].address[0].county+''+arr[i].address[0].title;
-                    val.push({"rname":arr[i].pname,"sprice":arr[i].psprice,"stotal":arr[i].total,"tax":arr[i].tax,
-                        "sdiscount":arr[i].discount,"paymethod":formdata.pay,"remarks":arr[i].details,"wid":arr[i].warehouse,"address":address,"scount":arr[i].count});
-                }
-                var xx={
-                    "data":val,
-                    "formdata":formdata
-                }
-                console.log(xx);
+               // var relatedsaleandorder=Qs.parse({"relatedsaleandorder":relatedsaleandorder});
+               // var relatedsaleandorder=Qs.parse({"relatedsaleandorder":relatedsaleandorder});
+                console.log(val);
+                //relatedsaleandorder=Qs.parse(val);
+                //var relatedsaleandorder=Qs.stringify(relatedsaleandorder);
+                $.ajax({
+                    url:'saleandorder/addsal',
+                    type:'get',
+                    data:formdatas,
+                    traditional:true,
+                    success:function(res){
+                        var data = res;
+                        console.log(data);
+                        if (data!="error"){
+                            for (var i=0;i<arr.length;i++){
+                                var address=arr[i].address[0].province+''+arr[i].address[0].city+''+arr[i].address[0].county+''+arr[i].address[0].title;
+                                var values={rname:arr[i].pname,
+                                    sprice:arr[i].psprice,
+                                    stotal:arr[i].total,
+                                    stax:arr[i].tax,
+                                    sdiscount:arr[i].discount,
+                                    paymethod:formdata.pay,
+                                    remarks:arr[i].details,
+                                    wid:arr[i].warehouse,
+                                    address:address,
+                                    scount:arr[i].count,
+                                    ordernumber:data};
+                                val.push(values);
+                            }
+                            $.ajax({
+                                url:'saleandorder/addrel',
+                                type:'post',
+                                contentType: "application/json",
+                                data:JSON.stringify(val),
+                                traditional:true,
+                                success:function(res){
+                                    var data = res;
+                                    console.log(data);
+                                }
+                            });
+
+                        }
+
+                      }
+
+                });
+
 
                 return false;
             });
@@ -912,12 +956,6 @@ z                                <div class="layui-inline layui-show-xs-block">
                             obj.update({
                                 count: 1
                             });
-                            addgoods.reload()
-                            return false;
-                        } else {
-                            obj.update({
-                                count: 0
-                            })
                             addgoods.reload();
                             return false;
                         }

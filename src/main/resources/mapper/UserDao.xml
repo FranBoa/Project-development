@@ -3,35 +3,36 @@
 <mapper namespace="com.code.dao.UserDao">
 
     <resultMap type="com.code.entity.User" id="UserMap">
-        <result property="id" column="id" jdbcType="INTEGER"/>
-        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="id" column="id" jdbcType="VARCHAR"/>
+        <result property="bossid" column="bossid" jdbcType="VARCHAR"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
         <result property="salt" column="salt" jdbcType="VARCHAR"/>
-        <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
-        <result property="mail" column="mail" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
         <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="UserMap">
         select
-          id, name, password, salt, telephone, mail, status
-        from clothesppsdb.user
+          id,bossid, username, password, salt,phone, email, status
+        from user
         where id = #{id}
     </select>
 
     <!--查询所有的数据-->
     <select id="selectAll" resultMap="UserMap">
         select
-          id, name, password, salt, telephone, mail, status
-        from clothesppsdb.user
+          id,bossid, username, password, salt,phone, email, status
+        from user
     </select>
 
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="UserMap">
         select
-          id, name, password, salt, telephone, mail, status
-        from clothesppsdb.user
+          id,bossid, username, password, salt,phone, email, status
+        from user
         <where>
             <if test="id != null">
                 and id = #{id}

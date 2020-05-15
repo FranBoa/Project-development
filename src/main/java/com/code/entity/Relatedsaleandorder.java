@@ -10,13 +10,13 @@ import java.io.Serializable;
  */
 public class Relatedsaleandorder implements Serializable {
     private static final long serialVersionUID = -71747920812316303L;
-    
+
     private Integer sid;
     /**
     * 编号
     */
     private String ordernumber;
-    
+
     private String rname;
     /**
     * 单位
@@ -38,7 +38,7 @@ public class Relatedsaleandorder implements Serializable {
     * 仓库
     */
     private Integer wid;
-    
+
     private String sdiscount;
     /**
     * 总价
@@ -162,4 +162,41 @@ public class Relatedsaleandorder implements Serializable {
         this.paymethod = paymethod;
     }
 
+    @Override
+    public String toString() {
+        return "Relatedsaleandorder{" +
+                "sid=" + sid +
+                ", ordernumber='" + ordernumber + '\'' +
+                ", rname='" + rname + '\'' +
+                ", sunit='" + sunit + '\'' +
+                ", sprice='" + sprice + '\'' +
+                ", scount='" + scount + '\'' +
+                ", stax='" + stax + '\'' +
+                ", wid=" + wid +
+                ", sdiscount='" + sdiscount + '\'' +
+                ", stotal='" + stotal + '\'' +
+                ", remarks='" + remarks + '\'' +
+                ", address='" + address + '\'' +
+                ", paymethod='" + paymethod + '\'' +
+                '}';
+    }
+
+    public Relatedsaleandorder(Integer sid, String ordernumber, String rname, String sunit, String sprice, String scount, String stax, Integer wid, String sdiscount, String stotal, String remarks, String address, String paymethod) {
+        this.sid = sid;
+        this.ordernumber = ordernumber;
+        this.rname = rname;
+        this.sunit = sunit;
+        this.sprice = sprice;
+        this.scount = scount;
+        this.stax = stax;
+        this.wid = wid;
+        this.sdiscount = sdiscount;
+        this.stotal = stotal;
+        this.remarks = remarks;
+        this.address = address;
+        this.paymethod = paymethod;
+    }
+
+    public Relatedsaleandorder() {
+    }
 }

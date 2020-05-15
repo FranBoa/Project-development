@@ -23,7 +23,7 @@
     <select id="selectAll" resultMap="WarehouseMap">
         select
           wId, wName, address, personnelName, personnelPhone, wPhone
-        from clothesppsdb.warehouse
+        from warehouse
     </select>
 
     <!--通过实体作为筛选条件查询-->

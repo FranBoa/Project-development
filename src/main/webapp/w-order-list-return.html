@@ -42,7 +42,7 @@
 								        var d = date.getDate(); <!--日，getDay是获得当前星期几（0-6），getDate是获得当前日期-->
 								        var h = date.getHours();
 
-								        document.getElementById("ghid").innerHTML = "gh"+y+m+d+h;
+								        document.getElementById("ghid").innerHTML = "th"+y+m+d+h;
 								        document.getElementById("day").innerHTML = y+"年"+m+"月"+d+"日";
 								    </script>
 								</div>
@@ -91,17 +91,6 @@
                                     <a class="next" href="">&gt;&gt;</a></div>
                             </div>
                         </div>
-						<div>
-							优惠率：<input type="text" name="" />
-							付款优惠：<input type="text" name="" />
-							优惠后金额：<input type="text" name=""  />
-							本次付款：<input type="text" name=""  />
-							结算账户：<select>
-								<option>现金</option>
-								<option>银行存款</option>
-								<option>多账户</option></select>/>
-							本次欠款：<input type="text" name="" />
-						</div>
                     </div>
                 </div>
             </div>
@@ -180,7 +169,7 @@
             });
         }</script>
 		<script>
-			$().ready(function(){
+			/* $().ready(function(){
 				 var start= "<td><input type='checkbox' name='' lay-skin='primary'></td>"
 				 var end="<td class='td-manage'><a title='删除' onclick='member_del(this,'要删除的id')' href='javascript:;'><i class='layui-icon'>&#xe640;</i></a></td>"
                  var centre=function(){
@@ -213,6 +202,6 @@
 		                    }  
 		                });  
 				 };
-			})
+			}) */
 		</script>
 </html>

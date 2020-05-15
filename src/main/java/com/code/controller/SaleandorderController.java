@@ -1,12 +1,21 @@
 package com.code.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.code.TimeUtil.TimeUtil;
+import com.code.entity.Relatedsaleandorder;
 import com.code.entity.Saleandorder;
+import com.code.entity.formdata;
 import com.code.service.RelatedsaleandorderService;
 import com.code.service.SaleandorderService;
 import com.github.pagehelper.PageInfo;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Resource;
@@ -19,6 +28,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("saleandorder")
+@Transactional
 public class SaleandorderController {
     /**
      * 服务对象
@@ -86,12 +96,102 @@ public class SaleandorderController {
     }
 
     @ResponseBody
-    @RequestMapping("add")
-    public  String add(Saleandorder saleandorder){
-        Saleandorder saleandorder1=this.saleandorderService.queryLastOne();
-        System.out.println(saleandorder1.getSid());
-        System.out.println(saleandorder);
-        return  "";
+    @RequestMapping("addrel")
+    public  String addrel(@RequestBody List<Relatedsaleandorder> relatedsaleandorder){
+        Integer count=0;
+        Integer discount=0;
+        Integer tax=0;
+        Integer price=0;
+        DecimalFormat df = new DecimalFormat("0.00");
+        df.setRoundingMode(RoundingMode.HALF_UP);
+        for (int i = 0; i <relatedsaleandorder.size() ; i++) {
+            Relatedsaleandorder xx=relatedsaleandorder.get(i);
+            System.out.println(xx);
+            System.out.println(tax);
+            System.out.println(discount);
+            if(xx.getScount()!=null){
+                count=Integer.parseInt(xx.getScount());
+            }
+            if(xx.getSdiscount()!=null){
+                discount=Integer.parseInt(xx.getSdiscount());
+                discount=discount/100;
+            }
+            if(xx.getStax()!=null){
+                tax=Integer.parseInt(xx.getStax());
+                tax=tax/100;
+            }
+            System.out.println(tax);
+            System.out.println(discount);
+            if(xx.getSprice()!=null){
+                price=Integer.parseInt(xx.getSprice());
+            }
+            xx.setSunit("个");
+            if(xx.getScount()==null&&xx.getSdiscount()==null&&xx.getStax()==null){
+                xx.setScount("1");xx.setSdiscount("0");xx.setStax("0");
+                xx.setStotal(String.valueOf(price));
+                System.out.println(xx.getStotal());
+            }else  if(xx.getScount()==null&&xx.getSdiscount()==null){
+                xx.setScount("1");xx.setSdiscount("0");
+                xx.setStotal(String.valueOf(Math.floor((price+price*tax)*100)/100));
+                System.out.println(xx.getStotal());
+            }else  if(xx.getScount()==null&&xx.getStax()==null){
+                xx.setScount("1");xx.setStax("0");
+                xx.setStotal(String.valueOf(Math.floor((price-price*discount)*100)/100));
+                System.out.println(xx.getStotal());
+            }else if (xx.getSdiscount()==null&&xx.getStax()==null){
+                xx.setSdiscount("0");xx.setStax("0");
+                xx.setStotal(String.valueOf(Math.floor((price*count)*100)/100));
+                System.out.println(xx.getStotal());
+            }else if(xx.getScount()==null){
+                xx.setScount("1");
+                xx.setStotal(String.valueOf(Math.floor((price+price*tax-price*discount)*100)/100));
+                System.out.println(xx.getStotal());
+            }else if (xx.getSdiscount()==null){
+                xx.setSdiscount("0");
+                xx.setStotal(String.valueOf(Math.floor(((price+price*tax)*count)*100)/100));
+                System.out.println(xx.getStotal());
+            }else if (xx.getStax()==null){
+                xx.setStax("0");
+                xx.setStotal(String.valueOf(Math.floor(((price-price*discount)*count)*100)/100));
+                System.out.println(xx.getStotal());
+            }else{
+                xx.setStotal(df.format((price+price*tax-price*discount)*count));
+                System.out.println(xx.getStotal());
+            }
+            System.out.println(xx);
+        }
+
+        return  "200";
     }
+
+    @ResponseBody
+    @RequestMapping("addsal")
+    public  String add(formdata formdatas){
+        if (formdatas!=null) {
+            System.out.println(formdatas.getTitle());
+            Saleandorder saleandoder1 = this.saleandorderService.queryLastOne();
+            int NeedId = saleandoder1.getSid();
+            String times = TimeUtil.order(NeedId, "JH");
+            Saleandorder saleandorder = new Saleandorder();
+            saleandorder.setSalesman("wdnmd");
+            saleandorder.setAuthor("wdnmd");
+            saleandorder.setCustomername(formdatas.getKehuid());
+            saleandorder.setOrdernumber(times);
+            if(formdatas.getTitle()!=null){
+                saleandorder.setRemarks(formdatas.getTitle());
+            }else {
+                saleandorder.setRemarks("无备注");
+            }
+
+            System.out.println(saleandorder);
+            this.saleandorderService.insert(saleandorder);
+        return times;
+        }else{
+            return   "error";
+        }
+
+    }
+
+
 
 }

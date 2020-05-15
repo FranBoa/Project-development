@@ -14,6 +14,7 @@
 		<link href="./css/bootstrap.min.css" rel="stylesheet" />
 		<script src="./js/vue.js"></script>
 		<script src="./js/axios.min.js"></script>
+		<script src="../js/qs.min.js"></script>
 
     </head>
     
@@ -29,7 +30,7 @@
                 <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
             </a>
         </div>
-        <div class="layui-fluid">
+        <div class="layui-fluid" id="tableList" >
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
                     <div class="layui-card">
@@ -37,7 +38,27 @@
                             <button class="layui-btn" onclick="xadmin.open('添加用户','./order-add.html',800,600)">
                                 <i class="layui-icon"></i>生成订单</button></div>
                         <div class="layui-card-body">
-    						<table id="tableList">
+    						<table class="layui-table">
+    						<tr>
+    							<td></td>
+    							<td>商品名称</td>
+    							<td>商品类别</td>
+    							<td>商品进价</td>
+    							<td>商品售价</td>
+    							<td>商品存储仓库</td>
+    							<td>库存数量</td>
+    							<td>详细说明</td>
+    						</tr>
+    						<tr v-for="c in list">
+    							<td><input type="checkbox" value="c.pid" /></td>
+    							<td>{{c.pname}}</td>
+    							<td>{{c.producttypename}}</td>
+    							<td>{{c.pbprice}}</td>
+    							<td>{{c.psprice}}</td>
+    							<td>{{c.wname}}</td>
+    							<td>{{c.warenum}}</td>
+    							<td>{{c.details}}</td>
+    						</tr>
     						</table>
                         </div>
                         <div class="layui-card-body ">
@@ -53,15 +74,15 @@
                             </div>
                         </div>
 						<div>
-							优惠率：<input type="text" name="" />
+							<!-- 优惠率：<input type="text" name="" />
 							付款优惠：<input type="text" name="" />
-							优惠后金额：<input type="text" name=""  />
+							优惠后金额：<input type="text" name=""  /> -->
 							本次付款：<input type="text" name=""  />
-							结算账户：<select>
+							<!-- 结算账户：<select>
 								<option>现金</option>
 								<option>银行存款</option>
 								<option>多账户</option></select>/>
-							本次欠款：<input type="text" name="" />
+							本次欠款：<input type="text" name="" /> -->
 						</div>
                     </div>
                 </div>
@@ -69,14 +90,14 @@
         </div>
     </body>
     <script>
-    layui.use('table', function () {
+/*     layui.use('table', function () {
         var table = layui.table;
 
         //返回的数据必须是code:0
         var tableIns = table.render({
             elem: '#tableList'
           , height: 450
-          , url: '/product/queryAll?WareNum=20' //数据接口
+          , url: '/product/queryAll?WareNum=50' //数据接口
           , where: { action: 'getclublistbypage' }
           , page: true //开启分页
           , limit: 10
@@ -91,52 +112,9 @@
           ]]
         });
 
-    });
+    }); */
     
-    layui.use(['laydate', 'form'],
-        function() {
-            var laydate = layui.laydate;
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#start' //指定元素
-            });
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#end' //指定元素
-            });
-        });
-
-        /*用户-删除*/
-        function member_del(obj, id) {
-            layer.confirm('确认要删除吗？',
-            function(index) {
-                //发异步删除数据
-                $(obj).parents("tr").remove();
-                layer.msg('已删除!', {
-                    icon: 1,
-                    time: 1000
-                });
-            });
-        }
-
-        function delAll(argument) {
-
-            var data = tableCheck.getData();
-
-            layer.confirm('确认要删除吗？' + data,
-            function(index) {
-                //捉到所有被选中的，发异步进行删除
-                layer.msg('删除成功', {
-                    icon: 1
-                });
-                $(".layui-form-checked").not('.header').parents('tr').remove();
-            });
-        }
-        
-
-        /* var vm = new Vue({
+        var vm = new Vue({
         	el:'#tableList',
         	data:{
         		list:[]
@@ -146,14 +124,15 @@
 			},
 			methods:{
 		        selectAll(){
-			        axios.get('/purchase/selectAll') .then(res=>{
+	    			var product=Qs.stringify({"warenum":50})
+			        axios.post('/product/queryAll',product) .then(res=>{
 			        		console.log(res)
-			        		this.list=res.data;
+			        		this.list=res.data.data;
 			        		}).catch(err=>{
 							alert('操作失败')
 						})
 		        }
 	    	}
-        }); */
+        }); 
         </script>
 </html>
