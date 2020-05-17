@@ -197,6 +197,4 @@ public class Relatedsaleandorder implements Serializable {
         this.paymethod = paymethod;
     }
 
-    public Relatedsaleandorder() {
-    }
 }

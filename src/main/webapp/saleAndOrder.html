@@ -12,6 +12,7 @@
         <script src="/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/js/xadmin.js"></script>
     </head>
+    <style></style>
 
     <body>
         <div class="x-nav">
@@ -42,7 +43,7 @@
                                             <div class="layui-form-item">
                                                 <label class="layui-form-label">备注</label>
                                                    <div class="layui-input-block">
-                                                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                                                        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
                                                 </div>
                                             </div>
 
@@ -105,10 +106,13 @@
                         <div class="layui-card-body ">
                             <form class="layui-form layui-col-space5">
                                 <div class="layui-inline layui-show-xs-block">
-                                    <input class="layui-input" autocomplete="off" placeholder="开始日" name="start" id="start1"></div>
+                                    <input class="layui-input" autocomplete="off" placeholder="交货日期" name="start" id="start1"></div>
                                 <div class="layui-inline layui-show-xs-block">
-z                                <div class="layui-inline layui-show-xs-block">
-                                    <input type="text" name="username" placeholder="请输入用户名"  autocomplete="off" class="layui-input"></div>
+                                <div class="layui-inline layui-show-xs-block">
+                                    <input type="text" name="username" placeholder="请输入订单号"  autocomplete="off" class="layui-input"></div>
+                                    <div class="layui-inline layui-show-xs-block">
+                                            <div id="kehuid2"></div>
+                                    </div>
                                 <div class="layui-inline layui-show-xs-block">
                                     <button class="layui-btn" lay-submit="" lay-filter="sreach">
                                         <i class="layui-icon">&#xe615;</i></button>
@@ -117,19 +121,19 @@ z                                <div class="layui-inline layui-show-xs-block">
                             </form>
                         </div>
                         <div class="layui-card-body ">
-                            <table class="layui-table" lay-data="{url:'saleandorder/selectAll',page:true,toolbar: '#toolbarDemo',id:'test',height: 415 }" lay-filter="test">
+                            <table class="layui-table" lay-data="{url:'saleandorder/selectAll',page:true,size:'sm',toolbar: '#toolbarDemo',id:'test' }" lay-filter="test">
                                 <thead>
                                 <tr>
                                     <th lay-data="{type:'checkbox'}">ID</th>
                                     <th lay-data="{field:'ordernumber', width:150, sort: true}">计划订单编号</th>
                                     <th lay-data="{field:'ordernumber2', width:150, sort: true}">关联订单编号</th>
-                                    <th lay-data="{field:'customername', edit: 'text', minWidth: 80}">收货人</th>
-                                    <th lay-data="{field:'stotal', edit: 'text', minWidth: 80,templet:'#RMB'}">总金额</th>
-                                    <th lay-data="{field:'status', edit: 'text', minWidth: 80,templet: '#orderTemp'}">订单状态</th>
-                                    <th lay-data="{field:'rdate', sort: true, edit: 'text',templet: '#timeTemp'}">交货日期</th>
-                                    <th lay-data="{field:'sdate', sort: true, edit: 'text',templet: '#timeTemp2'}">下单时间</th>
-                                    <th lay-data="{field:'author', sort: true, edit: 'text'}">制单人</th>
-                                    <th lay-data="{field:'inspect', sort: true, edit: 'text'}">审核人</th>
+                                    <th lay-data="{field:'customername'，minWidth: 80}">收货人</th>
+                                    <th lay-data="{field:'stotal',  minWidth: 80,templet:'#RMB'}">总金额</th>
+                                    <th lay-data="{field:'status', minWidth: 80,templet: '#orderTemp'}">订单状态</th>
+                                    <th lay-data="{field:'sdate', sort: true,templet: '#timeTemp2'}">下单时间</th>
+                                    <th lay-data="{field:'rdate', sort: true,templet: '#timeTemp'}">交货日期</th>
+                                    <th lay-data="{field:'author', sort: true}">制单人</th>
+                                    <th lay-data="{field:'inspect', sort: true}">审核人</th>
                                     <th lay-data="{field:'remarks', sort: true, edit: 'text'}">备注</th>
                                 </thead>
                             </table>
@@ -146,9 +150,11 @@ z                                <div class="layui-inline layui-show-xs-block">
 
                         </div>
                         <div class="layui-card-header">
-                            <button class="layui-btn layui-btn-danger" lay-submit  lay-filter="del">
+                            <button 	class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger"
+                                       lay-submit  lay-filter="del">
                                 <i class="layui-icon"></i>批量删除</button>
-                            <button class="layui-btn" onclick="openAdd()">
+                            <button 	class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal"
+                                       onclick="openAdd()">
                                 <i class="layui-icon"></i>添加计划商品</button></div>
                         <div class="layui-card-body ">
                             <table class="layui-table layui-form " id="xtable">
@@ -292,52 +298,52 @@ z                                <div class="layui-inline layui-show-xs-block">
     </script>
     <script  type="text/html" id="total" title="">
         {{# if(d.count==null&&d.tax==null&&d.discount==null) { }}
-        {{# if(Math.floor((d.psprice*1)*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;">{{Math.floor((d.psprice*1)*100)/100+'￥'}}</span>
+        {{# if(d.psprice*1>=d.pbprice) { }}
+        <span style="color: #77bf77;">{{d.psprice*1+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*1)*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{d.psprice*1+'￥'}}</span>
         {{#  } }}
         {{#  } else if(d.tax==null&&d.discount==null){ }}
-        {{# if(Math.floor((d.psprice*d.count)*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;">{{Math.floor((d.psprice*d.count)*100)/100+'￥'}}</span>
+        {{# if(d.psprice*d.count>=d.pbprice*d.count) { }}
+        <span style="color: #77bf77;">{{d.psprice*d.count+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count)*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{d.psprice*d.count+'￥'}}</span>
         {{#  } }}
         {{#  } else if(d.count==null&&d.discount==null){ }}
-        {{# if(Math.floor((d.psprice+d.tax/100*(d.psprice))*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice+d.tax/100*(d.psprice))*100)/100+'￥'}}</span>
+        {{# if(d.psprice+d.tax/100*(d.psprice)>=d.pbprice) { }}
+        <span style="color: #77bf77;"> {{d.psprice+d.tax/100*(d.psprice)+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice+d.tax/100*(d.psprice))*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{d.psprice+d.tax/100*(d.psprice)+'￥'}}</span>
         {{#  } }}
         {{#  } else if(d.count==null&&d.tax==null){ }}
-        {{# if(Math.floor((d.psprice-d.discount/100*(d.psprice))*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
+        {{# if(d.psprice-d.discount/100*(d.psprice)>=d.pbprice) { }}
+        <span style="color: #77bf77;"> {{d.psprice-d.discount/100*(d.psprice)+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{d.psprice-d.discount/100*(d.psprice)+'￥'}}</span>
         {{#  } }}
         {{#  } else if(d.count==null){ }}
-        {{# if(Math.floor((d.psprice+d.tax/100*(d.psprice)-d.discount/100*(d.psprice))*100)/100>=d.pbprice) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice+d.tax/100*(d.psprice)-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
+        {{# if((d.psprice*1+(d.tax/100*d.psprice-d.discount/100*d.psprice)*1)>=d.pbprice) { }}
+        <span style="color: #77bf77;"> {{(d.psprice*1+(d.tax/100*d.psprice-d.discount/100*d.psprice)*1)+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice+d.tax/100*(d.psprice)-d.discount/100*(d.psprice))*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{(d.psprice*1+(d.tax/100*d.psprice-d.discount/100*d.psprice)*1)+'￥'}}</span>
         {{#  } }}
         {{#  } else if(d.discount==null){ }}
-        {{# if(Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count))*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
+        {{# if((d.psprice+d.tax/100*(d.psprice*d.count))*d.count>=d.pbprice*d.count) { }}
+        <span style="color: #77bf77;"> {{(d.psprice+d.tax/100*(d.psprice*d.count))*d.count+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{(d.psprice+d.tax/100*(d.psprice*d.count))*d.count+'￥'}}</span>
         {{#  } }}
         {{#  } else if(d.tax==null){ }}
-        {{# if(Math.floor((d.psprice*d.count-d.discount/100*(d.psprice*d.count))*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice*d.count-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
+        {{# if((d.psprice*d.count-(d.discount/100*(d.psprice*d.count))*d.count)>=d.pbprice*d.count) { }}
+        <span style="color: #77bf77;"> {{(d.psprice*d.count-(d.discount/100*(d.psprice*d.count))*d.count)+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;">{{(d.psprice*d.count-(d.discount/100*(d.psprice*d.count))*d.count)+'￥'}}</span>
         {{#  } }}
         {{#  } else { }}
-        {{# if(Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count)-d.discount/100*(d.psprice*d.count))*100)/100>=d.pbprice*d.count) { }}
-        <span style="color: #77bf77;"> {{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count)-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
+        {{# if((d.psprice*d.count+(d.tax/100*d.psprice-d.discount/100*d.psprice)*d.count)>=d.pbprice*d.count) { }}
+        <span style="color: #77bf77;"> {{(d.psprice*d.count+(d.tax/100*d.psprice-d.discount/100*d.psprice)*d.count)+'￥'}}</span>
         {{#  } else { }}
-        <span style="color: #eb3b5f;">{{Math.floor((d.psprice*d.count+d.tax/100*(d.psprice*d.count)-d.discount/100*(d.psprice*d.count))*100)/100+'￥'}}</span>
+        <span style="color: #eb3b5f;"> {{(d.psprice*d.count+(d.tax/100*d.psprice-d.discount/100*d.psprice)*d.count)+'￥'}}</span>
         {{#  } }}
         {{#  } }}
     </script>
@@ -348,13 +354,13 @@ z                                <div class="layui-inline layui-show-xs-block">
         }).extend({
             selectN: 'selectNM/selectN',
             selectM: 'selectNM/selectM',
-        }).use(['jquery','selectN','selectM','form'],function () {
+        }).use(['jquery','selectN','selectM','form','table'],function () {
             $ = layui.jquery;
             var selectN = layui.selectN
                 ,selectM = layui.selectM;
 
             var form=layui.form;
-
+            var table=layui.table;
             var kehudata=getkehu();
             //无限级分类-基本配置
             var catIns1 = selectN({
@@ -367,35 +373,42 @@ z                                <div class="layui-inline layui-show-xs-block">
                 ,field:{idName:'cid',titleName:'name',childName:'children'}
             });
 
+            var catIns2 = selectN({
+                //元素容器【必填】
+                elem: '#kehuid2'
+                ,search:true
+                //候选数据【必填】
+                ,data:"category/selectAllWithKehu"
+                ,last:true
+                ,field:{idName:'cid',titleName:'name',childName:'children'}
+            });
+
             form.on('submit(demo1)',function (data) {
                 var arr=layui.table.cache["addgoods"];
                 //    console.log(arr);
-                var val=new Array();
                 //var selected=catIns1.selected; //lastName lastValue
+                if (data.field.kehuid==''||data.field.kehuid==null){
+                    layer.tips('请选择客户!', '#kehuid', {
+                        tips: [4, '#16ccc1'],
+                        time: 4000
+                    });
+                    return  false;
+                }
+                if (arr==null||arr==''){
+                    layer.tips('商品不能为空的哦！！', '#addgoods', {
+                        tips: [1, '#eb3b5f'],
+                        time: 4000
+                    });
+                    return  false;
+                }
                 var formdata=data.field;
                 var formdatas={
                     title:formdata.title,
                     pay:formdata.pay,
                     kehuid:formdata.kehuid
                 };
-                console.log(formdatas);
-                // formdata2.push({title:formdata.title});
-                // formdata2.push({pay:formdata.pay});
-                // formdata2.push({kehuid:formdata.kehuid});
-                // if (data.field.kehuid==''||data.field.kehuid==null){
-                //     layer.msg("请选择客户！！");
-                //     return  false;
-                // }
-                // if (arr==null||arr==''){
-                //     layer.msg("请添加商品！");
-                //     return  false;
-                // }
-
-               // var relatedsaleandorder=Qs.parse({"relatedsaleandorder":relatedsaleandorder});
-               // var relatedsaleandorder=Qs.parse({"relatedsaleandorder":relatedsaleandorder});
+                var val=new Array();
                 console.log(val);
-                //relatedsaleandorder=Qs.parse(val);
-                //var relatedsaleandorder=Qs.stringify(relatedsaleandorder);
                 $.ajax({
                     url:'saleandorder/addsal',
                     type:'get',
@@ -429,9 +442,34 @@ z                                <div class="layui-inline layui-show-xs-block">
                                 success:function(res){
                                     var data = res;
                                     console.log(data);
+                                    if (data=="200"){
+                                        layer.open({
+                                            content: '添加成功！',
+                                            icon:1,
+                                            success: function(layero, index){
+                                                table.reload("test");
+                                            }
+                                        });
+                                    }else{
+                                        layer.open({
+                                            content: '商品货物添加失败！',
+                                            icon:5,
+                                            success: function(layero, index){
+                                                table.reload("test");
+                                            }
+                                        });
+                                    }
                                 }
                             });
 
+                        }else{
+                            layer.open({
+                                content: '添加失败',
+                                icon:5,
+                                success: function(layero, index){
+                                    table.reload("test");
+                                }
+                            });
                         }
 
                       }
@@ -719,8 +757,8 @@ z                                <div class="layui-inline layui-show-xs-block">
     </script>
     <script type="text/html" id="toolbarDemo">
         <div class = "layui-btn-container" >
-            <button class="layui-btn-danger layui-btn layui-btn-sm" lay-event="delAny"> <i class="layui-icon"></i>批量删除</button></button>
-            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" >添加计划订单</button>
+            <button 	class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger" lay-event="delAny"> <i class="layui-icon"></i>批量删除</button></button>
+<!--            <button 	class="layui-btn layui-btn-sm layui-btn-radius layui-btn-normal" lay-event = "getCheckData" >添加计划订单</button>-->
 <!--            <button class = "layui-btn layui-btn-sm" lay-event = "getCheckData" > 获取选中行数据 </button>-->
 <!--            <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button >-->
 <!--            <button class = "layui-btn layui-btn-sm" lay-event = "isAll" > 验证是否全选</button>-->
@@ -945,7 +983,26 @@ z                                <div class="layui-inline layui-show-xs-block">
                         });
                     }
                 });
-
+                /**
+                 * 强制保留2位小数，不足补 0
+                 */
+                function toDecimal(x) {
+                    var f = parseFloat(x);
+                    if (isNaN(f)) {
+                        return false;
+                    }
+                    var f = Math.round(x*100)/100;
+                    var s = f.toString();
+                    var rs = s.indexOf('.');
+                    if (rs < 0) {
+                        rs = s.length;
+                        s += '.';
+                    }
+                    while (s.length <= rs + 2) {
+                        s += '0';
+                    }
+                    return s;
+                }
                 //监听单元格编辑
                 table.on('edit(addgoods)', function(obj){
                     var value = obj.value //得到修改后的值

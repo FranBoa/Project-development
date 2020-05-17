@@ -99,68 +99,81 @@ public class SaleandorderController {
     @RequestMapping("addrel")
     public  String addrel(@RequestBody List<Relatedsaleandorder> relatedsaleandorder){
         Integer count=0;
-        Integer discount=0;
-        Integer tax=0;
-        Integer price=0;
+        Double discount=0.00;
+        Double tax=0.00;
+        Double price=0.00;
+        Double total=0.00;
+        String OrderNumber=null;
         DecimalFormat df = new DecimalFormat("0.00");
         df.setRoundingMode(RoundingMode.HALF_UP);
         for (int i = 0; i <relatedsaleandorder.size() ; i++) {
             Relatedsaleandorder xx=relatedsaleandorder.get(i);
-            System.out.println(xx);
-            System.out.println(tax);
-            System.out.println(discount);
+            OrderNumber=xx.getOrdernumber();
             if(xx.getScount()!=null){
                 count=Integer.parseInt(xx.getScount());
             }
             if(xx.getSdiscount()!=null){
-                discount=Integer.parseInt(xx.getSdiscount());
-                discount=discount/100;
+                discount= Double.valueOf(xx.getSdiscount())/100.00;
             }
             if(xx.getStax()!=null){
-                tax=Integer.parseInt(xx.getStax());
-                tax=tax/100;
+                tax= Double.valueOf(xx.getStax())/100.00;
             }
+            if(xx.getSprice()!=null){
+                price=Double.valueOf(xx.getSprice());
+            }
+            System.out.println(price);
             System.out.println(tax);
             System.out.println(discount);
-            if(xx.getSprice()!=null){
-                price=Integer.parseInt(xx.getSprice());
-            }
             xx.setSunit("个");
             if(xx.getScount()==null&&xx.getSdiscount()==null&&xx.getStax()==null){
                 xx.setScount("1");xx.setSdiscount("0");xx.setStax("0");
-                xx.setStotal(String.valueOf(price));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format(price));
+                total+=price;
+                System.out.println(xx.getStotal()+"All为空");
             }else  if(xx.getScount()==null&&xx.getSdiscount()==null){
                 xx.setScount("1");xx.setSdiscount("0");
-                xx.setStotal(String.valueOf(Math.floor((price+price*tax)*100)/100));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format((price+price*tax)));
+                total+=price+price*tax;
+                System.out.println(xx.getStotal()+"Discount和Count为空");
             }else  if(xx.getScount()==null&&xx.getStax()==null){
                 xx.setScount("1");xx.setStax("0");
-                xx.setStotal(String.valueOf(Math.floor((price-price*discount)*100)/100));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format((price-price*discount)));
+                total+=price-price*discount;
+                System.out.println(xx.getStotal()+"Tax和Count为空");
             }else if (xx.getSdiscount()==null&&xx.getStax()==null){
                 xx.setSdiscount("0");xx.setStax("0");
-                xx.setStotal(String.valueOf(Math.floor((price*count)*100)/100));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format((price*count)));
+                total+=price*count;
+                System.out.println(xx.getStotal()+"Tax和Discount为空");
             }else if(xx.getScount()==null){
                 xx.setScount("1");
-                xx.setStotal(String.valueOf(Math.floor((price+price*tax-price*discount)*100)/100));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format((price+price*tax-price*discount)));
+                total+=price+price*tax-price*discount;
+                System.out.println(xx.getStotal()+"Count为空");
             }else if (xx.getSdiscount()==null){
                 xx.setSdiscount("0");
-                xx.setStotal(String.valueOf(Math.floor(((price+price*tax)*count)*100)/100));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format(((price+price*tax)*count)));
+                total+=(price+price*tax)*count;
+                System.out.println(xx.getStotal()+"Dis为空");
             }else if (xx.getStax()==null){
                 xx.setStax("0");
-                xx.setStotal(String.valueOf(Math.floor(((price-price*discount)*count)*100)/100));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format(((price-price*discount)*count)));
+                total+=((price-price*discount)*count);
+                System.out.println(xx.getStotal()+"Tax为空");
             }else{
-                xx.setStotal(df.format((price+price*tax-price*discount)*count));
-                System.out.println(xx.getStotal());
+                xx.setStotal(df.format(((price+price*tax-price*discount)*count)));
+                total+=((price+price*tax-price*discount)*count);
+                System.out.println(xx.getStotal()+"最后一次");
             }
-            System.out.println(xx);
-        }
 
+            relatedsaleandorderService.insert(xx);
+            System.out.println("最终输出"+xx);
+        }
+        System.out.println(total);
+        Saleandorder up=new Saleandorder();
+        up.setOrdernumber(OrderNumber);
+        up.setStotal(String.valueOf(total));
+        saleandorderService.update(up);
         return  "200";
     }
 

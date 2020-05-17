@@ -43,6 +43,11 @@ public class Saleandorder implements Serializable {
     private String ordernumber;
 
     private String ordernumber2;
+
+    public String getRemarks() {
+        return remarks;
+    }
+
     /**
     * 备注
     */
@@ -174,23 +179,5 @@ public class Saleandorder implements Serializable {
         this.wid = wid;
     }
 
-    @Override
-    public String toString() {
-        return "Saleandorder{" +
-                "sid=" + sid +
-                ", category='" + category + '\'' +
-                ", salesman='" + salesman + '\'' +
-                ", customername='" + customername + '\'' +
-                ", status='" + status + '\'' +
-                ", sdate=" + sdate +
-                ", rdate=" + rdate +
-                ", ordernumber='" + ordernumber + '\'' +
-                ", ordernumber2='" + ordernumber2 + '\'' +
-                ", remarks='" + remarks + '\'' +
-                ", stotal='" + stotal + '\'' +
-                ", author='" + author + '\'' +
-                ", inspect='" + inspect + '\'' +
-                ", wid='" + wid + '\'' +
-                '}';
-    }
+
 }

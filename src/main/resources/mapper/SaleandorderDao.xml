@@ -139,7 +139,7 @@
                 wid = #{wid},
             </if>
         </set>
-        where sid = #{sid}
+        where  OrderNumber = #{ordernumber}
     </update>
 
     <!--通过主键删除-->

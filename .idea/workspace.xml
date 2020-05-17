@@ -7,36 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cb36a92-77c6-4e3a-a114-21510b614716" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/TimeUtil/TimeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/WpurchaseDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Wpurchase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/service/WpurchaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/WpurchaseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/WpurchaseDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PurchaseDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WarehouseDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/WarehouseDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-Purchase-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-Purchase-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-Smart-replenishment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-Smart-replenishment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-order-list-approval.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-order-list-approval.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-order-list-return.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-order-list-return.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-order-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-order-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-order-list2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-order-list2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/w-purchase-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/w-purchase-add.html" afterDir="false" />
     </list>
     <list id="917cbde8-3f22-4814-b9ca-ba04f2ba0d06" name="Revert &quot;Revert &quot;第一次提交&quot;&quot;" comment="Revert &quot;Revert &quot;第一次提交&quot;&quot;&#10;&#10;This reverts commit 70dff54c" />
     <list id="8e435d33-3cf2-4713-af90-ef493a2a6fd4" name="Revert &quot;第一次提交&quot;" comment="Revert &quot;第一次提交&quot;&#10;&#10;This reverts commit be424aa6" />
@@ -93,25 +71,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="321" column="84" lean-forward="true" selection-start-line="321" selection-start-column="84" selection-end-line="321" selection-end-column="84" />
+            <state relative-caret-position="62">
+              <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
               <folding>
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#fieldset#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#script#3;n#html#0;n#!!top" />
+                <element signature="n#script#4;n#html#0;n#!!top" />
                 <element signature="n#script#5;n#html#0;n#!!top" />
                 <element signature="n#script#6;n#html#0;n#!!top" />
+                <element signature="n#script#7;n#html#0;n#!!top" />
+                <element signature="n#script#8;n#html#0;n#!!top" />
                 <element signature="n#script#9;n#html#0;n#!!top" />
                 <element signature="n#script#10;n#html#0;n#!!top" />
                 <element signature="n#script#11;n#html#0;n#!!top" />
                 <element signature="n#script#12;n#html#0;n#!!top" />
                 <element signature="n#script#13;n#html#0;n#!!top" />
                 <element signature="n#script#14;n#html#0;n#!!top" />
+                <element signature="n#script#15;n#html#0;n#!!top" />
+                <element signature="n#script#16;n#html#0;n#!!top" />
                 <element signature="n#script#18;n#html#0;n#!!top" />
                 <element signature="n#script#19;n#html#0;n#!!top" />
                 <element signature="n#script#20;n#html#0;n#!!top" />
-                <element signature="n#script#21;n#html#0;n#!!top" />
                 <element signature="n#script#22;n#html#0;n#!!top" />
                 <element signature="n#script#23;n#html#0;n#!!top" />
                 <element signature="n#script#24;n#html#0;n#!!top" />
@@ -121,33 +104,63 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2538">
-              <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
+            <state relative-caret-position="945">
+              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+              <folding>
+                <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#script#4;n#html#0;n#!!top" />
+                <element signature="n#script#5;n#html#0;n#!!top" />
+                <element signature="n#script#7;n#html#0;n#!!top" />
+                <element signature="n#script#8;n#html#0;n#!!top" />
+                <element signature="n#script#9;n#html#0;n#!!top" />
+                <element signature="n#script#11;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            <state relative-caret-position="3996">
+              <caret line="168" column="50" selection-start-line="168" selection-start-column="50" selection-end-line="168" selection-end-column="50" />
               <folding>
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#310#311#0" expanded="true" />
-                <element signature="e#352#353#0" expanded="true" />
-                <element signature="e#386#387#0" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#480#481#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#543#544#0" expanded="true" />
-                <element signature="e#572#573#0" expanded="true" />
-                <element signature="e#616#617#0" expanded="true" />
-                <element signature="e#652#653#0" expanded="true" />
+                <element signature="method#add#0;class#SaleandorderController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2187">
+              <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -155,8 +168,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2727">
-              <caret line="140" column="26" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="26" />
+            <state relative-caret-position="1107">
+              <caret line="42" column="30" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="30" />
+              <folding>
+                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2484">
-              <caret line="92" column="66" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
+            <state relative-caret-position="3726">
+              <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -173,8 +190,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="864">
+              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -190,19 +207,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>渲染</find>
-      <find>parent</find>
-      <find>GETVA</find>
-      <find>getva</find>
-      <find>dela</find>
-      <find>infinite</find>
-      <find>搜索</find>
-      <find>reload</find>
       <find>getval</find>
       <find>searchEmailCompany</find>
       <find>callback</find>
-      <find>test</find>
-      <find>收货人</find>
       <find>cat_ids1</find>
       <find>config</find>
       <find>selectN</find>
@@ -216,10 +223,20 @@
       <find>open</find>
       <find>l</find>
       <find>layui.js</find>
-      <find>demo</find>
       <find>del</find>
-      <find>demo1</find>
       <find>DEL</find>
+      <find>;</find>
+      <find>demo</find>
+      <find>demo1</find>
+      <find>test</find>
+      <find>add</find>
+      <find>addgoods</find>
+      <find>添加计划订单</find>
+      <find>请输入</find>
+      <find>收货人</find>
+      <find>下单时间</find>
+      <find>kehuid</find>
+      <find>请输入订单</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -246,7 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/icon.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/editAdv.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/edit.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/tree-menu.html" />
@@ -287,16 +303,17 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/KehuDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/TimeUtil/TimeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" />
       </list>
     </option>
   </component>
@@ -367,8 +384,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -393,38 +410,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DistributionSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -634,7 +619,12 @@
       <workItem from="1589384169872" duration="10064000" />
       <workItem from="1589435478494" duration="13826000" />
       <workItem from="1589459049544" duration="18527000" />
-      <workItem from="1589503019993" duration="816000" />
+      <workItem from="1589503019993" duration="2468000" />
+      <workItem from="1589526069413" duration="19414000" />
+      <workItem from="1589589114975" duration="663000" />
+      <workItem from="1589596404828" duration="3293000" />
+      <workItem from="1589638248939" duration="362000" />
+      <workItem from="1589707660993" duration="469000" />
     </task>
     <task id="LOCAL-00001" summary="部署....">
       <created>1587200949877</created>
@@ -818,11 +808,18 @@
       <option name="project" value="LOCAL" />
       <updated>1589334042607</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="提交添加">
+      <created>1589504614323</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1589504614323</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="573372000" />
+    <option name="totallyTimeSpent" value="599056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,8 +832,43 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Web" order="4" side_tool="true" weight="0.16471216" />
+      <window_info active="true" auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" visible="true" weight="0.17075774" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.3283582" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32928178" />
+      <window_info anchor="bottom" x="0" y="51" width="1901" height="928" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" visible="true" weight="0.80383795" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32942432" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32942432" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32942432" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.26629835" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32942432" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" x="28" y="380" width="1876" height="353" id="Run" order="14" sideWeight="0.4989339" side_tool="true" type="SLIDING" weight="0.23773988" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4978678" weight="0.32942432" />
+      <window_info anchor="bottom" id="Application Servers" order="16" weight="0.32928178" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49920508" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" sideWeight="0.47547975" visible="true" weight="0.18729989" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" sideWeight="0.35793358" side_tool="true" weight="0.2196162" />
+      <window_info anchor="right" id="Database" order="6" sideWeight="0.6420664" weight="0.21931697" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Bean Validation" order="8" sideWeight="0.48154983" weight="0.32995737" />
+      <window_info anchor="right" id="Word Book" order="9" side_tool="true" />
+      <window_info anchor="right" id="Translation Assistant" order="10" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
@@ -864,42 +896,6 @@
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49920508" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" sideWeight="0.47547975" visible="true" weight="0.18729989" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" sideWeight="0.35793358" side_tool="true" weight="0.2196162" />
-      <window_info anchor="right" id="Database" order="6" sideWeight="0.6420664" weight="0.2196162" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Bean Validation" order="8" sideWeight="0.48154983" weight="0.32995737" />
-      <window_info anchor="right" id="Word Book" order="9" side_tool="true" />
-      <window_info anchor="right" id="Translation Assistant" order="10" weight="0.32995737" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Web" order="4" side_tool="true" weight="0.16471216" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.17095391" />
-      <window_info anchor="bottom" id="Database Console" order="0" weight="0.3283582" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32942432" />
-      <window_info active="true" anchor="bottom" x="0" y="31" width="1901" height="948" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" visible="true" weight="0.80383795" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32942432" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32942432" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32942432" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.26652452" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32942432" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" x="28" y="380" width="1876" height="353" id="Run" order="14" sideWeight="0.4989339" side_tool="true" type="SLIDING" weight="0.23773988" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4978678" weight="0.32942432" />
-      <window_info anchor="bottom" id="Application Servers" order="16" visible="true" weight="0.32928178" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49920508" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" sideWeight="0.47547975" weight="0.18763326" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="5" sideWeight="0.35793358" side_tool="true" weight="0.2196162" />
       <window_info anchor="right" id="Database" order="6" sideWeight="0.6420664" weight="0.2196162" />
@@ -985,14 +981,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/selectY/selectY.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/product-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1492">
-          <caret line="133" column="20" selection-start-line="133" selection-start-column="20" selection-end-line="133" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1063,13 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProducttypeDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1123,34 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding>
-            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#script#4;n#html#0;n#!!top" />
-            <element signature="n#script#5;n#html#0;n#!!top" />
-            <element signature="n#script#7;n#html#0;n#!!top" />
-            <element signature="n#script#8;n#html#0;n#!!top" />
-            <element signature="n#script#9;n#html#0;n#!!top" />
-            <element signature="n#script#11;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1312,41 +1265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="321" column="84" lean-forward="true" selection-start-line="321" selection-start-column="84" selection-end-line="321" selection-end-column="84" />
-          <folding>
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#script#3;n#html#0;n#!!top" />
-            <element signature="n#script#5;n#html#0;n#!!top" />
-            <element signature="n#script#6;n#html#0;n#!!top" />
-            <element signature="n#script#9;n#html#0;n#!!top" />
-            <element signature="n#script#10;n#html#0;n#!!top" />
-            <element signature="n#script#11;n#html#0;n#!!top" />
-            <element signature="n#script#12;n#html#0;n#!!top" />
-            <element signature="n#script#13;n#html#0;n#!!top" />
-            <element signature="n#script#14;n#html#0;n#!!top" />
-            <element signature="n#script#18;n#html#0;n#!!top" />
-            <element signature="n#script#19;n#html#0;n#!!top" />
-            <element signature="n#script#20;n#html#0;n#!!top" />
-            <element signature="n#script#21;n#html#0;n#!!top" />
-            <element signature="n#script#22;n#html#0;n#!!top" />
-            <element signature="n#script#23;n#html#0;n#!!top" />
-            <element signature="n#script#24;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2538">
-          <caret line="114" column="40" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1368,24 +1286,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4978">
+          <caret line="188" column="29" selection-start-line="188" selection-start-column="29" selection-end-line="188" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="109" column="78" lean-forward="true" selection-start-line="109" selection-start-column="78" selection-end-line="109" selection-end-column="78" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#1;n#thead#0;n#table#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#fieldset#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#3;n#html#0;n#!!top" />
+            <element signature="n#script#4;n#html#0;n#!!top" />
+            <element signature="n#script#5;n#html#0;n#!!top" />
+            <element signature="n#script#6;n#html#0;n#!!top" />
+            <element signature="n#script#7;n#html#0;n#!!top" />
+            <element signature="n#script#8;n#html#0;n#!!top" />
+            <element signature="n#script#9;n#html#0;n#!!top" />
+            <element signature="n#script#10;n#html#0;n#!!top" />
+            <element signature="n#script#11;n#html#0;n#!!top" />
+            <element signature="n#script#12;n#html#0;n#!!top" />
+            <element signature="n#script#13;n#html#0;n#!!top" />
+            <element signature="n#script#14;n#html#0;n#!!top" />
+            <element signature="n#script#15;n#html#0;n#!!top" />
+            <element signature="n#script#16;n#html#0;n#!!top" />
+            <element signature="n#script#18;n#html#0;n#!!top" />
+            <element signature="n#script#19;n#html#0;n#!!top" />
+            <element signature="n#script#20;n#html#0;n#!!top" />
+            <element signature="n#script#22;n#html#0;n#!!top" />
+            <element signature="n#script#23;n#html#0;n#!!top" />
+            <element signature="n#script#24;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding>
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#1;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#4;n#html#0;n#!!top" />
+            <element signature="n#script#5;n#html#0;n#!!top" />
+            <element signature="n#script#7;n#html#0;n#!!top" />
+            <element signature="n#script#8;n#html#0;n#!!top" />
+            <element signature="n#script#9;n#html#0;n#!!top" />
+            <element signature="n#script#11;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3996">
+          <caret line="168" column="50" selection-start-line="168" selection-start-column="50" selection-end-line="168" selection-end-column="50" />
+          <folding>
+            <element signature="method#add#0;class#SaleandorderController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2187">
+          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2727">
-          <caret line="140" column="26" selection-start-line="140" selection-start-column="16" selection-end-line="140" selection-end-column="26" />
+        <state relative-caret-position="1107">
+          <caret line="42" column="30" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="30" />
+          <folding>
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2484">
-          <caret line="92" column="66" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
+        <state relative-caret-position="3726">
+          <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="864">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
         </state>
       </provider>
     </entry>

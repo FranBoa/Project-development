@@ -22,7 +22,28 @@
             top: 2%;
             transform: translateY(-50%);
         }
+        /* 偶数行背景色 */
+        .layui-table[lay-even] tr:nth-child(even) {
+            /* background-color: #aaffaa; */
+            background-color: #eeffee;
+        }
 
+        /* 鼠标指向表格时,奇数行背景颜色 */
+        .layui-table tbody tr:hover,.layui-table-hover {
+            background-color: #eeffee;
+        }
+
+        /* 表格头部工具栏背景色 */
+        .layui-table-tool {
+            background-color: #eeffee;
+        }
+
+        /* 表格头部背景色 */
+        th {
+            background-color: #16ccc1; /* MediumSeaGreen */
+            color: #fff;
+            font-weight: bold
+        }
     </style>
 
     <body>
@@ -123,7 +144,7 @@
                 <div class="layui-col-md6 layui-col-sm6 layui-col-xs6">
                     <div style="float: right">
                         <label class="layui-form-label"></label>
-                        <button class="layui-btn  layui-btn-lg layui-btn-radius" lay-filter="add" lay-submit="">点击增加</button>
+                        <button class="layui-btn  layui-btn-lg layui-btn-radius" lay-filter="add" id="add" lay-submit="">点击增加</button>
                         <button class="layui-btn layui-btn-primary layui-btn-lg layui-btn-radius" lay-filter="close" lay-submit="">关闭页面</button>
                     </div>
 
@@ -502,7 +523,7 @@
                     var index = parent.layer.getFrameIndex(window.name);
                     //关闭当前frame
                     parent.layer.close(index);
-                })
+                });
 
 
 
@@ -510,35 +531,47 @@
 
                 //监听提交
                 form.on('submit(add)', function(data) {
-                       // if (data.field.title==null||data.field.title==''){
-                       //     layer.alert("地址不能为空！",{icon: 5});
-                       //     return  false;
-                       // }
-                    cacheData=parent.sendData();
-                    let parent_data2=[];
-                    parent_data.map(item =>{
-                        let flag=true;
-                        if (item.warenum===0){
-                            flag=false;
-                        }
-                        if (cacheData.length>0) {
-                            let total = 0;
-                            cacheData.map(data => {
-                                if (data.pid === item.pid) {
-                                    total += typeof (data.count) === 'undefined' ? 1 : data.count * 1;
-                                }
-                            });
-                            if (item.warenum <= total) {
-                                flag = false;
-                            }
-                        }
-                        if (flag) {
-                            parent_data2.push(item);
-                        }
-                    });
-                    console.log(parent_data2);
-                    layer.msg('增加成功!');
-                        parent.GetValue(parent_data2, data.field, ids);
+                       if (data.field.title==null||data.field.title==''){
+                           layer.tips('你的地址忘记填啦！!', '#detailedAddress', {
+                               tips: [1, '#cc7531'],
+                               time: 4000
+                           });
+                           return  false;
+                       }
+                   if (parent_data.length>0){
+                       cacheData=parent.sendData();
+                       let parent_data2=[];
+                       parent_data.map(item =>{
+                           let flag=true;
+                           if (item.warenum===0){
+                               flag=false;
+                           }
+                           if (cacheData.length>0) {
+                               let total = 0;
+                               cacheData.map(data => {
+                                   if (data.pid === item.pid) {
+                                       total += typeof (data.count) === 'undefined' ? 1 : data.count * 1;
+                                   }
+                               });
+                               if (item.warenum <= total) {
+                                   flag = false;
+                               }
+                           }
+                           if (flag) {
+                               parent_data2.push(item);
+                           }
+                       });
+                       console.log(parent_data2);
+                       layer.msg('增加成功!');
+                       parent.GetValue(parent_data2, data.field, ids);
+                       return  false;
+                   }else{
+                       layer.tips('请选择一个商品!', '#add', {
+                           tips: [1, '#3595CC'],
+                           time: 4000
+                       });
+                       return  false;
+                   }
                     //     for(var i=0;i<parent_data.length;i++) {
                     //             var total = 0;
                     //             var warenum=parent_data2[i].warenum;
