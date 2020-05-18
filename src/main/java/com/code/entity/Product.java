@@ -34,10 +34,27 @@ public class Product implements Serializable {
     * 商品进价
     */
     private Double pbprice;
-    /**
+    
+    private List<children> children;
+    
+
+
+
+
+	public List<children> getChildren() {
+		return children;
+	}
+
+	public void setChildren(List<children> children) {
+		this.children = children;
+	}
+
+	/**
     * 商品售价
     */
 	private Double psprice;
+	
+	
     /**
     * 商品存储仓库
     */
@@ -139,20 +156,9 @@ public class Product implements Serializable {
         this.producttypes = producttypes;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "pid=" + pid +
-                ", pname='" + pname + '\'' +
-                ", ptype=" + ptype +
-                ", warehouses=" + warehouses +
-                ", producttypes=" + producttypes +
-                ", ptypes=" + Arrays.toString(ptypes) +
-                ", pbprice=" + pbprice +
-                ", psprice=" + psprice +
-                ", warehouse=" + warehouse +
-                ", warenum=" + warenum +
-                ", details='" + details + '\'' +
-                '}';
-    }
+
+
+
+
+
 }

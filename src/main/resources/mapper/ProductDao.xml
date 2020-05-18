@@ -17,6 +17,21 @@
 
 
 
+    <resultMap type="com.code.entity.Product" id="ProductMap2">
+        <result  property="pid" column="pId" jdbcType="INTEGER"/>
+        <result property="pname" column="pName" jdbcType="VARCHAR"/>
+        <result property="ptype" column="pType" jdbcType="INTEGER"/>
+        <result property="pbprice" column="pBprice" jdbcType="NUMERIC"/>
+        <result property="psprice" column="pSprice" jdbcType="NUMERIC"/>
+        <result property="warehouse" column="Warehouse" jdbcType="INTEGER"/>
+        <result property="warenum" column="WareNum" jdbcType="INTEGER"/>
+        <result property="details" column="details" jdbcType="VARCHAR"/>
+    <collection   property="children" ofType="com.code.entity.Product">
+    	   <id property="pid" column="pId"/>
+           <result property="pname" column="pBprice"/>
+    </collection >
+    </resultMap>
+
     <!--查询单个-->
     <select id="queryById" resultMap="ProductMap">
         select
@@ -27,6 +42,12 @@
 
     <!--查询所有的数据-->
     <select id="selectAll" resultMap="ProductMap">
+        select
+          pId, pName, pType, pBprice, pSprice, Warehouse, WareNum, details
+        from clothesppsdb.product
+    </select>
+
+     <select id="selectAll2" resultMap="ProductMap2">
         select
           pId, pName, pType, pBprice, pSprice, Warehouse, WareNum, details
         from clothesppsdb.product
@@ -63,7 +84,7 @@
                 and Warehouse = #{warehouse}
             </if>
             <if test="warenum != null">
-                and WareNum = #{warenum}
+                and WareNum &lt;= #{warenum}
             </if>
             <if test="details != null and details != ''">
                 and details = #{details}
@@ -81,12 +102,12 @@
     <update id="update">
         update clothesppsdb.product
         <set>
-            <if test="pname != null and pname != ''">
+           <!--  <if test="pname != null and pname != ''">
                 pName = #{pname},
             </if>
             <if test="ptype != null">
                 pType = #{ptype},
-            </if>
+            </if> -->
             <if test="pbprice != null">
                 pBprice = #{pbprice},
             </if>

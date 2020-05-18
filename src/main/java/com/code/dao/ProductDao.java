@@ -30,6 +30,7 @@ public interface ProductDao {
     List<Product> selectAll();
 
 
+    List<Product> selectAll2();
     /**
      * 通过实体作为筛选条件查询
      *

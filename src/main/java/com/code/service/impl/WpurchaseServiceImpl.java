@@ -1,10 +1,14 @@
 package com.code.service.impl;
 
 import com.code.entity.Product;
+import com.code.entity.Relatedsaleandorder;
 import com.code.entity.Wpurchase;
 import com.code.dao.ProductDao;
 import com.code.dao.WpurchaseDao;
 import com.code.service.WpurchaseService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 import org.springframework.stereotype.Service;
 
@@ -39,14 +43,15 @@ public class WpurchaseServiceImpl implements WpurchaseService {
     /**
      * 查询多条数据
      *
-     * @param 
-     * @param 
+     * @param
+     * @param
      * @return 对象列表
      */
     @Override
     public List<Wpurchase> selectAll(){
         return this.WpurchaseDao.selectAll();
     }
+
 
     /**
      * 通过实体作为筛选条件查询
@@ -59,6 +64,13 @@ public class WpurchaseServiceImpl implements WpurchaseService {
           return  this.WpurchaseDao.queryAll(purchase);
     }
 
+	@Override
+	public PageInfo<Wpurchase> queryAllForPage(int pageNum, int pageSize, Wpurchase wpurchase) {
+        PageHelper.startPage(pageNum,pageSize);
+		List<Wpurchase> list = this.WpurchaseDao.queryAll(wpurchase);
+	    PageInfo<Wpurchase> pageinfo=new PageInfo<>(list);
+	    return pageinfo;
+	}
     /**
      * 新增数据
      *
@@ -101,12 +113,19 @@ public class WpurchaseServiceImpl implements WpurchaseService {
 		if(a==b) {
 		return 1;
 		}else {
-		return 0;	
+		return 0;
 		}
 		}
 
 	@Override
 	public List<Wpurchase> queryBy(Wpurchase wpurchase) {
 		return this.queryBy(wpurchase);
+	}
+
+	@Override
+	public PageInfo<Wpurchase> queryByForPage(int pageNum, int pageSize, Wpurchase wpurchase) {
+		List<Wpurchase> list = this.WpurchaseDao.queryBy(wpurchase);
+	    PageInfo<Wpurchase> pageinfo=new PageInfo<>(list);
+	    return pageinfo;
 	}
 }

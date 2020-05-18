@@ -35,7 +35,7 @@ public class Wpurchase {
 	    /**
 	    * 商品id
 	    */
-	    private String purchaseGoodsId;
+	    private int purchaseGoodsId;
 	    /**
 	    * 商品名称
 	    */
@@ -79,13 +79,13 @@ public class Wpurchase {
 	    */
 	    private String discounts;
 	    /**
-	    * 优惠率
+	    * 已优惠金额
 	    */
-	    private Integer discountsPrice;
+	    private double discountsPrice;
 	    /**
 	    * 优惠后总金额
 	    */
-	    private Integer discountsSum;
+	    private double discountsSum;
 	    /**
 	    * 付款状态
 	    */
@@ -137,10 +137,10 @@ public class Wpurchase {
 		public void setSupplierId(String supplierId) {
 			this.supplierId = supplierId;
 		}
-		public String getPurchaseGoodsId() {
+		public int getPurchaseGoodsId() {
 			return purchaseGoodsId;
 		}
-		public void setPurchaseGoodsId(String purchaseGoodsId) {
+		public void setPurchaseGoodsId(int purchaseGoodsId) {
 			this.purchaseGoodsId = purchaseGoodsId;
 		}
 		public String getPurchaseGoodsName() {
@@ -209,16 +209,16 @@ public class Wpurchase {
 		public void setDiscounts(String discounts) {
 			this.discounts = discounts;
 		}
-		public Integer getDiscountsPrice() {
+		public double getDiscountsPrice() {
 			return discountsPrice;
 		}
-		public void setDiscountsPrice(Integer discountsPrice) {
+		public void setDiscountsPrice(double discountsPrice) {
 			this.discountsPrice = discountsPrice;
 		}
-		public Integer getDiscountsSum() {
+		public double getDiscountsSum() {
 			return discountsSum;
 		}
-		public void setDiscountsSum(Integer discountsSum) {
+		public void setDiscountsSum(double discountsSum) {
 			this.discountsSum = discountsSum;
 		}
 		public String getPaymentStatus() {
@@ -245,7 +245,7 @@ public class Wpurchase {
 					+ ", purchaseUnit=" + purchaseUnit + "]";
 		}
 		public Wpurchase(List<User> userList, String purchaseId, String usersId, String bossUsersId, String userName,
-				String bossName, String supplierId, String purchaseGoodsId, String purchaseGoodsName, String ptype,
+				String bossName, String supplierId, int purchaseGoodsId, String purchaseGoodsName, String ptype,
 				String ptypname, String purchaseStatus, Integer purchasePrice, Integer purchaseNum, String purchaseDate,
 				String commet, Integer warehouse, String wName, String discounts, Integer discountsPrice,
 				Integer discountsSum, String paymentStatus, String purchaseUnit) {

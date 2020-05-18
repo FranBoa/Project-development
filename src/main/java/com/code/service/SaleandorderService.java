@@ -49,7 +49,6 @@ public interface SaleandorderService {
      */
     List<Saleandorder> queryAll(Saleandorder saleandorder);
 
-
     PageInfo<Saleandorder> selectAllForPage(int pageNum, int pageSize);
     /**
      * 修改数据

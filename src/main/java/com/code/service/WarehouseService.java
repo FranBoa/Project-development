@@ -1,6 +1,9 @@
 package com.code.service;
 
+import com.code.entity.Product;
 import com.code.entity.Warehouse;
+import com.github.pagehelper.PageInfo;
+
 import java.util.List;
 
 /**
@@ -34,7 +37,7 @@ public interface WarehouseService {
      * @param warehouse 实例对象
      * @return 实例对象
      */
-    Warehouse insert(Warehouse warehouse);
+    int insert(Warehouse warehouse);
 
     /**
      * 通过实体作为筛选条件查询
@@ -42,7 +45,7 @@ public interface WarehouseService {
      * @param warehouse 实例对象
      * @return 对象列表
      */
-    List<Warehouse> queryAll(Warehouse warehouse);
+    List<Warehouse> queryAll(Warehouse warehose);
 
     /**
      * 修改数据
@@ -50,7 +53,7 @@ public interface WarehouseService {
      * @param warehouse 实例对象
      * @return 实例对象
      */
-    Warehouse update(Warehouse warehouse);
+    int update(Warehouse warehouse);
 
     /**
      * 通过主键删除数据
@@ -59,5 +62,10 @@ public interface WarehouseService {
      * @return 是否成功
      */
     boolean deleteById(Integer wid);
+
+	PageInfo<Warehouse> selectAllforPage(Integer pageNum, Integer pageSize);
+
+	PageInfo<Warehouse> selectBypname(String wname, Integer pageNum, Integer pageSize);
+
 
 }

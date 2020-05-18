@@ -30,6 +30,8 @@ public interface ProductService {
      */
     List<Product>selectAll();
 
+    List<Product> selectAll2();
+
     PageInfo<Product> selectAllforPage(Integer pageNum,Integer pageSize);
 
     /**
@@ -55,7 +57,7 @@ public interface ProductService {
      * @param product 实例对象
      * @return 实例对象
      */
-    Product update(Product product);
+    int update(Product product);
 
     /**
      * 通过主键删除数据

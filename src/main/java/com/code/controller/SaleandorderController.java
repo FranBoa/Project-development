@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.code.TimeUtil.TimeUtil;
 import com.code.entity.Relatedsaleandorder;
 import com.code.entity.Saleandorder;
+import com.code.entity.filterSos;
 import com.code.entity.formdata;
 import com.code.service.RelatedsaleandorderService;
 import com.code.service.SaleandorderService;
@@ -57,7 +58,10 @@ public class SaleandorderController {
      * @return 对象列表
      */
         @RequestMapping("selectAll")
-        public Map<String,Object> selectAll(@RequestParam("page") int pageNum, @RequestParam("limit") int pageSize){
+        public Map<String,Object> selectAll(@RequestBody(required = false)List<filterSos>  filterSos, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(value = "limit",defaultValue = "10") int pageSize){
+          if(filterSos!=null){
+              for (int i=0;i<filterSos.size();i++){ System.out.println(filterSos.get(i)); }
+          }
             PageInfo<Saleandorder> pageInfo = this.saleandorderService.selectAllForPage(pageNum,pageSize);
             Map<String,Object> map = new HashMap<>();
             map.put("data",pageInfo.getList());
@@ -84,6 +88,8 @@ public class SaleandorderController {
         int x=sid.length;
         int b=sid.length;
         for (int i=0;i<sid.length;i++){
+            System.out.println(ordernumber[i]);
+            System.out.println(sid[i]);
             boolean flag=true;
             if(flag!=true){
                 b=b-1;

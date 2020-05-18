@@ -1,6 +1,5 @@
 package com.code.controller;
 
-import com.code.entity.Saleandorder;
 import com.code.entity.Supplier;
 import com.code.service.SupplierService;
 import com.github.pagehelper.PageInfo;
@@ -47,8 +46,13 @@ public class SupplierController {
      * @return 对象列表
      */
     @RequestMapping("selectAll")
-    public List<Supplier> selectAll(){
-    	return this.supplierService.selectAll();
+    public Map<String,Object> selectAll(@RequestParam(value = "page",defaultValue = "1") Integer pageNum,@RequestParam(value = "limit",defaultValue = "10") Integer pageSize){
+    	 Map<String,Object> map=new HashMap<>();
+         PageInfo<Supplier> pageInfo = this.supplierService.selectAllforPage(pageNum,pageSize);
+         map.put("code",0);
+         map.put("data",pageInfo.getList());
+         map.put("count",pageInfo.getTotal());
+    	return map;
     }
     
     
@@ -70,4 +74,23 @@ public class SupplierController {
     public boolean delbyID(int sid) {
     	return this.supplierService.deleteById(sid);
     }
+    
+    @RequestMapping("delAll")
+   	public String delAll(@RequestParam(value = "sids") String[] sids) {
+       	int count = 0;
+       	for (int i = 0; i < sids.length; i++) {
+       		int sid = Integer.parseInt(sids[i]);
+       		boolean result = this.supplierService.deleteById(sid);
+       		if (result) {
+       			count=1;
+   			}else {
+   				count=0;
+   			}
+   		}
+       	if (count>0) {
+       		return "1";
+   		} else {
+   			return "0";
+   		}
+   	    }
 }

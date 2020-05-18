@@ -19,8 +19,8 @@
         <result property="warehouse" column="warehouse" jdbcType="INTEGER"/>
         <result property="wName" column="wName" jdbcType="VARCHAR"/>
         <result property="discounts" column="discounts" jdbcType="VARCHAR"/>
-        <result property="discountsPrice" column="discounts_Price" jdbcType="INTEGER"/>
-        <result property="discountsSum" column="discounts_sum" jdbcType="INTEGER"/>
+        <result property="discountsPrice" column="discounts_Price" jdbcType="DOUBLE"/>
+        <result property="discountsSum" column="discounts_sum" jdbcType="DOUBLE"/>
         <result property="paymentStatus" column="payment_status" jdbcType="VARCHAR"/>
         <result property="purchaseUnit" column="purchase_unit" jdbcType="VARCHAR"/>
     	<!-- <collection property="userList"  select="com.code.WpurchaseDao.queryById" column="usersId" >
@@ -33,35 +33,51 @@
 	        <result property="mail" column="mail" jdbcType="VARCHAR"/>
 	        <result property="status" column="status" jdbcType="INTEGER"/>
     	</collection> -->
-    </resultMap> 
+    </resultMap>
     <!--查询单个-->
     <select id="queryById" resultMap="WpurchaseMap">
-    select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+    select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = #{users_id})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse 
+		INNER JOIN warehouse w on w.wId=p.warehouse
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
 		where p.users_id=#{users_id} or p.boss_users_id=(select us.bossid from user us where u.id=#{users_id})
     </select>
+    <!-- <select id="queryByIdCount" resultMap="INTEGER">
+    select count(1)
+		from purchase p
+		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
+		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
+		INNER JOIN user u on p.users_id=u.id
+		where p.users_id=#{users_id} or p.boss_users_id=(select us.bossid from user us where u.id=#{users_id})
+    </select> -->
 
  <!--查询所有的数据-->
     <select id="selectAll" resultMap="WpurchaseMap">
-		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id =#{users_id})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse 
+		INNER JOIN warehouse w on w.wId=p.warehouse
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
-		<!-- where p.users_id='001' or p.boss_users_id=(select us.boosid from user us where u.id='001') -->
     </select>
-	
-	<!--通过实体作为筛选条件查询-->
-    <select id="queryBy" resultMap="WpurchaseMap">
-		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+    <!-- <select id="selectAllCount" resultMap="INTEGER">
+		select count(1)
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse 
+		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
+		INNER JOIN user u on p.users_id=u.id
+    </select> -->
+
+	<!--通过实体作为筛选条件查询-->
+    <select id="queryBy" resultMap="WpurchaseMap">
+		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id =#{users_id})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+		from purchase p
+		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
+		INNER JOIN warehouse w on w.wId=p.warehouse
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
         <where>
@@ -70,9 +86,6 @@
         	</if>
             <if test="purchaseId != null and purchaseGoodsName != ''">
                 and p.purchase_id = #{purchaseId}
-            </if>
-            <if test="purchaseGoodsId != null and purchaseGoodsName != ''">
-                and pd.purchase_goods_id = #{purchaseGoodsId}
             </if>
             <if test="purchaseGoodsName != null and purchaseGoodsName != ''">
                 and pd.purchase_goods_name = #{purchaseGoodsName}
@@ -97,13 +110,50 @@
             </if>
         </where>
     </select>
-	
-    <!--通过实体作为筛选条件查询-->
-    <select id="queryAll" resultMap="WpurchaseMap">
-		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+	<!-- <select id="queryByCount" resultMap="INTEGER">
+		select count(1)
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse 
+		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
+		INNER JOIN user u on p.users_id=u.id
+        <where>
+        	<if test="users_id != null and users_id != ''">
+        		and p.users_id=#{users_id} or p.boss_users_id=(select us.bossid from user us where u.id=#{users_id})
+        	</if>
+            <if test="purchaseId != null and purchaseGoodsName != ''">
+                and p.purchase_id = #{purchaseId}
+            </if>
+            <if test="purchaseGoodsName != null and purchaseGoodsName != ''">
+                and pd.purchase_goods_name = #{purchaseGoodsName}
+            </if>
+            <if test="purchasePrice != null">
+                and pd.purchase_price = #{purchasePrice}
+            </if>
+            <if test="purchaseNum != null">
+                and pd.purchase_num = #{purchaseNum}
+            </if>
+            <if test="purchaseDate != null and pruchaseDate != ''">
+                and p.purchase_date = #{pruchaseDate}
+            </if>
+            <if test="commet != null and commet != ''">
+                and p.commet = #{commet}
+            </if>
+            <if test="warehouse != null and warehouse != ''">
+                and p.warehouse = #{warehouse}
+            </if>
+            <if test="paymentStatus != null and paymentStatus != ''">
+                and p.payment_status = #{paymentStatus}
+            </if>
+        </where>
+    </select> -->
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="WpurchaseMap">
+		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = #{usersId})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+		from purchase p
+		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
+		INNER JOIN warehouse w on w.wId=p.warehouse
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
         <where>
@@ -119,8 +169,57 @@
             <if test="supplierId != null and supplierId != ''">
                 and p.supplier_id = #{supplierId}
             </if>
-            <if test="purchaseGoodsId != null">
-                and pd.purchase_goods_id = #{purchaseGoodsId}
+            <if test="purchaseGoodsName != null and purchaseGoodsName != ''">
+                and pd.purchase_goods_name = #{purchaseGoodsName}
+            </if>
+            <if test="purchaseStatus != null and purchaseStatus != ''">
+                and p.purchase_status = #{purchaseStatus}
+            </if>
+            <if test="purchasePrice != null">
+                and pd.purchase_price = #{purchasePrice}
+            </if>
+            <if test="purchaseNum != null">
+                and pd.purchase_num = #{purchaseNum}
+            </if>
+            <if test="purchaseDate != null and pruchaseDate != ''">
+                and p.purchase_date = #{pruchaseDate}
+            </if>
+            <if test="commet != null and commet != ''">
+                and p.commet = #{commet}
+            </if>
+            <if test="warehouse != null and warehouse != ''">
+                and p.warehouse = #{warehouse}
+            </if>
+            <if test="discounts != null and discounts != ''">
+                and pd.discounts = #{discounts}
+            </if>
+            <if test="paymentStatus != null and paymentStatus != ''">
+                and p.payment_status = #{paymentStatus}
+            </if>
+            <if test="purchaseUnit != null and purchaseUnit != ''">
+                and pd.purchase_unit = #{purchaseUnit}
+            </if>
+        </where>
+    </select>
+	<!-- <select id="queryAllCount" resultMap="INTEGER">
+		select count(1)
+		from purchase p
+		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
+		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
+		INNER JOIN user u on p.users_id=u.id
+        <where>
+            <if test="purchaseId != null">
+                and p.purchase_id = #{purchaseId}
+            </if>
+            <if test="usersId != null and usersId != ''">
+                and p.users_id = #{usersId}
+            </if>
+            <if test="bossUsersId != null and bossUsersId != ''">
+                and p.boss_users_id = #{bossUsersId}
+            </if>
+            <if test="supplierId != null and supplierId != ''">
+                and p.supplier_id = #{supplierId}
             </if>
             <if test="purchaseGoodsName != null and purchaseGoodsName != ''">
                 and pd.purchase_goods_name = #{purchaseGoodsName}
@@ -159,17 +258,12 @@
                 and pd.purchase_unit = #{purchaseUnit}
             </if>
         </where>
-    </select>
+    </select> -->
 
     <!--通过主键修改数据-->
     <update id="update">
         update purchase set purchase_status = #{purchaseStatus} where purchase_id = #{purchaseId}
     </update>
-
-    <!--通过主键删除-->
-    <!-- <delete id="deleteById">
-        delete from clothesppsdb.purchase where purchase_id = #{purchaseId}
-    </delete> -->
 
 	<!-- 添加purchase -->
 	<insert id="addp">
@@ -177,6 +271,6 @@
 	</insert>
 	<!-- 添加purchase-detail -->
 	<insert id="addpd">
-	insert into purchase_detail(purchase_id,purchase_goods_name,purchase_price,purchase_num,discounts_sum) VALUES(#{purchaseId},#{purchaseGoodsName},#{purchasePrice},#{purchaseNum},#{discountsSum});
+	insert into purchase_detail(purchase_id,purchase_goods_id,purchase_goods_name,purchase_price,purchase_num,discounts,discounts_price,discounts_sum,ptype) VALUES(#{purchaseId},#{purchaseGoodsId},#{purchaseGoodsName},#{purchasePrice},#{purchaseNum},#{discounts},#{discountsPrice},#{discountsSum},3);
 	</insert>
 </mapper>

@@ -1,138 +1,215 @@
 <!DOCTYPE html>
 <html class="x-admin-sm">
-    <head>
-        <meta charset="UTF-8">
-        <title>智能补货</title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!-- 
+<head>
+<meta charset="UTF-8">
+<title>智能补货</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-         --><link rel="stylesheet" href="./css/font.css">
-        <link rel="stylesheet" href="./css/xadmin.css">
-        <script src="./lib/layui/layui.js" charset="utf-8"></script>
-        <script src="./lib/layui/layui.all.js" charset="utf-8"></script>
-        <script type="text/javascript" src="./js/xadmin.js"></script>
-		<link href="./css/bootstrap.min.css" rel="stylesheet" />
-		<script src="./js/vue.js"></script>
-		<script src="./js/axios.min.js"></script>
-		<script src="../js/qs.min.js"></script>
+         -->
+<link rel="stylesheet" href="./css/font.css">
+<link rel="stylesheet" href="./css/xadmin.css">
+<script src="./lib/layui/layui.js" charset="utf-8"></script>
+<script src="./lib/layui/layui.all.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/xadmin.js"></script>
+<link href="./css/bootstrap.min.css" rel="stylesheet" />
+<script src="./js/vue.js"></script>
+<script src="./js/axios.min.js"></script>
+<script src="../js/qs.min.js"></script>
+<style>
+	* {
+          margin: 0;
+          padding: 0;
+          font-size: 14px;
+        }
+        
+        #vue-dingyi-paging ul {
+          list-style: none;
+          margin-top: 10px;
+        }
+        
+        #vue-dingyi-paging ul li {
+          margin: 0 5px;
+        }
+        
+        #vue-dingyi-paging ul li,
+        .pageLink {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          background: #F0F0F0;
+          color: #ABABAB;
+          border-radius: 3px;
+          text-align: center;
+          text-decoration: none;
+          line-height: 40px;
+        }
+        
+        #vue-dingyi-paging ul li .pageLink:hover {
+          background: #ABABAB;
+          color: #FFFFFF;
+        }
+        
+        #vue-dingyi-paging ul li .curPage {
+          background: #81C06F;
+          color: #FFFFFF;
+        }
+</style>
+</head>
 
-    </head>
-    
-    <body>
-        <div class="x-nav">
-            <span class="layui-breadcrumb">
-                <a href="">首页</a>
-                <a href="">演示</a>
-                <a>
-                    <cite>导航元素</cite></a>
-            </span>
-            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
-                <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
-            </a>
-        </div>
-        <div class="layui-fluid" id="tableList" >
-            <div class="layui-row layui-col-space15">
-                <div class="layui-col-md12">
-                    <div class="layui-card">
-                        <div class="layui-card-header">
-                            <button class="layui-btn" onclick="xadmin.open('添加用户','./order-add.html',800,600)">
-                                <i class="layui-icon"></i>生成订单</button></div>
-                        <div class="layui-card-body">
-    						<table class="layui-table">
-    						<tr>
-    							<td></td>
-    							<td>商品名称</td>
-    							<td>商品类别</td>
-    							<td>商品进价</td>
-    							<td>商品售价</td>
-    							<td>商品存储仓库</td>
-    							<td>库存数量</td>
-    							<td>详细说明</td>
-    						</tr>
-    						<tr v-for="c in list">
-    							<td><input type="checkbox" value="c.pid" /></td>
-    							<td>{{c.pname}}</td>
-    							<td>{{c.producttypename}}</td>
-    							<td>{{c.pbprice}}</td>
-    							<td>{{c.psprice}}</td>
-    							<td>{{c.wname}}</td>
-    							<td>{{c.warenum}}</td>
-    							<td>{{c.details}}</td>
-    						</tr>
-    						</table>
-                        </div>
-                        <div class="layui-card-body ">
-                            <div class="page">
-                                <div>
-                                    <a class="prev" href="">&lt;&lt;</a>
-                                    <a class="num" href="">1</a>
-                                    <span class="current">2</span>
-                                    <a class="num" href="">3</a>
-                                    <a class="num" href="">489</a>
-                                    <a class="next" href="">&gt;&gt;</a>
-                                </div>
-                            </div>
-                        </div>
-						<div>
-							<!-- 优惠率：<input type="text" name="" />
-							付款优惠：<input type="text" name="" />
-							优惠后金额：<input type="text" name=""  /> -->
-							本次付款：<input type="text" name=""  />
-							<!-- 结算账户：<select>
-								<option>现金</option>
-								<option>银行存款</option>
-								<option>多账户</option></select>/>
-							本次欠款：<input type="text" name="" /> -->
+<body>
+	<div class="x-nav">
+		<span class="layui-breadcrumb"> <a href="">首页</a> <a href="">演示</a>
+			<a> <cite>导航元素</cite></a>
+		</span> <a class="layui-btn layui-btn-small"
+			style="line-height: 1.6em; margin-top: 3px; float: right"
+			onclick="location.reload()" title="刷新"> <i
+			class="layui-icon layui-icon-refresh" style="line-height: 30px"></i>
+		</a>
+	</div>
+	<div class="layui-fluid" id="tableList">
+		<div class="layui-row layui-col-space15">
+			<div class="layui-col-md12">
+				<div class="layui-card">
+					<div class="layui-card-header">
+						<div class="layui-input" >
+							库存数量小于：<input type="text"v-model="shuliang" >
+							<button class="layui-btn" @click="selectAll()">搜索</button>
 						</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-    <script>
-/*     layui.use('table', function () {
-        var table = layui.table;
-
-        //返回的数据必须是code:0
-        var tableIns = table.render({
-            elem: '#tableList'
-          , height: 450
-          , url: '/product/queryAll?WareNum=50' //数据接口
-          , where: { action: 'getclublistbypage' }
-          , page: true //开启分页
-          , limit: 10
-          , cols: [[ //表头
-            , { field: 'pName', title: '商品名称', width: 100 }
-            , { field: 'pType', title: '商品类别', width: 100 }
-            , { field: 'pBprice', title: '商品进价', width: 100 }
-            , { field: 'pSprice', title: '商品售价', width: 100 }
-            , { field: 'Warehouse', title: '商品存储仓库', width: 120 }
-            , { field: 'WareNum', title: '库存数量', width: 100 }
-            , { field: 'details', title: '详细说明', width: 180 }
-          ]]
-        });
-
-    }); */
+					</div>
+					<div class="layui-card-body">
+						<table class="layui-table">
+							<tr>
+								<td><input type="checkbox" name="" lay-skin="primary"></td>
+								<td>商品名称</td>
+								<td>商品进价</td>
+								<td>商品售价</td>
+								<td>商品存储仓库</td>
+								<td>库存数量</td>
+								<td>详细说明</td>
+								<td>操作</td>
+							</tr>
+							<tr v-for="c,index in list">
+								<td><input type="checkbox" value="c.pid" lay-skin="primary"/></td>
+								<td>{{c.pname}}</td>
+								<td>{{c.pbprice}}</td>
+								<td>{{c.psprice}}</td>
+								<td>{{c.warehouses[0].wname}}</td>
+								<td>{{c.warenum}}</td>
+								<td>{{c.details}}</td>
+								<td><a title="添加"  @click="addList(c)" href="javascript:;">
+                                                <i class="layui-icon">&#xe63c;</i></a></td>
+							</tr>
+						</table>
+					</div>
+					<div class="layui-card-body ">
+						<!--分页-->
+						<!-- <div id="vue-dingyi-paging">
+							<ul>
+							    <li>
+							      <a class="pageLink" href="#" @click="setPage(curNum-1)">
+							        <</a>
+							    </li>
+							    <li v-for="n in totalNum">
+							      <a class="pageLink" href="#" v-text="n" @click="setPage(n+1)" :class="{ curPage: n+1 == curNum }"></a>
+							    </li>
+							    <li><a class="pageLink" href="#" @click="setPage(curNum+1)">></a></li>
+							  </ul>
+						</div> -->
+					</div>
+					<div>
+						<!-- 优惠率：<input type="text" name="" />
+							付款优惠：<input type="text" name="" />
+							优惠后金额：<input type="text" name=""  />
+						本次付款：<input type="text" name="" /> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
     
         var vm = new Vue({
         	el:'#tableList',
         	data:{
-        		list:[]
+        		list:[],
+        		shuliang:'',
+        		totalNum:'', //总页数
+        	    curNum: 1 //当前页码
         	},
 			mounted(){//初始化显示后调用
 				this.selectAll()
 			},
 			methods:{
 		        selectAll(){
-	    			var product=Qs.stringify({"warenum":50})
-			        axios.post('/product/queryAll',product) .then(res=>{
+	    			var product=Qs.stringify({"warenum":this.shuliang})
+			        axios.post('/product/queryAll',product) .then(res=>{// ,'pageNum':curNum,'pageSize':5
 			        		console.log(res)
 			        		this.list=res.data.data;
+			        		this.totalNum=res.data.count;
 			        		}).catch(err=>{
 							alert('操作失败')
 						})
-		        }
+		        },//切换页码
+		        setPage: function(num) {
+		            //页码小于等于1
+		            if (num <= 1) {
+		              return this.curNum = 1;
+		            }
+		            //页码大于总页数
+		            if (num >= this.totalNum) {
+		              return this.curNum = this.totalNum;
+		            }
+		            //页码赋给当前页
+		            this.curNum = num;
+		            this.selectAll();
+		          },
+		        addList(c){
+						var purchaseNum = prompt("请输入需要购买数量","");
+						var discounts = prompt("请输入折扣（%）","");
+						if(discounts>100){
+							return false;
+						}else if(discounts<1){
+							return false;
+						}
+				        /* if(word){
+				             //输出word的格式
+				             alert("已获得:"+word);
+				         } */
+	    				var wpurchase={
+          			"purchaseGoodsId":c.pid
+          			,"purchaseGoodsName":c.pname
+          			,"purchasePrice":c.pbprice
+          			,"purchaseNum":purchaseNum
+          			,"discounts":discounts
+          			,"commet":c.details
+          			,"warehouse":c.warehouses[0].wid
+            	};
+		        	  axios.post("/Wpurchase/add",wpurchase) .then(res=>{// ,'pageNum':curNum,'pageSize':5
+			        		
+							alert('操作成功')
+							location.reload()
+			        		}).catch(err=>{
+							alert('操作失败')
+						})
+		          }
 	    	}
         }); 
+        
+        function addList(argument) {
+
+            var data = tableCheck.getData();
+
+            layer.confirm('确认要添加吗？' + data,
+            function(index) {
+                //捉到所有被选中的，发异步进行删除
+                layer.msg('删除成功', {
+                    icon: 1
+                });
+                //$(".layui-form-checked").not('.header').parents('tr').remove();
+            });
+        }
         </script>
 </html>

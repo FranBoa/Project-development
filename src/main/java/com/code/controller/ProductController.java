@@ -1,6 +1,7 @@
 package com.code.controller;
 
 import com.code.entity.Product;
+import com.code.entity.Wpurchase;
 import com.code.service.ProductService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
@@ -56,6 +57,10 @@ public class ProductController {
         return map;
     }
 
+    @RequestMapping("selectAlltwo")
+    public List<Product> selectAlltwo(){
+           return this.productService.selectAll2();
+    }
 
         /**
      * 通过实体作为筛选条件查询

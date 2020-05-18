@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="x-admin-sm">
-    
+
     <head>
         <meta charset="UTF-8">
         <title>采购汇总</title>
@@ -13,7 +13,7 @@
         <script src="../lib/layui/layui.all.js" charset="utf-8"></script>
         <script type="text/javascript" src="../js/xadmin.js"></script>
     </head>
-    
+
     <body>
         <div class="x-nav">
             <span class="layui-breadcrumb">
@@ -30,7 +30,7 @@
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
                         <div class="layui-card-header">
-                            <button class="layui-btn" onclick="xadmin.open('购货','/w-purchase-add.html',600,400)"><i class="layui-icon"></i>购货</button>
+                            <button class="layui-btn" onclick="xadmin.open('购货','/w-purchase-add.html',700,700)"><i class="layui-icon"></i>购货</button>
                         </div>
                     <div class="layui-card">
                             <table id="tableList">
@@ -42,25 +42,25 @@
 				                <td>{{List.productDescribe}}</td>
 				                <td>{{List.amount}}</td>
 				                <td>{{List.residualAmount}}</td>
-				
-				
+
+
 				                <td>{{List.amountUnit}}</td>
 				                <td>{{List.costPrice}}</td>
 				                <td style="display: none">{{procedureName}}</td>
 				                <td contenteditable="true" id="nijia" @keyup="alertNum(index,$event)">{{List.num}}</td>
 				                <td></td>
 				                <td><a href="javascript:void(0);" @click="toMallInfo()">设计</a></td>
-				
+
 				              </tr>
 				            </tbody> -->
 				            </table>
-    				
+
                     </div>
                 </div>
             </div>
         </div>
     </body>
-    <!-- 
+    <!--
     <script type="text/html" id="username">
 		{{d.List[0].username}}
     </script>
@@ -68,8 +68,8 @@
 		{{d.List[0].bossname}}
     </script>
      -->
-    
-    
+
+
     <script>
    var tbins;
     layui.use('table', function () {
@@ -79,10 +79,11 @@
         tbins = table.render({
             elem: '#tableList'
           , height: 450
-          , url: '/Wpurchase/selectAll' //数据接口
+          , url: '/Wpurchase/queryAllForPage' //数据接口
           , where: { action: 'getclublistbypage' }
           , page: true //开启分页
           , limit: 10
+            ,limits:[10,20,30,40]
           , cols: [[ //表头
             { field: 'purchaseId', title: '订单编号', width: 80, fixed: 'left' }
             , { field: 'userName', title: '采购人员', width: 180,templet:'username' }
@@ -92,27 +93,46 @@
             , { field: 'purchaseNum', title: '数量', width: 180 }
             , { field: 'purchaseDate', title: '购货日期', width: 180 }
             , { field: 'commet', title: '备注', width: 180 }
-            , { field: 'warehouse', title: '仓库 id', width: 180 }
+            /* , { field: 'warehouse', title: '仓库 id', width: 180 } */
             , { field: 'wName', title: '仓库名', width: 180 }
             , { field: 'discounts', title: '折扣率', width: 180 }
             , { field: 'discountsPrice', title: '折扣额', width: 180 }
             , { field: 'discountsSum', title: '总金额', width: 180 }
-            , { field: 'paymentStatus', title: '付款方式', width: 180 }
             , { field: 'purchaseStatus', title: '审核状态', width: 180 }
           ]]
           ,done: function(res){
         	  table_data=res.data;
-        	  
+
           }
         });
 
-		
-		
+
+
     });
     function getval(){
     	tbins.reload();
     }
-    
+
+ // 发送type查询
+    function reloadtable(producttypeid,producttypeids){
+        var ptype=null;
+        var ptypes=null;
+        if (producttypeid != null) { ptype=producttypeid;}
+        if (producttypeids != null) { ptypes=Qs.parse(producttypeids);}
+        table.reload('test', {
+            page: {
+                curr: 1 //重新从第 1 页开始
+            }
+            ,url:'product/queryAll'
+            , where: {
+                pname:$("input[name=searContent]").val()
+                ,ptypes:ptypes
+                ,ptype:ptype
+            }
+        });
+
+    }
+
     layui.use(['laydate', 'form'],
         function() {
             var laydate = layui.laydate;

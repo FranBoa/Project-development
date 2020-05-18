@@ -49,6 +49,7 @@ public class SaleandorderServiceImpl implements SaleandorderService {
         return this.saleandorderDao.selectAll();
     }
 
+
     @Override
     public PageInfo<Saleandorder> selectAllForPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);

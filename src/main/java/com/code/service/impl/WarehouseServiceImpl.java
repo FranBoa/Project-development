@@ -1,8 +1,12 @@
 package com.code.service.impl;
 
+import com.code.entity.Product;
 import com.code.entity.Warehouse;
 import com.code.dao.WarehouseDao;
 import com.code.service.WarehouseService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -60,9 +64,8 @@ public class WarehouseServiceImpl implements WarehouseService {
      * @return 实例对象
      */
     @Override
-    public Warehouse insert(Warehouse warehouse) {
-        this.warehouseDao.insert(warehouse);
-        return warehouse;
+    public int insert(Warehouse warehouse) {
+        return  this.warehouseDao.insert(warehouse);
     }
 
     /**
@@ -72,9 +75,9 @@ public class WarehouseServiceImpl implements WarehouseService {
      * @return 实例对象
      */
     @Override
-    public Warehouse update(Warehouse warehouse) {
-        this.warehouseDao.update(warehouse);
-        return this.queryById(warehouse.getWid());
+    public int update(Warehouse warehouse) {
+        
+        return this.warehouseDao.update(warehouse);
     }
 
     /**
@@ -85,6 +88,23 @@ public class WarehouseServiceImpl implements WarehouseService {
      */
     @Override
     public boolean deleteById(Integer wid) {
-        return this.warehouseDao.deleteById(wid) > 0;
+        return this.warehouseDao.deleteById(wid)>0;
     }
+
+	@Override
+	public PageInfo<Warehouse> selectAllforPage(Integer pageNum, Integer pageSize) {
+		PageHelper.startPage(pageNum,pageSize);
+        List<Warehouse> list=this.warehouseDao.selectAll();
+        PageInfo<Warehouse> pageInfo=new PageInfo<>(list);
+        return pageInfo;
+	}
+
+	@Override
+	public PageInfo<Warehouse> selectBypname(String wname, Integer pageNum, Integer pageSize) {
+		PageHelper.startPage(pageNum,pageSize);
+        List<Warehouse> list=this.warehouseDao.selectBywname(wname);
+        PageInfo<Warehouse> pageInfo=new PageInfo<>(list);
+        return pageInfo;
+	}
+
 }

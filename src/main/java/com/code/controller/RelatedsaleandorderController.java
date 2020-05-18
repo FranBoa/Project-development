@@ -56,7 +56,8 @@ public class RelatedsaleandorderController {
      * @return 对象列表
      */
         @RequestMapping("queryAll")
-        public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder,int pageNum, int pageSize){
+        public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder, @RequestParam(defaultValue= "1") int pageNum,@RequestParam(defaultValue = "10") int pageSize){
+            System.out.println(relatedsaleandorder.getOrdernumber());
             Map<String,Object> map = new HashMap<>();
             PageInfo<Relatedsaleandorder> pageInfo = this.relatedsaleandorderService.queryAllforPage(pageNum,pageSize,relatedsaleandorder);
             System.out.println(pageInfo);
@@ -68,10 +69,12 @@ public class RelatedsaleandorderController {
 
 
         @RequestMapping("del")
-        public Map<String,Object> delAll(int [] sid){
+        public Map<String,Object> delAll(int [] sid,String [] ordernumber){
             int x=sid.length;
             int b=sid.length;
             for (int i=0;i<sid.length;i++){
+                System.out.println(ordernumber[i]);
+                System.out.println(sid[i]);
                 boolean flag=true;
                 if(flag!=true){
                     b=b-1;

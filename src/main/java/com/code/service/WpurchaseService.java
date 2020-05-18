@@ -1,6 +1,7 @@
 package com.code.service;
 
 import com.code.entity.Wpurchase;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public interface WpurchaseService {
     /**
      * 查询多条数据
      *
-     * @param 
+     * @param
      * @param
      * @return 对象列表
      */
@@ -64,5 +65,10 @@ public interface WpurchaseService {
 	int add(Wpurchase wpurchase);
 
 	List<Wpurchase> queryBy(Wpurchase wpurchase);
+
+
+    PageInfo<Wpurchase> queryAllForPage(int pageNum, int pageSize, Wpurchase wpurchase);
+
+	PageInfo<Wpurchase> queryByForPage(int pageNum, int pageSize, Wpurchase wpurchase);
 
 }

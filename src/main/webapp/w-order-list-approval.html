@@ -62,7 +62,7 @@
     							<td>{{c.wName}}</td>
     							<td>{{c.commet}}</td>
     							<td>{{c.purchaseStatus}}</td>
-    							<td><button @click="tongyi(c.purchaseId,c.purchaseGoodsName,c.purchasePrice,c.purchaseNum,c.warehouse,c.commet)" class="layui-btn" target="_blank">通过</button></td>
+    							<td><button @click="tongyi(c.purchaseId,c.purchaseGoodsId,c.purchaseGoodsName,c.purchasePrice,c.purchaseNum,c.warehouse,c.commet)" class="layui-btn" target="_blank">通过</button></td>
     						</tr>
     						</table>
                         </div>
@@ -91,8 +91,8 @@
     				alert('查询失败')
     			})
     		},
-    		tongyi(id,purchaseGoodsName,purchasePrice,purchaseNum,warehouse,commet){
-    			var purchase=Qs.stringify({"purchaseId":id,"purchaseGoodsName":purchaseGoodsName,"purchasePrice":purchasePrice,"purchaseNum":purchaseNum,"warehouse":warehouse,"commet":commet})
+    		tongyi(id,purchaseGoodsId,purchaseGoodsName,purchasePrice,purchaseNum,warehouse,commet){
+    			var purchase=Qs.stringify({"purchaseId":id,"purchaseGoodsId":purchaseGoodsId,"purchaseGoodsName":purchaseGoodsName,"purchasePrice":purchasePrice,"purchaseNum":purchaseNum,"warehouse":warehouse,"commet":commet})
     			axios.post('Wpurchase/updatetongyi',purchase).then(res=>{
     				this.getAll();
     				alert('审核成功')

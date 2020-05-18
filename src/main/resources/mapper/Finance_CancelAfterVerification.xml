@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.dao.Finance_CancelAfterVerification">
+    <insert id="addCancelAfterVerification">
+        insert  into cancel_after_verification values (#{sourceListNum},#{professionalType},#{invoicesDate},#{confirmedMoney},#{unfinishedMoney},#{clienteleId},#{out_consumer},#{income_consumer_id})
+    </insert>
+</mapper>

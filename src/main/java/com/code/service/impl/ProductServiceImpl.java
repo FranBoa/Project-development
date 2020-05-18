@@ -90,9 +90,9 @@ public class ProductServiceImpl implements ProductService {
      * @return 实例对象
      */
     @Override
-    public Product update(Product product) {
-        this.productDao.update(product);
-        return this.queryById(product.getPid());
+    public int update(Product product) {
+        
+        return this.productDao.update(product);
     }
 
     /**
@@ -105,4 +105,10 @@ public class ProductServiceImpl implements ProductService {
     public boolean deleteById(Integer pid) {
         return this.productDao.deleteById(pid) > 0;
     }
+
+	@Override
+	public List<Product> selectAll2() {
+		// TODO Auto-generated method stub
+		return this.productDao.selectAll2();
+	}
 }

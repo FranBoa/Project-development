@@ -1,6 +1,7 @@
 package com.code.service.impl;
 
 import com.code.entity.Supplier;
+import com.code.entity.Warehouse;
 import com.code.dao.SupplierDao;
 import com.code.service.SupplierService;
 import com.github.pagehelper.PageHelper;
@@ -96,4 +97,12 @@ public class SupplierServiceImpl implements SupplierService {
     public boolean deleteById(Integer sid) {
         return this.supplierDao.deleteById(sid) > 0;
     }
+
+	@Override
+	public PageInfo<Supplier> selectAllforPage(Integer pageNum, Integer pageSize) {
+		PageHelper.startPage(pageNum,pageSize);
+        List<Supplier> list=this.supplierDao.selectAll();
+        PageInfo<Supplier> pageInfo=new PageInfo<>(list);
+		return pageInfo;
+	}
 }

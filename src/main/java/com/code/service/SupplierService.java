@@ -2,6 +2,7 @@ package com.code.service;
 
 import com.code.entity.Saleandorder;
 import com.code.entity.Supplier;
+import com.code.entity.Warehouse;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -63,5 +64,7 @@ public interface SupplierService {
      * @return 是否成功
      */
     boolean deleteById(Integer sid);
+
+	PageInfo<Supplier> selectAllforPage(Integer pageNum, Integer pageSize);
 
 }
