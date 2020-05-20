@@ -3,10 +3,8 @@ package com.code.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.code.TimeUtil.TimeUtil;
-import com.code.entity.Relatedsaleandorder;
-import com.code.entity.Saleandorder;
-import com.code.entity.filterSos;
-import com.code.entity.formdata;
+import com.code.entity.*;
+import com.code.layuiUtil.SoulPage;
 import com.code.service.RelatedsaleandorderService;
 import com.code.service.SaleandorderService;
 import com.github.pagehelper.PageInfo;
@@ -15,10 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import javax.annotation.Resource;
 
 /**
@@ -58,16 +53,20 @@ public class SaleandorderController {
      * @return 对象列表
      */
         @RequestMapping("selectAll")
-        public Map<String,Object> selectAll(@RequestBody(required = false)List<filterSos>  filterSos, @RequestParam(defaultValue = "1") int pageNum, @RequestParam(value = "limit",defaultValue = "10") int pageSize){
-          if(filterSos!=null){
-              for (int i=0;i<filterSos.size();i++){ System.out.println(filterSos.get(i)); }
-          }
-            PageInfo<Saleandorder> pageInfo = this.saleandorderService.selectAllForPage(pageNum,pageSize);
-            Map<String,Object> map = new HashMap<>();
-            map.put("data",pageInfo.getList());
-            map.put("code",0);
-            map.put("count",pageInfo.getTotal());
-            return map;
+        public Object selectAll(SoulPage<Saleandorder> soulPage, SaleandorderSo saleandorderSo){
+//            selectAll(@RequestParam(value = "filterSos",required = false) String filterSos, @RequestParam(value = "page",defaultValue = "1") int pageNum, @RequestParam(value = "limit",defaultValue = "2") int pageSize, @RequestParam(required = false) String field, @RequestParam(required = false) String order){
+            soulPage.setObj(saleandorderSo);
+            System.out.println(saleandorderSo);
+//            List<filterSos> filterSosList = JSONArray.parseArray(filterSos,filterSos.class);
+//            if(filterSosList!=null){
+//              for (int i=0;i<filterSosList.size();i++){ System.out.println(filterSosList.get(i)); }
+//             }
+//            PageInfo<Saleandorder> pageInfo = this.saleandorderService.selectAllForPage(pageNum,pageSize,filterSosList);
+//            Map<String,Object> map = new HashMap<>();
+//            map.put("data",pageInfo.getList());
+//            map.put("code",0);
+//            map.put("count",pageInfo.getTotal());
+            return saleandorderService.selectAll(soulPage);
         }
 
 

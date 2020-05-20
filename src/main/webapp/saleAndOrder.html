@@ -110,16 +110,17 @@
                     <div class="layui-card">
                         <div class="layui-card-body ">
                             <form class="layui-form layui-col-space5">
+                                    <div class="layui-inline layui-show-xs-block">
+                                        <input type="text" name="createTime" style="width: 180px;"
+                                               class="layui-input" placeholder="下单时间"></div>
+                                    <div class="layui-inline layui-show-xs-block">
                                 <div class="layui-inline layui-show-xs-block">
-                                    <input class="layui-input" autocomplete="off" placeholder="下单日期" name="start" id="start1"></div>
-                                <div class="layui-inline layui-show-xs-block">
-                                <div class="layui-inline layui-show-xs-block">
-                                    <input type="text" name="username" placeholder="请输入订单号"  autocomplete="off" class="layui-input"></div>
+                                    <input type="text" name="ordernumber" placeholder="请输入订单号"  autocomplete="off" class="layui-input"></div>
                                     <div class="layui-inline layui-show-xs-block">
                                             <div id="kehuid2"></div>
                                     </div>
                                 <div class="layui-inline layui-show-xs-block">
-                                    <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                    <button class="layui-btn" lay-submit="" lay-filter="search">
                                         <i class="layui-icon">&#xe615;</i></button>
                                 </div>
                                 </div>
@@ -337,15 +338,15 @@
                 ,field:{idName:'cid',titleName:'name',childName:'children'}
             });
 
-            var catIns2 = selectN({
-                //元素容器【必填】
-                elem: '#kehuid2'
-                ,search:true
-                //候选数据【必填】
-                ,data:"category/selectAllWithKehu"
-                ,last:true
-                ,field:{idName:'cid',titleName:'name',childName:'children'}
-            });
+            // var catIns2 = selectN({
+            //     //元素容器【必填】
+            //     elem: '#kehuid2'
+            //     ,search:true
+            //     //候选数据【必填】
+            //     ,data:"category/selectAllWithKehu"
+            //     ,last:true
+            //     ,field:{idName:'cid',titleName:'name',childName:'children'}
+            // });
             form.on('submit(demo1)',function (data) {
                 var arr=layui.table.cache["addgoods"];
                 //    console.log(arr);
@@ -692,27 +693,6 @@
         <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
-    <script name="Layui-Date-Search">
-        layui.use(['laydate','form'],
-        function() {
-            var form=layui.form;
-            var laydate = layui.laydate;
-
-            form.on('submit(sreach)',function(data){
-               console.log(data.field);
-               return false;
-            });
-
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#start1' //指定元素
-            });
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#end1' //指定元素
-            });
-
-        });</script>
     <script  name="VUE-VM">
         var doneTest=function () {
             $("th").css({'font-size':'14','color':'black','border-color':'#aaa'});
@@ -829,6 +809,7 @@
                                                 success:function(data){
                                                     if (data.code==0){
                                                         layer.msg(data.result, {time: 5000, icon:6});
+
                                                     }else{
                                                         layer.msg(data.result, {time: 5000, icon:5});
                                                     }
@@ -838,7 +819,9 @@
                                                 error:function(data){
                                                     layer.msg('錯誤！', {time: 5000, icon:6});
                                                 }
+
                                             });
+                                            table.reload('xtable');
                                             break;
                                         case 'getCheckLength':
                                             var data = checkStatus.data;
@@ -932,6 +915,8 @@
             }
         });
     </script>
+
+
     <script name="addGoods">
         var xx=new Array();
         function GetValue(obj,datafiled,ids) {
@@ -957,6 +942,8 @@
                     elem: '#addgoods'
                     ,data: xx
                     ,page: true //开启分页
+                    ,limits:[1000,2000,3000]
+                    ,limit:1000
                     ,toolbar:'#addgoodsToolBar'
                     ,cols: [[
                         {type:'checkbox',field:'pid',fixed: 'left'}
@@ -974,9 +961,12 @@
                         ,{field:'warenum', width:90, title: '库存数量', sort: true,templet:'#danger'}
                         ,{field:'details', title: '说明',fixed:'right'}
                     ]]
-                    ,done:function (res) {
+                    ,done:function(res, curr, count){
                         $("th").css({'font-size':'14','color':'black','border-color':'#aaa'});
                         $("td").css({"border-color":'#aaa'});
+                        console.log(res);
+                        //得到数据总量
+                        console.log(count);
                     }
                 });
 
@@ -998,10 +988,17 @@
                     switch(obj.event){
                         case 'getCheckData':
                             var data = checkStatus.data;
-                            layer.alert(JSON.stringify(data));
-                            break;
-                        case 'getCheckLength':
-                            var data = checkStatus.data;
+                            for(var i=0;i<xx.length;i++){
+                                for (var j=0;j<data.length;j++){
+                                    if (xx[i].pid==data[j].pid){
+                                        console.log(data[j].pid);
+                                        xx.remove(i);
+                                    }
+                                }
+                            }
+                            addgoods.reload( {
+                                data:xx
+                            });
                             layer.msg('选中了：'+ data.length + ' 个');
                             break;
                         case 'isAll':
@@ -1077,32 +1074,37 @@
                         var count=0;
                         var total=0;
                         var Differencevalue=0;
-                        var val=   layui.table.cache["addgoods"];
-                        //console.log(obj);
+                        var val=layui.table.cache["addgoods"];
+                        console.log(val);
                         for (var i=0;i<val.length;i++){
+
                             if (val[i].pid==data.pid&&val[i].warehouse==data.warehouse){
+                                console.log(val[i].pid);
+                                console.log(data.pid);
                                 count++;
-                            }
-                            if (count>0){
-                                if (val[i].count==null||val[i].count==''){
-                                    total+=1;
-                                }else{
-                                    total+=val[i].count*1;
+                                console.log(count);
+                                //判断是否有重复的，有就去判断 疯了！！
+                                if (count>0){
+                                    if (val[i].count==null||val[i].count==''){
+                                        total+=1;
+                                    }else{
+                                        total+=val[i].count*1;
+                                    }
                                 }
                             }
-                            //console.log(data.pid);
-                            //console.log(val[i].pid);
-                            if (val[i].count!=value&&val[i].warehouse==data.warehouse){
+
+
+
+                            //说明数量多了 我自己看不懂了 啊啊啊啊啊啊啊啊啊！
+                            if (val[i].count!=value&&val[i].warehouse==data.warehouse&&val[i].pid==data.pid){
                                 if (val[i].count==null||val[i].count==''){
                                     Differencevalue+=1;
                                 }else{
                                     Differencevalue+=val[i].count*1;
                                 }
                             }
-
                         }
-                        // console.log(Differencevalue);
-
+                         console.log("差值"+Differencevalue);
                         if(total>data.warenum){
                             var count = data.warenum-Differencevalue;
                             obj.update({
@@ -1120,7 +1122,7 @@
 
         }
     </script>
-<script>
+    <script>
     // 自定义模块，这里只需要开放soulTable即可
     layui.config({
         base: 'module/',   // 第三方模块所在目录
@@ -1131,25 +1133,228 @@
         tableMerge: 'soulTable/tableMerge',
         tableFilter: 'soulTable/tableFilter',
         excel: 'soulTable/excel',
-    }).use(['form', 'table','soulTable'], function () {
+    }).use(['form', 'table','soulTable','laydate'], function () {
         var table = layui.table,
-            soulTable = layui.soulTable;
-        table.render({
+            soulTable = layui.soulTable
+            laydate=layui.laydate
+            form=layui.form;
+        var soultable=table.render({
             elem: '#soultable'
             ,url: 'saleandorder/selectAll'
-            ,height: 1200
+            ,method:'get'
+            ,height:'880px'
+            ,toolbar: '<div><button class="layui-btn layui-btn-sm  layui-btn-normal" lay-event="clearFilter">清除所有筛选条件</button>' +
+                '<button class="layui-btn layui-btn-sm  layui-btn-danger" lay-event="delAll">批量删除</button></div>'
             ,page: true
-             ,collapse: true
+            //,dataType:'json'
+            // ,soulSort: false
+            ,limit:10
+            ,limits: [10,20,30,40]
+            ,overflow: 'tips'
+            ,contextmenu: {
+                // 表头右键菜单配置
+                header: [
+                    {
+                        name: '复制',
+                        icon: 'layui-icon layui-icon-template',
+                        click: function(obj) {
+                            soulTable.copy(obj.text)
+                            layer.msg('复制成功！')
+                        }
+                    },
+                    {
+                        name: '导出excel',
+                        click: function() {
+                            soulTable.export(this.id)
+                        }
+                    },
+                    {
+                        name: '重载表格',
+                        icon: 'layui-icon layui-icon-refresh-1',
+                        click: function() {
+                            table.reload(this.id)
+                        }
+                    },
+                    {
+                        name: '刷新页面',
+                        icon: 'layui-icon layui-icon-refresh-1',
+                        click: function() {
+                            location.reload();
+                        }
+                    },
+                    {
+                        name: '字体颜色',
+                        icon: 'layui-icon layui-icon-theme',
+                        children: [
+                            {
+                                name: '红色',
+                                click: function(obj) {
+                                    obj.elem.css('color', 'red')
+                                }
+                            },
+                            {
+                                name: '绿色',
+                                click: function(obj) {
+                                    obj.elem.css('color', '#009688')
+                                }
+                            },
+                            {
+                                name:'默认颜色',
+                                click:function (obj) {
+                                    obj.elem.css('color','')
+                                }
+                            }
+
+                        ]
+                    }
+                    ,
+                    {
+                        name: '背景色',
+                        icon: 'layui-icon layui-icon-theme',
+                        children: [
+                            {
+                                name: '红色',
+                                click: function(obj) {
+                                    obj.elem.css('background', '#eb6775')
+                                }
+                            },
+                            {
+                                name: '绿色',
+                                click: function(obj) {
+                                    obj.elem.css('background', '#77bf77')
+                                }
+                            },
+                            {
+                                name: '默认颜色',
+                                click: function(obj) {
+                                    obj.elem.css('background', '')
+                                }
+                            }
+                        ]
+                    }
+                ],
+                // 表格内容右键菜单配置
+                body: [
+                    {
+                        name: '复制',
+                        icon: 'layui-icon layui-icon-template',
+                        click: function(obj) {
+                            soulTable.copy(obj.text)
+                            layer.msg('复制成功！')
+                        }
+                    },
+                    {
+                        name: '删除当前行数据',
+                        click: function(obj) {
+                            console.log(obj.row.ordernumber);
+                            console.log(obj.row.sid);
+                            var sid=new Array();
+                            var ordernumber=new Array();
+                            sid.push(obj.row.sid);
+                            ordernumber.push(obj.row.ordernumber);
+                            //var sid=JSON.stringify(sid);
+                            $.ajax({
+                                url:"saleandorder/del",
+                                data:{sid:sid,ordernumber:ordernumber},
+                                type:"post",
+                                traditional:true,
+                                success:function(data){
+                                    if (data.code==0){
+                                        layer.msg(data.result, {time: 5000, icon:6});
+                                    }else{
+                                        layer.msg(data.result, {time: 5000, icon:5});
+                                    }
+
+                                    //location.reload(); //删除成功后再刷新
+                                },
+                                error:function(data){
+                                    layer.msg('錯誤！', {time: 5000, icon:6});
+                                }
+                            });
+                            obj.del();
+                        }
+                    },
+                    {
+                        name: '更新数据',
+                        click: function(obj) {
+                            obj.update({author: obj.row.author + '+1'})
+                        }
+                    },
+                    {
+                        name: '行',
+                        children: [
+                            {
+                                name: '红色',
+                                click: function(obj) {
+                                    obj.trElem.css('background', 'red')
+                                }
+                            },
+                            {
+                                name: '绿色',
+                                click: function(obj) {
+                                    obj.trElem.css('background', '#77bf77')
+                                }
+                            },
+                            {
+                                name:'默认颜色',
+                                click:function (obj) {
+                                    obj.trElem.css('background','')
+                                }
+                            }
+
+                        ]
+
+                    },
+                    {
+                        name:'单元格',
+                        children:[
+                            {
+                                name: '红色',
+                                click: function(obj) {
+                                    obj.elem.css('color', 'red')
+                                }
+                            },
+                            {
+                                name: '绿色',
+                                click: function(obj) {
+                                    obj.elem.css('color', '#77bf77')
+                                }
+                            },
+                            {
+                                name: '黑色',
+                                click: function(obj) {
+                                    obj.elem.css('color', '')
+                                }
+                            }
+                        ]
+                    }
+                ],
+                // 合计栏右键菜单配置
+                total: [
+                    {
+                        name: '背景黄色',
+                        click: function(obj) {
+                            obj.elem.css('background', '#FFB800')
+                        }
+                    },
+                    {
+                        name: '背景红色',
+                        click: function(obj) {
+                            obj.elem.css('background', '#eb3b5f')
+                        }
+                    }
+                ]
+            }
             ,cols: [[
-                {title: '详细信息', width: 50, children: function(row) {
+                {title: '详细信息', width: 50, collapse: true,  children: function(row) {
                         return [
                             {
-                                title: '详细订单'
-                                ,url: 'relatedsaleandorder/queryAll'
-                                ,height: 600
+                                 title:'<span style="color: #ff60ef">'+ row.customername + '</span><span style="color: #ff5722">客户的</span><span style="color: #FFB800" >详细计划订单</span></span><span style="color: #77bf77">' + row.ordernumber + '</span>'
+                                ,url:'relatedsaleandorder/queryAll'
+                                ,height: 650
                                 ,page: true
-                                ,size:'sm'
-                                ,toolbar: '<div><a class="layui-btn layui-btn-sm" lay-event="reload">刷新字表</a> <a class="layui-btn layui-btn-normal layui-btn-sm" lay-event="update">更新父表</a> <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="delete">删除计划订单当前行</a> <a class="layui-btn layui-btn-sm layui-btn-warm" lay-event="close">关闭子表</a></div>'
+                                ,overflow: 'tips'
+                                ,toolbar: '<div><a class="layui-btn layui-btn-sm" lay-event="reload">刷新子表</a> <a class="layui-btn layui-btn-normal layui-btn-sm" lay-event="update">更新父表</a> <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="delete">删除计划订单当前行</a> <a class="layui-btn layui-btn-sm layui-btn-warm" lay-event="close">关闭子表</a></div>'
                                 ,cols: [[
                                     {type:'checkbox',field:'pid',fixed: 'left',rowspan:3}
                                     ,{field:"rname",title: '商品名',rowspan:3,width:210}
@@ -1166,8 +1371,8 @@
                                     {field:"sprice",title:"商品价格",rowspan:2,width:110}
                                     ,{field:"sdiscount",title:"折扣",width:110}
                                     ,{field:"stax",title:"税率",width:110}
-                                    ,{field:"stotal",title:"折税价",width:134}
-                                    ,{field:"remarks",title:"备注",width:140}
+                                    ,{field:"stotal",title:"折税价",width:130}
+                                    ,{field:"remarks",title:"备注",width:120}
                                 ]]
                                 ,rowEvent: function (obj, pobj) {
                                     // 单击行事件
@@ -1184,7 +1389,7 @@
                                     // 双击行事件
                                     // obj 子表当前行对象
                                     // pobj 父表当前行对象
-                                    obj.tr.css({'background':'#FF5722'}).siblings().removeAttr('style')
+                                    //obj.tr.css({'background':'#FF5722'}).siblings().removeAttr('style')
                                     console.log(obj.tr) //得到当前行元素对象
                                     console.log(obj.data) //得到当前行数据
                                     //obj.del(); //删除当前行
@@ -1201,12 +1406,13 @@
                                             layer.close(index);
                                             obj.update({
                                                 title: '我被修改了！'
-                                            })
-                                        })
-                                    } else if (obj.event === 'childDel') {
+                                            });
+                                        });
+                                    } else if (obj.event === 'del') {
                                         layer.confirm('删除成功! 调用<span style="color: #FF5722">table.reload(childId)</span>来重载子表', {icon: 3}, function(index) {
-                                            layer.close(index)
-                                            table.reload(childId)
+
+                                            layer.close(index);
+                                            table.reload(childId);
                                         })
                                     }
                                 }
@@ -1217,7 +1423,33 @@
                                         table.reload(this.id);
                                         layer.msg('子表重载成功！')
                                     } else if (obj.event === 'delete') {
-                                        pobj.del()
+                                        console.log(pobj);
+                                        var sid=new Array();
+                                        var ordernumber=new Array();
+                                        sid.push(pobj.data.sid);
+                                        ordernumber.push(pobj.data.ordernumber);
+                                        console.log(sid);
+                                        console.log(ordernumber);
+                                        //var sid=JSON.stringify(sid);
+                                        $.ajax({
+                                            url:"saleandorder/del",
+                                            data:{sid:sid,ordernumber:ordernumber},
+                                            type:"post",
+                                            traditional:true,
+                                            success:function(data){
+                                                if (data.code==0){
+                                                    layer.msg(data.result, {time: 5000, icon:6});
+                                                }else{
+                                                    layer.msg(data.result, {time: 5000, icon:5});
+                                                }
+
+                                                //location.reload(); //删除成功后再刷新
+                                            },
+                                            error:function(data){
+                                                layer.msg('錯誤！', {time: 5000, icon:6});
+                                            }
+                                        });
+                                        pobj.del();
                                     } else if (obj.event === 'update') {
                                         pobj.update({dynasty: pobj.data.dynasty + '+1'})
                                     } else if (obj.event === 'close') {
@@ -1237,32 +1469,129 @@
                                 ,where:{
                                     ordernumber:row.ordernumber
                                 }
-                                ,done: function () {
 
+                                ,done: function () {
+                                   soulTable.render(this)
                                 }
 
                             }
 
                         ]
-
                     }},
                 {type:'checkbox',field:'pid'},
-                {field: 'ordernumber', title: '计划订单编号', width: 200, sort: true, filter: true},
-                {field: 'ordernumber2', title: '关联订单编号', width: 100, sort: true, filter: true},
+                {field: 'ordernumber', title: '计划订单编号', width: 160, sort: true, filter: true},
+                {field: 'ordernumber2', title: '关联订单编号', width: 160, sort: true, filter: true},
                 {field: 'customername', title: '收货人', width: 165, filter: true},
-                {field: 'stotal', title: '总金额', width: 123, filter: true},
-                {field: 'status', title: '订单状态', width: 112, sort:true},
-                {field: 'sdate', title: '下单时间', width: 112, sort:true},
-                {field: 'rdate', title: '交货日期', width: 165, sort:true},
-                {field: 'author', title: '制单人', width: 112, filter: true},
-                {field: 'inspect', title: '审核人', width: 112, filter: true},
-                {field: 'remarks', title: '备注', width: 112}
+                {field: 'stotal', title: '总金额', width: 120, filter: true,sort:true},
+                {field: 'status', title: '订单状态', width: 110, sort:true},
+                {field: 'sdate', title: '下单时间', width: 180, sort:true},
+                {field: 'rdate', title: '交货日期', width: 180, sort:true},
+                {field: 'author', title: '制单人', width: 110, filter: true},
+                {field: 'inspect', title: '审核人', width: 110, filter: true},
+                {field: 'remarks', title: '备注', width: 180}
 
             ]]
+            ,rowEvent: function (obj) {
+                // layer.msg('父表行单击行事件！并展开子表！')
+                // obj.tr.css({'background':'#5FB878','color':'white'}).siblings().removeAttr('style') // 设置当前行颜色
+                console.log(obj.tr) //得到当前行元素对象
+                console.log(obj.data) //得到当前行数据
+                obj.tr.find('.childTable').trigger('click'); // 触发展开/关闭当前行子表
+                //obj.del(); //删除当前行
+                //obj.update(fields) //修改当前行数据
+            }
+            ,filter: {
+                items:['column','data','condition','editCondition','excel','clearCache'] // 加入了清除缓存按钮
+                ,cache: true
+            }
+
             ,done: function () {
                 soulTable.render(this)
             }
+
         });
+        //工具栏
+        table.on('toolbar(soultable)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            if (obj.event === 'clearFilter') {
+                // 清除所有筛选条件并重载表格
+                // 参数: tableId
+
+                soulTable.clearFilter('soultable')
+            }else if(obj.event === 'delAll'){
+                var data = checkStatus.data;
+                layer.msg('选中了：'+ data.length + ' 个');
+                console.log(data);
+                var sid=new Array();
+                var ordernumber=new Array();
+                if (checkStatus.data.length==0)return false;
+                for (var i=0;i<checkStatus.data.length;i++){
+                    var data=checkStatus.data[i].sid;
+                    var data2=checkStatus.data[i].ordernumber;
+                    sid.push(data);
+                    ordernumber.push(data2);
+                }
+                //var sid=JSON.stringify(sid);
+                $.ajax({
+                    url:"saleandorder/del",
+                    data:{sid:sid,ordernumber:ordernumber},
+                    type:"post",
+                    traditional:true,
+                    success:function(data){
+                        if (data.code==0){
+                            layer.msg(data.result, {time: 5000, icon:6});
+                        }else{
+                            layer.msg(data.result, {time: 5000, icon:5});
+                        }
+
+                        //location.reload(); //删除成功后再刷新
+                    },
+                    error:function(data){
+                        layer.msg('錯誤！', {time: 5000, icon:6});
+                    }
+                });
+                table.reload('soultable');
+            }else{
+
+            }
+        });
+
+        //修改
+        table.on('edit(soultable)',function (obj) {
+            var value = obj.value //得到修改后的值
+                ,data = obj.data //得到所在行所有键值
+                ,field = obj.field; //得到字段
+            layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+
+        });
+        //时间
+        laydate.render({
+            elem: '[name=createTime]',
+            range: true
+        });
+
+        // 查询
+        form.on('submit(search)', function (data) {
+            console.log(data.field);
+            if (data.field.createTime!=null) {
+                data.field.startTime = data.field.createTime.split(' - ')[0];
+                data.field.endTime = data.field.createTime.split(' - ')[1];
+            }else{
+                delete data.field.endTime
+                delete data.field.startTime
+                delete data.field.createTime
+            }
+            console.log(data.field);
+
+
+
+            soultable.reload({  // 重载 table
+                where: data.field
+            });
+            return false;
+        });
+
+
     });
 
 

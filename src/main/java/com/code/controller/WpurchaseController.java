@@ -106,7 +106,6 @@ public class WpurchaseController {
     public HashMap<String, Object>  queryAll(Wpurchase wpurchase, @RequestParam(value ="page" ,defaultValue = "1") int pageNum,@RequestParam(value = "limit",defaultValue = "10") int pageSize){
 
     	HashMap<String,Object> map = new HashMap<>();
-
     	/*res.getSession().setAttribute("userid", "002");*/
     	wpurchase.setUsersId(String.valueOf(res.getSession().getAttribute("userid")));
         PageInfo<Wpurchase> pageInfo = this.wpurchaseService.queryAllForPage(pageNum,pageSize,wpurchase);

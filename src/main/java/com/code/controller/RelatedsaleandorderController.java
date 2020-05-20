@@ -49,14 +49,14 @@ public class RelatedsaleandorderController {
     }
 
 
-        /**
+    /**
      * 通过实体作为筛选条件查询
      *
      * @param relatedsaleandorder 实例对象
      * @return 对象列表
      */
         @RequestMapping("queryAll")
-        public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder, @RequestParam(defaultValue= "1") int pageNum,@RequestParam(defaultValue = "10") int pageSize){
+        public Map<String,Object> queryAll(Relatedsaleandorder relatedsaleandorder, @RequestParam(value = "page",defaultValue= "1") int pageNum,@RequestParam(value = "limit",defaultValue = "10") int pageSize){
             System.out.println(relatedsaleandorder.getOrdernumber());
             Map<String,Object> map = new HashMap<>();
             PageInfo<Relatedsaleandorder> pageInfo = this.relatedsaleandorderService.queryAllforPage(pageNum,pageSize,relatedsaleandorder);

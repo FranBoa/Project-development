@@ -32,6 +32,17 @@
         select
           sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
+        <where>
+            <if test="so.status != null and so.status != ''">
+                title like '%${so.status}%'
+            </if>
+            <if test="so.ordernumber != null and so.ordernumber != ''">
+                and ordernumber like '%${so.ordernumber}%'
+            </if>
+            <if test="so.startTime != null and so.startTime != ''">
+                and sdate between #{so.startTime} and #{so.endTime}
+            </if>
+        </where>
     </select>
 
     <select id="queryLastOne" resultMap="SaleandorderMap">

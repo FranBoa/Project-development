@@ -84,4 +84,16 @@ public class Warehouse implements Serializable {
         this.wphone = wphone;
     }
 
+    public Warehouse(Integer wid, String wname, String address, String personnelname, String personnelphone, String wphone) {
+        this.wid = wid;
+        this.wname = wname;
+        this.address = address;
+        this.personnelname = personnelname;
+        this.personnelphone = personnelphone;
+        this.wphone = wphone;
+    }
+
+    public  Warehouse (){
+        super();
+    }
 }

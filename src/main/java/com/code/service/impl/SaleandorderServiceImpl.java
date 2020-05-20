@@ -2,6 +2,9 @@ package com.code.service.impl;
 
 import com.code.entity.Saleandorder;
 import com.code.dao.SaleandorderDao;
+import com.code.entity.SaleandorderSo;
+import com.code.entity.filterSos;
+import com.code.layuiUtil.SoulPage;
 import com.code.service.SaleandorderService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -40,23 +43,30 @@ public class SaleandorderServiceImpl implements SaleandorderService {
     /**
      * 查询多条数据
      *
+     * @param soulPage@return 对象列表
+     */
+    @Override
+    public Object selectAll(SoulPage<Saleandorder> soulPage) {
+        return soulPage.setData(this.saleandorderDao.selectAll(soulPage,(SaleandorderSo)soulPage.getObj()));
+    }
+
+    /**
+     * 查询多条数据
+     *
      * @param
      * @param
      * @return 对象列表
      */
-    @Override
-    public List<Saleandorder> selectAll(){
-        return this.saleandorderDao.selectAll();
-    }
 
 
-    @Override
-    public PageInfo<Saleandorder> selectAllForPage(int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum,pageSize);
-        List<Saleandorder> list =this.saleandorderDao.selectAll();
-        PageInfo<Saleandorder> pageInfo = new PageInfo<>(list);
-        return pageInfo;
-    }
+
+//    @Override
+//    public PageInfo<Saleandorder> selectAllForPage(int pageNum, int pageSize,List<filterSos> filterSosList) {
+//        PageHelper.startPage(pageNum,pageSize);
+//        List<Saleandorder> list =this.saleandorderDao.selectAll(filterSosList);
+//        PageInfo<Saleandorder> pageInfo = new PageInfo<>(list);
+//        return pageInfo;
+//    }
 
     /**
      * 通过实体作为筛选条件查询

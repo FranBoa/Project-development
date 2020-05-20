@@ -1,6 +1,9 @@
 package com.code.dao;
 
 import com.code.entity.Saleandorder;
+import com.code.entity.SaleandorderSo;
+import com.code.entity.filterSos;
+import com.code.layuiUtil.SoulPage;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
@@ -27,8 +30,7 @@ public interface SaleandorderDao {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<Saleandorder> selectAll();
-
+    List<Saleandorder> selectAll(SoulPage<Saleandorder> soulPage, @Param("so")SaleandorderSo saleandorderSo);
      Saleandorder queryLastOne();
     /**
      * 通过实体作为筛选条件查询

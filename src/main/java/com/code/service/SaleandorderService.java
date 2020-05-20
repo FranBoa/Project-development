@@ -1,7 +1,11 @@
 package com.code.service;
 
 import com.code.entity.Saleandorder;
+import com.code.entity.SaleandorderSo;
+import com.code.entity.filterSos;
+import com.code.layuiUtil.SoulPage;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -31,7 +35,7 @@ public interface SaleandorderService {
      * @param
      * @return 对象列表
      */
-    List<Saleandorder>selectAll();
+    Object selectAll(SoulPage<Saleandorder> soulPage);
 
     /**
      * 新增数据
@@ -49,7 +53,7 @@ public interface SaleandorderService {
      */
     List<Saleandorder> queryAll(Saleandorder saleandorder);
 
-    PageInfo<Saleandorder> selectAllForPage(int pageNum, int pageSize);
+//    PageInfo<Saleandorder> selectAllForPage(int pageNum, int pageSize,List<filterSos> filterSosList);
     /**
      * 修改数据
      *

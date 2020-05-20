@@ -1,5 +1,7 @@
 package com.code.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -32,10 +34,12 @@ public class Saleandorder implements Serializable {
     /**
     * 单据日期
     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date sdate;
     /**
     * 交货日期
     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date rdate;
     /**
     * 编号
@@ -43,6 +47,10 @@ public class Saleandorder implements Serializable {
     private String ordernumber;
 
     private String ordernumber2;
+
+    /**SaleandorderSo部分是soulTable的配置参数*/
+
+
 
     public String getRemarks() {
         return remarks;

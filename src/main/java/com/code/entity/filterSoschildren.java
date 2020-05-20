@@ -1,32 +1,39 @@
 package com.code.entity;
 
-import java.util.List;
-
 /**
- * ClassName:filterSos
+ * ClassName:filterSoschildren
  * Package:com.code.entity
  * Description:
  *
- * @Date: 2020/5/18 0018 12:36
+ * @Date: 2020/5/19 0019 0:47
  * @Author:YAP
  */
-public class filterSos {
+public class filterSoschildren {
     private String id;
     private String prefix;
     private String field;
     private String mode;
     private String type;
     private String value;
+    private String groupId;
 
-    public List<filterSoschildren> getChildren() {
-        return children;
+    public filterSoschildren(String id, String prefix, String field, String mode, String type, String value, String groupId) {
+        this.id = id;
+        this.prefix = prefix;
+        this.field = field;
+        this.mode = mode;
+        this.type = type;
+        this.value = value;
+        this.groupId = groupId;
     }
 
-    public void setChildren(List<filterSoschildren> children) {
-        this.children = children;
+    public String getId() {
+        return id;
     }
 
-    private List<filterSoschildren> children;
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getPrefix() {
         return prefix;
@@ -68,38 +75,27 @@ public class filterSos {
         this.value = value;
     }
 
-    public String getId() {
-        return id;
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
-
-    public filterSos() {
+    public  filterSoschildren(){
         super();
     }
 
     @Override
     public String toString() {
-        return "filterSos{" +
+        return "filterSoschildren{" +
                 "id='" + id + '\'' +
                 ", prefix='" + prefix + '\'' +
                 ", field='" + field + '\'' +
                 ", mode='" + mode + '\'' +
                 ", type='" + type + '\'' +
                 ", value='" + value + '\'' +
-                ", children=" + children +
+                ", groupId='" + groupId + '\'' +
                 '}';
-    }
-
-    public filterSos(String id, String prefix, String field, String mode, String type, String value, List<filterSoschildren> children) {
-        this.id = id;
-        this.prefix = prefix;
-        this.field = field;
-        this.mode = mode;
-        this.type = type;
-        this.value = value;
-        this.children = children;
     }
 }
