@@ -197,4 +197,11 @@ public class Relatedsaleandorder implements Serializable {
         this.paymethod = paymethod;
     }
 
+    public Relatedsaleandorder(String ordernumber) {
+        this.ordernumber = ordernumber;
+    }
+
+    public  Relatedsaleandorder(){
+        super();
+    }
 }

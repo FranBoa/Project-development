@@ -541,10 +541,6 @@
 
 
 
-
-
-
-
             //监听提交
             form.on('submit(add)', function(data) {
                 if (data.field.title==null||data.field.title==''){
@@ -610,7 +606,7 @@
                                     content: '添加成功！',
                                     icon:1,
                                     success: function(layero, index){
-
+                                        layer.closeAll('iframe');
                                     }
                                 });
                             }else{
@@ -618,7 +614,7 @@
                                     content: '商品货物添加失败！',
                                     icon:5,
                                     success: function(layero, index){
-
+                                        layer.closeAll('iframe');
                                     }
                                 });
                             }

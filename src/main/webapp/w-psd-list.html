@@ -29,9 +29,6 @@
         <div class="layui-fluid">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
-                        <div class="layui-card-header">
-                            <button class="layui-btn" onclick="xadmin.open('购货','/w-purchase-add.html',600,700)"><i class="layui-icon"></i>购货</button>
-                        </div>
                     <div class="layui-card">
                             <table id="tableList">
 
@@ -54,46 +51,37 @@
 
     <script>
    var tbins;
-    layui.use('table', function () {
-        var table = layui.table;
-		var table_data=null;
-        //返回的数据必须是code:0
-        tbins = table.render({
-            elem: '#tableList'
-          , height: 450
-          , url: '/Wpurchase/selectAllForPage' //数据接口
-          , where: { action: 'getclublistbypage' }
-          , page: true //开启分页
-          , limit: 10
-            ,limits:[10,20,30,40]
-          , cols: [[ //表头
-            { field: 'purchaseId', title: '订单编号', width: 80, fixed: 'left' }
-            , { field: 'userName', title: '采购人员', width: 180,templet:'username' }
-            , { field: 'bossName', title: '审批人', width: 180,templet:'bossname' }
-            , { field: 'purchaseGoodsName', title: '商品名称', width: 180 }
-            , { field: 'purchasePrice', title: '价格', width: 180 }
-            , { field: 'purchaseNum', title: '数量', width: 180 }
-            , { field: 'purchaseDate', title: '购货日期', width: 180 }
-            , { field: 'commet', title: '备注', width: 180 }
-            /* , { field: 'warehouse', title: '仓库 id', width: 180 } */
-            , { field: 'wName', title: '仓库名', width: 180 }
-            , { field: 'discounts', title: '折扣率', width: 180 }
-            , { field: 'discountsPrice', title: '折扣额', width: 180 }
-            , { field: 'discountsSum', title: '总金额', width: 180 }
-            , { field: 'purchaseStatus', title: '审核状态', width: 180 }
-          ]]
-          ,done: function(res){
-        	  table_data=res.data;
 
-          }
-        });
-
-
-
-    });
     function getval(){
     	tbins.reload();
     }
+   function child(obj) {
+       //这样就把主窗体的值放到iframe层的隐藏控件了
+       //你也可以直接拿到obj完成你的需求
+       layui.use('table', function () {
+           var table = layui.table;
+           var table_data=null;
+           //返回的数据必须是code:0
+           tbins = table.render({
+               elem: '#tableList'
+               , height: 450
+               , url: '/productscheduledetail/selectAll' //数据接口
+               , where: { "pid":obj }
+               , page: true //开启分页
+               , limit: 10
+               ,limits:[10,20,30,40]
+               , cols: [[ //表头
+                   { field: 'psid', title: '订单编号', width: 80, fixed: 'left' }
+                   , { field: 'psname', title: '物料名称', width: 180 }
+                   , { field: 'psnum', title: '数量', width: 180 }
+               ]]
+               ,done: function(res){
+                   table_data=res.data;
+               }
+           });
+
+       });
+   }
 
  // 发送type查询
     function reloadtable(producttypeid,producttypeids){

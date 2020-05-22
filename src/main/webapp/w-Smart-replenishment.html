@@ -13,48 +13,13 @@
 <script src="./lib/layui/layui.js" charset="utf-8"></script>
 <script src="./lib/layui/layui.all.js" charset="utf-8"></script>
 <script type="text/javascript" src="./js/xadmin.js"></script>
-<link href="./css/bootstrap.min.css" rel="stylesheet" />
-<script src="./js/vue.js"></script>
-<script src="./js/axios.min.js"></script>
-<script src="../js/qs.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/axios.min.js"></script>
+<script src="js/qs.min.js"></script>
 <style>
-	* {
-          margin: 0;
-          padding: 0;
-          font-size: 14px;
-        }
-        
-        #vue-dingyi-paging ul {
-          list-style: none;
-          margin-top: 10px;
-        }
-        
-        #vue-dingyi-paging ul li {
-          margin: 0 5px;
-        }
-        
-        #vue-dingyi-paging ul li,
-        .pageLink {
-          display: inline-block;
-          width: 40px;
-          height: 40px;
-          background: #F0F0F0;
-          color: #ABABAB;
-          border-radius: 3px;
-          text-align: center;
-          text-decoration: none;
-          line-height: 40px;
-        }
-        
-        #vue-dingyi-paging ul li .pageLink:hover {
-          background: #ABABAB;
-          color: #FFFFFF;
-        }
-        
-        #vue-dingyi-paging ul li .curPage {
-          background: #81C06F;
-          color: #FFFFFF;
-        }
 </style>
 </head>
 
@@ -73,8 +38,8 @@
 			<div class="layui-col-md12">
 				<div class="layui-card">
 					<div class="layui-card-header">
-						<div class="layui-input" >
-							库存数量小于：<input type="text"v-model="shuliang" >
+						<div class="layui-input">
+							库存数量小于：<input type="text" v-model="shuliang">
 							<button class="layui-btn" @click="selectAll()">搜索</button>
 						</div>
 					</div>
@@ -91,59 +56,104 @@
 								<td>操作</td>
 							</tr>
 							<tr v-for="c,index in list">
-								<td><input type="checkbox" value="c.pid" lay-skin="primary"/></td>
+								<td><input type="checkbox" value="c.pid" lay-skin="primary" /></td>
 								<td>{{c.pname}}</td>
 								<td>{{c.pbprice}}</td>
 								<td>{{c.psprice}}</td>
 								<td>{{c.warehouses[0].wname}}</td>
 								<td>{{c.warenum}}</td>
 								<td>{{c.details}}</td>
-								<td><a title="添加"  @click="addList(c)" href="javascript:;">
-                                                <i class="layui-icon">&#xe63c;</i></a></td>
+								<!-- onclick="openModak()" -->
+								<td><a title="添加" @click="addList(c)" href="javascript:;">
+										<i class="layui-icon">&#xe63c;</i></a>
+								</td>
 							</tr>
 						</table>
+
+						<fieldset id="page1" class="layui-elem-field layui-field-title"
+							style="margin-top: 30px;"></fieldset>
 					</div>
-					<div class="layui-card-body ">
-						<!--分页-->
-						<!-- <div id="vue-dingyi-paging">
-							<ul>
-							    <li>
-							      <a class="pageLink" href="#" @click="setPage(curNum-1)">
-							        <</a>
-							    </li>
-							    <li v-for="n in totalNum">
-							      <a class="pageLink" href="#" v-text="n" @click="setPage(n+1)" :class="{ curPage: n+1 == curNum }"></a>
-							    </li>
-							    <li><a class="pageLink" href="#" @click="setPage(curNum+1)">></a></li>
-							  </ul>
-						</div> -->
-					</div>
+					<!-- <div class="layui-card-body "></div>
 					<div>
-						<!-- 优惠率：<input type="text" name="" />
+						优惠率：<input type="text" name="" />
 							付款优惠：<input type="text" name="" />
 							优惠后金额：<input type="text" name=""  />
-						本次付款：<input type="text" name="" /> -->
+						本次付款：<input type="text" name="" />
 					</div>
+				</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
 <script>
-    
         var vm = new Vue({
         	el:'#tableList',
         	data:{
         		list:[],
         		shuliang:'',
-        		totalNum:'', //总页数
-        	    curNum: 1 //当前页码
+        		count:'',
+        		/* purchaseNum:'',
+        		discounts:'' */
+        		
         	},
 			mounted(){//初始化显示后调用
 				this.selectAll()
 			},
 			methods:{
-		        selectAll(){
+				selectAll(){
+	    			var data=Qs.stringify({"warenum":this.shuliang})
+	                axios.post('product/queryAll',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
+	                    this.list=res.data.data;
+	                    console.log(this.list);
+	                    this.count=res.data.count;
+	                    var count=this.count;
+	                    layui.use('laypage', function(){
+	                        var laypage = layui.laypage;
+	                        //执行一个laypage实例
+	                        laypage.render({
+	                            elem: 'page1' //注意，这里的 test1 是 ID，不用加 # 号
+	                            ,count: vm.$data.count//数据总数，从服务端得到
+	                            ,limit:vm.$data.pageSize
+	                            ,limits:[10,20,40]
+	                            ,theme: '#1E9FFF'
+	                            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+	                            ,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+	                            ,hash: 'fenye' //自定义hash值
+	                            ,jump: function(obj, first){
+	                                //obj包含了当前分页的所有参数，比如
+	                                //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+	                                //得到每页显示的条数
+	                                //首次不执行
+	                                if(!first){
+
+	                                    console.log(obj.limit);
+	                                    $.ajax({
+	                                        url:"product/queryAll",
+	                                        type:"post",
+	                                        data:{"warenum":this.shuliang,"page":obj.curr,"limit":obj.limit},
+	                                        async: false,
+	                                        traditional:true,
+	                                        success:function(data){
+	                                            //layer.msg(dat9a);
+	                                            vm.$data.list=data.data;
+	                                            vm.$data.count=data.count;
+	                                            //location.reload(); //删除成功后再刷新
+	                                        },
+	                                        error:function(data){
+	                                        }
+	                                    });
+	                                }
+	                            }
+	                        });
+	                    });
+	                }).catch(err=>{
+	                    console.log(err);
+	                    alert('请求失败')
+	                })
+	            },
+				
+		        /* selectAll(){
 	    			var product=Qs.stringify({"warenum":this.shuliang})
 			        axios.post('/product/queryAll',product) .then(res=>{// ,'pageNum':curNum,'pageSize':5
 			        		console.log(res)
@@ -152,32 +162,15 @@
 			        		}).catch(err=>{
 							alert('操作失败')
 						})
-		        },//切换页码
-		        setPage: function(num) {
-		            //页码小于等于1
-		            if (num <= 1) {
-		              return this.curNum = 1;
-		            }
-		            //页码大于总页数
-		            if (num >= this.totalNum) {
-		              return this.curNum = this.totalNum;
-		            }
-		            //页码赋给当前页
-		            this.curNum = num;
-		            this.selectAll();
-		          },
+		        }, */
 		        addList(c){
-						var purchaseNum = prompt("请输入需要购买数量","");
-						var discounts = prompt("请输入折扣（%）","");
+		        	var purchaseNum=prompt("请输入你需要的数量","")
+		        	var discounts=prompt("请输入折扣率","")
 						if(discounts>100){
 							return false;
 						}else if(discounts<1){
 							return false;
 						}
-				        /* if(word){
-				             //输出word的格式
-				             alert("已获得:"+word);
-				         } */
 	    				var wpurchase={
           			"purchaseGoodsId":c.pid
           			,"purchaseGoodsName":c.pname

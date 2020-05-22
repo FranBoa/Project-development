@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.dao.ProductScheduleDao">
+
+    <resultMap type="com.code.entity.ProductSchedule" id="ProductscheduleMap">
+        <result property="psid" column="psid" jdbcType="VARCHAR"/>
+        <result property="psname" column="psname" jdbcType="VARCHAR"/>
+        <result property="psstatus" column="psstatus" jdbcType="VARCHAR"/>
+        <result property="psdate" column="psdate" jdbcType="VARCHAR"/>
+        <result property="userid" column="userid" jdbcType="VARCHAR"/>
+        <result property="bossid" column="bossid" jdbcType="VARCHAR"/>
+        <result property="pscommet" column="pscommet" jdbcType="VARCHAR"/>
+        <collection property="userlist" select="com.code.dao.UserDao.queryById" column="userid" >
+            <result property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="bossid" column="bossid" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="salt" column="salt" jdbcType="VARCHAR"/>
+            <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+            <result property="mail" column="mail" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+        </collection>
+        <collection property="bosslist" select="com.code.dao.UserDao.queryById" column="bossid" >
+            <result property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="bossid" column="bossid" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="salt" column="salt" jdbcType="VARCHAR"/>
+            <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+            <result property="mail" column="mail" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+        </collection>
+        <collection property="psd" select="com.code.dao.ProductScheduleDetailDao.queryById" column="psid" >
+            <result property="id" column="id" jdbcType="INTEGER"/>
+            <result property="psid" column="psid" jdbcType="VARCHAR"/>
+            <result property="psname" column="psname" jdbcType="VARCHAR"/>
+            <result property="psnum" column="psnum" jdbcType="INTEGER"/>
+        </collection>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="ProductscheduleMap">
+        select
+          psid, psname, psstatus, psdate, userid, bossid, pscommet
+        from productschedule
+        where psid = #{psid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="ProductscheduleMap">
+        select
+          psid, psname, psstatus, psdate, userid, bossid, pscommet
+        from productschedule
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ProductscheduleMap">
+        select
+          psid, psname, psstatus, psdate, userid, bossid, pscommet
+        from productschedule
+        <where>
+            <if test="psid != null and psid != ''">
+                and psid = #{psid}
+            </if>
+            <if test="psname != null and psname != ''">
+                and psname = #{psname}
+            </if>
+            <if test="psstatus != null and psstatus != ''">
+                and psstatus = #{psstatus}
+            </if>
+            <if test="psdate != null and psdate != ''">
+                and psdate = #{psdate}
+            </if>
+            <if test="userid != null and userid != ''">
+                and userid = #{userid}
+            </if>
+            <if test="bossid != null and bossid != ''">
+                and bossid = #{bossid}
+            </if>
+            <if test="pscommet != null and pscommet != ''">
+                and pscommet = #{pscommet}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="psid" useGeneratedKeys="true">
+        insert into productschedule(psname, psstatus, psdate, userid, bossid, pscommet)
+        values (#{psname}, #{psstatus}, #{psdate}, #{userid}, #{bossid}, #{pscommet})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update productschedule
+        <set>
+            <if test="psname != null and psname != ''">
+                psname = #{psname},
+            </if>
+            <if test="psstatus != null and psstatus != ''">
+                psstatus = #{psstatus},
+            </if>
+            <if test="psdate != null and psdate != ''">
+                psdate = #{psdate},
+            </if>
+            <if test="userid != null and userid != ''">
+                userid = #{userid},
+            </if>
+            <if test="bossid != null and bossid != ''">
+                bossid = #{bossid},
+            </if>
+            <if test="pscommet != null and pscommet != ''">
+                pscommet = #{pscommet},
+            </if>
+        </set>
+        where psid = #{psid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from productschedule where psid = #{psid}
+    </delete>
+
+</mapper>

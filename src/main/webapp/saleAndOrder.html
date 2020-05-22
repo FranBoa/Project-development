@@ -1296,17 +1296,43 @@
                                     var childId = this.id; // 通过 this 对象获取当前子表的id
 
                                     if (obj.event === 'childEdit') {
-                                        layer.confirm('修改成功！调用<span style="color: #FF5722">行对象</span>修改当前行数据', {icon: 3}, function(index) {
+                                        layer.confirm('修改成功！调用<span style="color: #FF5722">行对象</span>修改当前行数据', {icon: 5}, function(index) {
                                             layer.close(index);
                                             obj.update({
                                                 title: '我被修改了！'
                                             });
                                         });
                                     } else if (obj.event === 'del') {
-                                        layer.confirm('删除成功! 调用<span style="color: #FF5722">table.reload(childId)</span>来重载子表', {icon: 3}, function(index) {
-                                            layer.close(index);
-                                            table.reload(childId);
-                                        })
+                                        console.log(obj);
+                                        var sid=new Array();
+                                        var ordernumber=new Array();
+                                        sid.push(obj.data.sid);
+                                        ordernumber.push(obj.data.ordernumber);
+                                        console.log(sid);
+                                        console.log(ordernumber);
+                                        //var sid=JSON.stringify(sid);
+                                        $.ajax({
+                                            url:"relatedsaleandorder/del",
+                                            data:{sid:sid,ordernumber:ordernumber},
+                                            type:"post",
+                                            traditional:true,
+                                            success:function(data){
+                                                if (data.code==0){
+                                                    layer.confirm('删除成功!', {icon: 3}, function(index) {
+                                                        layer.close(index);
+                                                        table.reload(childId);
+                                                    });
+                                                }else{
+                                                    layer.msg(data.result, {time: 5000, icon:5});
+                                                }
+
+                                                //location.reload(); //删除成功后再刷新
+                                            },
+                                            error:function(data){
+                                                layer.msg('錯誤！', {time: 5000, icon:6});
+                                            }
+                                        });
+
                                     }
                                 }
                                 ,toolbarEvent: function (obj, pobj) {
@@ -1345,7 +1371,7 @@
                                         });
                                         pobj.del();
                                     } else if (obj.event === 'update') {
-                                        pobj.update({dynasty: pobj.data.dynasty + '+1'})
+                                        table.reload('soultable');
                                     } else if (obj.event === 'close') {
                                         pobj.close();
                                     }else  if (obj.event ==='deleteCheckbox'){

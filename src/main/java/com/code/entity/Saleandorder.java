@@ -223,4 +223,25 @@ public class Saleandorder implements Serializable {
     public Saleandorder(String ordernumber) {
         this.ordernumber = ordernumber;
     }
+
+    @Override
+    public String toString() {
+        return "Saleandorder{" +
+                "sid=" + sid +
+                ", category='" + category + '\'' +
+                ", salesman='" + salesman + '\'' +
+                ", customername='" + customername + '\'' +
+                ", status='" + status + '\'' +
+                ", sdate=" + sdate +
+                ", rdate=" + rdate +
+                ", ordernumber='" + ordernumber + '\'' +
+                ", ordernumber2='" + ordernumber2 + '\'' +
+                ", remarks='" + remarks + '\'' +
+                ", stotal='" + stotal + '\'' +
+                ", author='" + author + '\'' +
+                ", inspect='" + inspect + '\'' +
+                ", wid='" + wid + '\'' +
+                ", customerid='" + customerid + '\'' +
+                '}';
+    }
 }

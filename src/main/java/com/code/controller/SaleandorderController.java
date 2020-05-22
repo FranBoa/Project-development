@@ -61,7 +61,7 @@ public class SaleandorderController {
             soulPage.setObj(saleandorderSo);
             System.out.println(saleandorderSo);
 //            List<filterSos> filterSosList = JSONArray.parseArray(filterSos,filterSos.class);
-//            if(filterSosList!=null){
+//            if(filterSosLisst!=null){
 //              for (int i=0;i<filterSosList.size();i++){ System.out.println(filterSosList.get(i)); }
 //             }
 //            PageInfo<Saleandorder> pageInfo = this.saleandorderService.selectAllForPage(pageNum,pageSize,filterSosList);
@@ -105,6 +105,8 @@ public class SaleandorderController {
                 d++;
             }
         }
+
+
         Map<String,Object> map=new HashMap<>();
         map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条,删除订单详细商品成功"+d+"条,"+"失败"+c+"条！" );
         map.put("code",x-b>0?1:0);
@@ -117,17 +119,35 @@ public class SaleandorderController {
     @ResponseBody
     @RequestMapping("addrel")
     public  String addrel(@RequestBody List<Relatedsaleandorder> relatedsaleandorder){
+        Double total=getTotal(relatedsaleandorder,true);
+        String OrderNumber=relatedsaleandorder.get(0).getOrdernumber();
+        List<Relatedsaleandorder> up=relatedsaleandorderService.queryAll(new Relatedsaleandorder(OrderNumber));
+        //更新主数据的total
+        Double total2=getTotal(up,false);
+        Saleandorder saleandorder=new Saleandorder();
+        saleandorder.setOrdernumber(OrderNumber);
+        saleandorder.setStotal(String.valueOf(total2));
+        saleandorderService.update(saleandorder);
+        //System.out.println(up);
+        //up.setOrdernumber(OrderNumber);
+        //up.setStotal(String.valueOf(total));
+        //saleandorderService.update(up);
+        return  "200";
+    }
+
+
+    private Double getTotal(List<Relatedsaleandorder> relatedsaleandorder,boolean flag){
         Integer count=0;
         Double discount=0.00;
         Double tax=0.00;
         Double price=0.00;
         Double total=0.00;
-        String OrderNumber=null;
+        //String OrderNumber=null;
         DecimalFormat df = new DecimalFormat("0.00");
         df.setRoundingMode(RoundingMode.HALF_UP);
         for (int i = 0; i <relatedsaleandorder.size() ; i++) {
             Relatedsaleandorder xx=relatedsaleandorder.get(i);
-            OrderNumber=xx.getOrdernumber();
+            //OrderNumber=xx.getOrdernumber();
             if(xx.getScount()!=null){
                 count=Integer.parseInt(xx.getScount());
             }
@@ -184,21 +204,14 @@ public class SaleandorderController {
                 total+=((price+price*tax-price*discount)*count);
                 System.out.println(xx.getStotal()+"最后一次");
             }
+            if(flag){
+                relatedsaleandorderService.insert(xx);
+                System.out.println("最终输出 TRUE"+xx);
+            }
 
-            relatedsaleandorderService.insert(xx);
-            System.out.println("最终输出"+xx);
+
         }
-        System.out.println(total);
-        List<Saleandorder> up=saleandorderService.queryAll(new Saleandorder(OrderNumber));
-        for (int i=0;i<up.size();i++){
-            Saleandorder saleandorder = up.get(i);
-            System.out.println(saleandorder);
-        }
-        System.out.println(up);
-        //up.setOrdernumber(OrderNumber);
-        //up.setStotal(String.valueOf(total));
-        //saleandorderService.update(up);
-        return  "200";
+        return total;
     }
 
     @ResponseBody

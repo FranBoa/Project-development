@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.code.dao.ProductScheduleDetailDao">
+
+    <resultMap type="com.code.entity.ProductScheduleDetail" id="ProductscheduledetailMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="psid" column="psid" jdbcType="VARCHAR"/>
+        <result property="psname" column="psname" jdbcType="VARCHAR"/>
+        <result property="psnum" column="psnum" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="ProductscheduledetailMap">
+        select
+          id, psid, psname, psnum
+        from productscheduledetail
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="ProductscheduledetailMap">
+        select
+          id, psid, psname, psnum
+        from productscheduledetail
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ProductscheduledetailMap">
+        select
+          id, psid, psname, psnum
+        from productscheduledetail
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="psid != null and psid != ''">
+                and psid = #{psid}
+            </if>
+            <if test="psname != null and psname != ''">
+                and psname = #{psname}
+            </if>
+            <if test="psnum != null">
+                and psnum = #{psnum}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into productscheduledetail(psid, psname, psnum)
+        values (#{psid}, #{psname}, #{psnum})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update productscheduledetail
+        <set>
+            <if test="psid != null and psid != ''">
+                psid = #{psid},
+            </if>
+            <if test="psname != null and psname != ''">
+                psname = #{psname},
+            </if>
+            <if test="psnum != null">
+                psnum = #{psnum},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from productscheduledetail where id = #{id}
+    </delete>
+
+</mapper>

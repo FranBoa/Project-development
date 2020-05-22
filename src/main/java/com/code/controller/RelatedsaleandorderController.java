@@ -47,8 +47,6 @@ public class RelatedsaleandorderController {
     public List<Relatedsaleandorder> selectAll(){
            return this.relatedsaleandorderService.selectAll();
     }
-
-
     /**
      * 通过实体作为筛选条件查询
      *

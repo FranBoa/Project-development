@@ -11,10 +11,12 @@
         <script src="./lib/layui/layui.js" charset="utf-8"></script>
         <script src="./lib/layui/layui.all.js" charset="utf-8"></script>
         <script type="text/javascript" src="./js/xadmin.js"></script>
-		<link href="./css/bootstrap.min.css" rel="stylesheet" />
-		<script src="../js/vue-2.4.0.js"></script>
-		<script src="../js/axios.min.js"></script>
-		<script src="../js/qs.min.js"></script>
+		    <link href="css/bootstrap.css" rel="stylesheet">
+		    <script src="js/jquery.min.js"></script>
+		    <script src="js/bootstrap.js"></script>
+		<script src="js/vue.js"></script>
+		<script src="js/axios.min.js"></script>
+		<script src="js/qs.min.js"></script>
 
     </head>
     
@@ -30,6 +32,8 @@
                 <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
             </a>
         </div>
+        
+        
         <div class="layui-fluid">
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md12">
@@ -62,9 +66,44 @@
     							<td>{{c.wName}}</td>
     							<td>{{c.commet}}</td>
     							<td>{{c.purchaseStatus}}</td>
-    							<td><button @click="tongyi(c.purchaseId,c.purchaseGoodsId,c.purchaseGoodsName,c.purchasePrice,c.purchaseNum,c.warehouse,c.commet)" class="layui-btn" target="_blank">通过</button></td>
+    							<td>
+    								<button @click="tongyi(c.purchaseId,c.purchaseGoodsId,c.purchaseGoodsName,c.purchasePrice,c.purchaseNum,c.warehouse,c.commet,c.bossid)" class="layui-btn" target="_blank">通过</button>
+    								<button @click="xx(c.purchaseId,c.bossid)" class="layui-btn" target="_blank">不通过</button>
+    								<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#shuju" onclick="Values()">通过</button> -->
+    								
+    							</td>
     						</tr>
     						</table>
+    						
+							<!-- <div class="modal fade" id="shuju" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							      <input type="hidden" id="id" name="id" value=''>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <h4 class="modal-title" id="myModalLabel">审核</h4>
+							      </div>
+							      <div class="modal-body">
+							        <div class="layui-form-item">
+										<label class="layui-form-label">理由</label>
+										<div class="layui-input-block">
+											<input type="text" name="reason" id="reason" required
+												lay-verify="required" placeholder="请输入理由" autocomplete="off"
+												class="layui-input">
+										</div>
+									</div>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+							        <button type="button" class="btn btn-primary" @click="tongyi(c.purchaseId,c.purchaseGoodsId,c.purchaseGoodsName,c.purchasePrice,c.purchaseNum,c.warehouse,c.commet,c.bossid)">保存</button>
+							      </div>
+							    </div>
+							  </div>
+							</div> -->
+
+
+    						<fieldset id="page1" class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                            </fieldset>
                         </div>
                     </div>
                 </div>
@@ -77,6 +116,7 @@
     	el:"#tableList",
     	data:{
     		list:[],
+    		count:'',
     		message:'hello'
     	},
 		mounted(){//初始化显示后调用
@@ -84,21 +124,87 @@
 		},
     	methods:{
     		getAll(){
-    			var purchase=Qs.stringify({"purchaseStatus":"未审核"})
-    			axios.post('Wpurchase/queryAll',purchase).then(res=>{
-    				this.list = res.data.data;
-    			}).catch(err=>{
-    				alert('查询失败')
-    			})
-    		},
-    		tongyi(id,purchaseGoodsId,purchaseGoodsName,purchasePrice,purchaseNum,warehouse,commet){
-    			var purchase=Qs.stringify({"purchaseId":id,"purchaseGoodsId":purchaseGoodsId,"purchaseGoodsName":purchaseGoodsName,"purchasePrice":purchasePrice,"purchaseNum":purchaseNum,"warehouse":warehouse,"commet":commet})
-    			axios.post('Wpurchase/updatetongyi',purchase).then(res=>{
-    				this.getAll();
-    				alert('审核成功')
-    			}).catch(err=>{
-    				alert('审核失败')
-    			})
+                var data=  Qs.stringify({"purchaseStatus":"未审核"});
+                axios.post('Wpurchase/queryAllForPage',data, {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
+                    this.list=res.data.data;
+                    console.log(this.list);
+                    this.count=res.data.count;
+                    var count=this.count;
+                    layui.use('laypage', function(){
+                        var laypage = layui.laypage;
+                        //执行一个laypage实例
+                        laypage.render({
+                            elem: 'page1' //注意，这里的 test1 是 ID，不用加 # 号
+                            ,count: vm.$data.count//数据总数，从服务端得到
+                            ,limit:vm.$data.pageSize
+                            ,limits:[5,10,20,40]
+                            ,theme: '#1E9FFF'
+                            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+                            ,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                            ,hash: 'fenye' //自定义hash值
+                            ,jump: function(obj, first){
+                                //obj包含了当前分页的所有参数，比如
+                                //console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                //得到每页显示的条数
+                                //首次不执行
+                                if(!first){
+                                    console.log(obj.limit);
+                                    $.ajax({
+                                        url:"Wpurchase/queryAllForPage",
+                                        data:{"purchaseStatus":"未审核","page":obj.curr,"limit":obj.limit},
+                                        type:"post",
+                                        async: false,
+                                        traditional:true,
+                                        success:function(data){
+                                            //layer.msg(dat9a);
+                                            vm.$data.list=data.data;
+                                            vm.$data.count=data.count;
+                                            //location.reload(); //删除成功后再刷新
+                                        },
+                                        error:function(data){
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    });
+                }).catch(err=>{
+                    console.log(err);
+                    alert('请求失败')
+                })
+            },tongyi(id,purchaseGoodsId,purchaseGoodsName,purchasePrice,purchaseNum,warehouse,commet,bossid){
+    				var reason = prompt("请输入通过的理由","");
+    				if (reason!=null) {
+		    			var purchase=Qs.stringify({"purchaseId":id,"bossUsersId":bossid,"purchaseGoodsId":purchaseGoodsId,"purchaseGoodsName":purchaseGoodsName,"purchasePrice":purchasePrice,"purchaseNum":purchaseNum,"warehouse":warehouse,"commet":commet})
+		    			axios.post('Wpurchase/updatetongyi',purchase).then(res=>{
+			    			/*if(res.data>0){*/
+			    				this.getAll();
+			    				alert('审核成功')
+			    			/*}else{
+			    				this.getAll();
+			    				alert('你没有资格')
+			    			}*/
+		    			}).catch(err=>{
+		    				alert('审核失败')
+		    			})
+    				}
+    		},xx(id,bossid){
+    				var reason = prompt("请输入不通过的理由","");
+    				if (reason!=null && reason!="") {
+    				    alter("不能为空")
+            			var purchase=Qs.stringify({"purchaseId":id,"bossUsersId":bossid,"reason":reason})
+            			axios.post('Wpurchase/updatex',purchase).then(res=>{
+            				/*if(res.data>0){*/
+    		    				this.getAll();
+    		    				alert('审核成功')
+    		    			/*}else{
+    		    				this.getAll();
+    		    				alert('你没有资格')
+    		    			}*/
+            			}).catch(err=>{
+            				alert('操作失败');
+            			})
+					}
     		}
     	}
     })
@@ -116,49 +222,6 @@
             }
         });
     });
-    /* layui.use('table', function () {
-        var table = layui.table;
-
-        //返回的数据必须是code:0
-        var tableIns = table.render({
-            elem: '#tableList'
-          , height: 450
-          , url: '/Wpurchase/queryAll?purchaseStatus=未审核' //数据接口
-          , where: { action: 'getclublistbypage' }
-          , page: true //开启分页
-          , limit: 10
-          , cols: [[ //表头 
-            { field: 'purchaseId', title: '订单编号', width: 80, fixed: 'left' }
-            , { field: 'usersId', title: '采购人员', width: 180 }
-            , { field: 'bossUsersId', title: '审批人', width: 180 }
-            , { field: 'supplierId', title: '供货商', width: 180 }
-            , { field: 'purchaseGoodsId', title: '商品id', width: 120 }
-            , { field: 'purchaseGoodsName', title: '商品名称', width: 180 }
-            , { field: 'purchasePrice', title: '价格', width: 180 }
-            , { field: 'purchaseNum', title: '数量', width: 180 }
-            , { field: 'purchaseUnit', title: '单位', width: 180 }
-            , { field: 'purchaseDate', title: '购货日期', width: 180 }
-            , { field: 'commet', title: '备注', width: 180 }
-            , { field: 'warehouse', title: '仓库', width: 180 }
-            , { field: 'discounts', title: '折扣率', width: 180 }
-            , { field: 'discountsPrice', title: '折扣额', width: 180 }
-            , { field: 'discountsSum', title: '总金额', width: 180 }
-            , { field: 'paymentStatus', title: '付款方式', width: 180 }
-            , { field: 'purchaseStatus', title: '审核状态', width: 180 }
-            ,{ field: '', title: '操作', toolbar:"#bar" }
-          ]]
-        });
-    });
-        function tongyi(purchaseid){
-        	
-        	$.ajax({url:"/Wpurchase/updatetongyi",data:{purchaseid:purchaseid},success:function(result){
-        		if(result>0){
-        			alter("已审核");
-        		}else{
-        			alter("请重试");
-        		}
-            }});
-        	} */
         </script>
         
 </html>

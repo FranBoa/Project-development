@@ -98,7 +98,7 @@
 		},
     	methods:{
     		getAll(){
-                axios.post('/Wpurchase/selectAllForPage', {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
+                axios.post('/ProductSchedule/selectAll', {headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(res=>{
                     this.list=res.data.data;
                     console.log(this.list);
                     this.count=res.data.count;
@@ -124,7 +124,7 @@
 
                                     console.log(obj.limit);
                                     $.ajax({
-                                        url:"Wpurchase/selectAllForPage",
+                                        url:"ProductSchedule/selectAll",
                                         data:{"page":obj.curr,"limit":obj.limit},
                                         type:"post",
                                         traditional:true,
