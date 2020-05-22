@@ -6,32 +6,29 @@
 		id="HuiyuankaiMap">
 		<result property="hid" column="hid" jdbcType="INTEGER" />
 		<result property="hykkh" column="hykkh" jdbcType="VARCHAR" />
-		<result property="hykdjid" column="hykdjid" jdbcType="INTEGER" />
-		<result property="hyktime" column="hykTime"
-			jdbcType="TIMESTAMP" />
+		<result property="djid" column="djid" jdbcType="INTEGER" />
+		<result property="hyktime" column="hykTime" jdbcType="TIMESTAMP" />
+		<result property="zx" column="zx" jdbcType="INTEGER" />
 	</resultMap>
 
 	<!--查询单个 -->
 	<select id="queryById" resultMap="HuiyuankaiMap">
 		select
-		hid,hykkh, hykdjid,
-		hykTime
+		hid,hykkh, djid,
+		hykTime,zx
 		from clothesppsdb.huiyuankai
 		where hid = #{hid}
 	</select>
 
 	<!--查询所有的数据 -->
 	<select id="selectAll" resultMap="HuiyuankaiMap">
-		select
-		hid,hykkh, hykdjid,
-		hykTime
-		from clothesppsdb.huiyuankai
+		SELECT h.`hid`,h.`hykkh`,d.`djname`,h.`hykTime`,h.zx  FROM huiyuankai AS h,dengji AS d WHERE h.djid=d.djid
 	</select>
 
 	<!--通过实体作为筛选条件查询 -->
 	<select id="queryAll" resultMap="HuiyuankaiMap">
 		select
-		hid,hykkh, hykdjid, hykTime
+		hid,hykkh, djid, hykTime,zx
 		from clothesppsdb.huiyuankai
 		<where>
 			<if test="hid != null and hid != ''">
@@ -40,38 +37,40 @@
 			<if test="hykkh != null and hykkh != ''">
 				and hykkh = #{hykkh}
 			</if>
-			<if test="hykdjid != null">
-				and hykdjid = #{hykdjid}
+			<if test="djid != null">
+				and djid = #{djid}
 			</if>
 			<if test="hyktime != null">
 				and hykTime = #{hyktime}
+			</if>
+			<if test="zx != null">
+				and zx = #{zx}
 			</if>
 		</where>
 	</select>
 
 	<!--新增所有列 -->
-	<insert id="insert" keyProperty="hykkh" useGeneratedKeys="true">
+	<insert id="insert"  useGeneratedKeys="true">
 		insert
-		into clothesppsdb.huiyuankai(hykdjid, hykTime)
-		values (#{hykdjid},
-		#{hyktime})
+		into clothesppsdb.huiyuankai(hykkh,djid, hykTime)
+		values (#{hykkh},#{djid},now())
 	</insert>
 
 	<!--通过主键修改数据 -->
 	<update id="update">
 		update clothesppsdb.huiyuankai
 		<set>
-			<if test="hid != null">
-				hid = #{hid},
+			<if test="hykkh != null">
+				hykkh = #{hykkh},
 			</if>
-			<if test="hykdjid != null">
-				hykdjid = #{hykdjid},
+			<if test="djid != null">
+				djid = #{djid},
 			</if>
 			<if test="hyktime != null">
-				hykTime = #{hyktime},
+				hykTime = now(),
 			</if>
 		</set>
-		where hykkh = #{hykkh}
+		where hid = #{hid}
 	</update>
 
 	<!--通过主键删除 -->

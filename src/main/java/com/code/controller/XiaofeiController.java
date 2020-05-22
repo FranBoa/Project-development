@@ -3,13 +3,17 @@ package com.code.controller;
 import com.code.entity.Xiaofei;
 import com.code.service.XiaofeiService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 会员消费记录表(Xiaofei)表控制层
@@ -32,10 +36,13 @@ public class XiaofeiController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("queryById")
-    public Xiaofei queryById(int xid) {
+    @RequestMapping("loadupdateXiaofei")
+    public ModelAndView queryById(int xid) {
     	Xiaofei xiaofei=this.xiaofeiService.queryById(xid);
-        return xiaofei;
+    	ModelAndView mv = new ModelAndView();
+		mv.addObject("xiaofei", xiaofei);
+		mv.setViewName("member-Xiaofei-edit");
+		return mv;
     }
     
     //修改后
@@ -66,7 +73,8 @@ public class XiaofeiController {
      */
     @RequestMapping("queryAll")
     public  Map<String, Object> queryAll(Xiaofei xiaofei){
-    	List<Xiaofei> list=this.xiaofeiService.queryAll(xiaofei);
+    	System.out.println(xiaofei);
+    	List<Xiaofei> list=this.xiaofeiService.selectAll();
     	Map<String, Object> map=new HashMap<>();
     	map.put("data", list);
     	map.put("code", 0);
@@ -74,11 +82,26 @@ public class XiaofeiController {
         return map;
     }
     
-  //添加
-    @RequestMapping(value="/insertxf",produces ="html/text;charset=UTF-8")
-	public @ResponseBody  String insertxf(HttpServletRequest request, Xiaofei xiaofei) {
-		int row=this.xiaofeiService.insert(xiaofei);
-		return row>0?"添加成功":"添加失败";
+    //添加
+    @RequestMapping("/insertxf")
+	public void insertKehu(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    	System.out.println("进了");
+    	PrintWriter out=response.getWriter();
+    	String hykid=request.getParameter("hykid");
+    	int spid=Integer.parseInt(request.getParameter("spid"));
+    	int xfsl=Integer.parseInt(request.getParameter("xfsl"));
+    	double money=Double.parseDouble(request.getParameter("money"));
+    	Xiaofei xiaofei=new Xiaofei();
+    	xiaofei.setHykid(hykid);
+    	xiaofei.setSpid(spid);
+    	xiaofei.setXfsl(xfsl);
+    	xiaofei.setMoney(money);
+    	//添加
+    	xiaofeiService.insert(xiaofei);
+    	
+    	out.print("1");
+		out.flush();
+		out.close();
 	}
    
     //删除

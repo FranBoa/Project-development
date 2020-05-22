@@ -5,30 +5,87 @@
       <artifact name="DistributionSystem:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html" line="597" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2cb36a92-77c6-4e3a-a114-21510b614716" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/filterSoschildren.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/layuiUtil/FilterSo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/layuiUtil/ReflectHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/layuiUtil/SoulPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/code/layuiUtil/SoulTableInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/SaleChangeKehu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/805b6120-cf06-4f54-bb80-8c6b8996d0a7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/805b6120-cf06-4f54-bb80-8c6b8996d0a7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/DengjiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/DengjiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/HuiyuanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/HuiyuanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/HuiyuankaiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/HuiyuankaiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/KehuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/KehuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/ShangpingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/ShangpingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/controller/XiaofeiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/controller/XiaofeiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/HuiyuanDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/HuiyuanDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/KehuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/KehuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/dao/ShangpingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/dao/ShangpingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Dengji.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Dengji.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Huiyuan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Huiyuan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Huiyuankai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Huiyuankai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Kehu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Kehu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/filterSos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/filterSos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Shangping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Shangping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Wpurchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Wpurchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Xiaofei.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Xiaofei.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/Zhuxiao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/Zhuxiao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/HuiyuanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/HuiyuanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/KehuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/KehuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/RelatedsaleandorderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/RelatedsaleandorderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/ShangpingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/ShangpingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/WpurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/WpurchaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/HuiyuanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/HuiyuanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/KehuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/KehuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/RelatedsaleandorderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/RelatedsaleandorderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/ShangpingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/ShangpingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/code/service/impl/WpurchaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/code/service/impl/WpurchaseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HuiyuanDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HuiyuanDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HuiyuankaiDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HuiyuankaiDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/KehuDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/KehuDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShangpingDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShangpingDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WpurchaseDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/WpurchaseDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/XiaofeiDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/XiaofeiDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientele-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientele-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientele-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientele-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientele-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientele-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientele-sort-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientele-sort-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientele-sort-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientele-sort-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/clientele-sort-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/clientele-sort-list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-DengJi-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-DengJi-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-DengJi-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-DengJi-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-DengJi-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-DengJi-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-Xiaofei-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-Xiaofei-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-Xiaofei-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-Xiaofei-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-Xiaofei-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-Xiaofei-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-Zhuxiao-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-Zhuxiao-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-card-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-card-add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-card-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-card-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-card-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-card-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/member-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/member-password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" afterDir="false" />
     </list>
     <list id="917cbde8-3f22-4814-b9ca-ba04f2ba0d06" name="Revert &quot;Revert &quot;第一次提交&quot;&quot;" comment="Revert &quot;Revert &quot;第一次提交&quot;&quot;&#10;&#10;This reverts commit 70dff54c" />
@@ -40,6 +97,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -57,6 +117,24 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="cdb145879" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cdb145879" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cdb145879" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="clothesppsdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="cdb145879" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="clothesppsdb: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="saleandorder: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -65,32 +143,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
-              <folding>
-                <element signature="method#add#0;class#SaleandorderController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="1130" column="41" lean-forward="true" selection-start-line="1130" selection-start-column="41" selection-end-line="1130" selection-end-column="41" />
+            <state relative-caret-position="213">
+              <caret line="1303" column="43" lean-forward="true" selection-start-line="1303" selection-start-column="43" selection-end-line="1303" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#script#3;n#html#0;n#!!top" />
@@ -108,26 +165,16 @@
                 <element signature="n#script#15;n#html#0;n#!!top" />
                 <element signature="n#script#16;n#html#0;n#!!top" />
                 <element signature="n#script#17;n#html#0;n#!!top" />
-                <element signature="n#script#18;n#html#0;n#!!top" />
+                <element signature="e#21276#21920#0" />
+                <element signature="e#21949#22693#0" />
+                <element signature="e#22722#23342#0" />
+                <element signature="e#23371#23406#0" />
                 <element signature="n#script#19;n#html#0;n#!!top" />
                 <element signature="n#script#20;n#html#0;n#!!top" />
                 <element signature="n#script#21;n#html#0;n#!!top" />
                 <element signature="n#script#22;n#html#0;n#!!top" />
                 <element signature="n#script#23;n#html#0;n#!!top" />
-                <element signature="n#script#24;n#html#0;n#!!top" />
-                <element signature="e#33973#36009#0" />
-                <element signature="e#36086#39292#0" />
-                <element signature="e#39408#40482#0" />
                 <element signature="n#script#25;n#html#0;n#!!top" />
-                <element signature="n#script#26;n#html#0;n#!!top" />
-                <element signature="e#42441#50203#0" />
-                <element signature="e#45054#46250#0" />
-                <element signature="e#45995#46804#0" />
-                <element signature="e#46919#47479#0" />
-                <element signature="e#47961#50186#0" />
-                <element signature="e#51053#54145#0" />
-                <element signature="e#54194#57359#0" />
-                <element signature="e#56736#57200#0" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#2;n#!!top" expanded="true" />
@@ -140,68 +187,86 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="785">
+              <caret line="616" column="44" lean-forward="true" selection-start-line="616" selection-start-column="44" selection-end-line="616" selection-end-column="44" />
               <folding>
-                <element signature="e#1875#1876#0" expanded="true" />
-                <element signature="e#1900#1901#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WarehouseDao.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="405">
+              <caret line="196" column="28" lean-forward="true" selection-start-line="196" selection-start-column="28" selection-end-line="196" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="144">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="202">
+              <caret line="204" column="35" selection-start-line="204" selection-start-column="35" selection-end-line="204" selection-end-column="35" />
+              <folding>
+                <element signature="e#1238#1239#0" expanded="true" />
+                <element signature="e#1271#1272#0" expanded="true" />
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1367#1368#0" expanded="true" />
+                <element signature="e#4275#4276#0" expanded="true" />
+                <element signature="e#4298#4299#0" expanded="true" />
+                <element signature="e#4345#4346#0" expanded="true" />
+                <element signature="e#4391#4392#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="240">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+            <state relative-caret-position="-1176">
+              <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="744">
+              <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/KehuController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1824">
+              <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -212,41 +277,42 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ordernumber</find>
-      <find>row</find>
-      <find>close</find>
-      <find>关闭</find>
-      <find>删除</find>
-      <find>update</find>
-      <find>bossid</find>
-      <find>tableList</find>
-      <find>购货</find>
-      <find>warehouse</find>
-      <find>002</find>
-      <find>demo</find>
-      <find>销售</find>
-      <find>laypage</find>
-      <find>kehuid2</find>
-      <find>requestbo</find>
-      <find>children</find>
-      <find>soultable</find>
-      <find>search</find>
-      <find>下单时间</find>
-      <find>sreach</find>
-      <find>username</find>
-      <find>删除计划</find>
-      <find>clearFilter</find>
-      <find>test</find>
-      <find>xtable</find>
+      <find>delA</find>
+      <find>刷新子</find>
       <find>del</find>
-      <find>xtableBar</find>
+      <find>清除所有筛选</find>
+      <find>delAll</find>
+      <find>change</find>
+      <find>kehuid</find>
+      <find>changek</find>
+      <find>title</find>
+      <find>修改客户</find>
+      <find>getCheckData</find>
+      <find>first</find>
+      <find>layer.tips</find>
+      <find>changeke</find>
+      <find>changekehu</find>
+      <find>close</find>
+      <find>changeKehu</find>
+      <find>layer.alert</find>
+      <find>addgood</find>
+      <find>kehu</find>
+      <find>status</find>
+      <find>关闭子表</find>
+      <find>open</find>
+      <find>addrel</find>
+      <find>producttype</find>
+      <find>LAYER.OPEN</find>
       <find>addgoods</find>
-      <find>rowEvent</find>
+      <find>json</find>
+      <find>layer.open</find>
+      <find>layer</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -273,57 +339,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/ProductController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProducttypeDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/KehuController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/KehuDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/KehuService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/KehuServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Kehu.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/module/ajaxCascader/ajaxCascader.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/webapp/module/selectNM/selectN.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/CategoryDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/CategoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/CategoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/KehuDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/TimeUtil/TimeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Relatedsaleandorder.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/service/Finance_AccountReceivableDetailService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/w-purchase-add.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Wpurchase.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/WpurchaseDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/WpurchaseServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/w-order-list.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/filterSoschildren.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/filterSos.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Category.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/CategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/CategoryDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/KehuDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/KehuDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/clientele-list.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/KehuController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/KehuService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/KehuServiceImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/RelatedsaleandorderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/impl/RelatedsaleandorderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/layuiUtil/SoulTableInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Kehu.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SaleChangeKehu.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/saleAndOrder.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html" />
       </list>
     </option>
   </component>
@@ -394,8 +460,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -443,17 +507,20 @@
               <item name="DistributionSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -465,7 +532,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/code/layuiUtil" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/学习/SpringMVC资料/第一章《Spring入门IOC、DI二》/SpringWork01" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -478,22 +545,22 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33255813" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\lib\layui" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\IDEWORK\DistributionSystem\src\main\java\com\code\layuiUtil" />
-      <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp" />
-      <recent name="D:\IDEWORK\DistributionSystem\src\main\java\com\code\entity" />
       <recent name="D:\IDEWORK\DistributionSystem\src\main\java\com\code\controller" />
       <recent name="D:\IDEWORK\DistributionSystem\src\main\java\com\code\dao" />
+      <recent name="D:\IDEWORK\DistributionSystem\src\main\java\com\code\entity" />
+      <recent name="D:\IDEWORK\DistributionSystem\src\main\resources\mapper" />
+      <recent name="D:\IDEWORK\DistributionSystem\src\main\java\com\code\service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEWORK\DistributionSystem\src\main\webapp\lib\layui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -668,6 +735,14 @@
       <workItem from="1589857710291" duration="3632000" />
       <workItem from="1589870609284" duration="1384000" />
       <workItem from="1589873290856" duration="29907000" />
+      <workItem from="1589934885314" duration="7271000" />
+      <workItem from="1589942214106" duration="15899000" />
+      <workItem from="1589980487373" duration="4908000" />
+      <workItem from="1590040132231" duration="7347000" />
+      <workItem from="1590047755706" duration="5940000" />
+      <workItem from="1590070854203" duration="6856000" />
+      <workItem from="1590107219406" duration="12142000" />
+      <workItem from="1590126876829" duration="6707000" />
     </task>
     <task id="LOCAL-00001" summary="部署....">
       <created>1587200949877</created>
@@ -872,11 +947,18 @@
       <option name="project" value="LOCAL" />
       <updated>1589789542132</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="提交添加">
+      <created>1589935143656</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1589935143656</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="708751000" />
+    <option name="totallyTimeSpent" value="775821000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -889,18 +971,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" weight="0.16471216" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.17075774" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.1705757" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.3283582" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32928178" />
-      <window_info anchor="bottom" x="0" y="51" width="1901" height="928" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" weight="0.80383795" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
+      <window_info active="true" anchor="bottom" x="0" y="51" width="1901" height="928" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" visible="true" weight="0.80383795" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32942432" />
@@ -908,12 +989,13 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32942432" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32942432" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.2647374" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.26439232" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32942432" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" x="28" y="380" width="1876" height="353" id="Run" order="14" sideWeight="0.4989339" side_tool="true" type="SLIDING" weight="0.23773988" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4978678" weight="0.32942432" />
       <window_info anchor="bottom" id="Application Servers" order="16" weight="0.32928178" />
+      <window_info anchor="bottom" id="Problems" order="17" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49920508" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -932,10 +1014,10 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Web" order="4" side_tool="true" weight="0.16471216" />
-      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.17075774" />
+      <window_info auto_hide="true" content_ui="combo" id="Project" order="5" type="SLIDING" weight="0.1705757" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.3283582" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32928178" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3283582" />
       <window_info anchor="bottom" x="0" y="51" width="1901" height="928" id="Debug" order="3" sideWeight="0.49946696" type="WINDOWED" visible="true" weight="0.80383795" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -944,12 +1026,13 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32942432" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32942432" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.2647374" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.26439232" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32942432" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" x="28" y="380" width="1876" height="353" id="Run" order="14" sideWeight="0.4989339" side_tool="true" type="SLIDING" weight="0.23773988" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4978678" weight="0.32942432" />
       <window_info anchor="bottom" id="Application Servers" order="16" weight="0.32928178" />
+      <window_info anchor="bottom" id="Problems" order="17" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49920508" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1039,340 +1122,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/Finance_AccountReceivableDetail.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/Finance_AccountReceivableDetailService.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/Finance_AccountReceivableDetailServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/Finance_AccountReceivableDetail.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2187">
-          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/Finance_AccountReceivableDetailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/soulTable/excel.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/soulTable/soulTable.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/soulTable/tableChild.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/soulTable/tableMerge.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Wpurchase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WpurchaseDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/Finance_Receipt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/ShangpingServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-691">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/XiaofeiDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4806">
-          <caret line="178" column="33" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/WpurchaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/WpurchaseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w-purchase-add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4077">
-          <caret line="151" column="57" selection-start-line="151" selection-start-column="57" selection-end-line="151" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/w-order-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/soulTable/soulTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1950">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/filterSoschildren.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding>
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1013#1014#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1219#1220#0" expanded="true" />
-            <element signature="e#1250#1251#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
-            <element signature="e#1349#1350#0" expanded="true" />
-            <element signature="e#1381#1382#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-            <element signature="e#1451#1452#0" expanded="true" />
-            <element signature="e#1485#1486#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/module/soulTable/tableFilter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#i#1;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#td#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.28/fastjson-1.2.28-sources.jar!/com/alibaba/fastjson/parser/deserializer/JavaBeanDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="342" column="22" selection-start-line="342" selection-start-column="22" selection-end-line="342" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.30/tomcat-embed-core-9.0.30-sources.jar!/org/apache/catalina/core/StandardWrapperValve.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="201" selection-start-line="201" selection-end-line="201" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/layuiUtil/FilterSo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/filterSos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="185" column="17" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47-sources.jar!/com/mysql/jdbc/ConnectionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="2229" column="12" selection-start-line="2229" selection-start-column="12" selection-end-line="2229" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/SaleandorderDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="86" selection-start-line="24" selection-start-column="86" selection-end-line="24" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/layuiUtil/SoulTableInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="267" column="34" lean-forward="true" selection-start-line="267" selection-start-column="34" selection-end-line="267" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1383,10 +1136,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="1176">
+          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1397,45 +1157,378 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Warehouse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        <state relative-caret-position="288">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WpurchaseDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="38" column="56" lean-forward="true" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding>
-            <element signature="e#1875#1876#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/WarehouseController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/CategoryDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+        <state relative-caret-position="192">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/CategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CategoryDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/KehuDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="229" column="59" lean-forward="true" selection-start-line="229" selection-start-column="59" selection-end-line="229" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/clientele-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="147" column="49" selection-start-line="147" selection-start-column="49" selection-end-line="147" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/KehuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/KehuServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="92" column="25" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/Relatedsaleandorder2Dao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/RelatedsaleandorderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="103" column="74" selection-start-line="103" selection-start-column="74" selection-end-line="103" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/dao/RelatedsaleandorderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/RelatedsaleandorderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/WpurchaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3408">
+          <caret line="165" column="4" selection-start-line="165" selection-start-column="4" selection-end-line="165" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/layuiUtil/SoulTableInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5520">
+          <caret line="254" column="30" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/impl/SaleandorderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
-            <element signature="method#add#0;class#SaleandorderController#0" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RelatedsaleandorderDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2928">
+          <caret line="122" column="17" lean-forward="true" selection-start-line="122" selection-start-column="17" selection-end-line="122" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/SaleandorderSo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Kehu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/io/PrintStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="819" column="16" selection-start-line="819" selection-start-column="16" selection-end-line="819" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1821">
+          <caret line="512" column="45" selection-start-line="512" selection-start-column="45" selection-end-line="512" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/KehuDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleChangeKehu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#script#1;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="342" column="23" lean-forward="true" selection-start-line="342" selection-start-column="23" selection-end-line="342" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/layuiUtil/FilterSo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-696">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/Relatedsaleandorder2Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/PurchaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/formdata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/KehuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1824">
+          <caret line="99" column="33" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/service/SaleandorderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SaleandorderDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1176">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/entity/Saleandorder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="204" column="35" selection-start-line="204" selection-start-column="35" selection-end-line="204" selection-end-column="35" />
+          <folding>
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1367#1368#0" expanded="true" />
+            <element signature="e#4275#4276#0" expanded="true" />
+            <element signature="e#4298#4299#0" expanded="true" />
+            <element signature="e#4345#4346#0" expanded="true" />
+            <element signature="e#4391#4392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.2.3.RELEASE/spring-core-5.2.3.RELEASE-sources.jar!/org/springframework/cglib/proxy/MethodProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="217" column="52" lean-forward="true" selection-start-line="217" selection-start-column="52" selection-end-line="217" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/RelatedsaleandorderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        <state relative-caret-position="744">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/code/controller/SaleandorderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="196" column="28" lean-forward="true" selection-start-line="196" selection-start-column="28" selection-end-line="196" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/SaleAndOrder-add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="616" column="44" lean-forward="true" selection-start-line="616" selection-start-column="44" selection-end-line="616" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/saleAndOrder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="1130" column="41" lean-forward="true" selection-start-line="1130" selection-start-column="41" selection-end-line="1130" selection-end-column="41" />
+        <state relative-caret-position="213">
+          <caret line="1303" column="43" lean-forward="true" selection-start-line="1303" selection-start-column="43" selection-end-line="1303" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#script#3;n#html#0;n#!!top" />
@@ -1453,26 +1546,16 @@
             <element signature="n#script#15;n#html#0;n#!!top" />
             <element signature="n#script#16;n#html#0;n#!!top" />
             <element signature="n#script#17;n#html#0;n#!!top" />
-            <element signature="n#script#18;n#html#0;n#!!top" />
+            <element signature="e#21276#21920#0" />
+            <element signature="e#21949#22693#0" />
+            <element signature="e#22722#23342#0" />
+            <element signature="e#23371#23406#0" />
             <element signature="n#script#19;n#html#0;n#!!top" />
             <element signature="n#script#20;n#html#0;n#!!top" />
             <element signature="n#script#21;n#html#0;n#!!top" />
             <element signature="n#script#22;n#html#0;n#!!top" />
             <element signature="n#script#23;n#html#0;n#!!top" />
-            <element signature="n#script#24;n#html#0;n#!!top" />
-            <element signature="e#33973#36009#0" />
-            <element signature="e#36086#39292#0" />
-            <element signature="e#39408#40482#0" />
             <element signature="n#script#25;n#html#0;n#!!top" />
-            <element signature="n#script#26;n#html#0;n#!!top" />
-            <element signature="e#42441#50203#0" />
-            <element signature="e#45054#46250#0" />
-            <element signature="e#45995#46804#0" />
-            <element signature="e#46919#47479#0" />
-            <element signature="e#47961#50186#0" />
-            <element signature="e#51053#54145#0" />
-            <element signature="e#54194#57359#0" />
-            <element signature="e#56736#57200#0" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#2;n#!!top" expanded="true" />
@@ -1505,7 +1588,6 @@
             <option name="proportions">
               <list>
                 <option value="0.33255813" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1578,6 +1660,17 @@
             <option name="proportions">
               <list>
                 <option value="0.33255813" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>

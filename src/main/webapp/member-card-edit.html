@@ -1,102 +1,180 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html class="x-admin-sm">
-    <head>
-        <meta charset="UTF-8">
-        <title>欢迎页面-X-admin2.2</title>
-        <meta name="renderer" content="webkit">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-        <link rel="stylesheet" href="/css/font.css">
-        <link rel="stylesheet" href="/css/xadmin.css">
-        <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
-        <script type="text/javascript" src="/js/xadmin.js"></script>
-        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
-        <!--[if lt IE 9]>
-            <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]--></head>
+<head>
+<meta charset="UTF-8">
+<title>欢迎页面-X-admin2.2</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+<link rel="stylesheet" href="/css/font.css">
+<link rel="stylesheet" href="/css/xadmin.css">
+<link rel="stylesheet" href="/css/layui.css">
+</head>
 
-    <body>
-        <div class="layui-fluid">
-            <div class="layui-row">
-                <form class="layui-form">
-                
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>会员卡编号</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="hid" required="" autocomplete="off" class="layui-input"></div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>会员卡卡号</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="hykkh" required="" autocomplete="off" class="layui-input"></div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>等级</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="hykdjid" required="" autocomplete="off" class="layui-input"></div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>注册时间</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="hykTime" required="" autocomplete="off" class="layui-input"></div>
-                    </div>
-                    
-                    <div class="layui-form-item">
-                        <label for="L_repass" class="layui-form-label"></label>
-                        <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
-                </form>
-            </div>
-        </div>
-        <script>layui.use(['form', 'layer'],
-            function() {
-                $ = layui.jquery;
-                var form = layui.form,
-                layer = layui.layer;
+<body>
+	<div class="layui-fluid" id="app">
+		<div class="layui-row">
 
-                //自定义验证规则
-                form.verify({
-                    nikename: function(value) {
-                    	if (value.length < 2) {
-                            return '昵称不得少于2个字符';
-                        }
-                    },
-                    pass: [/(.+){6,12}$/, '密码必须6到12位'],
-                    repass: function(value) {
-                        if ($('#L_pass').val() != $('#L_repass').val()) {
-                            return '两次密码不一致';
-                        }
-                    }
-                });
+			<form class="layui-form layui-form-pane" action="">
 
-                //监听提交
-                form.on('submit(add)',
-                function(data) {
-                    console.log(data);
-                    //发异步，把数据提交给php
-                    layer.alert("增加成功", {
-                        icon: 6
-                    },
-                    function() {
-                        // 获得frame索引
-                        var index = parent.layer.getFrameIndex(window.name);
-                        //关闭当前frame
-                        parent.layer.close(index);
-                    });
-                    return false;
-                });
+				<div class="layui-form-item">
+					<div class="layui-input-inline">
+						<input type="hidden" name="hid" v-model="obj.hid" lay-verify="" lay-verify="required" placeholder="请输入会员卡卡号" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">会员卡卡号</label>
+					<div class="layui-input-inline">
+						<input type="text" name="hykkh" v-model="obj.hykkh" lay-verify="div1" lay-verify="required" placeholder="请输入会员卡卡号" autocomplete="off" class="layui-input">
+					</div>
+				</div>
 
-            });</script>
-        <script>var _hmt = _hmt || []; (function() {
+				<div class="layui-form-item">
+					<label class="layui-form-label">会员等级</label>
+					<div class="layui-input-inline">
+						<select name="djid" id="djid" v-model="obj.djid">
+							<option value="">请选择客户类型</option>
+							<option value="0"></option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="layui-inline">
+				      <label class="layui-form-label">注册时间</label>
+				      <div class="layui-input-block">
+				        <input type="text" name="hyktime" id="test5" placeholder="yyyy-MM-dd HH:mm:ss" autocomplete="off" class="layui-input">
+				      </div>
+			    </div>
+
+				<div class="layui-form-item" style="text-align: center">
+					<button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-filter="edit" lay-submit="">修改</button>
+					<button type="reset" class="layui-btn layui-btn-normal layui-btn-radius">重置</button>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/js/axios.min.js"></script>
+	<script type="text/javascript" src="/js/vue-2.4.0.js"></script>
+	<script type="text/javascript" src="/js/qs.min.js"></script>
+	<script type="text/javascript">
+		var v1= new Vue({
+			el:'#app',
+			data:{
+				obj: {
+					hykkh:null,
+					hykdjid:null,
+					hyktime:null
+				}
+			},
+			methods:{
+				getval(){
+					this.obj=getval();
+				}
+			},
+			mounted(){
+				this.getval();
+			}
+		});
+	
+		function getval() {
+			return parent.loadupdatehyk();
+		}
+	</script>
+
+	<script type="text/javascript" src="/lib/layui/layui.js"
+		charset="utf-8"></script>
+	<script type="text/javascript" src="/js/xadmin.js"></script>
+	<script type="text/javascript">
+		layui.use([ 'form', 'layer', 'laydate', 'jquery' ],function() {
+			$ = layui.jquery;
+			var form = layui.form, layer = layui.layer;
+			var laydate = layui.laydate;
+			 //日期时间选择器
+			  laydate.render({
+			    elem: '#test5'
+			    ,type: 'datetime'
+			  });
+
+			//自定义验证规则
+			form.verify({
+				nikename : function(value) {
+				if (value.length < 2) {
+					return '昵称不得少于2个字符';
+				}
+			},
+			div1 : function(value) {
+				if (value.length > 16 || value.length < 16) {
+					return '会员卡不得大于16位数或者不得少于16位数';
+				}
+			},
+			pass : [ /(.+){6,12}$/, '密码必须6到12位' ],
+			repass : function(value) {
+				if ($('#L_pass').val() != $('#L_repass').val()) {
+					return '两次密码不一致';
+				}
+			}
+		});
+
+		//监听提交
+		form.on("submit(edit)", function(data) {
+			$.post("huiyuankai/updatehyk", data.field,function(data) {
+			//top.layer.msg("1");
+				if (data == "修改成功") {
+					setTimeout(function() {
+					top.layer.msg("操作成功！");
+					layer.closeAll("iframe");
+					//刷新父页面
+					parent.location.reload();
+				}, 1000);
+				} else {
+					top.layer.msg("操作失败！");
+				}
+			}); 
+			return false;
+		})
+
+		var form = layui.form, layer = layui.layer;
+			//下拉框绑定数据
+			$.ajax({
+				//提交数据的类型 POST GET
+				type : "POST",
+				//提交的网址
+				url : "dengji/Menubangding",
+				//提交的数据
+				//返回数据的格式
+				datatype : "json",//“xml”, “html”, “script”, “json”, “jsonp”, “text”.
+				//成功返回之后调用的函数
+				success : function(result) {
+				var s = $(".tid").val();
+				var data = eval('(' + result + ')');
+				//alert(data)
+				$.each(data,function(index,item) {
+					var option = "<option ";
+					option += " value=" + item.djid + ">"+ item.djname+ "</option>";
+					option += "</optgroup>";
+					$("#djid").append($(option));
+				});
+					layui.form.render("select");
+				},
+					error : function() {
+					alert("查询失败!!!")
+				}
+			});
+		});
+	</script>
+
+
+	<script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
                 hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             })();</script>
-    </body>
+</body>
 
 </html>

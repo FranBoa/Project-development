@@ -22,7 +22,7 @@ public interface HuiyuanService {
     /**
      * 查询多条数据
      *
-     * @param 
+     * @param
      * @param
      * @return 对象列表
      */
@@ -60,4 +60,6 @@ public interface HuiyuanService {
      */
     int deleteById(int hyid);
 
+    //修改密码
+    int pwdORrepass(int hyid, String pwd, String repass);
 }

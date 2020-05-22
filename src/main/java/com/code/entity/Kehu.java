@@ -1,6 +1,7 @@
 package com.code.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import lombok.ToString;
 
@@ -28,7 +29,6 @@ public class Kehu extends Category implements Serializable {
 	 * 类别编号
 	 */
 	private int cid;
-
 	private Category cType;
 	/**
 	 * 销售人员
@@ -46,6 +46,7 @@ public class Kehu extends Category implements Serializable {
 	 * 送货地址
 	 */
 	private String address;
+
 
 	public int getId() {
 		return id;
@@ -78,7 +79,6 @@ public class Kehu extends Category implements Serializable {
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
-
 
 	public String getSell() {
 		return sell;

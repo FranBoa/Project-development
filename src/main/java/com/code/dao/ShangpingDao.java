@@ -18,7 +18,7 @@ public interface ShangpingDao {
      * @param spid 主键
      * @return 实例对象
      */
-    Shangping queryById(String spid);
+    Shangping queryById(int spid);
 
     /**
      * 查询指定行数据
@@ -60,6 +60,6 @@ public interface ShangpingDao {
      * @param spid 主键
      * @return 影响行数
      */
-    int deleteById(String spid);
+    int deleteById(int spid);
 
 }

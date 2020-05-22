@@ -75,11 +75,12 @@ public class RelatedsaleandorderController {
             for (int i=0;i<sid.length;i++){
                 System.out.println(ordernumber[i]);
                 System.out.println(sid[i]);
-                boolean flag=true;
+                boolean flag=this.relatedsaleandorderService.deleteById(sid[i]);
                 if(flag!=true){
                     b=b-1;
                 }
             }
+
             Map<String,Object> map=new HashMap<>();
             map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条!" );
             map.put("code",x-b>0?1:0);

@@ -1,13 +1,17 @@
 package com.code.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.code.entity.Purchase;
 import com.code.entity.Shangping;
 import com.code.service.ShangpingService;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * (Shangping)表控制层
@@ -31,7 +35,7 @@ public class ShangpingController {
      * @return 单条数据
      */
     @GetMapping("selectOne")
-    public Shangping selectOne(String id) {
+    public Shangping selectOne(int id) {
         return this.shangpingService.queryById(id);
     }
     
@@ -68,5 +72,18 @@ public class ShangpingController {
     	/*map.put("count", pageInfo.getTotal());*/
         return map;
     }
+    
+   //菜单下拉框绑定
+  	@RequestMapping("/Menubangding")
+  	@ResponseBody
+  	public void Menubangding(HttpServletResponse response) throws IOException {
+  		response.setContentType("text/html;charset=utf-8");
+  		List<Shangping> list = shangpingService.selectAll();
+  		String str = JSONArray.toJSONString(list);
+  		PrintWriter out = response.getWriter();
+  		out.print(str);
+  		out.flush();
+  		out.close();
+  	}
 
 }

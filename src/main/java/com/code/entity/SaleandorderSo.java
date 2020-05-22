@@ -1,5 +1,7 @@
 package com.code.entity;
 
+import java.util.Date;
+
 /**
  * ClassName:SaleandorderSo
  * Package:com.code.entity
@@ -11,6 +13,7 @@ package com.code.entity;
 public class SaleandorderSo extends Saleandorder{
     private String startTime;
     private String endTime;
+
 
     public String getStartTime() {
         return startTime;

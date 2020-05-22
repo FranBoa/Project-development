@@ -94,6 +94,10 @@ public class Wpurchase {
 	    * 单位
 	    */
 	    private String purchaseUnit;
+	    /**
+		    * 理由
+		 */
+	    private String reason;
 	    
 		public List<User> getUserList() {
 			return userList;
@@ -233,22 +237,30 @@ public class Wpurchase {
 		public void setPurchaseUnit(String purchaseUnit) {
 			this.purchaseUnit = purchaseUnit;
 		}
+		public String getReason() {
+			return reason;
+		}
+		public void setReason(String reason) {
+			this.reason = reason;
+		}
+		
 		@Override
 		public String toString() {
 			return "Wpurchase [userList=" + userList + ", purchaseId=" + purchaseId + ", usersId=" + usersId
 					+ ", bossUsersId=" + bossUsersId + ", userName=" + userName + ", bossName=" + bossName
 					+ ", supplierId=" + supplierId + ", purchaseGoodsId=" + purchaseGoodsId + ", purchaseGoodsName="
-					+ purchaseGoodsName + ", purchaseStatus=" + purchaseStatus + ", purchasePrice=" + purchasePrice
-					+ ", purchaseNum=" + purchaseNum + ", purchaseDate=" + purchaseDate + ", commet=" + commet
-					+ ", warehouse=" + warehouse + ", wName=" + wName + ", discounts=" + discounts + ", discountsPrice="
-					+ discountsPrice + ", discountsSum=" + discountsSum + ", paymentStatus=" + paymentStatus
-					+ ", purchaseUnit=" + purchaseUnit + "]";
+					+ purchaseGoodsName + ", ptype=" + ptype + ", ptypname=" + ptypname + ", purchaseStatus="
+					+ purchaseStatus + ", purchasePrice=" + purchasePrice + ", purchaseNum=" + purchaseNum
+					+ ", purchaseDate=" + purchaseDate + ", commet=" + commet + ", warehouse=" + warehouse + ", wName="
+					+ wName + ", discounts=" + discounts + ", discountsPrice=" + discountsPrice + ", discountsSum="
+					+ discountsSum + ", paymentStatus=" + paymentStatus + ", purchaseUnit=" + purchaseUnit + ", reason="
+					+ reason + "]";
 		}
 		public Wpurchase(List<User> userList, String purchaseId, String usersId, String bossUsersId, String userName,
 				String bossName, String supplierId, int purchaseGoodsId, String purchaseGoodsName, String ptype,
 				String ptypname, String purchaseStatus, Integer purchasePrice, Integer purchaseNum, String purchaseDate,
-				String commet, Integer warehouse, String wName, String discounts, Integer discountsPrice,
-				Integer discountsSum, String paymentStatus, String purchaseUnit) {
+				String commet, Integer warehouse, String wName, String discounts, double discountsPrice,
+				double discountsSum, String paymentStatus, String purchaseUnit, String reason) {
 			super();
 			this.userList = userList;
 			this.purchaseId = purchaseId;
@@ -273,6 +285,7 @@ public class Wpurchase {
 			this.discountsSum = discountsSum;
 			this.paymentStatus = paymentStatus;
 			this.purchaseUnit = purchaseUnit;
+			this.reason = reason;
 		}
 		public Wpurchase() {
 			super();

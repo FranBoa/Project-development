@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author yap
  * @since 2020-04-19 02:16:41
  */
-public class Xiaofei implements Serializable {
+public class Xiaofei extends Shangping implements Serializable {
 	private static final long serialVersionUID = -34720252660632525L;
 	/**
 	 * 消费编号
@@ -21,11 +21,16 @@ public class Xiaofei implements Serializable {
 	/**
 	 * 商品编号，主键
 	 */
-	private Integer spid;
+	private int spid;
+	private Shangping spname;
 	/**
 	 * 购买数量
 	 */
 	private Integer xfsl;
+	/**
+	 * 金额
+	 */
+	private double money;
 
 	public int getXid() {
 		return xid;
@@ -43,11 +48,11 @@ public class Xiaofei implements Serializable {
 		this.hykid = hykid;
 	}
 
-	public Integer getSpid() {
+	public int getSpid() {
 		return spid;
 	}
 
-	public void setSpid(Integer spid) {
+	public void setSpid(int spid) {
 		this.spid = spid;
 	}
 
@@ -58,5 +63,20 @@ public class Xiaofei implements Serializable {
 	public void setXfsl(Integer xfsl) {
 		this.xfsl = xfsl;
 	}
+
+	public double getMoney() {
+		return money;
+	}
+
+	public void setMoney(double money) {
+		this.money = money;
+	}
+
+	@Override
+	public String toString() {
+		return "Xiaofei [xid=" + xid + ", hykid=" + hykid + ", spid=" + spid + ", spname=" + spname + ", xfsl=" + xfsl
+				+ ", money=" + money + "]";
+	}
+	
 
 }

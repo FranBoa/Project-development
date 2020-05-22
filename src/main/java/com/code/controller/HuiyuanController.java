@@ -4,12 +4,15 @@ import com.code.entity.Huiyuan;
 import com.code.service.HuiyuanService;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * (Huiyuan)表控制层
@@ -32,7 +35,7 @@ public class HuiyuanController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("queryById")
+    @RequestMapping("loadupdatehy")
     public Huiyuan queryById(int hyid) {
     	Huiyuan huiyuan=this.huiyuanService.queryById(hyid);
         return huiyuan;
@@ -40,7 +43,7 @@ public class HuiyuanController {
     
    //修改后
     @RequestMapping("/updatehy")
-	public @ResponseBody String updatehy(HttpServletRequest request, Huiyuan huiyuan){
+	public @ResponseBody String updatehy(Huiyuan huiyuan){
 		int row = this.huiyuanService.update(huiyuan);
 		return row>0?"修改成功":"修改失败";
 	}
@@ -65,7 +68,6 @@ public class HuiyuanController {
      */
     @RequestMapping("queryAll")
     public Map<String, Object>  queryAll(Huiyuan huiyuan){
-    	System.out.println(huiyuan);
     	List<Huiyuan> list=this.huiyuanService.queryAll(huiyuan);
     	Map<String, Object> map=new HashMap<>();
     	map.put("data", list);
@@ -74,11 +76,34 @@ public class HuiyuanController {
         return map;
     }
     
-   //添加
-    @RequestMapping(value="/inserthy",produces ="html/text;charset=UTF-8")
-	public @ResponseBody  String inserthy(HttpServletRequest request, Huiyuan huiyuan) {
-		int row=this.huiyuanService.insert(huiyuan);
-		return row>0?"添加成功":"添加失败";
+    //添加
+    @RequestMapping("/inserthy")
+	public  void inserthy(HttpServletRequest request,HttpServletResponse response) throws IOException {
+    	PrintWriter out=response.getWriter();
+    	String pwd=request.getParameter("pwd");
+    	String repass=request.getParameter("repass");
+    	String hykh=request.getParameter("hykh");
+    	String hyname=request.getParameter("hyname");
+    	String hysex=request.getParameter("hysex");
+    	int hyage=Integer.parseInt(request.getParameter("hyage"));
+    	String hydanwei=request.getParameter("hydanwei");
+    	String hylianxi=request.getParameter("hylianxi");
+    	Huiyuan huiyuan=new Huiyuan();
+    	huiyuan.setPwd(pwd);
+    	huiyuan.setRepass(repass);
+    	huiyuan.setHykh(hykh);
+    	huiyuan.setHyname(hyname);
+    	huiyuan.setHysex(hysex);
+    	huiyuan.setHyage(hyage);
+    	huiyuan.setHydanwei(hydanwei);
+    	huiyuan.setHylianxi(hylianxi);
+    	
+    	System.out.println(huiyuan);
+    	//添加
+    	huiyuanService.insert(huiyuan);
+    	out.print("1");
+		out.flush();
+		out.close();
 	}
     
     //删除
@@ -87,5 +112,23 @@ public class HuiyuanController {
   		int row=this.huiyuanService.deleteById(hyid);
   		return row>0?"删除成功":"删除失败";
   	}
-
+  	
+  	/**
+     * 通过主键查询单条数据进行修改密码
+     *
+     * @param id 主键
+     * @return 单条数据
+     */
+    @RequestMapping("loadpwdORrepass")
+    public Huiyuan loadpwdORrepass(int hyid) {
+    	Huiyuan huiyuan=this.huiyuanService.queryById(hyid);
+        return huiyuan;
+    }
+  	
+  	//修改密码
+  	@RequestMapping("/pwdORrepass")
+	public @ResponseBody String pwdORrepass(int hyid,String pwd,String repass) {
+  		int row = this.huiyuanService.pwdORrepass(hyid,pwd, repass);
+		return row>0?"修改成功":"修改失败";
+	}
 }

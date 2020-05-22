@@ -20,20 +20,20 @@
     <body>
         <div class="layui-fluid">
             <div class="layui-row">
-                <form class="layui-form">
-                
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>类别名称</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="cType" required=""  autocomplete="off" class="layui-input"></div>
-                    </div>
-                    
-                    
-                    <div class="layui-form-item">
-                        <label for="L_repass" class="layui-form-label"></label>
-                        <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
-                </form>
+            	<form class="layui-form layui-form-pane" action="">
+
+					<div class="layui-form-item">
+						<label class="layui-form-label">类别名称</label>
+						<div class="layui-input-inline">
+							<input type="text" name="cType" lay-verify="nikename" lay-verify="required" placeholder="请输入类别名称" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					
+					<div class="layui-form-item" style="text-align: center">
+						<button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-filter="add" lay-submit="">增加</button>
+						<button type="reset" class="layui-btn layui-btn-normal layui-btn-radius">重置</button>
+					</div>
+				</form>
             </div>
         </div>
         <script>layui.use(['form', 'layer','jquery'],

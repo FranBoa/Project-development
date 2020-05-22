@@ -17,23 +17,58 @@
         <![endif]--></head>
 
     <body>
-        <div class="layui-fluid">
+        <div class="layui-fluid" id="app" >
             <div class="layui-row">
-                <form class="layui-form">
-                    
-                    <div class="layui-form-item">
-                        <label for="L_username" class="layui-form-label">
-                            <span class="x-red">*</span>类别名称</label>
-                        <div class="layui-input-inline">
-                            <input type="text" id="L_username" name="cType" required=""  autocomplete="off" class="layui-input"></div>
-                    </div>
-                    
-                    <div class="layui-form-item">
-                        <label for="L_repass" class="layui-form-label"></label>
-                        <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
-                </form>
+            
+            	<form class="layui-form layui-form-pane" action="">
+					
+					<div class="layui-form-item">
+						<div class="layui-input-inline">
+							<input type="hidden" name="cid" v-model="obj.cid"  lay-verify="required" placeholder="请输入类别名称" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">类别名称</label>
+						<div class="layui-input-inline">
+							<input type="text" name="cType" v-model="obj.cType" lay-verify="nikename"  placeholder="请输入类别名称" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					
+					<div class="layui-form-item" style="text-align: center">
+						<button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-filter="edit" lay-submit="">修改</button>
+						<button type="reset" class="layui-btn layui-btn-normal layui-btn-radius">重置</button>
+					</div>
+				</form>
+				
             </div>
         </div>
+        
+    <script type="text/javascript" src="/js/axios.min.js"></script>
+	<script type="text/javascript" src="/js/vue-2.4.0.js"></script>
+	<script type="text/javascript" src="/js/qs.min.js"></script>
+	<script type="text/javascript">
+		var v1= new Vue({
+			el:'#app',
+			data:{
+				obj: {
+					cType:null
+				}
+			},
+			methods:{
+				getval(){
+					this.obj=getval();
+				}
+			},
+			mounted(){
+				this.getval();
+			}
+		});
+	
+		function getval() {
+			return parent.lodaupdateSort();
+		}
+	</script>
+        
         <script>layui.use(['form', 'layer'],
             function() {
                 $ = layui.jquery;
@@ -56,10 +91,10 @@
                 });
 
               //监听提交
-    			form.on("submit(add)", function(data) {
+    			form.on("submit(edit)", function(data) {
     				$.post("category/updateKehuSort", data.field, function(data) {
     					//top.layer.msg("1");
-    					if (data == "1") {
+    					if (data == "修改成功") {
     						setTimeout(function() {
     							top.layer.msg("操作成功！");
     							layer.closeAll("iframe");
@@ -76,6 +111,7 @@
 
     		});
         </script>
+
         <script>var _hmt = _hmt || []; (function() {
                 var hm = document.createElement("script");
                 hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";

@@ -6,7 +6,8 @@
         <result property="sid" column="sid" jdbcType="INTEGER"/>
         <result property="category" column="category" jdbcType="VARCHAR"/>
         <result property="salesman" column="salesman" jdbcType="VARCHAR"/>
-        <result property="customername" column="customername" jdbcType="VARCHAR"/>
+        <result property="customername" column="customerid" jdbcType="VARCHAR"/>
+        <result property="customerid" column="customername" jdbcType="VARCHAR"/>
         <result property="status" column="status" jdbcType="VARCHAR"/>
         <result property="sdate" column="sdate" jdbcType="TIMESTAMP"/>
         <result property="rdate" column="rdate" jdbcType="TIMESTAMP"/>
@@ -22,7 +23,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="SaleandorderMap">
         select
-          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
+          sid, category, salesman, customername,customerid, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
         where sid = #{sid}
     </select>
@@ -30,7 +31,7 @@
     <!--查询所有的数据-->
     <select id="selectAll" resultMap="SaleandorderMap">
         select
-          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
+          sid, category, salesman, customername, customerid,status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
         <where>
             <if test="so.status != null and so.status != ''">
@@ -52,7 +53,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="SaleandorderMap">
         select
-          sid, category, salesman, customername, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
+          sid, category, salesman, customername,customerid, status, sdate, rdate, OrderNumber, OrderNumber2, Remarks, stotal, author, inspect, wid
         from clothesppsdb.saleandorder
         <where>
             <if test="sid != null">
@@ -97,13 +98,16 @@
             <if test="wid != null and wid != ''">
                 and wid = #{wid}
             </if>
+            <if test="customerid != null and customerid !=''">
+                and customerid=#{customerid}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="sid" useGeneratedKeys="true">
-        insert into clothesppsdb.saleandorder(salesman, customername, OrderNumber, Remarks, author)
-        values ( #{salesman}, #{customername},#{ordernumber}, #{remarks}, #{author})
+        insert into clothesppsdb.saleandorder(salesman, customername,customerid, OrderNumber, Remarks, author)
+        values ( #{salesman}, #{customername},#{customerid},#{ordernumber}, #{remarks}, #{author})
     </insert>
 
     <!--通过主键修改数据-->
@@ -148,6 +152,9 @@
             </if>
             <if test="wid != null and wid != ''">
                 wid = #{wid},
+            </if>
+            <if test="customerid != null and customerid !=''">
+                customerid=#{customerid}
             </if>
         </set>
         where  OrderNumber = #{ordernumber}

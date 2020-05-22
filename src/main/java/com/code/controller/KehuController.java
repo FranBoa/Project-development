@@ -1,10 +1,12 @@
 package com.code.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.code.entity.Category;
 import com.code.entity.Huiyuan;
 import com.code.entity.Kehu;
 import com.code.service.CategoryService;
 import com.code.service.KehuService;
+import com.github.pagehelper.PageInfo;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +47,7 @@ public class KehuController {
      * @return 单条数据
      */
  	@RequestMapping("/loadupdate")
- 	public ModelAndView LoadupdateUname(int id) {
+ 	public ModelAndView Loadupdate(int id) {
 		Kehu kehu = kehuService.queryById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("kehu", kehu);
@@ -53,39 +56,12 @@ public class KehuController {
 	}
 
  	//修改后
-    @RequestMapping("/updateKehu1")
-	public @ResponseBody String updatehy(HttpServletRequest request, Kehu kehu){
+    @RequestMapping("/updateKehu")
+	public @ResponseBody String updatehy(Kehu kehu){
 		int row = this.kehuService.update(kehu);
 		return row>0?"修改成功":"修改失败";
 	}
-    //修改客户
-    @RequestMapping("/updateKehu")
-    @ResponseBody
-    public String updateKehu(HttpServletRequest request,HttpServletResponse response) throws IOException {
-    	System.out.println("进了");
-    	PrintWriter out=response.getWriter();
-    	String grade=request.getParameter("grade");
-    	String name=request.getParameter("name");
-    	int cid=Integer.parseInt(request.getParameter("cid"));
-    	String sell=request.getParameter("sell");
-    	String contact=request.getParameter("contact");
-    	String mobilePhone=request.getParameter("mobilePhone");
-    	String address=request.getParameter("address");
-    	Kehu kehu=new Kehu();
-    	kehu.setGrade(grade);
-    	kehu.setName(name);
-    	kehu.setCid(cid);
-    	kehu.setSell(sell);
-    	kehu.setContact(contact);
-    	kehu.setMobilePhone(mobilePhone);
-    	kehu.setAddress(address);
-    	//修改操作
-    	kehuService.update(kehu);
-    	out.print("1");
-		out.flush();
-		out.close();
-		return "1";
-    }
+
 
         /**
      * 查询某张表所有数据，搭配PageHelper使用更佳！
@@ -106,12 +82,12 @@ public class KehuController {
      * @return 对象列表
      */
     @RequestMapping("queryAll")
-    public Map<String, Object> queryAll(Kehu kehu){
-    	List<Kehu> list=this.kehuService.selectAll();
+    public Map<String, Object> queryAll(@RequestParam(value = "page",defaultValue = "1")Integer pageNum,@RequestParam(value ="limit" ,defaultValue = "10") Integer pageSize){
+    	PageInfo<Kehu> pageinfo=this.kehuService.selectAllForPage(pageNum, pageSize);
     	Map<String, Object> map=new HashMap<>();
-    	map.put("data", list);
+    	map.put("data", pageinfo.getList());
     	map.put("code", 0);
-    	map.put("total", list.size());
+    	map.put("total",pageinfo.getTotal());
         return map;
     }
 
@@ -149,10 +125,7 @@ public class KehuController {
   		return row>0?"删除成功":"删除失败";
   	}
 
-  	//查询单个 销售使用
-	@RequestMapping("/queryBycid")
-	public  List<Kehu> queryBycid(Integer cid){
-		List<Kehu> list= this.kehuService.queryBycId(cid);
-    	return list;
-	}
+  	//批量删除
+
+
 }

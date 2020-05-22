@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.code.entity.Category;
 import com.code.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,25 +37,20 @@ public class CategoryController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
-    public Category selectOne(String id) {
-    	Category category = this.categoryService.queryById(id);
-        return category;
+    @RequestMapping("lodaupdateSort")
+    public ModelAndView lodaupdate(String cid) {
+    	Category category = this.categoryService.queryById(cid);
+    	ModelAndView mv = new ModelAndView();
+    	mv.addObject("category", category);
+		mv.setViewName("clientele-sort-edit");
+        return mv;
     }
 
     //修改客户类别
     @RequestMapping("/updateKehuSort")
-    public void updateKehuSort(HttpServletRequest request,HttpServletResponse response) throws IOException {
-    	System.out.println("进了");
-    	PrintWriter out=response.getWriter();
-    	String cType=request.getParameter("cType");
-    	Category category=new Category();
-    	category.setcType(cType);
-    	//添加操作
-    	categoryService.insert(category);
-    	out.print("1");
-		out.flush();
-		out.close();
+    public @ResponseBody String updateKehuSort(Category category) {
+    	int row=this.categoryService.update(category);
+		return row>0?"修改成功":"修改失败";
     }
 
 
@@ -69,10 +65,11 @@ public class CategoryController {
            return this.categoryService.selectAll();
     }
 
-    @RequestMapping("selectAllWithKehu")
+	@RequestMapping("selectAllWithKehu")
 	public List<Category> selectAllWithKehu(){
-    	return  this.categoryService.selectAllWithKehu();
+		return  this.categoryService.selectAllWithKehu();
 	}
+
         /**
      * 通过实体作为筛选条件查询
      *

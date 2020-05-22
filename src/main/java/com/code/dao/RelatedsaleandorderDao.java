@@ -62,4 +62,6 @@ public interface RelatedsaleandorderDao {
      */
     int deleteById(Integer sid);
 
+    boolean deleteByOrderNumber(String ordernumber);
+
 }

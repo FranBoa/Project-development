@@ -21,7 +21,6 @@ public interface KehuDao {
 	Kehu queryById(int id);
 
 	List<Kehu> queryBycId(Integer cid);
-
 	/**
 	 * 查询指定行数据
 	 *

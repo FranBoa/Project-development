@@ -103,6 +103,12 @@ public class Huiyuan implements Serializable {
 		this.hyage = hyage;
 	}
 
+	@Override
+	public String toString() {
+		return "Huiyuan [hyid=" + hyid + ", hykh=" + hykh + ", pwd=" + pwd + ", repass=" + repass + ", hyname=" + hyname
+				+ ", hysex=" + hysex + ", hyage=" + hyage + ", hydanwei=" + hydanwei + ", hylianxi=" + hylianxi + "]";
+	}
+
 	public String getHydanwei() {
 		return hydanwei;
 	}

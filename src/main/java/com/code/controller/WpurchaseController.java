@@ -80,6 +80,19 @@ public class WpurchaseController {
     	/*map.put("count", pageInfo.getTotal());*/
         return map;
     }
+    
+
+    @RequestMapping("selectAllForPage")
+    public HashMap<String, Object>  selectAllForPage(@RequestParam(value ="page" ,defaultValue = "1") int pageNum,@RequestParam(value = "limit",defaultValue = "10") int pageSize){
+    	HashMap<String,Object> map = new HashMap<>();
+        PageInfo<Wpurchase> pageInfo = this.wpurchaseService.selectAllForPage(pageNum,pageSize);
+        System.out.println(pageInfo);
+        map.put("data",pageInfo.getList());
+        map.put("code",0);
+        map.put("count",pageInfo.getTotal());
+        return map;
+
+    }
 
         /**
          * 通过实体作为筛选条件查询
@@ -106,6 +119,7 @@ public class WpurchaseController {
     public HashMap<String, Object>  queryAll(Wpurchase wpurchase, @RequestParam(value ="page" ,defaultValue = "1") int pageNum,@RequestParam(value = "limit",defaultValue = "10") int pageSize){
 
     	HashMap<String,Object> map = new HashMap<>();
+
     	/*res.getSession().setAttribute("userid", "002");*/
     	wpurchase.setUsersId(String.valueOf(res.getSession().getAttribute("userid")));
         PageInfo<Wpurchase> pageInfo = this.wpurchaseService.queryAllForPage(pageNum,pageSize,wpurchase);
@@ -124,22 +138,37 @@ public class WpurchaseController {
 	 */
 	@RequestMapping("updatetongyi")
 	public int update(Wpurchase wpurchase){
-		wpurchase.setPurchaseStatus("已审核");
-
-    	Product p = new Product();
-    	p.setPtype(3);
-    	p.setPid(wpurchase.getPurchaseGoodsId());
-    	p.setWarehouse(wpurchase.getWarehouse());
-
-    	Product p2 = new Product();
-    	p2 = this.pservice.queryById(p.getPid());
-    	System.out.println(p2.getWarenum());
-    	p.setWarenum(wpurchase.getPurchaseNum()+p2.getWarenum());
-    	System.out.println(p.getWarenum());
-    	int row=this.pservice.update(p);
-
-		int num = this.wpurchaseService.update(wpurchase);
-    	return num;
+		if(wpurchase.getBossUsersId()==String.valueOf(res.getSession().getAttribute("userid"))) {
+			wpurchase.setPurchaseStatus("已审核");
+	
+	    	Product p = new Product();
+	    	p.setPtype(3);
+	    	p.setPid(wpurchase.getPurchaseGoodsId());
+	    	p.setWarehouse(wpurchase.getWarehouse());
+	
+	    	Product p2 = new Product();
+	    	p2 = this.pservice.queryById(p.getPid());
+	    	System.out.println(p2.getWarenum());
+	    	p.setWarenum(wpurchase.getPurchaseNum()+p2.getWarenum());
+	    	System.out.println(p.getWarenum());
+	    	int row=this.pservice.update(p);
+	
+			int num = this.wpurchaseService.update(wpurchase);
+	    	return num;
+		}else {
+	    	return 0;
+		}
+	}
+	@RequestMapping("updatex")
+	public int updatex(Wpurchase wpurchase){
+		if(wpurchase.getBossUsersId()==String.valueOf(res.getSession().getAttribute("userid"))) {
+			wpurchase.setPurchaseStatus("不通过");
+	
+			int num = this.wpurchaseService.update(wpurchase);
+	    	return num;
+		}else {
+	    	return 0;
+		}
 	}
 
 	@RequestMapping("add")

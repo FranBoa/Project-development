@@ -52,6 +52,13 @@ public class WpurchaseServiceImpl implements WpurchaseService {
         return this.WpurchaseDao.selectAll();
     }
 
+	@Override
+	public PageInfo<Wpurchase> selectAllForPage(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+		List<Wpurchase> list = this.WpurchaseDao.selectAll();
+	    PageInfo<Wpurchase> pageinfo=new PageInfo<>(list);
+	    return pageinfo;
+	}
 
     /**
      * 通过实体作为筛选条件查询

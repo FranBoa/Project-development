@@ -67,6 +67,8 @@ public interface WpurchaseService {
 	List<Wpurchase> queryBy(Wpurchase wpurchase);
 
 
+	PageInfo<Wpurchase> selectAllForPage(int pageNum, int pageSize);
+    
     PageInfo<Wpurchase> queryAllForPage(int pageNum, int pageSize, Wpurchase wpurchase);
 
 	PageInfo<Wpurchase> queryByForPage(int pageNum, int pageSize, Wpurchase wpurchase);

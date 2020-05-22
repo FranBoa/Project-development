@@ -72,11 +72,11 @@
 	</select>
 
 	<!--新增所有列 -->
-	<insert id="insert" keyProperty="hyid" useGeneratedKeys="true">
+	<insert id="insert" useGeneratedKeys="true">
 		insert
 		into clothesppsdb.huiyuan(hykh,pwd,repass, hyname, hysex, hyage, hydanwei,
 		hylianxi)
-		values (#{hykh},#{pwd},#{repass} #{hyname}, #{hysex}, #{hyage}, #{hydanwei},
+		values (#{hykh},#{pwd},#{repass}, #{hyname}, #{hysex}, #{hyage}, #{hydanwei},
 		#{hylianxi})
 	</insert>
 
@@ -116,5 +116,18 @@
 	<delete id="deleteById">
 		delete from clothesppsdb.huiyuan where hyid = #{hyid}
 	</delete>
-
+	
+	<!-- 修改密码 -->
+	<update id="pwdORrepass">
+		UPDATE clothesppsdb.huiyuan
+		<set>
+			<if test="pwd != null and pwd != ''">
+				pwd = #{pwd},
+			</if>
+			<if test="repass != null and repass != ''">
+				repass = #{repass}
+			</if>
+		</set>
+		where hyid = #{hyid}
+	</update>
 </mapper>

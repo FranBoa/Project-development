@@ -15,7 +15,7 @@ public interface CategoryService {
      * 通过ID查询单条数据
      *
      * @param cid 主键
-     * @return 实例对象
+     * @return 实例对象s
      */
     Category queryById(String cid);
 
@@ -27,7 +27,6 @@ public interface CategoryService {
      * @return 对象列表
      */
     List<Category>selectAll();
-
     List<Category> selectAllWithKehu();
     /**
      * 新增数据

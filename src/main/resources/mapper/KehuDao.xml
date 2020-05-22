@@ -34,6 +34,7 @@
 		#{id}
 	</select>
 
+
 	<select id="queryBycId" resultMap="KehuMap2">
 		select
 		id, grade, name, cid,
@@ -130,5 +131,10 @@
 	<delete id="deleteById">
 		delete from clothesppsdb.kehu where id = #{id}
 	</delete>
+
+	<!-- 分页查询 -->
+	<select id="selectPaging">
+		SELECT * FROM `clothesppsdb`.`kehu` WHERE id LIMIT #{page},#{pageSize}
+	</select>
 
 </mapper>

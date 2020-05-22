@@ -25,9 +25,16 @@ public class CategoryServiceImpl implements CategoryService {
      * @param cid 主键
      * @return 实例对象
      */
+
+    /**
+     * 通过ID查询单条数据
+     *
+     * @param cid 主键
+     * @return 实例对象s
+     */
     @Override
     public Category queryById(String cid) {
-        return this.categoryDao.queryById(cid);
+         return this.categoryDao.queryById(cid);
     }
 
     /**

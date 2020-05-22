@@ -18,7 +18,7 @@ public interface CategoryDao {
 	 * @param cid 主键
 	 * @return 实例对象
 	 */
-	Category queryById(String cid);
+	Category queryById(String  cid);
 
 	/**
 	 * 查询指定行数据
@@ -28,7 +28,6 @@ public interface CategoryDao {
 	 * @return 对象列表
 	 */
 	List<Category> selectAll();
-
 
 	List<Category> selectAllWithKehu();
 	/**

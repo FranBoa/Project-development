@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.code.TimeUtil.TimeUtil;
 import com.code.entity.*;
 import com.code.layuiUtil.SoulPage;
+import com.code.service.KehuService;
 import com.code.service.RelatedsaleandorderService;
 import com.code.service.SaleandorderService;
 import com.github.pagehelper.PageInfo;
@@ -34,6 +35,8 @@ public class SaleandorderController {
 
     @Resource
     private RelatedsaleandorderService relatedsaleandorderService;
+
+
     /**
      * 通过主键查询单条数据
      *
@@ -84,19 +87,30 @@ public class SaleandorderController {
     @ResponseBody
     @RequestMapping("del")
     public  Map<String,Object> del( int [] sid,String [] ordernumber){
-        int x=sid.length;
-        int b=sid.length;
+        Integer x=sid.length;
+        Integer b=sid.length;
+        Integer c=0;
+        Integer d=0;
         for (int i=0;i<sid.length;i++){
             System.out.println(ordernumber[i]);
             System.out.println(sid[i]);
-            boolean flag=true;
+            boolean flag=saleandorderService.deleteById(sid[i]);//删除主数据
+            boolean flagson=relatedsaleandorderService.deleteByOrderNumber(ordernumber[i]);//删除子数据
             if(flag!=true){
                 b=b-1;
             }
+            if(flagson!=true){
+                c++;
+            }else{
+                d++;
+            }
         }
         Map<String,Object> map=new HashMap<>();
-        map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条!" );
+        map.put("result","执行"+x+"条"+",成功"+b+"条"+"失败"+(x-b)+"条,删除订单详细商品成功"+d+"条,"+"失败"+c+"条！" );
         map.put("code",x-b>0?1:0);
+        if((x-b)>0||c>1){
+            map.put("msg","isnotnull");
+        }
         return map;
     }
 
@@ -175,10 +189,15 @@ public class SaleandorderController {
             System.out.println("最终输出"+xx);
         }
         System.out.println(total);
-        Saleandorder up=new Saleandorder();
-        up.setOrdernumber(OrderNumber);
-        up.setStotal(String.valueOf(total));
-        saleandorderService.update(up);
+        List<Saleandorder> up=saleandorderService.queryAll(new Saleandorder(OrderNumber));
+        for (int i=0;i<up.size();i++){
+            Saleandorder saleandorder = up.get(i);
+            System.out.println(saleandorder);
+        }
+        System.out.println(up);
+        //up.setOrdernumber(OrderNumber);
+        //up.setStotal(String.valueOf(total));
+        //saleandorderService.update(up);
         return  "200";
     }
 
@@ -191,9 +210,10 @@ public class SaleandorderController {
             int NeedId = saleandoder1.getSid();
             String times = TimeUtil.order(NeedId, "JH");
             Saleandorder saleandorder = new Saleandorder();
+            saleandorder.setCustomerid(formdatas.getKehuid());
             saleandorder.setSalesman("wdnmd");
             saleandorder.setAuthor("wdnmd");
-            saleandorder.setCustomername(formdatas.getKehuid());
+            saleandorder.setCustomername(formdatas.getCustomername());
             saleandorder.setOrdernumber(times);
             if(formdatas.getTitle()!=null){
                 saleandorder.setRemarks(formdatas.getTitle());
@@ -201,7 +221,6 @@ public class SaleandorderController {
                 saleandorder.setRemarks("无备注");
             }
 
-            System.out.println(saleandorder);
             this.saleandorderService.insert(saleandorder);
         return times;
         }else{
@@ -210,6 +229,10 @@ public class SaleandorderController {
 
     }
 
-
-
+    @ResponseBody
+    @RequestMapping("update")
+    public  String update(Saleandorder saleandorder){
+        this.saleandorderService.update(saleandorder);
+        return "ok";
+    }
 }

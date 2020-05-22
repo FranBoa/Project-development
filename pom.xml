@@ -90,6 +90,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
+      <scope>true</scope>
     </dependency>
     <!--导入pagehelper相关依赖-->
     <dependency>

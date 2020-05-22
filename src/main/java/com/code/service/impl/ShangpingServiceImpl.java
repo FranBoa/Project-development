@@ -26,7 +26,7 @@ public class ShangpingServiceImpl implements ShangpingService {
      * @return 实例对象
      */
     @Override
-    public Shangping queryById(String spid) {
+    public Shangping queryById(int spid) {
         return this.shangpingDao.queryById(spid);
     }
 
@@ -60,9 +60,8 @@ public class ShangpingServiceImpl implements ShangpingService {
      * @return 实例对象
      */
     @Override
-    public Shangping insert(Shangping shangping) {
-        this.shangpingDao.insert(shangping);
-        return shangping;
+    public int insert(Shangping shangping) {
+        return this.shangpingDao.insert(shangping);
     }
 
     /**
@@ -72,9 +71,8 @@ public class ShangpingServiceImpl implements ShangpingService {
      * @return 实例对象
      */
     @Override
-    public Shangping update(Shangping shangping) {
-        this.shangpingDao.update(shangping);
-        return this.queryById(shangping.getSpid());
+    public int update(Shangping shangping) {
+        return this.shangpingDao.update(shangping);
     }
 
     /**
@@ -84,7 +82,7 @@ public class ShangpingServiceImpl implements ShangpingService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(String spid) {
-        return this.shangpingDao.deleteById(spid) > 0;
+    public int deleteById(int spid) {
+        return this.shangpingDao.deleteById(spid);
     }
 }

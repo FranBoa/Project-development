@@ -1,6 +1,9 @@
 package com.code.service;
 
 import com.code.entity.Kehu;
+import com.code.entity.Saleandorder;
+import com.github.pagehelper.PageInfo;
+
 import java.util.List;
 
 /**
@@ -19,7 +22,6 @@ public interface KehuService {
      */
     Kehu queryById(int id);
 
-    List<Kehu> queryBycId(Integer cid);
     /**
      * 查询多条数据
      *
@@ -29,6 +31,8 @@ public interface KehuService {
      */
     List<Kehu>selectAll();
 
+
+    PageInfo<Kehu> selectAllForPage(int pageNum, int pageSize);
     /**
      * 新增数据
      *
@@ -43,7 +47,8 @@ public interface KehuService {
      * @param kehu 实例对象
      * @return 对象列表
      */
-    List<Kehu> queryAll(Kehu kehu);
+    List<Kehu> queryAll(Kehu  kehu);
+
 
     /**
      * 修改数据

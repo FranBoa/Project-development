@@ -15,6 +15,8 @@ public class formdata {
 
     private  String kehuid;
 
+    private String customername;
+
     public String getTitle() {
         return title;
     }
@@ -39,10 +41,19 @@ public class formdata {
         this.kehuid = kehuid;
     }
 
-    public formdata(String title, String pay, String kehuid) {
+    public String getCustomername() {
+        return customername;
+    }
+
+    public void setCustomername(String customername) {
+        this.customername = customername;
+    }
+
+    public formdata(String title, String pay, String kehuid, String customername) {
         this.title = title;
         this.pay = pay;
         this.kehuid = kehuid;
+        this.customername = customername;
     }
 
     @Override
@@ -51,6 +62,7 @@ public class formdata {
                 "title='" + title + '\'' +
                 ", pay='" + pay + '\'' +
                 ", kehuid='" + kehuid + '\'' +
+                ", customername='" + customername + '\'' +
                 '}';
     }
 }

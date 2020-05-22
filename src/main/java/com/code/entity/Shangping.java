@@ -13,7 +13,7 @@ public class Shangping implements Serializable {
     /**
     * 商品编号，主键
     */
-    private String spid;
+    private int spid;
     /**
     * 商品单价
     */
@@ -27,16 +27,15 @@ public class Shangping implements Serializable {
     */
     private Integer spshul;
 
+    public int getSpid() {
+		return spid;
+	}
 
-    public String getSpid() {
-        return spid;
-    }
+	public void setSpid(int spid) {
+		this.spid = spid;
+	}
 
-    public void setSpid(String spid) {
-        this.spid = spid;
-    }
-
-    public Object getSpdanjia() {
+	public Object getSpdanjia() {
         return spdanjia;
     }
 
@@ -60,4 +59,10 @@ public class Shangping implements Serializable {
         this.spshul = spshul;
     }
 
+	@Override
+	public String toString() {
+		return "Shangping [spid=" + spid + ", spdanjia=" + spdanjia + ", spname=" + spname + ", spshul=" + spshul + "]";
+	}
+    
+    
 }

@@ -98,4 +98,9 @@ public class RelatedsaleandorderServiceImpl implements RelatedsaleandorderServic
     public boolean deleteById(Integer sid) {
         return this.relatedsaleandorderDao.deleteById(sid) > 0;
     }
+
+    @Override
+    public boolean deleteByOrderNumber(String ordernumber) {
+        return this.relatedsaleandorderDao.deleteByOrderNumber(ordernumber);
+    }
 }

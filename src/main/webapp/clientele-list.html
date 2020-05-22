@@ -9,12 +9,9 @@
 	content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
 <link rel="stylesheet" href="/css/font.css">
 <link rel="stylesheet" href="/css/xadmin.css">
+<link rel="stylesheet" href="/css/layui.css"  media="all">
 <script src="/lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="/js/xadmin.js"></script>
-<!--[if lt IE 9]>
-          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 </head>
 <body>
 	<div class="x-nav">
@@ -34,28 +31,17 @@
 						<form class="layui-form layui-col-space5">
 							<div class="layui-inline layui-show-xs-block">
 								<input type="text" name="username" placeholder="请输入用户名" v-model="keywords"
-									autocomplete="off" class="layui-input">
+								autocomplete="off" class="layui-input">
 							</div>
-							<!-- <div class="layui-inline layui-show-xs-block"  >
-								<button class="layui-btn" lay-submit=""  lay-filter="sreach">
-									<i class="layui-icon"  >&#xe615;</i>
-								</button>
-							</div> -->
 						</form>
 					</div>
+
 					<div class="layui-card-header">
-						<button class="layui-btn layui-btn-danger" onclick="delAll()">
-							<i class="layui-icon"></i>批量删除
-						</button>
-						<button class="layui-btn" 
-							onclick="xadmin.open('添加客户','/clientele-add.html',451,520)">
-							<i class="layui-icon" ></i>添加
-						</button>
-						<button class="layui-btn"
-							onclick="xadmin.open('客户类别','/clientele-sort-list.html',900,600)">
-							<i class="layui-icon"></i>客户类别
-						</button>
+						<button type="button" class="layui-btn layui-btn-danger layui-btn-radius" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+						<button type="button" class="layui-btn layui-btn-normal layui-btn-radius" onclick="xadmin.open('添加客户','/clientele-add.html',400,520)"><i class="layui-icon" ></i>添加</button>
+						<button type="button" class="layui-btn layui-btn-warm layui-btn-radius" onclick="xadmin.open('客户类别','/clientele-sort-list.html',900,600)"><i class="layui-icon"></i>客户类别</button>
 					</div>
+
 					<div class="layui-card-body layui-table-body layui-table-main">
 						<table class="layui-table layui-form">
 							<thead>
@@ -75,7 +61,7 @@
 							</thead>
 							<tbody id="tbody">
 								<tr v-for="kh in search()">
-									<td><input type="checkbox" lay-filter="checkall" name="id" value="1" lay-skin="primary"></td>
+									<td><input type="checkbox" name="id" value="1"   lay-skin="primary"></td>
 									<td>{{kh.id}}</td>
 									<td>{{kh.grade}}</td>
 									<td>{{kh.name}}</td>
@@ -85,9 +71,9 @@
 									<td>{{kh.mobilePhone}}</td>
 									<td>{{kh.address}}</td>
 									<td class="td-manage">
-										<a title="编辑"  onclick="xadmin.open('编辑客户','clientele-edit.html',451,520)" 
+										<a title="编辑"  onclick="xadmin.open('编辑客户','clientele-edit.html',400,520)"
 											@click.prevent="loadupdate(kh)" href="javascript:;"> <i class="layui-icon">&#xe642;</i>
-										</a> 
+										</a>
 										<a title="删除"  onclick="member_del(this,'要删除的id')"
 											@click.prevent="del(kh.id)" href="javascript:;"> <i class="layui-icon">&#xe640;</i>
 										</a>
@@ -97,20 +83,18 @@
 							</tbody>
 						</table>
 					</div>
+
 					<div class="layui-card-body ">
-						<div class="page">
-							<div>
-								<a class="prev" href="">&lt;&lt;</a> <a class="num" href="">1</a>
-								<span class="current">2</span> <a class="num" href="">3</a> <a
-									class="num" href="">489</a> <a class="next" href="">&gt;&gt;</a>
-							</div>
-						</div>
+						<fieldset id="page1" class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+							<legend>选择一条数据...</legend>
+						</fieldset>
 					</div>
+
 
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
 
@@ -126,7 +110,17 @@
 				data:{
 					name:'',
 					keywords:'',
-					list:[] //存储所有客户对象的数据
+					list:[], //存储所有客户对象的数据
+					pageNum:1,
+					pageSize:5,
+					count:null
+				},
+				updated(){
+					 layui.use('form', function () {
+					        var form = layui.form;
+					        form.render();
+
+					    });
 				},
 				mounted(){//初始化显示完成调用
 					this.getAllKehu();
@@ -137,13 +131,79 @@
 						//发送异步请求，请求后端控制器，获取所有的客户信息
 						axios.post("kehu/queryAll").then(res=>{
 							this.list=res.data.data;
+							this.list=res.data.data;
+							this.count=res.data.count;
+							var xtabledata=res.data;
+							console.log(xtabledata);
+							var count=this.count;
+							if (res.data!=null){
+								layui.use(['laypage','table','jquery'], function(){
+									var laypage = layui.laypage;
+									var table=layui.table;
+									var $=layui.jquery;
+									//执行一个laypage实例
+									laypage.render({
+										elem: 'page1' //注意，这里的 test1 是 ID，不用加 # 号
+										,count: vm.$data.count//数据总数，从服务端得到
+										,limit:10
+										,limits:[10,15,20,40]
+										,theme: '#1E9FFF'
+										,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+										,curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+										,hash: 'fenye' //自定义hash值
+										,jump: function(obj, first){
+											//obj包含了当前分页的所有参数，比如
+											//console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+											//得到每页显示的条数
+											//首次不执行
+											if(!first){
+												console.log(obj.limit);
+												$.ajax({
+													url:"kehu/queryAll",
+													data:{"pageNum":obj.curr,"pageSize":obj.limit},
+													type:"post",
+													async: true,
+													traditional:true,
+													success:function(data) {
+														//layer.msg(data);
+														vm.$data.list = data.data;
+														vm.$data.count = data.count;
+													},
+													error:function(data){
+													}
+												});
+											}
+										}
+									});
+
+
+
+								});
+							}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							//alert(res.data.data);
 						}).catch(err=>{
 							console.log("请求失败")
 						})
-					}, 
+					},
 					//删除
-					del(id){  
+					del(id){
 						//var queren = confirm("确认要删除吗?")
 						//if(queren){
 							axios.post("kehu/deleteById?id="+id).then(res=>{
@@ -153,7 +213,7 @@
 								this.getAllKehu();
 							})
 						//}
-					}, 
+					},
 					search(){
 						//遍历list数组
 						var newList=[]
@@ -170,7 +230,7 @@
 					}
 				}
 			})
-			
+
 			function loadupdate() {
 				var kh=data_kh;
 			 return kh;
@@ -178,8 +238,7 @@
 		</script>
 
 	<script>
-		layui.use('table',
-        function() {
+		layui.use('table',function() {
             var table = layui.table;
             //监听单元格编辑
             table.on('edit(test)',
@@ -210,11 +269,17 @@
      </script>
 
     <script>
-      layui.use(['laydate','form'], function(){
+      layui.use(['laydate','form','laypage', 'layer'], function(){
         var laydate = layui.laydate;
+        var laypage = layui.laypage,layer = layui.layer;
         var  form = layui.form;
 
-
+        //自定义样式
+        laypage.render({
+          elem: 'demo2'
+          ,count: 100
+          ,theme: '#1E9FFF'
+        });
         // 监听全选
         form.on('checkbox(checkall)', function(data){
 

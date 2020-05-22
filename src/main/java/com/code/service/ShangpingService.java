@@ -17,7 +17,7 @@ public interface ShangpingService {
      * @param spid 主键
      * @return 实例对象
      */
-    Shangping queryById(String spid);
+    Shangping queryById(int spid);
 
     /**
      * 查询多条数据
@@ -34,7 +34,7 @@ public interface ShangpingService {
      * @param shangping 实例对象
      * @return 实例对象
      */
-    Shangping insert(Shangping shangping);
+    int insert(Shangping shangping);
 
     /**
      * 通过实体作为筛选条件查询
@@ -50,7 +50,7 @@ public interface ShangpingService {
      * @param shangping 实例对象
      * @return 实例对象
      */
-    Shangping update(Shangping shangping);
+    int update(Shangping shangping);
 
     /**
      * 通过主键删除数据
@@ -58,6 +58,6 @@ public interface ShangpingService {
      * @param spid 主键
      * @return 是否成功
      */
-    boolean deleteById(String spid);
+    int deleteById(int spid);
 
 }

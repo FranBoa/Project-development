@@ -3,7 +3,7 @@
 <mapper namespace="com.code.dao.ShangpingDao">
 
     <resultMap type="com.code.entity.Shangping" id="ShangpingMap">
-        <result property="spid" column="spid" jdbcType="VARCHAR"/>
+        <result property="spid" column="spid" jdbcType="INTEGER"/>
         <result property="spdanjia" column="spdanjia" jdbcType="OTHER"/>
         <result property="spname" column="spname" jdbcType="VARCHAR"/>
         <result property="spshul" column="spshul" jdbcType="INTEGER"/>

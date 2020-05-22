@@ -1,6 +1,11 @@
 package com.code.entity;
 
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 
 /**
@@ -22,6 +27,9 @@ public class Zhuxiao implements Serializable {
 	/**
 	 * 注销时间
 	 */
+	//设置时区为上海时区，时间格式自己据需求定。
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date zxtime;
 
 	public int getZid() {

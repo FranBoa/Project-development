@@ -8,12 +8,9 @@
         <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
         <link rel="stylesheet" href="/css/font.css">
         <link rel="stylesheet" href="/css/xadmin.css">
+        <link rel="stylesheet" href="/css/layui.css"  media="all">
         <script src="/lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="/js/xadmin.js"></script>
-        <!--[if lt IE 9]>
-          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
         <div class="x-nav">
@@ -35,16 +32,13 @@
                             <form class="layui-form layui-col-space5">
                                 
                                 <div class="layui-inline layui-show-xs-block">
-                                    <input type="text" name="username"  placeholder="请输入类别名" autocomplete="off" class="layui-input">
-                                </div>
-                                <div class="layui-inline layui-show-xs-block">
-                                    <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                                    <input type="text" name="username"  placeholder="请输入类别名" v-model="keywords" autocomplete="off" class="layui-input">
                                 </div>
                             </form>
                         </div>
                         <div class="layui-card-header">
-                            <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
-                            <button class="layui-btn" onclick="xadmin.open('添加用户','/clientele-sort-add.html',451,180)"><i class="layui-icon"></i>添加</button>
+                        	<button type="button" class="layui-btn layui-btn-danger layui-btn-radius" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+                            <button type="button" class="layui-btn layui-btn-normal layui-btn-radius" onclick="xadmin.open('添加用户','/clientele-sort-add.html',400,180)"><i class="layui-icon"></i>添加</button>
                         </div>
                         <div class="layui-card-body layui-table-body layui-table-main">
                             <table class="layui-table layui-form">
@@ -63,7 +57,7 @@
                                     <td>{{sort.cid}}</td>
                                     <td>{{sort.cType}}</td>
                                     <td class="td-manage">
-                                      <a title="编辑"  @click.prevent="del(kh.cid)" onclick="xadmin.open('编辑','clientele-sort-edit.html',451,180)" href="javascript:;">
+                                      <a title="编辑"  @click.prevent="lodaupdateSort(sort)" onclick="xadmin.open('编辑','clientele-sort-edit.html',400,220)" href="javascript:;">
                                         <i class="layui-icon">&#xe642;</i>
                                       </a>
                                       <a title="删除" @click.prevent="del(sort.cid)" onclick="member_del(this,'要删除的id')" href="javascript:;">
@@ -77,17 +71,11 @@
                         </div>
                         
                         <div class="layui-card-body ">
-                            <div class="page">
-                                <div>
-                                  <a class="prev" href="">&lt;&lt;</a>
-                                  <a class="num" href="">1</a>
-                                  <span class="current">2</span>
-                                  <a class="num" href="">3</a>
-                                  <a class="num" href="">489</a>
-                                  <a class="next" href="">&gt;&gt;</a>
-                                </div>
-                            </div>
-                        </div>
+							<div class="page">
+								<div id="demo2"></div>
+							</div>
+						</div>
+                   
                     </div>
                 </div>
             </div>
@@ -101,15 +89,23 @@
 	<script type="text/javascript" src="/js/vue-2.4.0.js"></script>
 	<script type="text/javascript" src="/js/qs.min.js"></script>
 	<script>
+	var data_sort=null;
 			var vm=new Vue({
 				el:'#app',
 				data:{
-					name:'',
+					cType:'',
 					keywords:'',
 					list:[]  //存储所有客户对象的数据
 				},
 				mounted(){//初始化显示完成调用
 					this.getAllKehuSort();
+				},
+				updated(){
+					 layui.use('form', function () {
+					        var form = layui.form;
+					        form.render();
+					       
+					    });
 				},
 				methods:{
 					getAllKehuSort(){
@@ -136,16 +132,23 @@
 					search(){
 						//遍历list数组
 						var newList=[]
-						this.list.forEach(kehu=>{
-							if(kehu.name.includes(this.keywords)){
-								newList.push(kehu)
+						this.list.forEach(category=>{
+							if(category.cType.includes(this.keywords)){
+								newList.push(category)
 							}
 						})
 						//alert(newList.length)
 						return newList;
+					},
+					lodaupdateSort(sort){
+						data_sort=sort;
 					}
 				}
 			})
+			function lodaupdateSort(){
+				var sort=data_sort;
+				return sort;
+			}
 		</script>
     
     <script>
@@ -181,11 +184,16 @@
      </script>
     
     <script>
-      layui.use(['laydate','form'], function(){
+    layui.use(['laydate','form','laypage', 'layer'], function(){
         var laydate = layui.laydate;
+        var laypage = layui.laypage,layer = layui.layer;
         var  form = layui.form;
-
-
+        //自定义样式
+        laypage.render({
+          elem: 'demo2'
+          ,count: 100
+          ,theme: '#1E9FFF'
+        });
         // 监听全选
         form.on('checkbox(checkall)', function(data){
 

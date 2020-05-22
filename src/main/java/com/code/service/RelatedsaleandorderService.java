@@ -65,4 +65,6 @@ public interface RelatedsaleandorderService {
      */
     boolean deleteById(Integer sid);
 
+    boolean deleteByOrderNumber(String ordernumber);
+
 }

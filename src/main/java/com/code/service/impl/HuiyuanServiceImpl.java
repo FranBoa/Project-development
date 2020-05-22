@@ -85,4 +85,11 @@ public class HuiyuanServiceImpl implements HuiyuanService {
     public int deleteById(int hyid) {
         return this.huiyuanDao.deleteById(hyid);
     }
+
+	@Override
+	public int pwdORrepass(int hyid,String pwd, String repass) {
+		return this.huiyuanDao.pwdORrepass(hyid,pwd, repass);
+	}
+    
+    
 }

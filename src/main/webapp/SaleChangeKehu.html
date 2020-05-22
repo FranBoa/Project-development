@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+<head>
+    <meta charset="UTF-8">
+    <title>修改客户</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/xadmin.css">
+    <link rel="stylesheet" href="module/soulTable/soulTable.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/xadmin.js"></script>
+</head>
+<body>
+<div class="layui-fluid" id="kehu">
+    <div class="layui-row layui-col-space15">
+        <form class="layui-form">
+        <div class="layui-col-md12">
+            <div  class="layui-form-item">
+                <label class="layui-form-label">客户</label>
+                <div id="kehuid"></div>
+            </div>
+            <div  class="layui-form-item">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <input type="text" name="remarks" lay-verify="title" id="remarks" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item"   style="margin-top: 50px">
+                <div class="layui-container">
+                        <div>
+                            <label class="layui-form-label"></label>
+                            <button class="layui-btn  layui-btn-lg layui-btn-radius" lay-filter="changekehu" id="changekehu" lay-submit="">点击修改</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-lg layui-btn-radius" lay-filter="close" lay-submit="">关闭页面</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    var Ordernumber;
+    layui.config({
+        base: 'module/',
+        base2:'/'
+    }).extend({
+        selectN: 'selectNM/selectN',
+        selectM: 'selectNM/selectM',
+    }).use(['jquery','selectN','selectM','form','table'],function(){
+        $ = layui.jquery;
+        var selectN = layui.selectN,selectM = layui.selectM,form=layui.form;
+        var table=layui.table;
+        var kehudata=getkehu();
+        //无限级分类-基本配置
+
+        var catIns1 = selectN({
+            //元素容器【必填】
+             elem: '#kehuid'
+            ,search:true
+            //候选数据【必填】
+            ,data:"category/selectAllWithKehu"
+            ,last:true
+            ,field:{idName:'cid',titleName:'name',childName:'children'}
+        });
+
+        form.on('submit(changekehu)',function (data) {
+            console.log(data.field);
+            if (Ordernumber==null){
+                var index = parent.layer.getFrameIndex(window.name);
+                //关闭当前frame
+                parent.layer.close(index)
+                return  false;
+            }else if (data.field.kehuid!=null&&data.field.kehuid!=""){
+                var saleandorder={
+                    customername:catIns1.lastName,
+                    customerid:data.field.kehuid,
+                    remarks:data.field.remarks,
+                    ordernumber:Ordernumber
+                }
+                $.ajax({
+                    url:'saleandorder/update',
+                    data:saleandorder,
+                    traditional:true,
+                    success:function (res) {
+                        //询问框
+                        layer.confirm('修改成功！', {
+                            btn: ['确定'] //按钮
+                        }, function(){
+                            //layer.msg("修改成功！！", {time: 5000, icon:6});
+                            parent.reloadsoultable();
+                            var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                        });
+
+
+                    }
+                });
+                return false;
+            }else{
+                //tips层
+                layer.tips('客户不能为空w(ﾟДﾟ)w！', '#changekehu', {
+                    tips: [1, '#78BA32']
+                });
+                return false;
+            }
+            return false;
+        });
+
+
+        form.on('submit(close)',function (data) {
+            var index = parent.layer.getFrameIndex(window.name);
+            //关闭当前frame
+            parent.layer.close(index);
+        });
+
+        });
+
+    function sendkehu(ordernumber) {
+        Ordernumber=ordernumber;
+    }
+
+    function getkehu() {
+        var alldata=null;
+        $.ajax({
+            url:"category/selectAllWithKehu",
+            type:'get',
+            success:function(res){
+                var data = res;
+                console.log(data);
+                // for(var i in data){
+                //     data[i].value = data[i].cid;
+                //     data[i].label = data[i].cType;
+                //     delete data[i].cid;
+                //     delete data[i].cType;
+                //     data[i].hasChild = true;
+                // }
+                alldata=data;
+            }
+
+        });
+        return alldata;
+    }
+
+
+</script>
+<script name="Text-tool">
+    layui.config({ base: 'module/' }).extend({
+        textool: 'textool/textool.min'
+    }).use(['form', 'textool'], function() {
+        var $ = layui.$, form = layui.form, textool = layui.textool;
+        textool.init({
+            // 根据元素 id 值单独渲染，为空默认根据 class='layext-text-tool' 批量渲染
+            eleId: 'remarks',
+            // 批量设置输入框最大长度，可结合 eleId 单独设置最大长度
+            maxlength: 200,
+            // 初始化回调，无参
+            initEnd: $.noop,
+            // 显示回调，参数为当前输入框和工具条面板的 jQuery 对象
+            showEnd: $.noop,
+            // 隐藏回调，参数为当前输入框和工具条面板的 jQuery 对象
+            hideEnd: $.noop,
+            // 初始化展开，默认展开，否则收起
+            initShow: true,
+            // 启用指定工具模块，默认依次为字数统计、复制内容、重置内容、清空内容，按数组顺序显示
+            tools: ['count', 'copy', 'reset', 'clear'],
+            // 工具按钮提示类型，默认为 'title' 属性，可选 'laytips'，使用 layer 组件的吸附提示， 其他值不显示提示
+            tipType: 'title',
+            // 吸附提示背景颜色
+            tipColor: '#01AAED',
+            // 对齐方向，默认右对齐，可选左对齐 'left'
+            align: 'left',
+            // 工具条字体颜色
+            color: '#666666',
+            // 工具条背景颜色
+            bgColor: '#FFFFFF',
+            // 工具条边框颜色
+            borderColor: '#E6E6E6',
+            // 工具条附加样式类名
+            className: '',
+            // z-index
+            zIndex: 1
+        });
+    });
+</script>
+</html>

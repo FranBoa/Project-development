@@ -33,13 +33,13 @@
 	        <result property="mail" column="mail" jdbcType="VARCHAR"/>
 	        <result property="status" column="status" jdbcType="INTEGER"/>
     	</collection> -->
-    </resultMap>
+    </resultMap> 
     <!--查询单个-->
     <select id="queryById" resultMap="WpurchaseMap">
-    select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = #{users_id})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+    select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
 		where p.users_id=#{users_id} or p.boss_users_id=(select us.bossid from user us where u.id=#{users_id})
@@ -48,7 +48,7 @@
     select count(1)
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
 		where p.users_id=#{users_id} or p.boss_users_id=(select us.bossid from user us where u.id=#{users_id})
@@ -56,10 +56,10 @@
 
  <!--查询所有的数据-->
     <select id="selectAll" resultMap="WpurchaseMap">
-		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id =#{users_id})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
     </select>
@@ -67,17 +67,17 @@
 		select count(1)
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
     </select> -->
-
+	
 	<!--通过实体作为筛选条件查询-->
     <select id="queryBy" resultMap="WpurchaseMap">
-		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id =#{users_id})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
         <where>
@@ -114,7 +114,7 @@
 		select count(1)
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
         <where>
@@ -147,13 +147,13 @@
             </if>
         </where>
     </select> -->
-
+    
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="WpurchaseMap">
-		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = #{usersId})) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
+		select pt.productTypeName,p.purchase_id,p.supplier_id,p.users_id,u.username,(select username from user where id = (select bossid from user where id = '002')) as bossname,p.boss_users_id,p.warehouse,w.wName,pd.purchase_goods_id,pd.purchase_goods_name,pd.purchase_price,pd.purchase_num,pd.discounts,pd.discounts_price,pd.discounts_sum,p.purchase_date,p.payment_status,p.commet,p.purchase_status
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
         <where>
@@ -205,7 +205,7 @@
 		select count(1)
 		from purchase p
 		INNER JOIN purchase_detail pd on p.purchase_id=pd.purchase_id
-		INNER JOIN warehouse w on w.wId=p.warehouse
+		INNER JOIN warehouse w on w.wId=p.warehouse 
 		INNER JOIN producttype pt on pt.productTypeId=pd.ptype
 		INNER JOIN user u on p.users_id=u.id
         <where>
@@ -259,7 +259,7 @@
             </if>
         </where>
     </select> -->
-
+    
     <!--通过主键修改数据-->
     <update id="update">
         update purchase set purchase_status = #{purchaseStatus} where purchase_id = #{purchaseId}

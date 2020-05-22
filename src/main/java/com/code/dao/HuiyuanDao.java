@@ -61,4 +61,6 @@ public interface HuiyuanDao {
 	 */
 	int deleteById(int hyid);
 
+	//修改密码
+	int pwdORrepass(int hyid, String pwd, String repass);
 }

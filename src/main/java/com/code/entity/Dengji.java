@@ -47,4 +47,11 @@ public class Dengji implements Serializable {
 		this.djyouhui = djyouhui;
 	}
 
+	@Override
+	public String toString() {
+		return "Dengji [djid=" + djid + ", djname=" + djname + ", djyouhui=" + djyouhui + "]";
+	}
+	
+	
+	
 }

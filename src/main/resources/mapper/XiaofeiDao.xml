@@ -6,22 +6,21 @@
 		<result property="xid" column="xid" jdbcType="INTEGER" />
 		<result property="hykid" column="hykid" jdbcType="VARCHAR" />
 		<result property="spid" column="spid" jdbcType="INTEGER" />
-		<result property="xfsl" column="Xfsl" jdbcType="INTEGER" />
+		<result property="xfsl" column="xfsl" jdbcType="INTEGER" />
+		<result property="money" column="money" jdbcType="OTHER" />
 	</resultMap>
 
 	<!--查询单个 -->
 	<select id="queryById" resultMap="XiaofeiMap">
 		select
-		xid,hykid, spid, Xfsl
+		xid,hykid, spid, xfsl
 		from clothesppsdb.xiaofei
 		where xid = #{xid}
 	</select>
 
 	<!--查询所有的数据 -->
 	<select id="selectAll" resultMap="XiaofeiMap">
-		select
-		xid,hykid, spid, Xfsl
-		from clothesppsdb.xiaofei
+		SELECT f.`xid`,f.`hykid`,s.`spname`,f.`xfsl`,f.money  FROM xiaofei AS f,shangping AS s WHERE f.`spid`=s.`spid`
 	</select>
 
 	<!--通过实体作为筛选条件查询 -->
@@ -40,30 +39,35 @@
 				and spid = #{spid}
 			</if>
 			<if test="xfsl != null">
-				and Xfsl = #{xfsl}
+				and xfsl = #{xfsl}
+			</if>
+			<if test="money != null">
+				and money = #{money}
 			</if>
 		</where>
 	</select>
 
 	<!--新增所有列 -->
-	<insert id="insert" keyProperty="hykid" useGeneratedKeys="true">
-		insert
-		into clothesppsdb.xiaofei(spid, Xfsl)
-		values (#{spid}, #{xfsl})
+	<insert id="insert"  useGeneratedKeys="true">
+		INSERT INTO `clothesppsdb`.`xiaofei` (`hykid`,`spid`,`xfsl`,money) VALUES 
+		(#{hykid},#{spid}, #{xfsl},#{money});
 	</insert>
 
 	<!--通过主键修改数据 -->
 	<update id="update">
 		update clothesppsdb.xiaofei
 		<set>
-			<if test="xid != null">
-				xid = #{xid},
+			<if test="hykid != null">
+				hykid = #{hykid},
 			</if>
 			<if test="spid != null">
 				spid = #{spid},
 			</if>
 			<if test="xfsl != null">
-				Xfsl = #{xfsl},
+				xfsl = #{xfsl},
+			</if>
+			<if test="xfsl != null">
+				money = #{money},
 			</if>
 		</set>
 		where xid = #{xid}

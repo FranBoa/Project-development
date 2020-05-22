@@ -12,85 +12,70 @@
 <link rel="stylesheet" href="/css/xadmin.css">
 <script type="text/javascript" src="/lib/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript" src="/js/xadmin.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
 </head>
 <body>
 	<div class="layui-fluid" id="app">
 		<div class="layui-row">
-			<form class="layui-form">
+		
+			<form class="layui-form layui-form-pane" action="">
 
 				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red">*</span>客户等级
-					</label>
+					<label class="layui-form-label">客户等级</label>
 					<div class="layui-input-inline">
-						<input type="text" id="L_username" name="grade" required=""
-							autocomplete="off" class="layui-input">
+						<input type="text" name="grade" lay-verify="nikename" lay-verify="required" placeholder="请输入客户等级" autocomplete="off" class="layui-input">
 					</div>
 				</div>
 				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red">*</span>客户名称
-					</label>
+					<label class="layui-form-label">客户名称</label>
 					<div class="layui-input-inline">
-						<input type="text" id="L_username" name="name" required=""
-							lay-verify="nikename" autocomplete="off" class="layui-input">
+						<input type="text" name="name" lay-verify="nikename" lay-verify="required" placeholder="请输入客户名称" autocomplete="off" class="layui-input">
 					</div>
 				</div>
+
 				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red"></span>类别
-					</label>
+					<label class="layui-form-label">客户类别</label>
 					<div class="layui-input-inline">
 						<select name="cid" id="cid">
-							<option value="0">全部</option>
+							<option value="">请选择客户类型</option>
+							<option value="0"></option>
 						</select>
 					</div>
 				</div>
-				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red">*</span>销售人员
-					</label>
-					<div class="layui-input-inline">
-						<input type="text" id="L_username" name="sell" required=""
-							lay-verify="nikename" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red">*</span>联系人
-					</label>
-					<div class="layui-input-inline">
-						<input type="text" id="L_username" name="contact" required=""
-							lay-verify="nikename" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red">*</span>手机
-					</label>
-					<div class="layui-input-inline">
-						<input type="text" id="L_username" name="mobilePhone" required=""
-							lay-verify="nikename" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label for="L_username" class="layui-form-label"> <span
-						class="x-red">*</span>送货地址
-					</label>
-					<div class="layui-input-inline">
-						<input type="text" id="L_username" name="address" required=""
-							autocomplete="off" class="layui-input">
-					</div>
-				</div>
 
 				<div class="layui-form-item">
-					<label for="L_repass" class="layui-form-label"></label>
-					<button class="layui-btn" lay-filter="add" lay-submit="">增加</button>
+					<label class="layui-form-label">销售人员</label>
+					<div class="layui-input-inline">
+						<input type="text" name="sell" lay-verify="nikename" lay-verify="required" placeholder="请输入销售人员" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">联系人</label>
+					<div class="layui-input-inline">
+						<input type="text" name="contact" lay-verify="nikename" lay-verify="required" placeholder="请输入联系人" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">手机</label>
+					<div class="layui-input-inline">
+						<input type="text" name="mobilePhone" lay-verify="nikemobile" lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">送货地址</label>
+					<div class="layui-input-inline">
+						<input type="text" name="address" lay-verify="nikename" lay-verify="required" placeholder="请输入送货地址" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-form-item" style="text-align: center">
+					<button type="button" class="layui-btn layui-btn-normal layui-btn-radius" lay-filter="add" lay-submit="">增加</button>
+					<button type="reset" class="layui-btn layui-btn-normal layui-btn-radius">重置</button>
 				</div>
 			</form>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript">
 	layui.use([ 'form', 'layer' ], function() {
 		$ = layui.jquery;
@@ -108,7 +93,6 @@
 			success : function(result) {
 				var s = $(".tid").val();
 				var data = eval('(' + result + ')');
-				//alert(data)
 				$.each(data, function(index, item) {
 					var option = "<option ";
 					option += " value=" + item.cid + ">" + item.cType
@@ -124,47 +108,55 @@
 		});
 	});
 	</script>
+	
 	<script>
-		layui.use([ 'form', 'layer', 'jquery' ], function() {
-			$ = layui.jquery;
-			var form = layui.form, layer = layui.layer;
+	layui.use(['form', 'layer'],function() {
+		            $ = layui.jquery;
+		            var form = layui.form,
+		            layer = layui.layer;
+		
+		          	//自定义验证规则
+					form.verify({
+						nikename : function(value) {
+							if (value.length < 2) {
+								return '昵称不得少于2个字符';
+							}
+						},
+						nikemobile : function(value) {
+							if (value.length > 11 || value.length < 11) {
+								return '手机号不得少于或大于11个字符';
+							}
+						},
+						pass : [ /(.+){6,12}$/, '密码必须6到12位' ],
+						repass : function(value) {
+							if ($('#L_pass').val() != $('#L_repass').val()) {
+								return '两次密码不一致';
+							}
+						}
+					});
 
-			//自定义验证规则
-			form.verify({
-				nikename : function(value) {
-					if (value.length < 2) {
-						return '昵称不得少于2个字符';
-					}
-				},
-				pass : [ /(.+){6,12}$/, '密码必须6到12位' ],
-				repass : function(value) {
-					if ($('#L_pass').val() != $('#L_repass').val()) {
-						return '两次密码不一致';
-					}
-				}
-			});
+					//监听提交
+					form.on("submit(add)", function(data) {
+						$.post("kehu/insertKehu", data.field, function(data) {
+							//top.layer.msg("1");
+							if (data == "1") {
+								setTimeout(function() {
+									top.layer.msg("操作成功！");
+									layer.closeAll("iframe");
+									//刷新父页面
+									parent.location.reload();
+								}, 1000);
+							} else {
+								top.layer.msg("操作失败！");
+							}
+						});
 
-			//监听提交
-			form.on("submit(add)", function(data) {
-				$.post("kehu/insertKehu", data.field, function(data) {
-					//top.layer.msg("1");
-					if (data == "1") {
-						setTimeout(function() {
-							top.layer.msg("操作成功！");
-							layer.closeAll("iframe");
-							//刷新父页面
-							parent.location.reload();
-						}, 1000);
-					} else {
-						top.layer.msg("操作失败！");
-					}
+						return false;
+					})
+
 				});
-
-				return false;
-			})
-
-		});
-	</script>
+            
+        </script>
 
 </body>
 

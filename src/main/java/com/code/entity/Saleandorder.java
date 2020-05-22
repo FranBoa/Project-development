@@ -75,6 +75,16 @@ public class Saleandorder implements Serializable {
 
     private String wid;
 
+    public String getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(String customerid) {
+        this.customerid = customerid;
+    }
+
+    private String customerid;
+
     public Integer getSid() {
         return sid;
     }
@@ -188,4 +198,29 @@ public class Saleandorder implements Serializable {
     }
 
 
+    public Saleandorder(Integer sid, String category, String salesman, String customername, String status, Date sdate, Date rdate, String ordernumber, String ordernumber2, String remarks, String stotal, String author, String inspect, String wid, String customerid) {
+        this.sid = sid;
+        this.category = category;
+        this.salesman = salesman;
+        this.customername = customername;
+        this.status = status;
+        this.sdate = sdate;
+        this.rdate = rdate;
+        this.ordernumber = ordernumber;
+        this.ordernumber2 = ordernumber2;
+        this.remarks = remarks;
+        this.stotal = stotal;
+        this.author = author;
+        this.inspect = inspect;
+        this.wid = wid;
+        this.customerid = customerid;
+    }
+
+    public Saleandorder() {
+        super();
+    }
+
+    public Saleandorder(String ordernumber) {
+        this.ordernumber = ordernumber;
+    }
 }
